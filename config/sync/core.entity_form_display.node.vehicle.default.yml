@@ -1,0 +1,132 @@
+uuid: b8a99b93-c938-4352-be4d-caa229b3b72d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.vehicle.field_body_style
+    - field.field.node.vehicle.field_color
+    - field.field.node.vehicle.field_condition
+    - field.field.node.vehicle.field_featured
+    - field.field.node.vehicle.field_make
+    - field.field.node.vehicle.field_mileage
+    - field.field.node.vehicle.field_model
+    - field.field.node.vehicle.field_photo
+    - field.field.node.vehicle.field_price
+    - field.field.node.vehicle.field_sale_status
+    - field.field.node.vehicle.field_stock_number
+    - field.field.node.vehicle.field_year
+    - node.type.vehicle
+    - workflows.workflow.basic_editorial
+  module:
+    - content_moderation
+    - media_library
+id: node.vehicle.default
+targetEntityType: node
+bundle: vehicle
+mode: default
+content:
+  field_body_style:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_color:
+    type: string_textfield
+    weight: 7
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_condition:
+    type: options_select
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_featured:
+    type: boolean_checkbox
+    weight: 10
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_make:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_mileage:
+    type: number
+    weight: 6
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_model:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_photo:
+    type: media_library_widget
+    weight: 9
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_price:
+    type: number
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_sale_status:
+    type: options_buttons
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_stock_number:
+    type: number
+    weight: 0
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_year:
+    type: number
+    weight: 3
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_meta_tags: true
+  field_seo_analysis: true
+  field_tags: true
+  path: true
+  promote: true
+  publish_on: true
+  publish_state: true
+  simple_sitemap: true
+  status: true
+  sticky: true
+  title: true
+  uid: true
+  unpublish_on: true
+  unpublish_state: true
+  url_redirects: true

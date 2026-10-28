@@ -1,0 +1,17 @@
+ .../canvas.component.sdc.wildbills.info_card.yml   | 71 +++++++++++++++++++++-
+ droost/wiki/wildbills.md                           | 68 ++++++++++++++++++++-
+ droost/wiki/wildbills_site.md                      | 59 +++++++++++++++---
+ .../wildbills_site/src/Hook/WildbillsSiteHooks.php |  9 ++-
+ .../custom/wildbills_site/src/HoursSummary.php     | 20 +++---
+ .../custom/wildbills_site/src/Inventory.php        | 18 ++++++
+ .../custom/wildbills_site/src/LocationDetails.php  | 44 +++++++++++---
+ .../tests/src/Unit/HoursSummaryTest.php            | 17 ++++++
+ .../tests/src/Unit/LocationDetailsTest.php         | 31 +++++++++-
+ .../tests/src/Unit/WildbillsSiteHooksTest.php      |  2 +
+ .../wildbills_site/wildbills_site.deploy.php       | 44 ++++++++++++++
+ .../components/info_card/info_card.component.yml   |  8 ++-
+ .../wildbills/components/info_card/info_card.css   |  2 +-
+ .../wildbills/components/info_card/info_card.twig  | 17 ++++--
+ .../wildbills/components/inventory/inventory.css   |  7 ---
+ web/themes/custom/wildbills/css/base.css           | 11 ++++
+ 16 files changed, 378 insertions(+), 50 deletions(-)

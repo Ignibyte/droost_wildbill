@@ -1,0 +1,23 @@
+uuid: 5f55e058-f795-4d32-bd71-0464c00f2f52
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_year
+    - node.type.vehicle
+id: node.vehicle.field_year
+field_name: field_year
+entity_type: node
+bundle: vehicle
+label: Year
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1900
+  max: 2100
+  prefix: ''
+  suffix: ''
+field_type: integer

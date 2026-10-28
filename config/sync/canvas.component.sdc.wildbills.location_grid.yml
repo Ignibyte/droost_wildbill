@@ -1,0 +1,24 @@
+uuid: ce1b4bd0-9e07-4e66-af0f-4afd6ae541fd
+langcode: en
+status: true
+dependencies:
+  theme:
+    - wildbills
+active_version: 3e6dc5301c167e37
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions: {  }
+    fallback_metadata:
+      slot_definitions:
+        main:
+          title: 'Main column'
+          description: 'The wider left column; the map card and the info cards.'
+        aside:
+          title: 'Side column'
+          description: 'The right column; the hours and the closing panel.'
+label: 'Location columns'
+id: sdc.wildbills.location_grid
+provider: wildbills
+source: sdc
+source_local_id: 'wildbills:location_grid'

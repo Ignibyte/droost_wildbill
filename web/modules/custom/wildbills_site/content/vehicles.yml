@@ -1,0 +1,26 @@
+# The source's sample inventory (design/src/.../src/site/shared.ts VEHICLES),
+# written by wildbills_site_deploy_r02_vehicles(). Not live stock (Q2, Q3).
+
+makes: [Chevrolet, Dodge, Ford, GMC, Jeep, RAM, Toyota]
+
+body_styles:
+  - { name: Truck, plural: Trucks, line: 'Haul, tow, work', photo: v6.jpg }
+  - { name: SUV, plural: SUVs, line: 'Room for everyone', photo: v9.jpg }
+  - { name: Car, plural: Cars, line: 'Just for driving', photo: v11.jpg }
+
+vehicles:
+  - { stock: 1, make: Ford, model: 'F-150', year: 2021, price: 38900, body_style: Truck, miles: 42000, color: 'Magnetic Gray', condition: excellent, featured: true, photo: v1.jpg }
+  - { stock: 2, make: Chevrolet, model: 'Tahoe', year: 2020, price: 42500, body_style: SUV, miles: 55000, color: 'Shadow Gray', condition: good, featured: true, photo: v2.jpg }
+  - { stock: 3, make: RAM, model: '1500', year: 2022, price: 47200, body_style: Truck, miles: 18500, color: 'Diamond Black', condition: excellent, featured: true, photo: v3.jpg }
+  - { stock: 4, make: Jeep, model: 'Wrangler', year: 2021, price: 44800, body_style: SUV, miles: 31000, color: 'Firecracker Red', condition: excellent, featured: true, photo: v4.jpg }
+  - { stock: 5, make: Toyota, model: 'Tundra', year: 2020, price: 39500, body_style: Truck, miles: 48000, color: 'Barcelona Red', condition: good, featured: false, photo: v5.jpg }
+  - { stock: 6, make: GMC, model: 'Sierra 1500', year: 2021, price: 41000, body_style: Truck, miles: 35000, color: 'Onyx Black', condition: excellent, featured: false, photo: v6.jpg }
+  - { stock: 7, make: Ford, model: 'Explorer', year: 2020, price: 32900, body_style: SUV, miles: 61000, color: 'Star White', condition: good, featured: false, photo: v7.jpg }
+  - { stock: 8, make: Chevrolet, model: 'Silverado 1500', year: 2019, price: 28500, body_style: Truck, miles: 72000, color: 'Summit White', condition: fair, featured: false, photo: v8.jpg }
+  - { stock: 9, make: Toyota, model: '4Runner', year: 2021, price: 43900, body_style: SUV, miles: 29000, color: 'Army Green', condition: excellent, featured: false, photo: v9.jpg }
+  - { stock: 10, make: Dodge, model: 'Challenger', year: 2020, price: 36800, body_style: Car, miles: 22000, color: 'Hellraisin Purple', condition: excellent, featured: false, photo: v10.jpg }
+  - { stock: 11, make: Ford, model: 'Mustang GT', year: 2021, price: 34500, body_style: Car, miles: 18000, color: 'Race Red', condition: excellent, featured: false, photo: v11.jpg }
+  - { stock: 12, make: Jeep, model: 'Grand Cherokee', year: 2020, price: 38200, body_style: SUV, miles: 44000, color: 'Brilliant Black', condition: good, featured: false, photo: v12.jpg }
+  - { stock: 13, make: GMC, model: 'Yukon XL', year: 2022, price: 58000, body_style: SUV, miles: 12000, color: 'White Frost', condition: excellent, featured: false, photo: v13.jpg }
+  - { stock: 14, make: Chevrolet, model: 'Colorado', year: 2021, price: 31000, body_style: Truck, miles: 39000, color: 'Northsky Blue', condition: good, featured: false, photo: v14.jpg }
+  - { stock: 15, make: RAM, model: '2500 Laramie', year: 2020, price: 53400, body_style: Truck, miles: 47000, color: 'Granite Crystal', condition: good, featured: false, photo: v15.jpg }

@@ -1,0 +1,23 @@
+uuid: 4b0b8d13-c6b5-49df-aef1-c81faf1c8493
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stock_number
+    - node.type.vehicle
+id: node.vehicle.field_stock_number
+field_name: field_stock_number
+entity_type: node
+bundle: vehicle
+label: 'Stock number'
+description: "The lot's own number for this car. Each car has its own; links and inquiries carry it."
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

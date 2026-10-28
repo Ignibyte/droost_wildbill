@@ -1,0 +1,433 @@
+{
+    "relay": null,
+    "levers": {
+        "provenance": "file",
+        "preset": "high",
+        "mode": "agentic",
+        "enforcement": "hard",
+        "require_run": "hard",
+        "custom_code": [],
+        "flow": "strict",
+        "max_loops": 5,
+        "follow_ups": "auto",
+        "rules": {
+            "written": {
+                "house": [
+                    {
+                        "id": "HR1",
+                        "rule": "New markup lives in an SDC component",
+                        "judge": "gate",
+                        "check": "sdc_markup"
+                    },
+                    {
+                        "id": "HR2",
+                        "rule": "A landing page is a Canvas page, one component per section, written with droost/bin/canvas tree:set",
+                        "judge": "seeker"
+                    }
+                ]
+            },
+            "by_case": {
+                "none": {
+                    "case": "none",
+                    "kinds": {
+                        "page": {
+                            "owners": [
+                                "entity_view_display",
+                                "route"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "list_section": {
+                            "owners": [
+                                "view_block"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "collection": {
+                            "owners": [
+                                "view_page",
+                                "list_builder"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "detail": {
+                            "owners": [
+                                "entity_view_display"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "form": {
+                            "owners": [
+                                "webform"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "settings": {
+                            "owners": [
+                                "config_form"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "resource": {
+                            "owners": [
+                                "route",
+                                "view_page"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        }
+                    },
+                    "editor_proof": {
+                        "role": "content_editor",
+                        "mode": "off",
+                        "source": "default"
+                    },
+                    "code_components": {
+                        "mode": "off",
+                        "source": "default"
+                    }
+                },
+                "sdc": {
+                    "case": "sdc",
+                    "kinds": {
+                        "page": {
+                            "owners": [
+                                "canvas_page"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "list_section": {
+                            "owners": [
+                                "view_block"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "collection": {
+                            "owners": [
+                                "view_page",
+                                "list_builder"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "detail": {
+                            "owners": [
+                                "entity_view_display",
+                                "content_template"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "form": {
+                            "owners": [
+                                "webform"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "settings": {
+                            "owners": [
+                                "config_form"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "resource": {
+                            "owners": [
+                                "route",
+                                "view_page"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        }
+                    },
+                    "editor_proof": {
+                        "role": "content_editor",
+                        "mode": "report",
+                        "source": "default"
+                    },
+                    "code_components": {
+                        "mode": "report",
+                        "source": "default"
+                    }
+                },
+                "code": {
+                    "case": "code",
+                    "kinds": {
+                        "page": {
+                            "owners": [
+                                "canvas_page"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "list_section": {
+                            "owners": [
+                                "view_block"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "collection": {
+                            "owners": [
+                                "view_page",
+                                "list_builder"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "detail": {
+                            "owners": [
+                                "entity_view_display",
+                                "content_template"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "form": {
+                            "owners": [
+                                "webform"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "settings": {
+                            "owners": [
+                                "config_form"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "resource": {
+                            "owners": [
+                                "route",
+                                "view_page"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        }
+                    },
+                    "editor_proof": {
+                        "role": "content_editor",
+                        "mode": "report",
+                        "source": "default"
+                    },
+                    "code_components": {
+                        "mode": "off",
+                        "source": "default"
+                    }
+                }
+            }
+        },
+        "phases": [
+            "plan",
+            "code",
+            "test",
+            "complete"
+        ],
+        "gates": {
+            "phpcs": {
+                "on": true,
+                "standard": "Drupal,DrupalPractice",
+                "scope": "ticket",
+                "paths": "web/modules/custom,web/themes/custom"
+            },
+            "phpstan": {
+                "on": true,
+                "level": 6,
+                "scope": "ticket",
+                "paths": "web/modules/custom,web/themes/custom"
+            },
+            "eslint": {
+                "on": false,
+                "scope": "ticket"
+            },
+            "stylelint": {
+                "on": false,
+                "scope": "ticket"
+            },
+            "prettier": {
+                "on": false,
+                "scope": "ticket"
+            },
+            "phpunit": {
+                "on": true,
+                "in_diff": true
+            },
+            "mutation": {
+                "on": false,
+                "msi_min": 0
+            },
+            "playwright": {
+                "on": true,
+                "required": true
+            },
+            "parity": {
+                "on": true,
+                "required": true,
+                "scope": "frame"
+            },
+            "coverage": {
+                "on": false,
+                "min": 0
+            },
+            "house_rules": {
+                "on": true
+            },
+            "wiki_fresh": {
+                "on": true,
+                "cover_diff": true
+            },
+            "custom:component_lint": {
+                "on": true,
+                "phase": "code",
+                "run": "droost/gates/component-lint.php",
+                "timeout": 300
+            }
+        },
+        "phase_gates": {
+            "plan": [],
+            "code": [
+                "phpcs",
+                "phpstan",
+                "eslint",
+                "stylelint",
+                "prettier",
+                "house_rules",
+                "custom:component_lint"
+            ],
+            "test": [
+                "phpcs",
+                "phpstan",
+                "eslint",
+                "prettier",
+                "phpunit",
+                "mutation",
+                "playwright",
+                "parity",
+                "coverage"
+            ],
+            "complete": [
+                "phpcs",
+                "phpstan",
+                "eslint",
+                "stylelint",
+                "prettier",
+                "phpunit",
+                "mutation",
+                "playwright",
+                "parity",
+                "coverage",
+                "house_rules",
+                "wiki_fresh",
+                "custom:component_lint"
+            ]
+        },
+        "max_gate_retries": 2,
+        "seekers": true,
+        "seeker_rounds": 1,
+        "seeker_holds": "critical",
+        "seeker_at_complete": false,
+        "work_item": null,
+        "baseline": true,
+        "hooks": [],
+        "walls": [],
+        "operator_only": []
+    },
+    "baseline": {
+        "present": false,
+        "honoured": false,
+        "lever": true,
+        "dir": "droost/baseline"
+    },
+    "toolchain": {
+        "phpcs": {
+            "on": true,
+            "binary": "vendor/bin/phpcs",
+            "present": true
+        },
+        "phpstan": {
+            "on": true,
+            "binary": "vendor/bin/phpstan",
+            "present": true
+        },
+        "eslint": {
+            "on": false,
+            "binary": "node_modules/.bin/eslint",
+            "present": false
+        },
+        "stylelint": {
+            "on": false,
+            "binary": "node_modules/.bin/stylelint",
+            "present": false
+        },
+        "prettier": {
+            "on": false,
+            "binary": "node_modules/.bin/prettier",
+            "present": false
+        },
+        "phpunit": {
+            "on": true,
+            "binary": "vendor/bin/phpunit",
+            "present": true,
+            "suite_config": false
+        },
+        "mutation": {
+            "on": false,
+            "binary": "vendor/bin/infection",
+            "present": false
+        },
+        "playwright": {
+            "on": true,
+            "binary": "node_modules/.bin/playwright",
+            "present": true
+        },
+        "parity": {
+            "on": true,
+            "binary": "<site>/tools/droost/vendor/droost/workflow/bin/droost-parity",
+            "present": true
+        },
+        "coverage": {
+            "on": false,
+            "binary": "vendor/bin/phpunit",
+            "present": true,
+            "suite_config": false
+        },
+        "house_rules": {
+            "on": true,
+            "binary": "vendor/bin/house_rules",
+            "present": false
+        },
+        "wiki_fresh": {
+            "on": true,
+            "binary": "vendor/bin/droost",
+            "present": false
+        }
+    },
+    "deprecations": [],
+    "run": null,
+    "host": {
+        "session_id": "918a217d-5abe-41d4-bac8-d8bd4c69f6ba",
+        "claude_code": "2.1.308",
+        "recorded_at": "2026-10-22T21:54:19+00:00",
+        "mods_recorded": false,
+        "host": "claude-code",
+        "source": "the transcript the hook was handed",
+        "sessions": [
+            {
+                "session_id": "918a217d-5abe-41d4-bac8-d8bd4c69f6ba",
+                "claude_code": "2.1.308",
+                "recorded_at": "2026-10-22T21:54:19+00:00",
+                "mods_recorded": false
+            }
+        ]
+    }
+}

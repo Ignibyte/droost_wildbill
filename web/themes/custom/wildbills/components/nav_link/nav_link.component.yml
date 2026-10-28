@@ -1,0 +1,39 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Navigation link
+description: "One menu link in the site header's bar, its mobile menu or the footer's Pages list. The header and footer blocks place one per menu link."
+group: "Wild Bill's frame"
+status: stable
+props:
+  type: object
+  required:
+    - title
+    - url
+  properties:
+    title:
+      type: string
+      title: Title
+      description: The link's text.
+      examples: ['Inventory']
+    url:
+      type: string
+      format: uri-reference
+      title: Link
+      description: Where it goes.
+      examples: ['/vehicles']
+    current:
+      type: boolean
+      title: Current page
+      description: Marks the link as the page being viewed.
+      default: false
+      examples: [false]
+    placement:
+      type: string
+      title: Placement
+      description: Where the link sits, which decides its markup.
+      enum: [bar, mobile, footer]
+      meta:enum:
+        bar: Header bar
+        mobile: Mobile menu
+        footer: Footer list
+      default: bar
+      examples: [bar]

@@ -1,0 +1,24 @@
+<header class="wb-header" data-wb-header>
+  {%- if demo_notices %}
+  <div class="wb-demo-bar"><strong>{{ 'Demo site.'|t }}</strong> {{ 'Inventory, phone, email, address and hours shown here are sample information, not a live dealership listing.'|t }}</div>
+  {%- endif %}
+  <div class="wb-wrap wb-nav">
+    {{ include('wildbills:brand', { mark: brand_mark, name: brand_name, tagline: brand_tagline, url: home_url, label: brand_label }, with_context = false) }}
+    <nav aria-label="{{ 'Primary'|t }}"><ul class="wb-nav-links">{% block links %}{{ links }}{% endblock %}</ul></nav>
+    <div class="wb-nav-cta">
+      {%- if cta_label and cta_url %}
+      {{ include('wildbills:button', { label: cta_label, url: cta_url, variant: 'ink', size: 'sm', icon: 'arrow' }, with_context = false) }}
+      {%- endif %}
+      <button class="wb-menu-btn" type="button" aria-expanded="false" aria-controls="wb-mobile-nav" aria-label="{{ 'Open menu'|t }}" data-label-open="{{ 'Open menu'|t }}" data-label-close="{{ 'Close menu'|t }}">
+        <svg class="wb-menu-btn__open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+        <svg class="wb-menu-btn__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="wb-mobile-nav wb-wrap" id="wb-mobile-nav" aria-label="{{ 'Mobile'|t }}">
+    {% block mobile_links %}{{ mobile_links }}{% endblock %}
+    {%- if phone and phone_href %}
+    <a class="wb-btn wb-btn-primary" href="{{ phone_href }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg> {{ 'Call @phone'|t({ '@phone': phone }) }}{% if demo_notices %} {{ '(sample)'|t }}{% endif %}</a>
+    {%- endif %}
+  </nav>
+</header>

@@ -1,0 +1,95 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Inquiry form
+description: "The contact form that drafts an email in the visitor's own mail app: name, email, phone, topic and message, checked in the browser, then a preview to open in the mail app or copy. Nothing is sent to the site. A link to /contact?vehicle=<stock> asks about that car, and ?topic=<topic> picks a topic."
+group: "Wild Bill's contact"
+status: stable
+props:
+  type: object
+  required:
+    - name_label
+    - email_label
+    - message_label
+    - submit_label
+    - ready_heading
+    - open_label
+  properties:
+    notice:
+      type: string
+      title: Notice
+      description: The note above the form saying where the message goes.
+      examples: ['This site has no message server. Submitting prepares an email in your own mail app. Nothing is sent until you press send there.']
+    name_label:
+      type: string
+      title: Name label
+      description: The name field's label.
+      examples: ['Your name']
+    email_label:
+      type: string
+      title: Email label
+      description: The email field's label.
+      examples: ['Email']
+    phone_label:
+      type: string
+      title: Phone label
+      description: The phone field's label.
+      examples: ['Phone']
+    optional_label:
+      type: string
+      title: Optional marker
+      description: Beside the phone field's label.
+      examples: ['optional']
+    topic_label:
+      type: string
+      title: Topic label
+      description: The topic list's label.
+      examples: ['Topic']
+    message_label:
+      type: string
+      title: Message label
+      description: The message field's label.
+      examples: ['Message']
+    message_placeholder:
+      type: string
+      title: Message placeholder
+      description: Shown in the empty message field.
+      examples: ['What would you like to know?']
+    submit_label:
+      type: string
+      title: Button label
+      description: The button that prepares the email.
+      examples: ['Prepare email']
+    not_sent_label:
+      type: string
+      title: Not sent, in bold
+      description: The bold start of the warning over the prepared email.
+      examples: ['Not sent yet.']
+    not_sent_text:
+      type: string
+      title: Not sent, the rest
+      description: The rest of the warning over the prepared email.
+      examples: ['Your message is ready but has not left this page.']
+    ready_heading:
+      type: string
+      title: Ready heading
+      description: The heading over the prepared email.
+      examples: ['Your email is ready to send.']
+    open_label:
+      type: string
+      title: Open label
+      description: The button that opens the email in the visitor's mail app.
+      examples: ['Open in email app']
+    copy_label:
+      type: string
+      title: Copy label
+      description: The button that copies the email's text.
+      examples: ['Copy message']
+    edit_label:
+      type: string
+      title: Edit label
+      description: The button that brings the form back.
+      examples: ['Edit message']
+libraryOverrides:
+  dependencies:
+    - core/drupal
+    - core/once
+    - core/components.wildbills--button

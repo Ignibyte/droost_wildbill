@@ -1,0 +1,5 @@
+{%- if kind == 'option' -%}
+<option value="{{ value }}">{{ label }}</option>
+{%- else -%}
+<button type="button" data-type="{{ value }}" aria-pressed="false">{{ label }}</button>
+{%- endif -%}

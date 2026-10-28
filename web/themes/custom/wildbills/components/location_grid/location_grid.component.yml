@@ -1,0 +1,12 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Location columns
+description: "The location page's two columns: the map and address cards on the left, the hours and a panel on the right; one column on a narrow screen."
+group: "Wild Bill's location"
+status: stable
+slots:
+  main:
+    title: Main column
+    description: The wider left column; the map card and the info cards.
+  aside:
+    title: Side column
+    description: The right column; the hours and the closing panel.

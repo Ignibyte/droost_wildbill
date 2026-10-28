@@ -1,0 +1,92 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Site footer
+description: "The site footer: the brand and its line, the Pages list, the week's hours, the contact lines and the copyright. The Site footer block renders it from the dealership details and the footer menu."
+group: "Wild Bill's frame"
+status: stable
+props:
+  type: object
+  properties:
+    brand_mark:
+      type: string
+      title: Brand mark
+      description: The letters in the square badge.
+      examples: ['WB']
+    brand_name:
+      type: string
+      title: Brand name
+      description: The first line of the name.
+      examples: ["Wild Bill's"]
+    brand_tagline:
+      type: string
+      title: Brand tagline
+      description: The small second line.
+      examples: ['Used Cars']
+    brand_label:
+      type: string
+      title: Brand link's accessible name
+      description: What a screen reader says for the brand link.
+      examples: ["Wild Bill's Used Cars, home"]
+    home_url:
+      type: string
+      format: uri-reference
+      title: Home link
+      description: The front page.
+      examples: ['/']
+    about:
+      type: string
+      title: Line under the brand
+      description: One sentence about the dealership.
+      examples: ['An independent used-car lot. Look at the car, ask your questions, decide in your own time.']
+    hours:
+      type: array
+      title: Hours
+      description: The week's hours, one line per run of days.
+      items:
+        type: string
+      examples:
+        - ['Mon–Fri 8am–7pm', 'Saturday 9am–6pm', 'Sunday closed']
+    phone:
+      type: string
+      title: Phone
+      description: The phone number, as shown.
+      examples: ['(555) 123-4567']
+    phone_href:
+      type: string
+      title: Phone link
+      description: The phone number's tel link.
+      examples: ['tel:+15551234567']
+    email:
+      type: string
+      format: email
+      title: Email
+      description: The email address.
+      examples: ['wildbill@wildbillscars.com']
+    street:
+      type: string
+      title: Street
+      description: The street line of the address.
+      examples: ['123 Dusty Creek Rd']
+    city:
+      type: string
+      title: City
+      description: The city, state and ZIP line.
+      examples: ['Dusty Creek, TX 78701']
+    name:
+      type: string
+      title: Dealership name
+      description: The name in the copyright line.
+      examples: ["Wild Bill's Used Cars"]
+    year:
+      type: integer
+      title: Year
+      description: The copyright year.
+      examples: [2026]
+    demo_notices:
+      type: boolean
+      title: Demo notices
+      description: Shows the "(sample)" labels and the demonstration lines.
+      examples: [true]
+slots:
+  links:
+    title: Pages
+    description: The footer menu's links, as Navigation link components placed in the footer list.

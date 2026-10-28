@@ -1,0 +1,78 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Questions to ask
+description: "A photo beside an eyebrow, a heading, a lede, a checklist of up to four lines and two buttons."
+group: "Wild Bill's home"
+status: stable
+props:
+  type: object
+  required:
+    - heading
+    - image
+  properties:
+    image:
+      $ref: json-schema-definitions://canvas.module/image
+      title: Photo
+      description: The photo beside the text.
+      type: object
+      examples:
+        - src: lot.jpg
+          alt: 'A small dealership office with cars parked out front in late-afternoon light'
+          width: 1024
+          height: 1024
+    eyebrow:
+      type: string
+      title: Eyebrow
+      description: The small uppercase line above the heading.
+      examples: ['Before you come in']
+    heading:
+      type: string
+      title: Heading
+      description: The section's heading.
+      examples: ["Bring your questions. We'd rather you ask."]
+    lede:
+      type: string
+      title: Lede
+      description: The paragraph under the heading.
+      examples: ["Buying used should feel like a conversation, not a contest. A few things worth asking about any car you're considering:"]
+    item_1:
+      type: string
+      title: Checklist line 1
+      description: The first line of the checklist.
+      examples: ['Vehicle history report and title status']
+    item_2:
+      type: string
+      title: Checklist line 2
+      description: The second line of the checklist.
+      examples: ['Service records and recent maintenance']
+    item_3:
+      type: string
+      title: Checklist line 3
+      description: The third line of the checklist.
+      examples: ['Whether a pre-purchase inspection by your mechanic is welcome']
+    item_4:
+      type: string
+      title: Checklist line 4
+      description: The fourth line of the checklist.
+      examples: ['Trade-in value and payment options, in writing']
+    primary_label:
+      type: string
+      title: First button label
+      description: The dark button.
+      examples: ['Send a question']
+    primary_url:
+      type: string
+      format: uri-reference
+      title: First button link
+      description: Where the dark button goes.
+      examples: ['/contact']
+    secondary_label:
+      type: string
+      title: Second button label
+      description: The outlined button.
+      examples: ['Hours & directions']
+    secondary_url:
+      type: string
+      format: uri-reference
+      title: Second button link
+      description: Where the outlined button goes.
+      examples: ['/location']

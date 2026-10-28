@@ -1,0 +1,27 @@
+{#
+  demo_notices, rows and timezone are not props: the wildbills_site module
+  hands them in (DemoNotices, LocationDetails) from the dealership details.
+  Each row is Monday to Sunday: weekday (Sunday 0), label, text, and the
+  open and close times with their printed forms.
+
+  Which day is today, and whether the lot is open, are not decided here: the
+  page cache would keep them for good. hours_table.js works them out in the
+  browser, in the dealership's time zone, from the data attributes below.
+  The status sentences are translated here, with their placeholders for it.
+#}
+<div class="wb-hours" data-wb-hours data-timezone="{{ timezone }}"
+  data-open-now="{{ 'Open now · closes @time'|t }}"
+  data-opens-today="{{ 'Closed · opens today at @time'|t }}"
+  data-opens-tomorrow="{{ 'Closed · opens tomorrow at @time'|t }}"
+  data-opens-day="{{ 'Closed · opens @day at @time'|t }}"
+  data-closed="{{ 'Closed'|t }}"
+  data-today="{{ '@day · today'|t }}">
+  <h2>{{ heading }}{% if demo_notices %} <span class="wb-tag-sample">{{ 'sample'|t }}</span>{% endif %}</h2>
+  <div class="wb-hours-status" role="status"><span class="wb-dot"></span><span data-wb-status>{{ checking_label }}</span></div>
+  <ul>
+    {%- for row in rows %}
+    <li data-weekday="{{ row.weekday }}" data-label="{{ row.label }}"{% if row.open and row.close %} data-open="{{ row.open }}" data-close="{{ row.close }}" data-open-label="{{ row.open_label }}" data-close-label="{{ row.close_label }}"{% endif %}><span>{{ row.label }}</span><span>{{ row.text }}</span></li>
+    {%- endfor %}
+  </ul>
+  {%- if note %}<p class="wb-hours-note">{{ note }}</p>{% endif %}
+</div>

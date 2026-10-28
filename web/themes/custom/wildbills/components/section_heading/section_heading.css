@@ -1,0 +1,3 @@
+.wb-section-head { display: flex; justify-content: space-between; align-items: end; gap: 2rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.wb-section-head .wb-h2 { margin-top: 1rem; }
+.wb-section-head p { margin: .9rem 0 0; }

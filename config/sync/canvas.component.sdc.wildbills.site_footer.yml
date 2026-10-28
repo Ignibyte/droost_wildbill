@@ -1,0 +1,209 @@
+uuid: cb2021d9-59a8-43a4-ae9f-9bd766be67ae
+langcode: en
+status: false
+dependencies:
+  module:
+    - link
+  theme:
+    - wildbills
+active_version: 58d79ff790bf0717
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        brand_mark:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: WB
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        brand_name:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: "Wild Bill's"
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        brand_tagline:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Used Cars'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        brand_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: "Wild Bill's Used Cars, home"
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        home_url:
+          required: false
+          field_type: link
+          field_storage_settings: {  }
+          field_instance_settings:
+            title: 0
+            link_type: 17
+          field_widget: link_default
+          default_value:
+            -
+              uri: /
+              options: {  }
+          expression: ℹ︎link␟url
+          derived_schema_metadata:
+            string_shape:
+              format: uri-reference
+        about:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'An independent used-car lot. Look at the car, ask your questions, decide in your own time.'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        hours:
+          required: false
+          field_type: string
+          cardinality: -1
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Mon–Fri 8am–7pm'
+            -
+              value: 'Saturday 9am–6pm'
+            -
+              value: 'Sunday closed'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        phone:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: '(555) 123-4567'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        phone_href:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'tel:+15551234567'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        email:
+          required: false
+          field_type: email
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: email_default
+          default_value:
+            -
+              value: wildbill@wildbillscars.com
+          expression: ℹ︎email␟value
+          derived_schema_metadata: {  }
+        street:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: '123 Dusty Creek Rd'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        city:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Dusty Creek, TX 78701'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        name:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: "Wild Bill's Used Cars"
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        year:
+          required: false
+          field_type: integer
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: number
+          default_value:
+            -
+              value: 2026
+          expression: ℹ︎integer␟value
+          derived_schema_metadata: {  }
+        demo_notices:
+          required: false
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value:
+            -
+              value: true
+          expression: ℹ︎boolean␟value
+          derived_schema_metadata: {  }
+    fallback_metadata:
+      slot_definitions:
+        links:
+          title: Pages
+          description: "The footer menu's links, as Navigation link components placed in the footer list."
+label: 'Site footer'
+id: sdc.wildbills.site_footer
+provider: wildbills
+source: sdc
+source_local_id: 'wildbills:site_footer'

@@ -1,0 +1,26 @@
+uuid: 99941032-cffe-4a83-8e8b-4e0300d12681
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.event
+  module:
+    - text
+_core:
+  default_config_hash: S7vlyVZdgzf0NgQzrdJAheVMK5F28NMp79udVtO50pE
+id: node.event.body
+field_name: body
+entity_type: node
+bundle: event
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

@@ -1,0 +1,22 @@
+.wb-header { position: sticky; top: 0; z-index: 50; background: hsl(var(--wb-paper) / .86); backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid hsl(var(--wb-line) / .7); }
+.wb-demo-bar { background: hsl(var(--wb-ink)); color: hsl(var(--wb-paper) / .85); font-size: .8rem; text-align: center; padding: .45rem 1rem; }
+.wb-demo-bar strong { color: hsl(var(--wb-paper)); font-weight: 600; }
+.wb-nav { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 1rem; }
+.wb-nav-links { display: flex; gap: .25rem; list-style: none; margin: 0; padding: 0; }
+.wb-nav-links a { display: block; padding: .55rem .9rem; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: .95rem; color: hsl(var(--wb-ink-2)); transition: background-color .2s, color .2s; }
+.wb-nav-links a:hover { background: hsl(var(--wb-paper-2)); color: hsl(var(--wb-ink)); }
+.wb-nav-links a[aria-current="page"] { background: hsl(var(--wb-ink)); color: hsl(var(--wb-paper)); }
+.wb-nav-cta { display: flex; align-items: center; gap: .5rem; }
+.wb-menu-btn { display: none; width: 46px; height: 46px; border-radius: 12px; border: 1.5px solid hsl(var(--wb-ink) / .2); background: transparent; cursor: pointer; place-items: center; padding: 0; }
+.wb-menu-btn svg { width: 22px; height: 22px; grid-area: 1 / 1; }
+.wb-menu-btn__close, .wb-header.is-open .wb-menu-btn__open { display: none; }
+.wb-header.is-open .wb-menu-btn__close { display: block; }
+.wb-mobile-nav { display: none; border-top: 1px solid hsl(var(--wb-line)); padding: .75rem 0 1.25rem; }
+.wb-mobile-nav a { display: flex; justify-content: space-between; align-items: center; padding: 1rem .25rem; font-family: var(--wb-display); font-size: 1.5rem; font-weight: 600; text-decoration: none; border-bottom: 1px solid hsl(var(--wb-line) / .6); }
+.wb-mobile-nav a[aria-current="page"] { color: hsl(var(--wb-signal)); }
+.wb-mobile-nav .wb-btn { margin-top: 1rem; width: 100%; font-family: var(--wb-body); font-size: 1rem; border: 0; }
+@media (max-width: 860px) {
+  .wb-nav-links, .wb-nav-cta .wb-btn { display: none; }
+  .wb-menu-btn { display: grid; }
+  .wb-header.is-open .wb-mobile-nav { display: block; }
+}

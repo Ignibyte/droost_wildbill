@@ -1,0 +1,19 @@
+uuid: 15735de8-3517-4e3f-a271-72bf33b78659
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.wildbills.body_style_tile
+    - canvas.component.sdc.wildbills.card_grid
+    - canvas.component.sdc.wildbills.filter_choice
+    - canvas.component.sdc.wildbills.inventory
+    - canvas.component.sdc.wildbills.vehicle_card
+name: "Wild Bill's inventory"
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.wildbills.body_style_tile
+  - sdc.wildbills.card_grid
+  - sdc.wildbills.filter_choice
+  - sdc.wildbills.inventory
+  - sdc.wildbills.vehicle_card

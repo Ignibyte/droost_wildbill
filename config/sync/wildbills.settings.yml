@@ -1,0 +1,8 @@
+_core:
+  default_config_hash: 3AkIFD1qSbFy4euMVmVAHM10IjQS479hWtqheCblQSo
+favicon:
+  use_default: false
+  path: themes/custom/wildbills/favicon.svg
+  mimetype: image/svg+xml
+logo:
+  use_default: true

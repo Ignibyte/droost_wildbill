@@ -1,0 +1,5 @@
+/* The page shell. The region and block wrappers make no box of their own, so
+   the site header's sticky position spans the whole page. */
+.wb-page { display: flex; flex-direction: column; min-height: 100dvh; flex: 1; }
+.wb-region, .wb-region > div { display: contents; }
+.wb-main { flex: 1; }

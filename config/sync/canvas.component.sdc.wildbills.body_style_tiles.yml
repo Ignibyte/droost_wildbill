@@ -1,0 +1,45 @@
+uuid: cfa01fbc-2ced-41f8-ae48-630e577ac39a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - wildbills
+active_version: e50f3173b9002621
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        eyebrow:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Shop by body style'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        heading:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'What do you need it to do?'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+    fallback_metadata:
+      slot_definitions:
+        tiles:
+          title: Tiles
+          description: "The body-style tiles' block."
+label: 'Body style tiles'
+id: sdc.wildbills.body_style_tiles
+provider: wildbills
+source: sdc
+source_local_id: 'wildbills:body_style_tiles'

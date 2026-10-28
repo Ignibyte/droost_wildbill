@@ -1,0 +1,78 @@
+uuid: a4cda784-a1e5-4acd-b2b9-73f08ea8994b
+langcode: en
+status: true
+dependencies:
+  theme:
+    - wildbills
+active_version: 24dcaf80c89c761c
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        pin_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: "Wild Bill's"
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        map_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Illustrative map graphic with a pin marking the sample dealership address'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        caption:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Illustrative graphic, not a real map. The address below is a sample placeholder.'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        google_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Open in Google Maps'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        apple_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Apple Maps'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'Map card'
+id: sdc.wildbills.map_card
+provider: wildbills
+source: sdc
+source_local_id: 'wildbills:map_card'

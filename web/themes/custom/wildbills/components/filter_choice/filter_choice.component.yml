@@ -1,0 +1,27 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Filter choice
+description: "One choice in the inventory filter: a body-style button or a make in the make list."
+group: "Wild Bill's inventory"
+status: stable
+props:
+  type: object
+  required:
+    - value
+    - label
+  properties:
+    kind:
+      type: string
+      title: Kind
+      description: A body-style button or a make option.
+      enum: ['button', 'option']
+      examples: ['button']
+    value:
+      type: string
+      title: Value
+      description: What the filter matches (the body style's name, the make).
+      examples: ['Truck']
+    label:
+      type: string
+      title: Label
+      description: What it says (the body style's plural name, the make).
+      examples: ['Trucks']

@@ -1,0 +1,132 @@
+{
+  "items": [
+    {
+      "uuid": "6f1b2c1e-0a51-4c2e-9d1a-1b0e5f6a0001",
+      "component_id": "sdc.wildbills.home_hero",
+      "inputs": {
+        "eyebrow": "Independent used-car lot",
+        "headline_before": "Good used cars.",
+        "headline_emphasis": "Plainly",
+        "headline_after": "sold.",
+        "lede": "Trucks, SUVs and cars with the price on the windshield and the answers up front. Look around online, then come drive the one you like.",
+        "primary_label": "Browse inventory",
+        "primary_url": "/vehicles",
+        "secondary_label": "Ask a question",
+        "secondary_url": "/contact",
+        "image": {
+          "target_id": "media:hero.jpg"
+        },
+        "tag_noun": "vehicles",
+        "tag_text": "Trucks, SUVs and cars to explore",
+        "tag_label": "See them",
+        "tag_url": "/vehicles"
+      }
+    },
+    {
+      "uuid": "6f1b2c1e-0a51-4c2e-9d1a-1b0e5f6a0002",
+      "component_id": "sdc.wildbills.promise_band",
+      "inputs": {
+        "title_1": "Price on every car",
+        "text_1": "Listed up front, no \"call for price\"",
+        "title_2": "Look before you visit",
+        "text_2": "Filter by type, price, year and miles",
+        "title_3": "Ask about any car",
+        "text_3": "Inquiries come prefilled with the vehicle",
+        "title_4": "Visit on your schedule",
+        "text_4": "Hours and directions on one page"
+      }
+    },
+    {
+      "uuid": "6f1b2c1e-0a51-4c2e-9d1a-1b0e5f6a0007",
+      "component_id": "sdc.wildbills.featured_vehicles",
+      "inputs": {
+        "eyebrow": "On the lot",
+        "heading": "Featured this week",
+        "lede": "A few picks from the sample inventory.",
+        "button_label": "All vehicles",
+        "button_url": "/vehicles"
+      }
+    },
+    {
+      "uuid": "6f1b2c1e-0a51-4c2e-9d1a-1b0e5f6a0008",
+      "component_id": "block.views_block.vehicles-block_featured",
+      "parent_uuid": "6f1b2c1e-0a51-4c2e-9d1a-1b0e5f6a0007",
+      "slot": "vehicles",
+      "inputs": {
+        "label": "Featured vehicles",
+        "label_display": "0",
+        "views_label": "",
+        "items_per_page": null
+      }
+    },
+    {
+      "uuid": "6f1b2c1e-0a51-4c2e-9d1a-1b0e5f6a0009",
+      "component_id": "sdc.wildbills.body_style_tiles",
+      "inputs": {
+        "eyebrow": "Shop by body style",
+        "heading": "What do you need it to do?"
+      }
+    },
+    {
+      "uuid": "6f1b2c1e-0a51-4c2e-9d1a-1b0e5f6a000a",
+      "component_id": "block.views_block.body_styles-block_tiles",
+      "parent_uuid": "6f1b2c1e-0a51-4c2e-9d1a-1b0e5f6a0009",
+      "slot": "tiles",
+      "inputs": {
+        "label": "Body style tiles",
+        "label_display": "0",
+        "views_label": "",
+        "items_per_page": null
+      }
+    },
+    {
+      "uuid": "6f1b2c1e-0a51-4c2e-9d1a-1b0e5f6a0003",
+      "component_id": "sdc.wildbills.how_it_works",
+      "inputs": {
+        "eyebrow": "How it works",
+        "heading": "Four steps. No runaround.",
+        "step_1_title": "Browse",
+        "step_1_text": "Filter the lot by body style, make, budget, year and mileage.",
+        "step_2_title": "Ask",
+        "step_2_text": "Open any car and send a question. The form fills in the vehicle for you.",
+        "step_3_title": "Drive it",
+        "step_3_text": "Stop by during open hours and take it for a test drive.",
+        "step_4_title": "Decide",
+        "step_4_text": "Take your time. Ask about paperwork, history and trade-ins in person."
+      }
+    },
+    {
+      "uuid": "6f1b2c1e-0a51-4c2e-9d1a-1b0e5f6a0004",
+      "component_id": "sdc.wildbills.questions_split",
+      "inputs": {
+        "image": {
+          "target_id": "media:lot.jpg"
+        },
+        "eyebrow": "Before you come in",
+        "heading": "Bring your questions. We'd rather you ask.",
+        "lede": "Buying used should feel like a conversation, not a contest. A few things worth asking about any car you're considering:",
+        "item_1": "Vehicle history report and title status",
+        "item_2": "Service records and recent maintenance",
+        "item_3": "Whether a pre-purchase inspection by your mechanic is welcome",
+        "item_4": "Trade-in value and payment options, in writing",
+        "primary_label": "Send a question",
+        "primary_url": "/contact",
+        "secondary_label": "Hours & directions",
+        "secondary_url": "/location"
+      }
+    },
+    {
+      "uuid": "6f1b2c1e-0a51-4c2e-9d1a-1b0e5f6a0005",
+      "component_id": "sdc.wildbills.closing_cta",
+      "inputs": {
+        "eyebrow": "Come take a look",
+        "heading": "Found one you like?",
+        "text": "Send an inquiry with the car already filled in, or check the hours and stop by for a test drive.",
+        "primary_label": "Browse inventory",
+        "primary_url": "/vehicles",
+        "secondary_label": "Plan a visit",
+        "secondary_url": "/location"
+      }
+    }
+  ]
+}

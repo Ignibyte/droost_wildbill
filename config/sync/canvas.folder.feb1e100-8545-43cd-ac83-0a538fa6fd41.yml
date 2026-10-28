@@ -1,0 +1,21 @@
+uuid: feb1e100-8545-43cd-ac83-0a538fa6fd41
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.block.views_block.body_styles-block_tiles
+    - canvas.component.block.views_block.vehicles-block_featured
+    - canvas.component.sdc.wildbills.button
+    - canvas.component.sdc.wildbills.info_card
+    - canvas.component.sdc.wildbills.page_head
+    - canvas.component.sdc.wildbills.section_heading
+name: "Wild Bill's"
+configEntityTypeId: component
+weight: 0
+items:
+  - block.views_block.body_styles-block_tiles
+  - block.views_block.vehicles-block_featured
+  - sdc.wildbills.button
+  - sdc.wildbills.info_card
+  - sdc.wildbills.page_head
+  - sdc.wildbills.section_heading

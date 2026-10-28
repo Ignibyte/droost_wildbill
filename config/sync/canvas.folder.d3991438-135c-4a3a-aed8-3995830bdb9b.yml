@@ -1,0 +1,15 @@
+uuid: d3991438-135c-4a3a-aed8-3995830bdb9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.wildbills.hours_table
+    - canvas.component.sdc.wildbills.location_grid
+    - canvas.component.sdc.wildbills.map_card
+name: "Wild Bill's location"
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.wildbills.hours_table
+  - sdc.wildbills.location_grid
+  - sdc.wildbills.map_card

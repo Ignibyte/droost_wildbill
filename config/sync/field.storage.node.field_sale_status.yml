@@ -1,0 +1,30 @@
+uuid: 1bf42216-8fcb-487f-93fe-9a2ae2815277
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_sale_status
+field_name: field_sale_status
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: available
+      label: Available
+    -
+      value: pending
+      label: 'Sale pending'
+    -
+      value: sold
+      label: Sold
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

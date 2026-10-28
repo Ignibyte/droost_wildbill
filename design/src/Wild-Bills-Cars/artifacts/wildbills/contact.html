@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Wild Bill's Used Cars</title>
+  <meta name="description" content="Ask Wild Bill's Used Cars about a vehicle, a test drive, trade-ins or payment options. Prepares an email in your own mail app. Demo website.">
+  <meta name="theme-color" content="#173e32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script type="module" src="/src/site/contact.ts"></script>
+</head>
+<body>
+<main id="main">
+  <div class="wrap page-head">
+    <span class="eyebrow rise">Contact</span>
+    <h1 class="rise rise-2">Ask us anything.</h1>
+    <p class="lede rise rise-3">About a specific car, a test drive, your trade-in or how payment works. Write it here and we'll put it into an email for you to send.</p>
+  </div>
+
+  <div class="wrap contact-grid">
+    <div class="form-card rise rise-3">
+      <form id="form" class="form-grid" novalidate>
+        <div class="notice">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+          <span>This site has no message server. Submitting prepares an email in your own mail app. Nothing is sent until you press send there.</span>
+        </div>
+        <div id="vehicleBox" hidden></div>
+        <div class="form-row">
+          <div class="field"><label for="name">Your name</label><input class="input" id="name" name="name" autocomplete="name" required aria-describedby="name-err" data-testid="input-name"><span class="err" id="name-err"></span></div>
+          <div class="field"><label for="email">Email</label><input class="input" id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-err" data-testid="input-email"><span class="err" id="email-err"></span></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="phone">Phone <span class="help">optional</span></label><input class="input" id="phone" name="phone" type="tel" autocomplete="tel" data-testid="input-phone"></div>
+          <div class="field"><label for="topic">Topic</label>
+            <select class="select" id="topic" name="topic" data-testid="select-topic">
+              <option>General question</option>
+              <option>Specific vehicle</option>
+              <option>Test drive</option>
+              <option>Trade-in</option>
+              <option>Payment options</option>
+              <option>Vehicle search</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="message">Message <span class="help" id="msgCount">0 / 1000</span></label><textarea class="textarea" id="message" name="message" maxlength="1000" required aria-describedby="message-err" data-testid="input-message" placeholder="What would you like to know?"></textarea><span class="err" id="message-err"></span></div>
+        <button class="btn btn-primary" type="submit" style="justify-self:start" data-testid="button-prepare-email">Prepare email</button>
+      </form>
+
+      <div class="handoff" id="handoff" tabindex="-1" aria-labelledby="handoffTitle">
+        <div class="notice notice-warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span><strong>Not sent yet.</strong> Your message is ready but has not left this page.</span></div>
+        <h2 id="handoffTitle" style="font-size:1.8rem">Your email is ready to send.</h2>
+        <p style="margin:0;color:hsl(203 30% 30%)">Open it in your email app, review it, and press send there. If no app opens, copy the text and send it to <span id="toAddr"></span> yourself. <span class="tag-sample">sample address</span></p>
+        <pre id="preview" data-testid="text-email-preview"></pre>
+        <div class="detail-actions">
+          <a class="btn btn-primary" id="mailtoLink" href="#" data-testid="link-open-email">Open in email app</a>
+          <button class="btn btn-ghost" type="button" id="copyBtn" data-testid="button-copy-email">Copy message</button>
+          <button class="btn btn-ghost" type="button" id="editBtn" data-testid="button-edit-message">Edit message</button>
+        </div>
+        <p class="note" id="copyStatus" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <aside class="side-stack">
+      <div class="info"><h3>Phone <span class="tag-sample">sample</span></h3><p><a class="link" href="tel:+15551234567">(555) 123-4567</a></p><p>Placeholder number from the original site.</p></div>
+      <div class="info"><h3>Email <span class="tag-sample">sample</span></h3><p><a class="link" href="mailto:wildbill@wildbillscars.com">wildbill@wildbillscars.com</a></p></div>
+      <div class="info"><h3>Visit <span class="tag-sample">sample</span></h3><p>123 Dusty Creek Rd<br>Dusty Creek, TX 78701</p><p><a class="link" href="./location.html">Hours &amp; directions</a></p></div>
+      <div class="info"><h3>Hours <span class="tag-sample">sample</span></h3><p>Mon–Fri 8:00am–7:00pm<br>Saturday 9:00am–6:00pm<br>Sunday closed</p></div>
+    </aside>
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,9 @@
+uuid: 5c1165bb-f2cf-4ff7-a361-f20ca42df4a1
+langcode: en
+status: true
+dependencies: {  }
+name: 'Body style'
+vid: body_style
+description: 'Truck, SUV, Car… Drag to set the order the inventory filter and the home page tiles show them in.'
+weight: 0
+new_revision: false

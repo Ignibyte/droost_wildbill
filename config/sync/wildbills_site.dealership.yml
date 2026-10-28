@@ -1,0 +1,32 @@
+_core:
+  default_config_hash: e54sQHyao2gCM5iyNVDuwMJzegs3Q1ffM5dj2zFShbw
+langcode: en
+name: "Wild Bill's Used Cars"
+phone: '(555) 123-4567'
+email: wildbill@wildbillscars.com
+street: '123 Dusty Creek Rd'
+city: 'Dusty Creek, TX 78701'
+timezone: America/Chicago
+demo_notices: true
+hours:
+  sunday:
+    open: ''
+    close: ''
+  monday:
+    open: '08:00'
+    close: '19:00'
+  tuesday:
+    open: '08:00'
+    close: '19:00'
+  wednesday:
+    open: '08:00'
+    close: '19:00'
+  thursday:
+    open: '08:00'
+    close: '19:00'
+  friday:
+    open: '08:00'
+    close: '19:00'
+  saturday:
+    open: '09:00'
+    close: '18:00'

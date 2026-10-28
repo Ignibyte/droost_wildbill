@@ -1,0 +1,25 @@
+uuid: 5921da1e-d74d-4c3c-a698-94c92d26d3ed
+langcode: en
+status: true
+dependencies:
+  module:
+    - wildbills_site
+  theme:
+    - wildbills
+id: wildbills_site_header
+theme: wildbills
+region: header
+weight: 0
+provider: null
+plugin: wildbills_site_header
+settings:
+  id: wildbills_site_header
+  label: 'Site header'
+  label_display: '0'
+  provider: wildbills_site
+  brand_mark: WB
+  brand_name: "Wild Bill's"
+  brand_tagline: 'Used Cars'
+  cta_label: 'Browse cars'
+  cta_url: /vehicles
+visibility: {  }

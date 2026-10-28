@@ -1,0 +1,37 @@
+uuid: ea5fd262-3791-4e50-97ba-8f4e15c14897
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.body_styles
+  module:
+    - views
+active_version: 120f7d0cbcf0bfc6
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'views_block:body_styles-block_tiles'
+        label: 'Body style tiles'
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: null
+    fallback_metadata:
+      slot_definitions: null
+  120f7d0cbcf0bfc6:
+    settings:
+      default_settings:
+        id: 'views_block:body_styles-block_tiles'
+        label: 'Body style tiles'
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: null
+    fallback_metadata:
+      slot_definitions: null
+label: 'Body style tiles'
+id: block.views_block.body_styles-block_tiles
+provider: views
+source: block
+source_local_id: 'views_block:body_styles-block_tiles'

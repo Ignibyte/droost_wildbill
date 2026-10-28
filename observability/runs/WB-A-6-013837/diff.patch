@@ -1,0 +1,756 @@
+diff --git a/config/sync/canvas.component.sdc.wildbills.button.yml b/config/sync/canvas.component.sdc.wildbills.button.yml
+index 30a11d5..869c62c 100644
+--- a/config/sync/canvas.component.sdc.wildbills.button.yml
++++ b/config/sync/canvas.component.sdc.wildbills.button.yml
+@@ -7,9 +7,89 @@ dependencies:
+     - options
+   theme:
+     - wildbills
+-active_version: 6091b98f4d3c5124
++active_version: a4aa417f32ca9e21
+ versioned_properties:
+   active:
++    settings:
++      prop_field_definitions:
++        label:
++          required: true
++          field_type: string
++          field_storage_settings: {  }
++          field_instance_settings: {  }
++          field_widget: string_textfield
++          default_value:
++            -
++              value: 'Browse inventory'
++          expression: ℹ︎string␟value
++          derived_schema_metadata:
++            string_shape: {  }
++        url:
++          required: true
++          field_type: link
++          field_storage_settings: {  }
++          field_instance_settings:
++            title: 0
++            link_type: 17
++          field_widget: link_default
++          default_value:
++            -
++              uri: /vehicles
++              options: {  }
++          expression: ℹ︎link␟url
++          derived_schema_metadata:
++            string_shape:
++              format: uri-reference
++        variant:
++          required: false
++          field_type: list_string
++          field_storage_settings:
++            allowed_values_function: canvas_load_allowed_values_for_component_prop
++          field_instance_settings: {  }
++          field_widget: options_select
++          default_value:
++            -
++              value: primary
++          expression: ℹ︎list_string␟value
++          derived_schema_metadata: {  }
++        size:
++          required: false
++          field_type: list_string
++          field_storage_settings:
++            allowed_values_function: canvas_load_allowed_values_for_component_prop
++          field_instance_settings: {  }
++          field_widget: options_select
++          default_value:
++            -
++              value: md
++          expression: ℹ︎list_string␟value
++          derived_schema_metadata: {  }
++        icon:
++          required: false
++          field_type: list_string
++          field_storage_settings:
++            allowed_values_function: canvas_load_allowed_values_for_component_prop
++          field_instance_settings: {  }
++          field_widget: options_select
++          default_value:
++            -
++              value: none
++          expression: ℹ︎list_string␟value
++          derived_schema_metadata: {  }
++        new_tab:
++          required: false
++          field_type: boolean
++          field_storage_settings: {  }
++          field_instance_settings: {  }
++          field_widget: boolean_checkbox
++          default_value:
++            -
++              value: false
++          expression: ℹ︎boolean␟value
++          derived_schema_metadata: {  }
++    fallback_metadata:
++      slot_definitions: {  }
++  6091b98f4d3c5124:
+     settings:
+       prop_field_definitions:
+         label:
+diff --git a/config/sync/canvas.component.sdc.wildbills.closing_cta.yml b/config/sync/canvas.component.sdc.wildbills.closing_cta.yml
+index 06589d7..fc085e8 100644
+--- a/config/sync/canvas.component.sdc.wildbills.closing_cta.yml
++++ b/config/sync/canvas.component.sdc.wildbills.closing_cta.yml
+@@ -4,11 +4,121 @@ status: true
+ dependencies:
+   module:
+     - link
++    - options
+   theme:
+     - wildbills
+-active_version: 765206112807bf3c
++active_version: e040202f1db1d0c2
+ versioned_properties:
+   active:
++    settings:
++      prop_field_definitions:
++        eyebrow:
++          required: false
++          field_type: string
++          field_storage_settings: {  }
++          field_instance_settings: {  }
++          field_widget: string_textfield
++          default_value:
++            -
++              value: 'Come take a look'
++          expression: ℹ︎string␟value
++          derived_schema_metadata:
++            string_shape: {  }
++        heading:
++          required: true
++          field_type: string
++          field_storage_settings: {  }
++          field_instance_settings: {  }
++          field_widget: string_textfield
++          default_value:
++            -
++              value: 'Found one you like?'
++          expression: ℹ︎string␟value
++          derived_schema_metadata:
++            string_shape: {  }
++        text:
++          required: false
++          field_type: string
++          field_storage_settings: {  }
++          field_instance_settings: {  }
++          field_widget: string_textfield
++          default_value:
++            -
++              value: 'Send an inquiry with the car already filled in, or check the hours and stop by for a test drive.'
++          expression: ℹ︎string␟value
++          derived_schema_metadata:
++            string_shape: {  }
++        primary_label:
++          required: false
++          field_type: string
++          field_storage_settings: {  }
++          field_instance_settings: {  }
++          field_widget: string_textfield
++          default_value:
++            -
++              value: 'Browse inventory'
++          expression: ℹ︎string␟value
++          derived_schema_metadata:
++            string_shape: {  }
++        primary_url:
++          required: false
++          field_type: link
++          field_storage_settings: {  }
++          field_instance_settings:
++            title: 0
++            link_type: 17
++          field_widget: link_default
++          default_value:
++            -
++              uri: /vehicles
++              options: {  }
++          expression: ℹ︎link␟url
++          derived_schema_metadata:
++            string_shape:
++              format: uri-reference
++        secondary_label:
++          required: false
++          field_type: string
++          field_storage_settings: {  }
++          field_instance_settings: {  }
++          field_widget: string_textfield
++          default_value:
++            -
++              value: 'Plan a visit'
++          expression: ℹ︎string␟value
++          derived_schema_metadata:
++            string_shape: {  }
++        secondary_url:
++          required: false
++          field_type: link
++          field_storage_settings: {  }
++          field_instance_settings:
++            title: 0
++            link_type: 17
++          field_widget: link_default
++          default_value:
++            -
++              uri: /location
++              options: {  }
++          expression: ℹ︎link␟url
++          derived_schema_metadata:
++            string_shape:
++              format: uri-reference
++        layout:
++          required: false
++          field_type: list_string
++          field_storage_settings:
++            allowed_values_function: canvas_load_allowed_values_for_component_prop
++          field_instance_settings: {  }
++          field_widget: options_select
++          default_value:
++            -
++              value: band
++          expression: ℹ︎list_string␟value
++          derived_schema_metadata: {  }
++    fallback_metadata:
++      slot_definitions: {  }
++  765206112807bf3c:
+     settings:
+       prop_field_definitions:
+         eyebrow:
+diff --git a/config/sync/canvas.folder.feb1e100-8545-43cd-ac83-0a538fa6fd41.yml b/config/sync/canvas.folder.feb1e100-8545-43cd-ac83-0a538fa6fd41.yml
+index 2be2b18..5485961 100644
+--- a/config/sync/canvas.folder.feb1e100-8545-43cd-ac83-0a538fa6fd41.yml
++++ b/config/sync/canvas.folder.feb1e100-8545-43cd-ac83-0a538fa6fd41.yml
+@@ -6,6 +6,7 @@ dependencies:
+     - canvas.component.block.views_block.body_styles-block_tiles
+     - canvas.component.block.views_block.vehicles-block_featured
+     - canvas.component.sdc.wildbills.button
++    - canvas.component.sdc.wildbills.info_card
+     - canvas.component.sdc.wildbills.page_head
+     - canvas.component.sdc.wildbills.section_heading
+ name: "Wild Bill's"
+@@ -15,5 +16,6 @@ items:
+   - block.views_block.body_styles-block_tiles
+   - block.views_block.vehicles-block_featured
+   - sdc.wildbills.button
++  - sdc.wildbills.info_card
+   - sdc.wildbills.page_head
+   - sdc.wildbills.section_heading
+diff --git a/droost/wiki/wildbills.md b/droost/wiki/wildbills.md
+index 57b5483..3080592 100644
+--- a/droost/wiki/wildbills.md
++++ b/droost/wiki/wildbills.md
+@@ -14,7 +14,7 @@ droost:
+     - path: web/themes/custom/wildbills/css/tokens.css
+       hash: "xxh3:abde5f2e76fb893c"
+     - path: web/themes/custom/wildbills/css/base.css
+-      hash: "xxh3:4b93d6047feeb7fc"
++      hash: "xxh3:9c2a8ddbf7f48740"
+     - path: web/themes/custom/wildbills/js/reveal.js
+       hash: "xxh3:6a399dfd35693cdf"
+     - path: web/themes/custom/wildbills/templates/page.html.twig
+@@ -59,6 +59,24 @@ droost:
+       hash: "xxh3:12341ec8041f9117"
+     - path: web/themes/custom/wildbills/components/home_hero/home_hero.twig
+       hash: "xxh3:0eb0328d3e8ddec6"
++    - path: web/themes/custom/wildbills/components/location_grid/location_grid.component.yml
++      hash: "xxh3:8136a1b706442b45"
++    - path: web/themes/custom/wildbills/components/map_card/map_card.component.yml
++      hash: "xxh3:5c7ae4f8c2e1e056"
++    - path: web/themes/custom/wildbills/components/info_card/info_card.component.yml
++      hash: "xxh3:ac926f7baab60f71"
++    - path: web/themes/custom/wildbills/components/hours_table/hours_table.component.yml
++      hash: "xxh3:6482e4ef76ce84c9"
++    - path: web/themes/custom/wildbills/components/hours_table/hours_table.js
++      hash: "xxh3:345cd79d2fdc1a60"
++    - path: web/themes/custom/wildbills/components/closing_cta/closing_cta.twig
++      hash: "xxh3:12a03d1457f8c2fc"
++    - path: web/themes/custom/wildbills/components/button/button.component.yml
++      hash: "xxh3:6e7bf69024e35308"
++    - path: droost/canvas/location.tree.json
++      hash: "xxh3:75f791e61d98b5d2"
++    - path: droost/canvas/apply-location.sh
++      hash: "xxh3:70c9a5c898ffb72a"
+ ---
+ 
+ # wildbills
+@@ -170,7 +188,7 @@ everything shows at once, with no transition.
+   - `body_style_tile`: builds `/vehicles?type=<name>` with `url_encode`.
+   - `filter_choice`: a button or an `<option>`.
+   - `inventory`: the layout.
+-- **`page_head`** is enabled for the inner pages R03 and R04 build.
++- **`page_head`** is enabled for the inner pages R03 and R04 build; /location opens with it.
+ - **`inventory.js`** (a behavior) does what the source's `vehicles.ts` does,
+   over the cards already on the page:
+   - search over year, make, model, colour and body style;
+@@ -185,3 +203,56 @@ everything shows at once, with no transition.
+   focus. A car that is not listed (sold, unpublished) opens no pop-up.
+ - **The grid's CSS:** the inventory includes `card_grid`, so the grid's CSS is
+   attached on /vehicles as well.
++
++## The Location page (R03)
++
++- **The page:** `/location` is a Canvas page, `canvas_page` 4 on this site. The `wildbills_site`
++  deploy hook makes it.
++- **The tree file:** `droost/canvas/location.tree.json` holds its tree, with fixed uuids. It has two
++  roots (HR2): `page_head`, then `location_grid`.
++  - **`main` slot:** `map_card`, `info_card` (Address, `detail: address`), and `info_card` (Before
++    you head over, with its link to `/contact?topic=Test%20drive`).
++  - **`aside` slot:** `hours_table`, and `closing_cta` with `layout: panel` ("Shortlist first.").
++- **Rebuilding:** run `droost/canvas/apply-location.sh` after `drush deploy`. It finds the page by its
++  alias, then runs `tree:validate` and `tree:set`.
++
++### The location components (enabled in Canvas)
++
++- **`location_grid`:** the source's `loc-grid`, with no props.
++  - Two slots, `main` (1.3fr) and `aside` (1fr), with the rise delays.
++  - One column below 900px.
++- **`map_card`:** the source's SVG map art, the pin label, the caption (Q6), the map's accessible
++  name, and two button labels.
++  - **The links:** the URLs come from `wildbills_site` (`LocationDetails`). A button shows only when
++    its URL exists, and both open in a new tab.
++  - **Spacing:** the first info card after it gets `margin-top: 2.5rem` (`.wb-map + .wb-info`).
++- **`info_card`:** a heading under a rule, an optional sentence, and a `.wb-link`.
++  - `detail: address` prints the dealership's street and city in the display face. They come from
++    `LocationDetails`, never a prop.
++  - It adds the "sample" tag while the demo notices are on.
++  - R04's contact cards can add more `detail` values.
++- **`hours_table`:** the hours panel. Its props are the heading, the "Checking hours…" placeholder and
++  the note (Q8: "Status uses the dealership's local time.").
++  - **From `LocationDetails`:** the rows and the time zone. The "sample" tag follows the demo notices.
++  - **`hours_table.js`** (a behavior) works out two things in the browser:
++    - **today's row:** `.is-today`, `aria-current="date"` and " · today";
++    - **the status:** open now, or when the lot next opens. It follows the source's `openStatus()`,
++      in minutes, so half hours work.
++  - **The clock:** both use the dealership's time zone (`Intl.DateTimeFormat` with `timeZone`), not
++    the visitor's.
++  - **Why the browser:** the page cache keeps the page for good, so the status and today's row are
++    never decided on the server.
++  - **Translated wording:** the sentences it fills in come from `data-*` attributes, translated in
++    Twig with `@time` and `@day` placeholders.
++
++### Changes to shared components
++
++- **`closing_cta`** has `layout`: `band` (the default, the home page's full-width section) or `panel`.
++  - `panel` is a compact one-column card with no section wrapper, 2rem padding, a 22px radius and a
++    1.7rem heading.
++  - It gets `margin-top: 1.2rem` after a sibling.
++- **`button`** has `new_tab`, which adds `target="_blank" rel="noopener"`. The map card uses it.
++- **Home is unchanged:** its tree keeps the Canvas versions it was written with, and renders as
++  before.
++- **`base.css`** now carries `.wb-link` (the source's `.link`) and `.wb-tag-sample` (`.tag-sample`),
++  for R03 and R04.
+diff --git a/droost/wiki/wildbills_site.md b/droost/wiki/wildbills_site.md
+index e8de769..f74a7ba 100644
+--- a/droost/wiki/wildbills_site.md
++++ b/droost/wiki/wildbills_site.md
+@@ -14,13 +14,13 @@ droost:
+     - path: web/modules/custom/wildbills_site/config/schema/wildbills_site.schema.yml
+       hash: "xxh3:90c4b4236940daff"
+     - path: web/modules/custom/wildbills_site/src/Dealership.php
+-      hash: "xxh3:1281013fcc3cf5d0"
++      hash: "xxh3:c0659f835d64fe44"
+     - path: web/modules/custom/wildbills_site/src/HoursSummary.php
+       hash: "xxh3:bb104ccfec8f3028"
+     - path: web/modules/custom/wildbills_site/src/DemoNotices.php
+       hash: "xxh3:fcab6e8a275b96bb"
+     - path: web/modules/custom/wildbills_site/src/Hook/WildbillsSiteHooks.php
+-      hash: "xxh3:578318117df9db60"
++      hash: "xxh3:a5fa69551b46e639"
+     - path: web/modules/custom/wildbills_site/src/Form/DealershipSettingsForm.php
+       hash: "xxh3:953697ffb3706f58"
+     - path: web/modules/custom/wildbills_site/src/Plugin/Block/SiteFrameBlockBase.php
+@@ -32,7 +32,7 @@ droost:
+     - path: web/modules/custom/wildbills_site/wildbills_site.services.yml
+       hash: "xxh3:5c1c728a89673747"
+     - path: web/modules/custom/wildbills_site/wildbills_site.deploy.php
+-      hash: "xxh3:d915954bb0858d90"
++      hash: "xxh3:fd7e610f31373f8d"
+     - path: web/modules/custom/wildbills_site/content/vehicles.yml
+       hash: "xxh3:7f94716d00cf7b94"
+     - path: web/modules/custom/wildbills_site/src/Inventory.php
+@@ -53,6 +53,10 @@ droost:
+       hash: "xxh3:3bcf4301182047aa"
+     - path: config/sync/node.type.vehicle.yml
+       hash: "xxh3:52804820cb5e1514"
++    - path: web/modules/custom/wildbills_site/src/LocationDetails.php
++      hash: "xxh3:62cbbb3f2dfa041c"
++    - path: web/modules/custom/wildbills_site/src/HoursTable.php
++      hash: "xxh3:2222e29a591433b5"
+ ---
+ 
+ # wildbills_site
+@@ -92,6 +96,9 @@ config directly.** It gives:
+ 
+ - `phoneHref()`: the digits as a `tel:` link, with `+1` for ten digits.
+ - `hoursSummary()`: `HoursSummary::lines()`.
++- `mapsQuery()`, `googleMapsUrl()` and `appleMapsUrl()`: "street, city", searched in each service.
++  It is encoded with `rawurlencode`, as the source's `encodeURIComponent` does. With no address
++  they return `''`.
+ - `cacheability()`: the config's cache tag.
+ 
+ `HoursSummary` is pure and unit-tested. Monday to Sunday, consecutive days with
+@@ -236,3 +243,41 @@ source's `VEHICLES`) and `content/images/v1–v15.jpg`.
+ - **Trash:** a deleted car stays in Trash, and its stock number stays taken
+   until it is purged.
+ 
++## The location page (R03)
++
++Built in R03 (`droost/intake/tickets/R03.md`). The spec,
++`droost/droost-workflow/spec-r03-location.md`, has a Realized section that says why.
++
++- **`HoursTable`** (pure, unit-tested) lays the week out Monday to Sunday, as the source's
++  `fmtHour()` prints it: "8:00am – 7:00pm", or "Closed". It differs from the footer's "8am–7pm".
++  - Each row carries `weekday` (Sunday 0, as JavaScript counts), the `HH:MM` times and their printed
++    forms.
++  - The browser works out today and the status from these, and never formats a time itself.
++  - A day with a missing or malformed time is closed (`HoursSummary::isTime`).
++- **`LocationDetails::preRender`**, beside `DemoNotices` and `VehicleCount` in `elementInfoAlter()`,
++  hands the location components the dealership's values:
++  - `wildbills:map_card` gets `google_url` and `apple_url`.
++  - `wildbills:info_card` with `detail: address` gets `street` and `city`.
++  - `wildbills:hours_table` gets `rows` (with translated day names) and `timezone`.
++
++  Each also gets the details' cache tag. It returns at once for any other component.
++  - **Why not props:** the address and hours are never Canvas props, so editors cannot type over
++    them.
++  - **What wins:** the dealership's value wins over a prop of the same name.
++- **`wildbills_site_deploy_r03_location_page()`** makes the Canvas page "Location & Hours": its
++  description, the `/location` alias (Pathauto skipped), and its own `metatags` with the title
++  `[canvas_page:title] — [site:name]`.
++  - **The title tag:** Canvas gives each new page a `|` title of its own, which overrides
++    `metatag.metatag_defaults.canvas_page`. So the page's own value is set here, and R04's Contact
++    page needs the same.
++  - **The redirect:** the hook also makes the `location.html` → `/location` redirect, which carries
++    the query.
++  - **Running it again:** it skips a page already at `/location` and an existing redirect.
++  - **The page's tree:** the hook does not write it. `droost/canvas/apply-location.sh` does (see the
++    `wildbills` page).
++  - **The name:** it is not `…_r03_location`, because R03's abandoned first attempt already used
++    that name in this database's deploy-hook registry.
++- **Menu links (a known coupling):** R01's "Visit" (main) and "Location & hours" (footer) links point
++  at `/location`.
++  - Deleting the Location page deletes both, through menu_link_content's entity predelete.
++  - Re-running `wildbills_site_install()` puts them back, since it is safe to run again.
+diff --git a/web/modules/custom/wildbills_site/src/Dealership.php b/web/modules/custom/wildbills_site/src/Dealership.php
+index 8fac54b..6e9b31e 100644
+--- a/web/modules/custom/wildbills_site/src/Dealership.php
++++ b/web/modules/custom/wildbills_site/src/Dealership.php
+@@ -76,6 +76,29 @@ public function city(): string {
+     return (string) $this->config()->get('city');
+   }
+ 
++  /**
++   * The address as one search: "123 Dusty Creek Rd, Dusty Creek, TX 78701".
++   */
++  public function mapsQuery(): string {
++    return implode(', ', array_filter([trim($this->street()), trim($this->city())], static fn (string $line): bool => $line !== ''));
++  }
++
++  /**
++   * The address searched in Google Maps, or '' when there is no address.
++   */
++  public function googleMapsUrl(): string {
++    $query = $this->mapsQuery();
++    return $query === '' ? '' : 'https://www.google.com/maps/search/?api=1&query=' . rawurlencode($query);
++  }
++
++  /**
++   * The address searched in Apple Maps, or '' when there is no address.
++   */
++  public function appleMapsUrl(): string {
++    $query = $this->mapsQuery();
++    return $query === '' ? '' : 'https://maps.apple.com/?q=' . rawurlencode($query);
++  }
++
+   /**
+    * The time zone the dealership keeps its hours in.
+    */
+diff --git a/web/modules/custom/wildbills_site/src/Hook/WildbillsSiteHooks.php b/web/modules/custom/wildbills_site/src/Hook/WildbillsSiteHooks.php
+index e01e2e0..514d378 100644
+--- a/web/modules/custom/wildbills_site/src/Hook/WildbillsSiteHooks.php
++++ b/web/modules/custom/wildbills_site/src/Hook/WildbillsSiteHooks.php
+@@ -15,6 +15,7 @@
+ use Drupal\taxonomy\TermInterface;
+ use Drupal\wildbills_site\DemoNotices;
+ use Drupal\wildbills_site\Inventory;
++use Drupal\wildbills_site\LocationDetails;
+ use Drupal\wildbills_site\VehicleCount;
+ use Drupal\wildbills_site\VehicleTitle;
+ 
+@@ -42,9 +43,9 @@ public function __construct(
+   /**
+    * Implements hook_element_info_alter().
+    *
+-   * Runs DemoNotices::preRender() and VehicleCount::preRender() ahead of the
+-   * component element's own pre-render, which turns the props into the
+-   * template's context.
++   * Runs DemoNotices::preRender(), VehicleCount::preRender() and
++   * LocationDetails::preRender() ahead of the component element's own
++   * pre-render, which turns the props into the template's context.
+    *
+    * @param array<string, array<string, mixed>> $info
+    *   The element info, keyed by element type.
+@@ -53,7 +54,12 @@ public function __construct(
+   public function elementInfoAlter(array &$info): void {
+     if (isset($info['component'])) {
+       $pre_render = $info['component']['#pre_render'] ?? [];
+-      array_unshift($pre_render, [DemoNotices::class, 'preRender'], [VehicleCount::class, 'preRender']);
++      array_unshift(
++        $pre_render,
++        [DemoNotices::class, 'preRender'],
++        [VehicleCount::class, 'preRender'],
++        [LocationDetails::class, 'preRender'],
++      );
+       $info['component']['#pre_render'] = $pre_render;
+     }
+   }
+diff --git a/web/modules/custom/wildbills_site/tests/src/Unit/DealershipTest.php b/web/modules/custom/wildbills_site/tests/src/Unit/DealershipTest.php
+index 33dd573..0cf2385 100644
+--- a/web/modules/custom/wildbills_site/tests/src/Unit/DealershipTest.php
++++ b/web/modules/custom/wildbills_site/tests/src/Unit/DealershipTest.php
+@@ -84,6 +84,24 @@ public function testDefaults(): void {
+     $this->assertSame([], $dealership->hours());
+   }
+ 
++  /**
++   * The map links search the address, encoded as the source encodes it.
++   */
++  public function testMapsUrls(): void {
++    $dealership = $this->dealership(['street' => '123 Dusty Creek Rd', 'city' => 'Dusty Creek, TX 78701']);
++    $this->assertSame('123 Dusty Creek Rd, Dusty Creek, TX 78701', $dealership->mapsQuery());
++    $this->assertSame('https://www.google.com/maps/search/?api=1&query=123%20Dusty%20Creek%20Rd%2C%20Dusty%20Creek%2C%20TX%2078701', $dealership->googleMapsUrl());
++    $this->assertSame('https://maps.apple.com/?q=123%20Dusty%20Creek%20Rd%2C%20Dusty%20Creek%2C%20TX%2078701', $dealership->appleMapsUrl());
++
++    $street_only = $this->dealership(['street' => 'Rock & Roll Way']);
++    $this->assertSame('Rock & Roll Way', $street_only->mapsQuery());
++    $this->assertSame('https://maps.apple.com/?q=Rock%20%26%20Roll%20Way', $street_only->appleMapsUrl());
++
++    $nowhere = $this->dealership([]);
++    $this->assertSame('', $nowhere->googleMapsUrl());
++    $this->assertSame('', $nowhere->appleMapsUrl());
++  }
++
+   /**
+    * Anything rendered from the details carries the config's cache tag.
+    */
+diff --git a/web/modules/custom/wildbills_site/tests/src/Unit/WildbillsSiteHooksTest.php b/web/modules/custom/wildbills_site/tests/src/Unit/WildbillsSiteHooksTest.php
+index 4b4f97a..926b427 100644
+--- a/web/modules/custom/wildbills_site/tests/src/Unit/WildbillsSiteHooksTest.php
++++ b/web/modules/custom/wildbills_site/tests/src/Unit/WildbillsSiteHooksTest.php
+@@ -13,6 +13,7 @@
+ use Drupal\Tests\UnitTestCase;
+ use Drupal\wildbills_site\DemoNotices;
+ use Drupal\wildbills_site\Hook\WildbillsSiteHooks;
++use Drupal\wildbills_site\LocationDetails;
+ use Drupal\wildbills_site\VehicleCount;
+ use PHPUnit\Framework\Attributes\CoversClass;
+ use PHPUnit\Framework\Attributes\Group;
+@@ -54,7 +55,7 @@ public function testCronLeavesTheSameYearAlone(): void {
+   }
+ 
+   /**
+-   * The demo switch's and the count's pre-renders run before the element's own.
++   * The demo switch's, the count's and the location's pre-renders run first.
+    */
+   public function testDemoNoticesRunFirst(): void {
+     // Any pre-render already declared stands in for the element's own.
+@@ -63,6 +64,7 @@ public function testDemoNoticesRunFirst(): void {
+     $this->assertSame([
+       [DemoNotices::class, 'preRender'],
+       [VehicleCount::class, 'preRender'],
++      [LocationDetails::class, 'preRender'],
+       [HtmlTag::class, 'preRenderHtmlTag'],
+     ], $info['component']['#pre_render']);
+   }
+diff --git a/web/modules/custom/wildbills_site/wildbills_site.deploy.php b/web/modules/custom/wildbills_site/wildbills_site.deploy.php
+index 4e42846..eee0836 100644
+--- a/web/modules/custom/wildbills_site/wildbills_site.deploy.php
++++ b/web/modules/custom/wildbills_site/wildbills_site.deploy.php
+@@ -10,6 +10,7 @@
+ 
+ declare(strict_types=1);
+ 
++use Drupal\Component\Serialization\Json;
+ use Drupal\Component\Serialization\Yaml;
+ use Drupal\Core\File\FileExists;
+ use Drupal\Core\File\FileSystemInterface;
+@@ -17,6 +18,7 @@
+ use Drupal\media\Entity\Media;
+ use Drupal\media\MediaInterface;
+ use Drupal\node\Entity\Node;
++use Drupal\pathauto\PathautoState;
+ use Drupal\redirect\Entity\Redirect;
+ use Drupal\taxonomy\Entity\Term;
+ use Drupal\taxonomy\TermInterface;
+@@ -101,6 +103,49 @@ function wildbills_site_deploy_r02_vehicles(): string {
+   return sprintf('Sample inventory: %d vehicle(s) created.', $created);
+ }
+ 
++/**
++ * Makes the Location & Hours page at /location, and its .html redirect.
++ *
++ * Only the page itself, its title, description and address: its components
++ * are written by droost/canvas/apply-location.sh with `canvas tree:set`
++ * (HR2). Safe to run again: a page already at /location, or a redirect
++ * already from location.html, is left as it is.
++ */
++function wildbills_site_deploy_r03_location_page(): string {
++  $made = [];
++  if (\Drupal::service('path_alias.manager')->getPathByAlias('/location') === '/location') {
++    \Drupal::entityTypeManager()->getStorage('canvas_page')->create([
++      'title' => 'Location & Hours',
++      'description' => 'Opening hours, address and map links for visiting Wild Bill\'s Used Cars. Sample location details for this demo website.',
++      'path' => ['alias' => '/location', 'pathauto' => PathautoState::SKIP],
++      // Canvas gives every new page its own title tag, "<title> | <site>";
++      // the source writes "Location & Hours — Wild Bill's Used Cars".
++      'metatags' => Json::encode([
++        'title' => '[canvas_page:title] — [site:name]',
++        'description' => '[canvas_page:description]',
++        'canonical_url' => '[canvas_page:url]',
++        'image_src' => '[canvas_page:image:entity:field_media_image:entity:url]',
++      ]),
++      'status' => TRUE,
++      'owner' => 1,
++    ])->save();
++    $made[] = 'the page';
++  }
++
++  $redirects = \Drupal::entityTypeManager()->getStorage('redirect');
++  if (!$redirects->loadByProperties(['redirect_source__path' => 'location.html'])) {
++    Redirect::create([
++      'redirect_source' => ['path' => 'location.html'],
++      'redirect_redirect' => ['uri' => 'internal:/location'],
++      'status_code' => 301,
++      'language' => 'und',
++    ])->save();
++    $made[] = 'the location.html redirect';
++  }
++
++  return $made ? 'Location & Hours: made ' . implode(' and ', $made) . '.' : 'Location & Hours: already in place.';
++}
++
+ /**
+  * Finds a term by vocabulary and name, or makes it with these values.
+  *
+diff --git a/web/themes/custom/wildbills/components/button/button.component.yml b/web/themes/custom/wildbills/components/button/button.component.yml
+index 939e088..4f29654 100644
+--- a/web/themes/custom/wildbills/components/button/button.component.yml
++++ b/web/themes/custom/wildbills/components/button/button.component.yml
+@@ -53,3 +53,9 @@ props:
+         phone: Phone, before
+       default: none
+       examples: [none]
++    new_tab:
++      type: boolean
++      title: Open in a new tab
++      description: Opens the link in a new tab, for a page on another site.
++      default: false
++      examples: [false]
+diff --git a/web/themes/custom/wildbills/components/button/button.twig b/web/themes/custom/wildbills/components/button/button.twig
+index ff90a50..ae70a0d 100644
+--- a/web/themes/custom/wildbills/components/button/button.twig
++++ b/web/themes/custom/wildbills/components/button/button.twig
+@@ -1,5 +1,5 @@
+ {%- set classes = ['wb-btn', 'wb-btn-' ~ (variant|default('primary')), (size|default('md')) == 'sm' ? 'wb-btn-sm'] -%}
+-<a class="{{ classes|filter(c => c)|join(' ') }}" href="{{ url }}">
++<a class="{{ classes|filter(c => c)|join(' ') }}" href="{{ url }}"{% if new_tab %} target="_blank" rel="noopener"{% endif %}>
+   {%- if icon == 'phone' -%}
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg> {% endif -%}
+   {{ label }}
+diff --git a/web/themes/custom/wildbills/components/closing_cta/closing_cta.component.yml b/web/themes/custom/wildbills/components/closing_cta/closing_cta.component.yml
+index 000da1b..ee3078e 100644
+--- a/web/themes/custom/wildbills/components/closing_cta/closing_cta.component.yml
++++ b/web/themes/custom/wildbills/components/closing_cta/closing_cta.component.yml
+@@ -1,6 +1,6 @@
+ $schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+ name: Closing call to action
+-description: "A dark rounded panel with an eyebrow, a heading, a sentence and two buttons, closing a page."
++description: "A dark rounded panel with an eyebrow, a heading, a sentence and two buttons: a full-width band closing a page, or a compact panel in a column."
+ group: "Wild Bill's home"
+ status: stable
+ props:
+@@ -45,3 +45,13 @@ props:
+       title: Second button link
+       description: Where the outlined button goes.
+       examples: ['/location']
++    layout:
++      type: string
++      title: Layout
++      description: A full-width band closing the page, or a compact panel in a column.
++      enum: [band, panel]
++      meta:enum:
++        band: Band (full width)
++        panel: Panel (in a column)
++      default: band
++      examples: [band]
+diff --git a/web/themes/custom/wildbills/components/closing_cta/closing_cta.css b/web/themes/custom/wildbills/components/closing_cta/closing_cta.css
+index e89b973..5901d01 100644
+--- a/web/themes/custom/wildbills/components/closing_cta/closing_cta.css
++++ b/web/themes/custom/wildbills/components/closing_cta/closing_cta.css
+@@ -9,3 +9,11 @@
+ .wb-cta .wb-btn-primary:hover { background: hsl(var(--wb-paper)); }
+ .wb-cta-actions { display: flex; gap: .7rem; flex-wrap: wrap; justify-content: flex-end; position: relative; z-index: 1; }
+ @media (max-width: 860px) { .wb-cta { grid-template-columns: 1fr; } .wb-cta-actions { justify-content: flex-start; } }
++
++/* layout: panel, the compact card in a column (location's "Shortlist first.") */
++.wb-cta--panel { grid-template-columns: 1fr; padding: 2rem; border-radius: 22px; }
++* + .wb-cta--panel { margin-top: 1.2rem; }
++.wb-cta--panel h2 { font-size: 1.7rem; margin-bottom: .6rem; }
++.wb-cta--panel .wb-cta-copy .wb-eyebrow { margin-bottom: 1rem; }
++.wb-cta--panel .wb-cta-copy p { margin: 0 0 1.2rem; }
++.wb-cta--panel .wb-cta-actions { justify-content: flex-start; }
+diff --git a/web/themes/custom/wildbills/components/closing_cta/closing_cta.twig b/web/themes/custom/wildbills/components/closing_cta/closing_cta.twig
+index c312b31..7e62451 100644
+--- a/web/themes/custom/wildbills/components/closing_cta/closing_cta.twig
++++ b/web/themes/custom/wildbills/components/closing_cta/closing_cta.twig
+@@ -1,3 +1,21 @@
++{#
++  layout: band is the full-width closing section (home); panel is the compact
++  one-column card that sits in a column (location's "Shortlist first.").
++#}
++{%- set actions -%}
++  {%- if primary_label and primary_url %}{{ include('wildbills:button', { label: primary_label, url: primary_url, variant: 'primary' }, with_context = false) }}{% endif -%}
++  {%- if secondary_label and secondary_url %}{{ include('wildbills:button', { label: secondary_label, url: secondary_url, variant: 'light' }, with_context = false) }}{% endif -%}
++{%- endset -%}
++{%- if layout == 'panel' %}
++<div class="wb-cta wb-cta--panel">
++  <div class="wb-cta-copy">
++    {%- if eyebrow %}<span class="wb-eyebrow">{{ eyebrow }}</span>{% endif %}
++    <h2>{{ heading }}</h2>
++    {%- if text %}<p>{{ text }}</p>{% endif %}
++    {%- if actions|trim %}<div class="wb-cta-actions">{{ actions }}</div>{% endif %}
++  </div>
++</div>
++{%- else %}
+ <section class="wb-section wb-section--flush-top">
+   <div class="wb-wrap">
+     <div class="wb-cta wb-reveal">
+@@ -6,10 +24,8 @@
+         <h2 class="wb-h2">{{ heading }}</h2>
+         {%- if text %}<p>{{ text }}</p>{% endif %}
+       </div>
+-      <div class="wb-cta-actions">
+-        {%- if primary_label and primary_url %}{{ include('wildbills:button', { label: primary_label, url: primary_url, variant: 'primary' }, with_context = false) }}{% endif -%}
+-        {%- if secondary_label and secondary_url %}{{ include('wildbills:button', { label: secondary_label, url: secondary_url, variant: 'light' }, with_context = false) }}{% endif -%}
+-      </div>
++      <div class="wb-cta-actions">{{ actions }}</div>
+     </div>
+   </div>
+ </section>
++{%- endif %}
+diff --git a/web/themes/custom/wildbills/css/base.css b/web/themes/custom/wildbills/css/base.css
+index 795a829..fb33468 100644
+--- a/web/themes/custom/wildbills/css/base.css
++++ b/web/themes/custom/wildbills/css/base.css
+@@ -59,3 +59,7 @@ h1, h2, h3 { font-family: var(--wb-display); letter-spacing: -.025em; line-heigh
+   *, *::before, *::after { animation-duration: .001ms !important; animation-delay: 0ms !important; transition-duration: .001ms !important; }
+   .wb-js .wb-reveal { opacity: 1; transform: none; }
+ }
++
++/* inline: an underlined text link, and the "sample" tag beside a heading */
++.wb-link { font-weight: 600; text-decoration: underline; text-decoration-color: hsl(var(--wb-signal)); text-underline-offset: 4px; text-decoration-thickness: 2px; }
++.wb-tag-sample { font-family: var(--wb-mono); font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; padding: .18rem .45rem; border-radius: 6px; background: hsl(var(--wb-signal) / .14); color: hsl(var(--wb-signal-ink)); vertical-align: middle; margin-left: .35rem; font-weight: 500; }

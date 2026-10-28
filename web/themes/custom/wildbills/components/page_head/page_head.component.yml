@@ -1,0 +1,25 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Page heading
+description: "An inner page's opening: an eyebrow, the page's one big heading and a lede. The inventory, contact and location pages open with it."
+group: "Wild Bill's"
+status: stable
+props:
+  type: object
+  required:
+    - heading
+  properties:
+    eyebrow:
+      type: string
+      title: Eyebrow
+      description: The small uppercase line above the heading.
+      examples: ['Sample inventory · not live stock']
+    heading:
+      type: string
+      title: Heading
+      description: The page's heading.
+      examples: ['The lot.']
+    lede:
+      type: string
+      title: Lede
+      description: The sentence under the heading.
+      examples: ['Every car with its price, mileage and color. Narrow it down, open one up, and send a question with the details already filled in.']

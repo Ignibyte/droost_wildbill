@@ -1,0 +1,22 @@
+uuid: c9b7ac9b-51f9-433a-84ca-9a9d74cccded
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - droost_theme
+_core:
+  default_config_hash: PMft0GDcUomzHPtq6vlnX3rMNvA07xBjVXmPX2DusuI
+id: droost_theme_main
+theme: droost_theme
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: main
+  label_display: '0'
+  provider: system
+visibility: {  }

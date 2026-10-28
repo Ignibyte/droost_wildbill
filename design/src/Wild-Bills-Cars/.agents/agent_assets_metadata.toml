@@ -1,0 +1,16 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "eRAGM4LM3NnOGcDba-bnZ"
+uri = "file://handoff.md"
+type = "text"
+title = "Agent handoff"
+description = "Project structure, approved design, setup commands, verification results, known limitations and remaining GitHub setup."
+logical_id = "55f3b57b-a842-4106-97e2-8791050c6ee8"
+content_hash = "sha256:b32be3dfb1bd0291a37598f7a3d54d6a1a3ebb4f83828ebb9601829b41d88a0d"
+size = 9201
+mtime_ms = 1791598890983
+storage_uri = "gcs://replit-rams-assets-kirk/rams/assets/repl:ca97437e-df2f-4f6d-bd4e-a8d97aa6282c/55f3b57b-a842-4106-97e2-8791050c6ee8/a397fbcb-4049-4c55-8922-e0fd8ede8df2"
+storage_version_token = "1791598899939566"
+content_type = "text/markdown"

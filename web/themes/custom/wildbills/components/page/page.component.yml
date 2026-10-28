@@ -1,0 +1,18 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Page shell
+description: "The page: the site header, the main content (the skip link's #main) and the site footer. The theme's page template fills it with the three regions; it is not for placing on a Canvas page."
+group: "Wild Bill's frame"
+status: stable
+props:
+  type: object
+  properties: {}
+slots:
+  header:
+    title: Header
+    description: The site header.
+  content:
+    title: Content
+    description: The page's main content.
+  footer:
+    title: Footer
+    description: The site footer.

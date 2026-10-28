@@ -1,0 +1,19 @@
+.wb-cta { background: hsl(var(--wb-ink)); color: hsl(var(--wb-paper)); border-radius: 28px; padding: clamp(2.5rem, 6vw, 5rem); display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; align-items: end; overflow: hidden; position: relative; }
+.wb-cta::before { content: ""; position: absolute; width: 420px; height: 420px; border-radius: 50%; border: 1.5px solid hsl(var(--wb-sage) / .5); right: -140px; top: -180px; }
+.wb-cta::after { content: ""; position: absolute; width: 260px; height: 260px; border-radius: 50%; border: 1.5px solid hsl(var(--wb-paper) / .14); right: -40px; top: -90px; }
+.wb-cta-copy { position: relative; z-index: 1; }
+.wb-cta-copy .wb-eyebrow { color: hsl(var(--wb-paper) / .6); }
+.wb-cta-copy .wb-h2 { margin: 1rem 0 .8rem; }
+.wb-cta-copy p { margin: 0; max-width: 30rem; color: hsl(var(--wb-paper) / .75); }
+.wb-cta .wb-btn-primary { background: hsl(var(--wb-sage)); color: hsl(var(--wb-ink)); }
+.wb-cta .wb-btn-primary:hover { background: hsl(var(--wb-paper)); }
+.wb-cta-actions { display: flex; gap: .7rem; flex-wrap: wrap; justify-content: flex-end; position: relative; z-index: 1; }
+@media (max-width: 860px) { .wb-cta { grid-template-columns: 1fr; } .wb-cta-actions { justify-content: flex-start; } }
+
+/* layout: panel, the compact card in a column (location's "Shortlist first.") */
+.wb-cta--panel { grid-template-columns: 1fr; padding: 2rem; border-radius: 22px; }
+* + .wb-cta--panel { margin-top: 1.2rem; }
+.wb-cta--panel h2 { font-size: 1.7rem; margin-bottom: .6rem; }
+.wb-cta--panel .wb-cta-copy .wb-eyebrow { margin-bottom: 1rem; }
+.wb-cta--panel .wb-cta-copy p { margin: 0 0 1.2rem; }
+.wb-cta--panel .wb-cta-actions { justify-content: flex-start; }

@@ -1,0 +1,9 @@
+<section class="wb-band">
+  <div class="wb-wrap wb-band-grid">
+    {%- for i in 1..4 %}
+      {%- set title = attribute(_context, 'title_' ~ i) %}
+      {%- set text = attribute(_context, 'text_' ~ i) %}
+      {%- if title %}<div><b>{{ title }}</b>{% if text %}<span>{{ text }}</span>{% endif %}</div>{% endif %}
+    {%- endfor %}
+  </div>
+</section>

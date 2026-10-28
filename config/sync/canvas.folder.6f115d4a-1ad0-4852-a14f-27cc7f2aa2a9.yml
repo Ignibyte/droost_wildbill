@@ -1,0 +1,13 @@
+uuid: 6f115d4a-1ad0-4852-a14f-27cc7f2aa2a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.wildbills.contact_grid
+    - canvas.component.sdc.wildbills.inquiry_form
+name: "Wild Bill's contact"
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.wildbills.contact_grid
+  - sdc.wildbills.inquiry_form

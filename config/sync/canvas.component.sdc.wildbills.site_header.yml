@@ -1,0 +1,153 @@
+uuid: a624c0f4-c24e-4d04-871c-5229cbd9a0fd
+langcode: en
+status: false
+dependencies:
+  module:
+    - link
+  theme:
+    - wildbills
+active_version: a63d8c437c3d2307
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        brand_mark:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: WB
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        brand_name:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: "Wild Bill's"
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        brand_tagline:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Used Cars'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        brand_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: "Wild Bill's Used Cars, home"
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        home_url:
+          required: false
+          field_type: link
+          field_storage_settings: {  }
+          field_instance_settings:
+            title: 0
+            link_type: 17
+          field_widget: link_default
+          default_value:
+            -
+              uri: /
+              options: {  }
+          expression: ℹ︎link␟url
+          derived_schema_metadata:
+            string_shape:
+              format: uri-reference
+        cta_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Browse cars'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        cta_url:
+          required: false
+          field_type: link
+          field_storage_settings: {  }
+          field_instance_settings:
+            title: 0
+            link_type: 17
+          field_widget: link_default
+          default_value:
+            -
+              uri: /vehicles
+              options: {  }
+          expression: ℹ︎link␟url
+          derived_schema_metadata:
+            string_shape:
+              format: uri-reference
+        phone:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: '(555) 123-4567'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        phone_href:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'tel:+15551234567'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        demo_notices:
+          required: false
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value:
+            -
+              value: true
+          expression: ℹ︎boolean␟value
+          derived_schema_metadata: {  }
+    fallback_metadata:
+      slot_definitions:
+        links:
+          title: Links
+          description: "The main menu's links, as Navigation link components placed in the bar."
+        mobile_links:
+          title: 'Mobile links'
+          description: 'The same links, as Navigation link components placed in the mobile menu.'
+label: 'Site header'
+id: sdc.wildbills.site_header
+provider: wildbills
+source: sdc
+source_local_id: 'wildbills:site_header'

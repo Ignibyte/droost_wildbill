@@ -1,0 +1,26 @@
+{#
+  demo_notices is not a prop: the wildbills_site module hands it to every
+  wildbills component from the dealership details' demo switch. The data-*
+  attributes are what the inventory's script filters, sorts and fills the
+  details pop-up from.
+#}
+{%- set name = [year, make, model]|filter(p => p)|join(' ') -%}
+<article class="wb-car" data-wb-vehicle data-stock="{{ stock }}" data-year="{{ year }}" data-make="{{ make }}" data-model="{{ model }}" data-color="{{ color }}" data-type="{{ body_style }}" data-price="{{ price }}" data-miles="{{ miles }}" data-condition="{{ condition }}" data-featured="{{ featured ? 1 : 0 }}" data-status="{{ status|default('available') }}">
+  <div class="wb-car-media">
+    {{ photo }}
+    {%- if status == 'pending' %}<span class="wb-chip wb-chip-pending">{{ 'Sale pending'|t }}</span>
+    {%- elseif featured %}<span class="wb-chip wb-chip-signal">{{ 'Featured'|t }}</span>
+    {%- elseif body_style %}<span class="wb-chip">{{ body_style }}</span>{% endif %}
+  </div>
+  <div class="wb-car-body">
+    <div><div class="wb-car-year">{{ year }} · {{ body_style|upper }}</div><h3 class="wb-car-title">{{ make }} {{ model }}</h3></div>
+    <ul class="wb-specs">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 14l4-4"/><path d="M3.3 19a10 10 0 1 1 17.4 0"/></svg>{{ miles|number_format }} mi</li>
+      {%- if color %}<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="8" cy="10" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16" cy="10" r="1"/></svg>{{ color }}</li>{% endif %}
+    </ul>
+    <div class="wb-car-foot">
+      <div class="wb-price">${{ price|number_format }}{% if demo_notices %}<small>{{ 'Sample price'|t }}</small>{% endif %}</div>
+      <div class="wb-car-actions"><a class="wb-btn wb-btn-ghost wb-btn-sm" href="{{ path('<front>') }}vehicles?vehicle={{ stock }}" aria-label="{{ 'View details for @name'|t({'@name': name}) }}" data-wb-details>{{ 'Details'|t }}</a></div>
+    </div>
+  </div>
+</article>

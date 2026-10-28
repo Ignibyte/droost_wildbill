@@ -1,0 +1,76 @@
+/*
+ * Page-wide rules, from the source's site.css: the box model, the body, the
+ * focus ring, the skip link, the shared type styles and the motion rules.
+ * Component styles live beside each component.
+ */
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+/* droost_theme drops core's .hidden for Tailwind's; this theme has no Tailwind. */
+.hidden { display: none; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: hsl(var(--wb-paper));
+  color: hsl(var(--wb-ink));
+  font-family: var(--wb-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+body > .dialog-off-canvas-main-canvas { display: flex; flex-direction: column; flex: 1; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid hsl(var(--wb-signal)); outline-offset: 3px; border-radius: 6px; }
+.wb-wrap { width: var(--wb-wrap); margin-inline: auto; }
+.visually-hidden, .wb-sr-only { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* skip link */
+.wb-skip { position: absolute; left: 1rem; top: -4rem; z-index: 100; background: hsl(var(--wb-ink)); color: hsl(var(--wb-paper)); padding: .6rem 1rem; border-radius: 8px; }
+.wb-skip:focus { top: 1rem; }
+
+/* type */
+.wb-eyebrow { font-family: var(--wb-mono); font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: hsl(var(--wb-ink-3)); display: inline-flex; align-items: center; gap: .6rem; }
+.wb-eyebrow::before { content: ""; width: 1.6rem; height: 2px; background: hsl(var(--wb-signal)); }
+h1, h2, h3 { font-family: var(--wb-display); letter-spacing: -.025em; line-height: 1.02; margin: 0; font-weight: 700; }
+.wb-display { font-size: clamp(2.8rem, 7.4vw, 6.6rem); font-weight: 800; letter-spacing: -.045em; line-height: .94; }
+.wb-h2 { font-size: clamp(2rem, 4.4vw, 3.4rem); }
+.wb-lede { font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: hsl(var(--wb-ink-2)); max-width: 36rem; }
+
+/* sections */
+.wb-section { position: relative; padding: clamp(4rem, 9vw, 7.5rem) 0; }
+.wb-section--flush-top { padding-top: 0; }
+.wb-section--band { background: hsl(var(--wb-band)); }
+
+/* motion: reveal on scroll (js/reveal.js adds .wb-js and .is-in) */
+.wb-js .wb-reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s var(--wb-ease), transform .8s var(--wb-ease); }
+.wb-js .wb-reveal.is-in { opacity: 1; transform: none; }
+.wb-rise { animation: wb-rise .9s var(--wb-ease) both; }
+.wb-rise-2 { animation-delay: .1s; }
+.wb-rise-3 { animation-delay: .2s; }
+.wb-rise-4 { animation-delay: .3s; }
+@keyframes wb-rise { from { opacity: 0; transform: translateY(26px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-delay: 0ms !important; transition-duration: .001ms !important; }
+  .wb-js .wb-reveal { opacity: 1; transform: none; }
+}
+
+/* inline: an underlined text link, and the "sample" tag beside a heading */
+.wb-link { font-weight: 600; text-decoration: underline; text-decoration-color: hsl(var(--wb-signal)); text-underline-offset: 4px; text-decoration-thickness: 2px; }
+.wb-tag-sample { font-family: var(--wb-mono); font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; padding: .18rem .45rem; border-radius: 6px; background: hsl(var(--wb-signal) / .14); color: hsl(var(--wb-signal-ink)); vertical-align: middle; margin-left: .35rem; font-weight: 500; }
+
+/* form fields: the inventory's filters and the contact page's inquiry form */
+.wb-field { display: grid; gap: .45rem; }
+.wb-field > label, .wb-field-label { font-size: .82rem; font-weight: 600; color: hsl(var(--wb-ink-2)); display: flex; justify-content: space-between; }
+.wb-field output { font-family: var(--wb-mono); color: hsl(var(--wb-signal-ink)); font-weight: 500; }
+.wb-input, .wb-select, .wb-textarea { width: 100%; min-height: 46px; padding: .7rem .9rem; border-radius: 12px; border: 1.5px solid hsl(var(--wb-line)); background: hsl(var(--wb-paper)); transition: border-color .2s; }
+.wb-input:hover, .wb-select:hover, .wb-textarea:hover { border-color: hsl(var(--wb-ink-3)); }
+.wb-input:focus, .wb-select:focus, .wb-textarea:focus { outline: none; border-color: hsl(var(--wb-petrol)); box-shadow: 0 0 0 3px hsl(var(--wb-petrol) / .15); }
+.wb-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%2314303f' stroke-width='1.8'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right .9rem center; padding-right: 2.3rem; }
+.wb-input[aria-invalid="true"], .wb-textarea[aria-invalid="true"] { border-color: hsl(var(--wb-signal)); }
+.wb-textarea { min-height: 140px; resize: vertical; }

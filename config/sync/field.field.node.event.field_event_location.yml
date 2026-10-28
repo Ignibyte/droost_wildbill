@@ -1,0 +1,21 @@
+uuid: b45b5c78-d192-4544-b386-5a6cf94951e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_location
+    - node.type.event
+_core:
+  default_config_hash: qyAmtNnZboQ8BbIKbrb3jZJBDA_w1Qr_ZPR-QqQ1bbc
+id: node.event.field_event_location
+field_name: field_event_location
+entity_type: node
+bundle: event
+label: Location
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

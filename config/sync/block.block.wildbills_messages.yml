@@ -1,0 +1,22 @@
+uuid: 733f6c2b-15e0-4c5b-bca2-a202a618af0e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - wildbills
+_core:
+  default_config_hash: T006wAQaVLoHLuwzOVPHAsCc1g9tQ6gl2GjL1ZRY0Yg
+id: wildbills_messages
+theme: wildbills
+region: content
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: messages
+  label_display: '0'
+  provider: system
+visibility: {  }

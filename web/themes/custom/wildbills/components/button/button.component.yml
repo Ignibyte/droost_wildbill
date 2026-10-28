@@ -1,0 +1,61 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Button
+description: "A pill-shaped link button: primary (green), ink (dark), ghost (outlined) or light (outlined, on a dark panel), with an optional arrow or phone icon."
+group: "Wild Bill's"
+status: stable
+props:
+  type: object
+  required:
+    - label
+    - url
+  properties:
+    label:
+      type: string
+      title: Label
+      description: The button's text.
+      examples: ['Browse inventory']
+    url:
+      type: string
+      format: uri-reference
+      title: Link
+      description: Where the button goes.
+      examples: ['/vehicles']
+    variant:
+      type: string
+      title: Style
+      description: The button's colour.
+      enum: [primary, ink, ghost, light]
+      meta:enum:
+        primary: Primary (green)
+        ink: Ink (dark)
+        ghost: Ghost (outlined)
+        light: Light (outlined, on dark)
+      default: primary
+      examples: [primary]
+    size:
+      type: string
+      title: Size
+      description: Regular, or small.
+      enum: [md, sm]
+      meta:enum:
+        md: Regular
+        sm: Small
+      default: md
+      examples: [md]
+    icon:
+      type: string
+      title: Icon
+      description: An icon beside the label.
+      enum: [none, arrow, phone]
+      meta:enum:
+        none: None
+        arrow: Arrow, after
+        phone: Phone, before
+      default: none
+      examples: [none]
+    new_tab:
+      type: boolean
+      title: Open in a new tab
+      description: Opens the link in a new tab, for a page on another site.
+      default: false
+      examples: [false]

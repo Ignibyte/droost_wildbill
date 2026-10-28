@@ -1,0 +1,57 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Closing call to action
+description: "A dark rounded panel with an eyebrow, a heading, a sentence and two buttons: a full-width band closing a page, or a compact panel in a column."
+group: "Wild Bill's home"
+status: stable
+props:
+  type: object
+  required:
+    - heading
+  properties:
+    eyebrow:
+      type: string
+      title: Eyebrow
+      description: The small uppercase line above the heading.
+      examples: ['Come take a look']
+    heading:
+      type: string
+      title: Heading
+      description: The panel's heading.
+      examples: ['Found one you like?']
+    text:
+      type: string
+      title: Sentence
+      description: The sentence under the heading.
+      examples: ['Send an inquiry with the car already filled in, or check the hours and stop by for a test drive.']
+    primary_label:
+      type: string
+      title: First button label
+      description: The sage button.
+      examples: ['Browse inventory']
+    primary_url:
+      type: string
+      format: uri-reference
+      title: First button link
+      description: Where the sage button goes.
+      examples: ['/vehicles']
+    secondary_label:
+      type: string
+      title: Second button label
+      description: The outlined button.
+      examples: ['Plan a visit']
+    secondary_url:
+      type: string
+      format: uri-reference
+      title: Second button link
+      description: Where the outlined button goes.
+      examples: ['/location']
+    layout:
+      type: string
+      title: Layout
+      description: A full-width band closing the page, or a compact panel in a column.
+      enum: [band, panel]
+      meta:enum:
+        band: Band (full width)
+        panel: Panel (in a column)
+      default: band
+      examples: [band]

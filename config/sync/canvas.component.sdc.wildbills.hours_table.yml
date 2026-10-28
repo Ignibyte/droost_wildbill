@@ -1,0 +1,54 @@
+uuid: 4b7a78c5-c252-42ab-b0a7-e49e522c9101
+langcode: en
+status: true
+dependencies:
+  theme:
+    - wildbills
+active_version: d50361f7a0ea2cac
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        heading:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Hours
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        checking_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Checking hours…'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        note:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: "Status uses the dealership's local time."
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+label: Hours
+id: sdc.wildbills.hours_table
+provider: wildbills
+source: sdc
+source_local_id: 'wildbills:hours_table'

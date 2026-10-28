@@ -1,0 +1,22 @@
+uuid: fafe9e0a-6363-4782-8379-b726a1762a33
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - droost_theme
+_core:
+  default_config_hash: T006wAQaVLoHLuwzOVPHAsCc1g9tQ6gl2GjL1ZRY0Yg
+id: droost_theme_messages
+theme: droost_theme
+region: content
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: messages
+  label_display: '0'
+  provider: system
+visibility: {  }

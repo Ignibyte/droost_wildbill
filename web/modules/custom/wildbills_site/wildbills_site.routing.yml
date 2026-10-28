@@ -1,0 +1,7 @@
+wildbills_site.dealership:
+  path: '/admin/config/system/dealership'
+  defaults:
+    _form: '\Drupal\wildbills_site\Form\DealershipSettingsForm'
+    _title: 'Dealership details'
+  requirements:
+    _permission: 'administer dealership details'

@@ -1,0 +1,10 @@
+.wb-band { position: relative; background: hsl(var(--wb-petrol)); color: hsl(var(--wb-paper)); }
+.wb-band-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+.wb-band-grid > div { padding: 1.6rem 1.4rem; border-left: 1px solid hsl(var(--wb-paper) / .14); }
+.wb-band-grid > div:first-child { border-left: 0; padding-left: 0; }
+.wb-band-grid b { display: block; font-family: var(--wb-display); font-size: 1.15rem; margin-bottom: .2rem; letter-spacing: -.02em; }
+.wb-band-grid span { font-size: .88rem; color: hsl(var(--wb-paper) / .72); }
+@media (max-width: 900px) {
+  .wb-band-grid { grid-template-columns: 1fr 1fr; }
+  .wb-band-grid > div { border-left: 0; padding-left: 0; border-top: 1px solid hsl(var(--wb-paper) / .14); }
+}

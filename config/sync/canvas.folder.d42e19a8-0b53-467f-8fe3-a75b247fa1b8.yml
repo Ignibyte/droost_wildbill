@@ -1,0 +1,11 @@
+uuid: d42e19a8-0b53-467f-8fe3-a75b247fa1b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.droost_theme.button
+name: Actions
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.droost_theme.button

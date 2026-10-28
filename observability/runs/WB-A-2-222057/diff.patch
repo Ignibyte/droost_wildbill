@@ -1,0 +1,364 @@
+diff --git a/.gitignore b/.gitignore
+index 2c54312..340426f 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -15,3 +15,7 @@ droost/droost-workflow/
+ .php-cs-fixer.cache
+ .eslintcache
+ .stylelintcache
++
++# Playwright run output.
++test-results/
++playwright-report/
+diff --git a/config/sync/canvas.component.sdc.droost_theme.avatar.yml b/config/sync/canvas.component.sdc.droost_theme.avatar.yml
+index 43dc2f1..bcb3f66 100644
+--- a/config/sync/canvas.component.sdc.droost_theme.avatar.yml
++++ b/config/sync/canvas.component.sdc.droost_theme.avatar.yml
+@@ -1,6 +1,6 @@
+ uuid: 242527ff-03b2-471e-a27a-f7b2b7b619a6
+ langcode: en
+-status: true
++status: false
+ dependencies:
+   module:
+     - link
+diff --git a/config/sync/canvas.component.sdc.droost_theme.button.yml b/config/sync/canvas.component.sdc.droost_theme.button.yml
+index d93d342..5a303b0 100644
+--- a/config/sync/canvas.component.sdc.droost_theme.button.yml
++++ b/config/sync/canvas.component.sdc.droost_theme.button.yml
+@@ -1,6 +1,6 @@
+ uuid: cef22ac2-e87a-46f9-8b9f-2075eda5e9f9
+ langcode: en
+-status: true
++status: false
+ dependencies:
+   module:
+     - link
+diff --git a/config/sync/canvas.component.sdc.droost_theme.card.yml b/config/sync/canvas.component.sdc.droost_theme.card.yml
+index 293b5bc..62bf35a 100644
+--- a/config/sync/canvas.component.sdc.droost_theme.card.yml
++++ b/config/sync/canvas.component.sdc.droost_theme.card.yml
+@@ -1,6 +1,6 @@
+ uuid: 3e09d50b-0a66-4962-b265-f4eabd88c001
+ langcode: en
+-status: true
++status: false
+ dependencies:
+   module:
+     - link
+diff --git a/config/sync/canvas.component.sdc.droost_theme.carousel.yml b/config/sync/canvas.component.sdc.droost_theme.carousel.yml
+index 7cb1a08..8cfc670 100644
+--- a/config/sync/canvas.component.sdc.droost_theme.carousel.yml
++++ b/config/sync/canvas.component.sdc.droost_theme.carousel.yml
+@@ -1,6 +1,6 @@
+ uuid: cefe95b2-260e-481c-94b6-ebe1c04dd015
+ langcode: en
+-status: true
++status: false
+ dependencies:
+   module:
+     - options
+diff --git a/config/sync/canvas.component.sdc.droost_theme.code.yml b/config/sync/canvas.component.sdc.droost_theme.code.yml
+index c954a7e..d6cce08 100644
+--- a/config/sync/canvas.component.sdc.droost_theme.code.yml
++++ b/config/sync/canvas.component.sdc.droost_theme.code.yml
+@@ -1,6 +1,6 @@
+ uuid: 50582fa4-07be-4ef8-937b-2f77ba833eff
+ langcode: en
+-status: true
++status: false
+ dependencies:
+   theme:
+     - droost_theme
+diff --git a/config/sync/canvas.component.sdc.droost_theme.faq_item.yml b/config/sync/canvas.component.sdc.droost_theme.faq_item.yml
+index 9affa8e..82462fd 100644
+--- a/config/sync/canvas.component.sdc.droost_theme.faq_item.yml
++++ b/config/sync/canvas.component.sdc.droost_theme.faq_item.yml
+@@ -1,6 +1,6 @@
+ uuid: e6e1fe00-2ea6-4c83-b999-a0326190df85
+ langcode: en
+-status: true
++status: false
+ dependencies:
+   theme:
+     - droost_theme
+diff --git a/config/sync/canvas.component.sdc.droost_theme.grid.yml b/config/sync/canvas.component.sdc.droost_theme.grid.yml
+index 79b2feb..198c452 100644
+--- a/config/sync/canvas.component.sdc.droost_theme.grid.yml
++++ b/config/sync/canvas.component.sdc.droost_theme.grid.yml
+@@ -1,6 +1,6 @@
+ uuid: 757dd1d8-b6bd-42bc-8111-988a2fae71e7
+ langcode: en
+-status: true
++status: false
+ dependencies:
+   module:
+     - options
+diff --git a/config/sync/canvas.component.sdc.droost_theme.hero.yml b/config/sync/canvas.component.sdc.droost_theme.hero.yml
+index fa82333..482df81 100644
+--- a/config/sync/canvas.component.sdc.droost_theme.hero.yml
++++ b/config/sync/canvas.component.sdc.droost_theme.hero.yml
+@@ -1,6 +1,6 @@
+ uuid: 34c5fa27-7e00-469d-b46a-c108ad7d2cd1
+ langcode: en
+-status: true
++status: false
+ dependencies:
+   module:
+     - link
+diff --git a/config/sync/canvas.component.sdc.droost_theme.radial_progress.yml b/config/sync/canvas.component.sdc.droost_theme.radial_progress.yml
+index 549620b..7d42056 100644
+--- a/config/sync/canvas.component.sdc.droost_theme.radial_progress.yml
++++ b/config/sync/canvas.component.sdc.droost_theme.radial_progress.yml
+@@ -1,6 +1,6 @@
+ uuid: 9be650bf-08ed-4509-80e3-7a8767a0536f
+ langcode: en
+-status: true
++status: false
+ dependencies:
+   theme:
+     - droost_theme
+diff --git a/config/sync/canvas.component.sdc.droost_theme.rating.yml b/config/sync/canvas.component.sdc.droost_theme.rating.yml
+index 21c64c1..85afddc 100644
+--- a/config/sync/canvas.component.sdc.droost_theme.rating.yml
++++ b/config/sync/canvas.component.sdc.droost_theme.rating.yml
+@@ -1,6 +1,6 @@
+ uuid: e9994768-3011-4b14-b5ad-54d9d4cfbd85
+ langcode: en
+-status: true
++status: false
+ dependencies:
+   theme:
+     - droost_theme
+diff --git a/config/sync/canvas.component.sdc.droost_theme.section.yml b/config/sync/canvas.component.sdc.droost_theme.section.yml
+index 6d6582f..328557d 100644
+--- a/config/sync/canvas.component.sdc.droost_theme.section.yml
++++ b/config/sync/canvas.component.sdc.droost_theme.section.yml
+@@ -1,6 +1,6 @@
+ uuid: 815d2ba2-67d4-43b6-8195-6080c5fa3e47
+ langcode: en
+-status: true
++status: false
+ dependencies:
+   module:
+     - options
+diff --git a/config/sync/canvas.component.sdc.droost_theme.slide.yml b/config/sync/canvas.component.sdc.droost_theme.slide.yml
+index a280222..bf04768 100644
+--- a/config/sync/canvas.component.sdc.droost_theme.slide.yml
++++ b/config/sync/canvas.component.sdc.droost_theme.slide.yml
+@@ -1,6 +1,6 @@
+ uuid: 0b76d8be-1650-456f-9586-05b8e6b7459f
+ langcode: en
+-status: true
++status: false
+ dependencies:
+   module:
+     - link
+diff --git a/config/sync/canvas.component.sdc.droost_theme.stat.yml b/config/sync/canvas.component.sdc.droost_theme.stat.yml
+index bbdd272..db16aec 100644
+--- a/config/sync/canvas.component.sdc.droost_theme.stat.yml
++++ b/config/sync/canvas.component.sdc.droost_theme.stat.yml
+@@ -1,6 +1,6 @@
+ uuid: c30a82ec-ad49-4ed4-95d1-4923fbf3b238
+ langcode: en
+-status: true
++status: false
+ dependencies:
+   theme:
+     - droost_theme
+diff --git a/config/sync/canvas.component.sdc.droost_theme.stats.yml b/config/sync/canvas.component.sdc.droost_theme.stats.yml
+index 3cf4c61..4356412 100644
+--- a/config/sync/canvas.component.sdc.droost_theme.stats.yml
++++ b/config/sync/canvas.component.sdc.droost_theme.stats.yml
+@@ -1,6 +1,6 @@
+ uuid: ad519692-773e-45f8-9670-2b83a31b78a2
+ langcode: en
+-status: true
++status: false
+ dependencies:
+   theme:
+     - droost_theme
+diff --git a/config/sync/canvas.component.sdc.droost_theme.step.yml b/config/sync/canvas.component.sdc.droost_theme.step.yml
+index 52622f7..c425268 100644
+--- a/config/sync/canvas.component.sdc.droost_theme.step.yml
++++ b/config/sync/canvas.component.sdc.droost_theme.step.yml
+@@ -1,6 +1,6 @@
+ uuid: 2889036b-225d-4369-95c0-1797a0e1a14c
+ langcode: en
+-status: true
++status: false
+ dependencies:
+   theme:
+     - droost_theme
+diff --git a/config/sync/canvas.component.sdc.droost_theme.steps.yml b/config/sync/canvas.component.sdc.droost_theme.steps.yml
+index 312e7b0..68f8d96 100644
+--- a/config/sync/canvas.component.sdc.droost_theme.steps.yml
++++ b/config/sync/canvas.component.sdc.droost_theme.steps.yml
+@@ -1,6 +1,6 @@
+ uuid: b29ce1d1-fc3a-4929-bbea-648d176f1750
+ langcode: en
+-status: true
++status: false
+ dependencies:
+   module:
+     - options
+diff --git a/config/sync/canvas.component.sdc.droost_theme.tab.yml b/config/sync/canvas.component.sdc.droost_theme.tab.yml
+index b97ac5f..b5f484e 100644
+--- a/config/sync/canvas.component.sdc.droost_theme.tab.yml
++++ b/config/sync/canvas.component.sdc.droost_theme.tab.yml
+@@ -1,6 +1,6 @@
+ uuid: 53720ed5-b55e-4d9d-831c-4df306b767a2
+ langcode: en
+-status: true
++status: false
+ dependencies:
+   theme:
+     - droost_theme
+diff --git a/config/sync/canvas.component.sdc.droost_theme.tabs.yml b/config/sync/canvas.component.sdc.droost_theme.tabs.yml
+index 7d0a463..d467bb1 100644
+--- a/config/sync/canvas.component.sdc.droost_theme.tabs.yml
++++ b/config/sync/canvas.component.sdc.droost_theme.tabs.yml
+@@ -1,6 +1,6 @@
+ uuid: 98ee84fa-248a-44ae-ae63-44173beb2aed
+ langcode: en
+-status: true
++status: false
+ dependencies:
+   theme:
+     - droost_theme
+diff --git a/config/sync/canvas.component.sdc.droost_theme.text.yml b/config/sync/canvas.component.sdc.droost_theme.text.yml
+index e1454a3..700c1a7 100644
+--- a/config/sync/canvas.component.sdc.droost_theme.text.yml
++++ b/config/sync/canvas.component.sdc.droost_theme.text.yml
+@@ -1,6 +1,6 @@
+ uuid: 6b5e5953-961f-4dd0-82fe-74a511e91846
+ langcode: en
+-status: true
++status: false
+ dependencies:
+   module:
+     - options
+diff --git a/config/sync/canvas.component.sdc.droost_theme.timeline.yml b/config/sync/canvas.component.sdc.droost_theme.timeline.yml
+index 313050f..535deaa 100644
+--- a/config/sync/canvas.component.sdc.droost_theme.timeline.yml
++++ b/config/sync/canvas.component.sdc.droost_theme.timeline.yml
+@@ -1,6 +1,6 @@
+ uuid: 54015c52-f22f-4cf6-9ace-9ea27fc43a76
+ langcode: en
+-status: true
++status: false
+ dependencies:
+   theme:
+     - droost_theme
+diff --git a/config/sync/canvas.component.sdc.droost_theme.timeline_item.yml b/config/sync/canvas.component.sdc.droost_theme.timeline_item.yml
+index 3ecdec5..909909d 100644
+--- a/config/sync/canvas.component.sdc.droost_theme.timeline_item.yml
++++ b/config/sync/canvas.component.sdc.droost_theme.timeline_item.yml
+@@ -1,6 +1,6 @@
+ uuid: 3e5f22ba-9d7c-46e5-85e1-2a06d70e65f7
+ langcode: en
+-status: true
++status: false
+ dependencies:
+   theme:
+     - droost_theme
+diff --git a/config/sync/core.extension.yml b/config/sync/core.extension.yml
+index 675ba2c..82cc0c1 100644
+--- a/config/sync/core.extension.yml
++++ b/config/sync/core.extension.yml
+@@ -100,6 +100,7 @@ module:
+   user: 0
+   view_password: 0
+   views_ui: 0
++  wildbills_site: 0
+   workflows: 0
+   yoast_seo: 0
+   eca_form: 1
+@@ -114,4 +115,5 @@ theme:
+   gin: 0
+   mercury: 0
+   droost_theme: 0
++  wildbills: 0
+ profile: minimal
+diff --git a/config/sync/metatag.metatag_defaults.front.yml b/config/sync/metatag.metatag_defaults.front.yml
+index f287d38..b2e2803 100644
+--- a/config/sync/metatag.metatag_defaults.front.yml
++++ b/config/sync/metatag.metatag_defaults.front.yml
+@@ -8,25 +8,25 @@ id: front
+ label: 'Front page'
+ tags:
+   canonical_url: '[site:url]'
+-  description: '[canvas_page:description|node:field_seo_description|node:field_description]'
++  description: "Browse sample inventory from Wild Bill's Used Cars, an independent used-car lot. Clear prices, plain answers, no pressure. Demo website."
+   image_src: '[canvas_page:image:entity:field_media_image:social_media_facebook|node:field_seo_image:entity:field_media_image:social_media_facebook|node:field_image:entity:field_media_image:social_media_facebook]'
+-  og_description: '[canvas_page:description|node:field_seo_description|node:field_description]'
++  og_description: "Browse sample inventory from Wild Bill's Used Cars, an independent used-car lot. Clear prices, plain answers, no pressure. Demo website."
+   og_image: '[canvas_page:image:entity:field_media_image:social_media_facebook|node:field_seo_image:entity:field_media_image:social_media_facebook|node:field_image:entity:field_media_image:social_media_facebook]'
+   og_image_alt: '[canvas_page:image:entity:field_media_image:alt|node:field_seo_image:entity:field_media_image:alt|node:field_image:entity:field_media_image:alt]'
+   og_image_height: '[canvas_page:image:entity:field_media_image:social_media_facebook:height|node:field_seo_image:entity:field_media_image:social_media_facebook:height|node:field_image:entity:field_media_image:social_media_facebook:height]'
+   og_image_type: '[canvas_page:image:entity:field_media_image:social_media_facebook:mimetype|node:field_seo_image:entity:field_media_image:social_media_facebook:mimetype|node:field_image:entity:field_media_image:social_media_facebook:mimetype]'
+   og_image_width: '[canvas_page:image:entity:field_media_image:social_media_facebook:width|node:field_seo_image:entity:field_media_image:social_media_facebook:width|node:field_image:entity:field_media_image:social_media_facebook:width]'
+   og_site_name: '[site:name]'
+-  og_title: '[canvas_page:title|node:field_seo_title|node:title]'
++  og_title: '[site:name] — [site:slogan]'
+   og_type: website
+   og_updated_time: '[node:changed:custom:c]'
+   og_url: '[site:url]'
+   referrer: unsafe-url
+   rights: 'Copyright © All rights reserved.'
+   shortlink: '[site:url]'
+-  title: '[canvas_page:title|node:field_seo_title|node:title] | [site:name]'
+-  twitter_cards_description: '[canvas_page:description|node:field_seo_description|node:field_description]'
++  title: '[site:name] — [site:slogan]'
++  twitter_cards_description: "Browse sample inventory from Wild Bill's Used Cars, an independent used-car lot. Clear prices, plain answers, no pressure. Demo website."
+   twitter_cards_image: '[canvas_page:image:entity:field_media_image:social_media_x|node:field_seo_image:entity:field_media_image:social_media_x|node:field_image:entity:field_media_image:social_media_x]'
+   twitter_cards_image_alt: '[canvas_page:image:entity:field_media_image:entity:alt|node:field_seo_image:entity:field_media_image:alt|node:field_image:entity:field_media_image:alt]'
+-  twitter_cards_title: '[canvas_page:title|node:field_seo_title|node:title]'
++  twitter_cards_title: '[site:name] — [site:slogan]'
+   twitter_cards_type: summary_large_image
+diff --git a/config/sync/system.site.yml b/config/sync/system.site.yml
+index bdbc20d..2995770 100644
+--- a/config/sync/system.site.yml
++++ b/config/sync/system.site.yml
+@@ -2,9 +2,9 @@ _core:
+   default_config_hash: HlN7eAN2N4JIHsYv56V4E7sqC9bS609KwvGFjyD_mgk
+ langcode: en
+ uuid: cd8029b0-b2d6-4240-af75-748717df8933
+-name: 'Drush Site-Install'
++name: "Wild Bill's Used Cars"
+ mail: admin@example.com
+-slogan: ''
++slogan: 'Straightforward used cars, trucks and SUVs'
+ page:
+   403: /user/login
+   404: ''
+diff --git a/config/sync/system.theme.yml b/config/sync/system.theme.yml
+index 7e900b8..2e555dc 100644
+--- a/config/sync/system.theme.yml
++++ b/config/sync/system.theme.yml
+@@ -1,4 +1,4 @@
+ _core:
+   default_config_hash: 6lQ55NXM9ysybMQ6NzJj4dtiQ1dAkOYxdDompa-r_kk
+ admin: gin
+-default: droost_theme
++default: wildbills
+diff --git a/config/sync/user.role.content_editor.yml b/config/sync/user.role.content_editor.yml
+index c441f88..90dfb5b 100644
+--- a/config/sync/user.role.content_editor.yml
++++ b/config/sync/user.role.content_editor.yml
+@@ -25,6 +25,7 @@ dependencies:
+     - scheduler
+     - system
+     - trash
++    - wildbills_site
+ _core:
+   default_config_hash: g-zSnaBXJnH7VoimReFb6KcLjIgHCU-hisiShtZ9hjQ
+ id: content_editor
+@@ -36,6 +37,7 @@ permissions:
+   - 'access content overview'
+   - 'access media overview'
+   - 'access trash'
++  - 'administer dealership details'
+   - 'administer menu'
+   - 'administer redirects'
+   - 'administer url aliases'

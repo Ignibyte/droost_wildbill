@@ -1,0 +1,27 @@
+uuid: 592cca8f-3394-4ad9-863a-9810b3b3e4ce
+langcode: en
+status: false
+dependencies:
+  theme:
+    - wildbills
+active_version: 464952b5ddca0042
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions: {  }
+    fallback_metadata:
+      slot_definitions:
+        header:
+          title: Header
+          description: 'The site header.'
+        content:
+          title: Content
+          description: "The page's main content."
+        footer:
+          title: Footer
+          description: 'The site footer.'
+label: 'Page shell'
+id: sdc.wildbills.page
+provider: wildbills
+source: sdc
+source_local_id: 'wildbills:page'

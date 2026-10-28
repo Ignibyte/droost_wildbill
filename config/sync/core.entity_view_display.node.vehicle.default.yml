@@ -1,0 +1,38 @@
+uuid: 084871cf-6eec-4a9f-a4b8-32f4a470d91d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.vehicle.field_body_style
+    - field.field.node.vehicle.field_color
+    - field.field.node.vehicle.field_condition
+    - field.field.node.vehicle.field_featured
+    - field.field.node.vehicle.field_make
+    - field.field.node.vehicle.field_mileage
+    - field.field.node.vehicle.field_model
+    - field.field.node.vehicle.field_photo
+    - field.field.node.vehicle.field_price
+    - field.field.node.vehicle.field_sale_status
+    - field.field.node.vehicle.field_stock_number
+    - field.field.node.vehicle.field_year
+    - node.type.vehicle
+id: node.vehicle.default
+targetEntityType: node
+bundle: vehicle
+mode: default
+content: {  }
+hidden:
+  content_moderation_control: true
+  field_body_style: true
+  field_color: true
+  field_condition: true
+  field_featured: true
+  field_make: true
+  field_mileage: true
+  field_model: true
+  field_photo: true
+  field_price: true
+  field_sale_status: true
+  field_stock_number: true
+  field_year: true
+  links: true

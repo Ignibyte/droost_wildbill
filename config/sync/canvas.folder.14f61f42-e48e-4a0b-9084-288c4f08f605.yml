@@ -1,0 +1,21 @@
+uuid: 14f61f42-e48e-4a0b-9084-288c4f08f605
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.block.project_browser_block.drupal_core
+    - canvas.component.block.project_browser_block.drupalorg_jsonapi
+    - canvas.component.block.project_browser_block.eca_guide_library
+    - canvas.component.block.project_browser_block.local_modules
+    - canvas.component.block.project_browser_block.recipes
+    - canvas.component.block.project_browser_block.recommended
+name: 'Project Browser'
+configEntityTypeId: component
+weight: 0
+items:
+  - block.project_browser_block.drupal_core
+  - block.project_browser_block.drupalorg_jsonapi
+  - block.project_browser_block.eca_guide_library
+  - block.project_browser_block.local_modules
+  - block.project_browser_block.recipes
+  - block.project_browser_block.recommended

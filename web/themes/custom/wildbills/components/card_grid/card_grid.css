@@ -1,0 +1,3 @@
+.wb-car-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 1.4rem; }
+.wb-cats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+@media (max-width: 760px) { .wb-cats { grid-template-columns: 1fr; } }

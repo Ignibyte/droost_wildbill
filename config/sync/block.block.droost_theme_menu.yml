@@ -1,0 +1,27 @@
+uuid: 380f9bed-dd7f-47f2-a1df-179965c4f8f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - droost_theme
+_core:
+  default_config_hash: XNwrlLxdnI4fVKmWYEiwdFH24gJQQDhL8VWu_qiAfEA
+id: droost_theme_menu
+theme: droost_theme
+region: header
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: menu
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

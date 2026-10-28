@@ -1,0 +1,16 @@
+<section class="wb-section wb-section--band">
+  <div class="wb-wrap">
+    {{ include('wildbills:section_heading', { eyebrow: eyebrow, heading: heading }, with_context = false) }}
+    <div class="wb-steps wb-reveal">
+      {%- set n = 0 %}
+      {%- for i in 1..4 %}
+        {%- set title = attribute(_context, 'step_' ~ i ~ '_title') %}
+        {%- set text = attribute(_context, 'step_' ~ i ~ '_text') %}
+        {%- if title %}
+          {%- set n = n + 1 %}
+      <div class="wb-step"><span class="wb-step-n">{{ '%02d'|format(n) }}</span><h3>{{ title }}</h3>{% if text %}<p>{{ text }}</p>{% endif %}</div>
+        {%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>

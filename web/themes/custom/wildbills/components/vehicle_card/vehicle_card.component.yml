@@ -1,0 +1,74 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Vehicle card
+description: "A car on the lot: its photo, one chip (Sale pending, else Featured, else its body style), year and body style, make and model, miles and colour, price, and Details. The vehicles View renders it for every listed car; it carries the facts the inventory filters on."
+group: "Wild Bill's inventory"
+status: stable
+props:
+  type: object
+  required:
+    - stock
+    - year
+    - make
+    - model
+    - price
+  properties:
+    stock:
+      type: integer
+      title: Stock number
+      description: The lot's number for the car; Details opens /vehicles?vehicle=<it>.
+      examples: [1]
+    year:
+      type: integer
+      title: Year
+      description: "The model year."
+      examples: [2021]
+    make:
+      type: string
+      title: Make
+      description: "The make's name."
+      examples: ['Ford']
+    model:
+      type: string
+      title: Model
+      description: "The model."
+      examples: ['F-150']
+    body_style:
+      type: string
+      title: Body style
+      description: The body style's name, as ?type= carries it.
+      examples: ['Truck']
+    price:
+      type: integer
+      title: Price
+      description: Whole dollars.
+      examples: [38900]
+    miles:
+      type: integer
+      title: Mileage
+      description: "The mileage."
+      examples: [42000]
+    color:
+      type: string
+      title: Color
+      description: "The maker's colour name."
+      examples: ['Magnetic Gray']
+    condition:
+      type: string
+      title: Condition
+      description: "The condition's label: Excellent, Good or Fair."
+      examples: ['Excellent']
+    featured:
+      type: boolean
+      title: Featured
+      description: "Featured cars come first and show a Featured chip."
+      examples: [true]
+    status:
+      type: string
+      title: Sale status
+      description: "Available, pending (shows a Sale pending chip) or sold (not listed)."
+      enum: ['available', 'pending', 'sold']
+      examples: ['available']
+slots:
+  photo:
+    title: Photo
+    description: The car's photo.

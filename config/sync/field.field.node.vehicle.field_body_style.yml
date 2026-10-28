@@ -1,0 +1,28 @@
+uuid: 8928a411-8944-4912-a062-09d3a07091e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_body_style
+    - node.type.vehicle
+    - taxonomy.vocabulary.body_style
+id: node.vehicle.field_body_style
+field_name: field_body_style
+entity_type: node
+bundle: vehicle
+label: 'Body style'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      body_style: body_style
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+field_type: entity_reference

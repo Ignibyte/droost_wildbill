@@ -1,0 +1,19 @@
+uuid: 8b70e716-2ca4-4dc9-adf6-8c7cfae0b4dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_plural_name
+    - taxonomy.vocabulary.body_style
+id: taxonomy_term.body_style.field_plural_name
+field_name: field_plural_name
+entity_type: taxonomy_term
+bundle: body_style
+label: 'Plural name'
+description: 'What the filter button and the home page tile say: "Trucks".'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

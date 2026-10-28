@@ -1,0 +1,150 @@
+uuid: 0942515d-6037-4e4d-ada1-b259f3b43aeb
+langcode: en
+status: false
+dependencies:
+  module:
+    - options
+  theme:
+    - wildbills
+active_version: bfc0d2f4cd07ac53
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        stock:
+          required: true
+          field_type: integer
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: number
+          default_value:
+            -
+              value: 1
+          expression: ℹ︎integer␟value
+          derived_schema_metadata: {  }
+        year:
+          required: true
+          field_type: integer
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: number
+          default_value:
+            -
+              value: 2021
+          expression: ℹ︎integer␟value
+          derived_schema_metadata: {  }
+        make:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Ford
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        model:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: F-150
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        body_style:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Truck
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        price:
+          required: true
+          field_type: integer
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: number
+          default_value:
+            -
+              value: 38900
+          expression: ℹ︎integer␟value
+          derived_schema_metadata: {  }
+        miles:
+          required: false
+          field_type: integer
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: number
+          default_value:
+            -
+              value: 42000
+          expression: ℹ︎integer␟value
+          derived_schema_metadata: {  }
+        color:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Magnetic Gray'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        condition:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Excellent
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        featured:
+          required: false
+          field_type: boolean
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: boolean_checkbox
+          default_value:
+            -
+              value: true
+          expression: ℹ︎boolean␟value
+          derived_schema_metadata: {  }
+        status:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: available
+          expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
+    fallback_metadata:
+      slot_definitions:
+        photo:
+          title: Photo
+          description: "The car's photo."
+label: 'Vehicle card'
+id: sdc.wildbills.vehicle_card
+provider: wildbills
+source: sdc
+source_local_id: 'wildbills:vehicle_card'

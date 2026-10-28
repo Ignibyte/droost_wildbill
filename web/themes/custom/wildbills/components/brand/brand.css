@@ -1,0 +1,5 @@
+.wb-brand { display: inline-flex; align-items: center; gap: .7rem; text-decoration: none; }
+.wb-brand-mark { width: 38px; height: 38px; border-radius: 11px; background: hsl(var(--wb-petrol)); color: hsl(var(--wb-paper)); display: grid; place-items: center; font-family: var(--wb-display); font-weight: 800; font-size: 1.05rem; letter-spacing: -.04em; position: relative; }
+.wb-brand-mark::after { content: ""; position: absolute; right: 6px; bottom: 6px; width: 6px; height: 6px; border-radius: 50%; background: hsl(var(--wb-sage)); }
+.wb-brand-name { font-family: var(--wb-display); font-weight: 700; font-size: 1.15rem; letter-spacing: -.03em; line-height: 1; }
+.wb-brand-name small { display: block; font-family: var(--wb-mono); font-weight: 400; font-size: .64rem; letter-spacing: .14em; text-transform: uppercase; color: hsl(var(--wb-ink-3)); margin-top: 4px; }

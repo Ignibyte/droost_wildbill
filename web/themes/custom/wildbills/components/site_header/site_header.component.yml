@@ -1,0 +1,71 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Site header
+description: "The sticky site header: the demo bar, the brand, the main menu with the current page marked, the Browse cars button, and below 860px a menu button that opens the links and a call button. The Site header block renders it from the dealership details and the main menu."
+group: "Wild Bill's frame"
+status: stable
+props:
+  type: object
+  properties:
+    brand_mark:
+      type: string
+      title: Brand mark
+      description: The letters in the square badge.
+      examples: ['WB']
+    brand_name:
+      type: string
+      title: Brand name
+      description: The first line of the name.
+      examples: ["Wild Bill's"]
+    brand_tagline:
+      type: string
+      title: Brand tagline
+      description: The small second line.
+      examples: ['Used Cars']
+    brand_label:
+      type: string
+      title: Brand link's accessible name
+      description: What a screen reader says for the brand link.
+      examples: ["Wild Bill's Used Cars, home"]
+    home_url:
+      type: string
+      format: uri-reference
+      title: Home link
+      description: The front page.
+      examples: ['/']
+    cta_label:
+      type: string
+      title: Button label
+      description: The button at the end of the bar.
+      examples: ['Browse cars']
+    cta_url:
+      type: string
+      format: uri-reference
+      title: Button link
+      description: Where the button goes.
+      examples: ['/vehicles']
+    phone:
+      type: string
+      title: Phone
+      description: The number the mobile menu's call button shows.
+      examples: ['(555) 123-4567']
+    phone_href:
+      type: string
+      title: Phone link
+      description: The call button's tel link.
+      examples: ['tel:+15551234567']
+    demo_notices:
+      type: boolean
+      title: Demo notices
+      description: Shows the demo bar and the "(sample)" label.
+      examples: [true]
+slots:
+  links:
+    title: Links
+    description: The main menu's links, as Navigation link components placed in the bar.
+  mobile_links:
+    title: Mobile links
+    description: The same links, as Navigation link components placed in the mobile menu.
+libraryOverrides:
+  dependencies:
+    - core/drupal
+    - core/once

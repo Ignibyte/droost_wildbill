@@ -1,0 +1,25 @@
+name: "Wild Bill's"
+type: theme
+description: "Wild Bill's Used Cars: the approved forest-green and cream design, as a sub-theme of Droost Theme. Its markup is single directory components."
+package: "Wild Bill's"
+core_version_requirement: ^11
+base theme: droost_theme
+# Regions are not inherited (droost_theme README, "Restyling without editing
+# contrib"): the three the page shell renders, restated.
+regions:
+  header: Header
+  content: Content
+  footer: Footer
+libraries:
+  - wildbills/fonts
+  - wildbills/tokens
+  - wildbills/base
+  - wildbills/reveal
+# The design is its own stylesheet (the source's site.css), not daisyUI: drop
+# droost_theme's Tailwind/daisyUI delivery in both CSS modes, so the source's
+# rules meet the browser's defaults exactly as they did in the source. The
+# theme's own components never use a daisyUI class.
+libraries-override:
+  droost_theme/global: false
+  droost_theme/jit: false
+  droost_theme/tokens: false

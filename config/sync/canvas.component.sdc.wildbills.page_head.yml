@@ -1,0 +1,54 @@
+uuid: 968911cf-e399-4854-9ca1-4407be78ab4f
+langcode: en
+status: true
+dependencies:
+  theme:
+    - wildbills
+active_version: 8fe27ba1a1ee6c82
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        eyebrow:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Sample inventory · not live stock'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        heading:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'The lot.'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        lede:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Every car with its price, mileage and color. Narrow it down, open one up, and send a question with the details already filled in.'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'Page heading'
+id: sdc.wildbills.page_head
+provider: wildbills
+source: sdc
+source_local_id: 'wildbills:page_head'

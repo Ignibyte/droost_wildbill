@@ -1,0 +1,24 @@
+uuid: 1d721198-d9c3-4d83-b2d5-ab00cad99d3b
+langcode: en
+status: true
+dependencies:
+  module:
+    - wildbills_site
+  theme:
+    - wildbills
+id: wildbills_site_footer
+theme: wildbills
+region: footer
+weight: 0
+provider: null
+plugin: wildbills_site_footer
+settings:
+  id: wildbills_site_footer
+  label: 'Site footer'
+  label_display: '0'
+  provider: wildbills_site
+  brand_mark: WB
+  brand_name: "Wild Bill's"
+  brand_tagline: 'Used Cars'
+  about: 'An independent used-car lot. Look at the car, ask your questions, decide in your own time.'
+visibility: {  }

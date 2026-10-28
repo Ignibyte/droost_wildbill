@@ -1,0 +1,78 @@
+{
+  "items": [
+    {
+      "uuid": "3c0e7a52-6b1d-4f0a-9e57-2a6c3f0b0301",
+      "component_id": "sdc.wildbills.page_head",
+      "inputs": {
+        "eyebrow": "Visit",
+        "heading": "Come see it in person.",
+        "lede": "Photos only tell you so much. Stop by during open hours, walk the lot and take one for a drive."
+      }
+    },
+    {
+      "uuid": "3c0e7a52-6b1d-4f0a-9e57-2a6c3f0b0302",
+      "component_id": "sdc.wildbills.location_grid",
+      "inputs": {}
+    },
+    {
+      "uuid": "3c0e7a52-6b1d-4f0a-9e57-2a6c3f0b0303",
+      "component_id": "sdc.wildbills.map_card",
+      "parent_uuid": "3c0e7a52-6b1d-4f0a-9e57-2a6c3f0b0302",
+      "slot": "main",
+      "inputs": {
+        "pin_label": "Wild Bill's",
+        "map_label": "Illustrative map graphic with a pin marking the sample dealership address",
+        "caption": "Illustrative graphic, not a real map. The address below is a sample placeholder.",
+        "google_label": "Open in Google Maps",
+        "apple_label": "Apple Maps"
+      }
+    },
+    {
+      "uuid": "3c0e7a52-6b1d-4f0a-9e57-2a6c3f0b0304",
+      "component_id": "sdc.wildbills.info_card",
+      "parent_uuid": "3c0e7a52-6b1d-4f0a-9e57-2a6c3f0b0302",
+      "slot": "main",
+      "inputs": {
+        "heading": "Address",
+        "detail": "address"
+      }
+    },
+    {
+      "uuid": "3c0e7a52-6b1d-4f0a-9e57-2a6c3f0b0305",
+      "component_id": "sdc.wildbills.info_card",
+      "parent_uuid": "3c0e7a52-6b1d-4f0a-9e57-2a6c3f0b0302",
+      "slot": "main",
+      "inputs": {
+        "heading": "Before you head over",
+        "detail": "none",
+        "text": "Call or email to confirm the car you want to see is still on the lot, and bring your driver's license for a test drive.",
+        "link_label": "Ask about a test drive",
+        "link_url": "/contact?topic=Test%20drive"
+      }
+    },
+    {
+      "uuid": "3c0e7a52-6b1d-4f0a-9e57-2a6c3f0b0306",
+      "component_id": "sdc.wildbills.hours_table",
+      "parent_uuid": "3c0e7a52-6b1d-4f0a-9e57-2a6c3f0b0302",
+      "slot": "aside",
+      "inputs": {
+        "heading": "Hours",
+        "checking_label": "Checking hours…",
+        "note": "Status uses the dealership's local time."
+      }
+    },
+    {
+      "uuid": "3c0e7a52-6b1d-4f0a-9e57-2a6c3f0b0307",
+      "component_id": "sdc.wildbills.closing_cta",
+      "parent_uuid": "3c0e7a52-6b1d-4f0a-9e57-2a6c3f0b0302",
+      "slot": "aside",
+      "inputs": {
+        "layout": "panel",
+        "heading": "Shortlist first.",
+        "text": "Browse the lot online so you know which cars to look at when you arrive.",
+        "primary_label": "Browse inventory",
+        "primary_url": "/vehicles"
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+uuid: 8e41a304-a851-4c5e-ad7a-f83bdceb2871
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_color
+    - node.type.vehicle
+id: node.vehicle.field_color
+field_name: field_color
+entity_type: node
+bundle: vehicle
+label: Color
+description: 'The maker''s colour name: "Magnetic Gray".'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

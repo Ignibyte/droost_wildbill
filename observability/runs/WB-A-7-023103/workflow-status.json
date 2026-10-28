@@ -1,0 +1,1158 @@
+{
+    "relay": null,
+    "levers": {
+        "provenance": "file",
+        "preset": "high",
+        "mode": "agentic",
+        "enforcement": "hard",
+        "require_run": "hard",
+        "custom_code": [],
+        "flow": "strict",
+        "max_loops": 5,
+        "follow_ups": "auto",
+        "rules": {
+            "written": {
+                "house": [
+                    {
+                        "id": "HR1",
+                        "rule": "New markup lives in an SDC component",
+                        "judge": "gate",
+                        "check": "sdc_markup"
+                    },
+                    {
+                        "id": "HR2",
+                        "rule": "A landing page is a Canvas page, one component per section, written with droost/bin/canvas tree:set",
+                        "judge": "seeker"
+                    }
+                ]
+            },
+            "by_case": {
+                "none": {
+                    "case": "none",
+                    "kinds": {
+                        "page": {
+                            "owners": [
+                                "entity_view_display",
+                                "route"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "list_section": {
+                            "owners": [
+                                "view_block"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "collection": {
+                            "owners": [
+                                "view_page",
+                                "list_builder"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "detail": {
+                            "owners": [
+                                "entity_view_display"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "form": {
+                            "owners": [
+                                "webform"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "settings": {
+                            "owners": [
+                                "config_form"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "resource": {
+                            "owners": [
+                                "route",
+                                "view_page"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        }
+                    },
+                    "editor_proof": {
+                        "role": "content_editor",
+                        "mode": "off",
+                        "source": "default"
+                    },
+                    "code_components": {
+                        "mode": "off",
+                        "source": "default"
+                    }
+                },
+                "sdc": {
+                    "case": "sdc",
+                    "kinds": {
+                        "page": {
+                            "owners": [
+                                "canvas_page"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "list_section": {
+                            "owners": [
+                                "view_block"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "collection": {
+                            "owners": [
+                                "view_page",
+                                "list_builder"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "detail": {
+                            "owners": [
+                                "entity_view_display",
+                                "content_template"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "form": {
+                            "owners": [
+                                "webform"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "settings": {
+                            "owners": [
+                                "config_form"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "resource": {
+                            "owners": [
+                                "route",
+                                "view_page"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        }
+                    },
+                    "editor_proof": {
+                        "role": "content_editor",
+                        "mode": "report",
+                        "source": "default"
+                    },
+                    "code_components": {
+                        "mode": "report",
+                        "source": "default"
+                    }
+                },
+                "code": {
+                    "case": "code",
+                    "kinds": {
+                        "page": {
+                            "owners": [
+                                "canvas_page"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "list_section": {
+                            "owners": [
+                                "view_block"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "collection": {
+                            "owners": [
+                                "view_page",
+                                "list_builder"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "detail": {
+                            "owners": [
+                                "entity_view_display",
+                                "content_template"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "form": {
+                            "owners": [
+                                "webform"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "settings": {
+                            "owners": [
+                                "config_form"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        },
+                        "resource": {
+                            "owners": [
+                                "route",
+                                "view_page"
+                            ],
+                            "mode": "report",
+                            "source": "default"
+                        }
+                    },
+                    "editor_proof": {
+                        "role": "content_editor",
+                        "mode": "report",
+                        "source": "default"
+                    },
+                    "code_components": {
+                        "mode": "off",
+                        "source": "default"
+                    }
+                }
+            }
+        },
+        "phases": [
+            "plan",
+            "code",
+            "test",
+            "complete"
+        ],
+        "gates": {
+            "phpcs": {
+                "on": true,
+                "standard": "Drupal,DrupalPractice",
+                "scope": "ticket",
+                "paths": "web/modules/custom,web/themes/custom"
+            },
+            "phpstan": {
+                "on": true,
+                "level": 6,
+                "scope": "ticket",
+                "paths": "web/modules/custom,web/themes/custom"
+            },
+            "eslint": {
+                "on": false,
+                "scope": "ticket"
+            },
+            "stylelint": {
+                "on": false,
+                "scope": "ticket"
+            },
+            "prettier": {
+                "on": false,
+                "scope": "ticket"
+            },
+            "phpunit": {
+                "on": true,
+                "in_diff": true
+            },
+            "mutation": {
+                "on": false,
+                "msi_min": 0
+            },
+            "playwright": {
+                "on": true,
+                "required": true
+            },
+            "parity": {
+                "on": true,
+                "required": true,
+                "scope": "frame",
+                "pages": "/,/vehicles,/location,/contact",
+                "routes": "/,/vehicles,/location,/contact"
+            },
+            "coverage": {
+                "on": false,
+                "min": 0
+            },
+            "house_rules": {
+                "on": true
+            },
+            "wiki_fresh": {
+                "on": true,
+                "cover_diff": true
+            },
+            "custom:component_lint": {
+                "on": true,
+                "phase": "code",
+                "run": "droost/gates/component-lint.php",
+                "timeout": 300
+            }
+        },
+        "phase_gates": {
+            "plan": [],
+            "code": [
+                "phpcs",
+                "phpstan",
+                "eslint",
+                "stylelint",
+                "prettier",
+                "house_rules",
+                "custom:component_lint"
+            ],
+            "test": [
+                "phpcs",
+                "phpstan",
+                "eslint",
+                "prettier",
+                "phpunit",
+                "mutation",
+                "playwright",
+                "parity",
+                "coverage"
+            ],
+            "complete": [
+                "phpcs",
+                "phpstan",
+                "eslint",
+                "stylelint",
+                "prettier",
+                "phpunit",
+                "mutation",
+                "playwright",
+                "parity",
+                "coverage",
+                "house_rules",
+                "wiki_fresh",
+                "custom:component_lint"
+            ]
+        },
+        "max_gate_retries": 2,
+        "seekers": true,
+        "seeker_rounds": 1,
+        "seeker_holds": "critical",
+        "seeker_at_complete": false,
+        "work_item": null,
+        "baseline": true,
+        "hooks": [],
+        "walls": [],
+        "operator_only": []
+    },
+    "baseline": {
+        "present": false,
+        "honoured": false,
+        "lever": true,
+        "dir": "droost/baseline"
+    },
+    "toolchain": {
+        "phpcs": {
+            "on": true,
+            "binary": "vendor/bin/phpcs",
+            "present": true
+        },
+        "phpstan": {
+            "on": true,
+            "binary": "vendor/bin/phpstan",
+            "present": true
+        },
+        "eslint": {
+            "on": false,
+            "binary": "node_modules/.bin/eslint",
+            "present": false
+        },
+        "stylelint": {
+            "on": false,
+            "binary": "node_modules/.bin/stylelint",
+            "present": false
+        },
+        "prettier": {
+            "on": false,
+            "binary": "node_modules/.bin/prettier",
+            "present": false
+        },
+        "phpunit": {
+            "on": true,
+            "binary": "vendor/bin/phpunit",
+            "present": true,
+            "suite_config": true
+        },
+        "mutation": {
+            "on": false,
+            "binary": "vendor/bin/infection",
+            "present": false
+        },
+        "playwright": {
+            "on": true,
+            "binary": "node_modules/.bin/playwright",
+            "present": true
+        },
+        "parity": {
+            "on": true,
+            "binary": "<site>/tools/droost/vendor/droost/workflow/bin/droost-parity",
+            "present": true
+        },
+        "coverage": {
+            "on": false,
+            "binary": "vendor/bin/phpunit",
+            "present": true,
+            "suite_config": true
+        },
+        "house_rules": {
+            "on": true,
+            "binary": "vendor/bin/house_rules",
+            "present": false
+        },
+        "wiki_fresh": {
+            "on": true,
+            "binary": "vendor/bin/droost",
+            "present": false
+        }
+    },
+    "deprecations": [],
+    "run": {
+        "run_id": "run-36776d8c9d4c",
+        "archived": true,
+        "started_at": "2026-10-23T06:40:44+00:00",
+        "preset": "high",
+        "enforcement": {
+            "requested": "hard",
+            "effective": "hard",
+            "reason": "the declared host runs the pack hooks"
+        },
+        "effective_mode": "agentic",
+        "current_phase": null,
+        "seekers": true,
+        "seeker_rounds": 1,
+        "seeker_holds": "critical",
+        "seeker_at_complete": false,
+        "seeker": null,
+        "seeker_history": [
+            {
+                "status": "clean",
+                "open": 3,
+                "critical": 0,
+                "high": 0,
+                "medium": 0,
+                "low": 3,
+                "observations": 1,
+                "self_reviewed": false,
+                "phase": "code",
+                "dispatch": "verified",
+                "reported_at": "2026-10-23T07:12:04+00:00"
+            },
+            {
+                "status": "clean",
+                "open": 0,
+                "critical": 0,
+                "high": 0,
+                "medium": 0,
+                "low": 3,
+                "observations": 0,
+                "self_reviewed": true,
+                "phase": "code",
+                "dispatch": "none",
+                "reported_at": "2026-10-23T07:14:56+00:00"
+            }
+        ],
+        "spec": "droost/droost-workflow/spec-r04-contact.md",
+        "criteria": {
+            "total": 23,
+            "verified": [
+                "AC-1",
+                "AC-2",
+                "AC-3",
+                "AC-4",
+                "AC-5",
+                "AC-6",
+                "AC-7",
+                "AC-8",
+                "AC-9",
+                "AC-10",
+                "AC-11",
+                "AC-12",
+                "AC-13",
+                "AC-14",
+                "AC-15",
+                "AC-16",
+                "AC-17",
+                "AC-18",
+                "AC-19",
+                "AC-20",
+                "AC-21",
+                "AC-22",
+                "AC-23"
+            ],
+            "manual": [],
+            "unverified": [],
+            "unnamed": [],
+            "misshapen": [],
+            "column_missing": false,
+            "source": "declared"
+        },
+        "gate_waivers": [],
+        "browser": "none",
+        "tasks": "claude-code",
+        "base_commit": "a975882b736f64b319bac7cda877f7436c9c6143",
+        "baseline_hash": null,
+        "rule_files": {
+            "droost/agents.md": "f7ed07f2cf5602ae88d348ae1b3f978b81f05ee99dceda1065c3fc54c4507092",
+            "droost/gates/component-lint.php": "cc2402f2648ee05d647db73b603d19723f94ff871ef793e9920d851211b960c5"
+        },
+        "work_item": {
+            "id": "R04",
+            "source": "declared",
+            "number": null,
+            "title": null,
+            "status": null,
+            "type": null,
+            "path": null
+        },
+        "phases": {
+            "plan": "passed",
+            "code": "passed",
+            "test": "passed",
+            "complete": "passed"
+        },
+        "phase_gates": {
+            "plan": [],
+            "code": [
+                "phpcs",
+                "phpstan",
+                "eslint",
+                "stylelint",
+                "prettier",
+                "house_rules",
+                "custom:component_lint"
+            ],
+            "test": [
+                "phpcs",
+                "phpstan",
+                "eslint",
+                "prettier",
+                "phpunit",
+                "mutation",
+                "playwright",
+                "parity",
+                "coverage"
+            ],
+            "complete": [
+                "phpcs",
+                "phpstan",
+                "eslint",
+                "stylelint",
+                "prettier",
+                "phpunit",
+                "mutation",
+                "playwright",
+                "parity",
+                "coverage",
+                "house_rules",
+                "wiki_fresh",
+                "custom:component_lint"
+            ]
+        },
+        "gate_reports": {
+            "plan": {
+                "phase": "plan",
+                "advance": true,
+                "tally": {
+                    "passed": 0,
+                    "labelled": 0,
+                    "failed": 0,
+                    "reported": 0,
+                    "skipped-no-site": 0,
+                    "error-tool-missing": 0,
+                    "error-tool-failed": 0,
+                    "off": 0,
+                    "waived": 0
+                },
+                "gates": []
+            },
+            "code": {
+                "phase": "code",
+                "advance": true,
+                "tally": {
+                    "passed": 4,
+                    "labelled": 0,
+                    "failed": 0,
+                    "reported": 0,
+                    "skipped-no-site": 0,
+                    "error-tool-missing": 0,
+                    "error-tool-failed": 0,
+                    "off": 3,
+                    "waived": 0
+                },
+                "gates": [
+                    {
+                        "gate": "phpcs",
+                        "status": "passed",
+                        "exit_code": 0,
+                        "duration_ms": 3513,
+                        "summary": "phpcs passed \u2014 ticket scope: 10 file(s) this run changed, not the whole configured set",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": null,
+                        "invocation": "<site>/vendor/bin/phpcs -q --report=json --standard=Drupal,DrupalPractice --extensions=php,module,install,inc,theme,profile,engine --ignore=*/node_modules/*,*/vendor/*,*/.claude/*,*/droost/droost-workflow/*,*/droost/baseline/*,*/.droost-workflow/* web/modules/custom/wildbills_site/src/Hook/WildbillsSiteHooks.php web/modules/custom/wildbills_site/src/HoursSummary.php web/modules/custom/wildbills_site/src/InquiryDetails.php web/modules/custom/wildbills_site/src/Inventory.php web/modules/custom/wildbills_site/src/LocationDetails.php web/modules/custom/wildbills_site/tests/src/Unit/HoursSummaryTest.php web/modules/custom/wildbills_site/tests/src/Unit/InquiryDetailsTest.php web/modules/custom/wildbills_site/tests/src/Unit/LocationDetailsTest.php web/modules/custom/wildbills_site/tests/src/Unit/WildbillsSiteHooksTest.php web/modules/custom/wildbills_site/wildbills_site.deploy.php",
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "phpstan",
+                        "status": "passed",
+                        "exit_code": 0,
+                        "duration_ms": 21753,
+                        "summary": "phpstan passed \u2014 ticket scope: 10 file(s) this run changed, not the whole configured set",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": null,
+                        "invocation": "<site>/vendor/bin/phpstan analyse --no-progress --error-format=json --level=6 --memory-limit=1G web/modules/custom/wildbills_site/src/Hook/WildbillsSiteHooks.php web/modules/custom/wildbills_site/src/HoursSummary.php web/modules/custom/wildbills_site/src/InquiryDetails.php web/modules/custom/wildbills_site/src/Inventory.php web/modules/custom/wildbills_site/src/LocationDetails.php web/modules/custom/wildbills_site/tests/src/Unit/HoursSummaryTest.php web/modules/custom/wildbills_site/tests/src/Unit/InquiryDetailsTest.php web/modules/custom/wildbills_site/tests/src/Unit/LocationDetailsTest.php web/modules/custom/wildbills_site/tests/src/Unit/WildbillsSiteHooksTest.php web/modules/custom/wildbills_site/wildbills_site.deploy.php",
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false,
+                        "previous_attempts": [
+                            {
+                                "status": "failed",
+                                "exit_code": 1,
+                                "duration_ms": 4853,
+                                "summary": "phpstan (level 6) failed (exit 1): 2 errors, at web/modules/custom/wildbills_site/src/InquiryDetails.php:86, web/modules/custom/wildbills_site/tests/src/Unit/InquiryDetailsTest.php:128 \u2014 ticket scope: 10 file(s) this run changed, not the whole configured set"
+                            }
+                        ]
+                    },
+                    {
+                        "gate": "eslint",
+                        "status": "off",
+                        "exit_code": null,
+                        "duration_ms": null,
+                        "summary": "off \u2014 by preset high",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": "by preset high",
+                        "invocation": null,
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "stylelint",
+                        "status": "off",
+                        "exit_code": null,
+                        "duration_ms": null,
+                        "summary": "off \u2014 by preset high",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": "by preset high",
+                        "invocation": null,
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "prettier",
+                        "status": "off",
+                        "exit_code": null,
+                        "duration_ms": null,
+                        "summary": "off \u2014 by preset high",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": "by preset high",
+                        "invocation": null,
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "house_rules",
+                        "status": "passed",
+                        "exit_code": 0,
+                        "duration_ms": 1,
+                        "summary": "house_rules passed \u2014 HR1 held (HR1 read 15 added file(s))",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": null,
+                        "invocation": "house rules: HR1",
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "custom:component_lint",
+                        "status": "passed",
+                        "exit_code": 0,
+                        "duration_ms": 4747,
+                        "summary": "custom:component_lint passed \u2014 component_lint passed: 26 custom SDC(s) meet Canvas's requirements (0 advisory(ies), which never fail it).",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": null,
+                        "invocation": "run droost/gates/component-lint.php",
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    }
+                ]
+            },
+            "test": {
+                "phase": "test",
+                "advance": true,
+                "tally": {
+                    "passed": 5,
+                    "labelled": 0,
+                    "failed": 0,
+                    "reported": 0,
+                    "skipped-no-site": 0,
+                    "error-tool-missing": 0,
+                    "error-tool-failed": 0,
+                    "off": 4,
+                    "waived": 0
+                },
+                "gates": [
+                    {
+                        "gate": "phpcs",
+                        "status": "passed",
+                        "exit_code": 0,
+                        "duration_ms": 532,
+                        "summary": "phpcs passed \u2014 ticket scope: 10 file(s) this run changed, not the whole configured set",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": null,
+                        "invocation": "<site>/vendor/bin/phpcs -q --report=json --standard=Drupal,DrupalPractice --extensions=php,module,install,inc,theme,profile,engine --ignore=*/node_modules/*,*/vendor/*,*/.claude/*,*/droost/droost-workflow/*,*/droost/baseline/*,*/.droost-workflow/* web/modules/custom/wildbills_site/src/Hook/WildbillsSiteHooks.php web/modules/custom/wildbills_site/src/HoursSummary.php web/modules/custom/wildbills_site/src/InquiryDetails.php web/modules/custom/wildbills_site/src/Inventory.php web/modules/custom/wildbills_site/src/LocationDetails.php web/modules/custom/wildbills_site/tests/src/Unit/HoursSummaryTest.php web/modules/custom/wildbills_site/tests/src/Unit/InquiryDetailsTest.php web/modules/custom/wildbills_site/tests/src/Unit/LocationDetailsTest.php web/modules/custom/wildbills_site/tests/src/Unit/WildbillsSiteHooksTest.php web/modules/custom/wildbills_site/wildbills_site.deploy.php",
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "phpstan",
+                        "status": "passed",
+                        "exit_code": 0,
+                        "duration_ms": 3637,
+                        "summary": "phpstan passed \u2014 ticket scope: 10 file(s) this run changed, not the whole configured set",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": null,
+                        "invocation": "<site>/vendor/bin/phpstan analyse --no-progress --error-format=json --level=6 --memory-limit=1G web/modules/custom/wildbills_site/src/Hook/WildbillsSiteHooks.php web/modules/custom/wildbills_site/src/HoursSummary.php web/modules/custom/wildbills_site/src/InquiryDetails.php web/modules/custom/wildbills_site/src/Inventory.php web/modules/custom/wildbills_site/src/LocationDetails.php web/modules/custom/wildbills_site/tests/src/Unit/HoursSummaryTest.php web/modules/custom/wildbills_site/tests/src/Unit/InquiryDetailsTest.php web/modules/custom/wildbills_site/tests/src/Unit/LocationDetailsTest.php web/modules/custom/wildbills_site/tests/src/Unit/WildbillsSiteHooksTest.php web/modules/custom/wildbills_site/wildbills_site.deploy.php",
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "eslint",
+                        "status": "off",
+                        "exit_code": null,
+                        "duration_ms": null,
+                        "summary": "off \u2014 by preset high",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": "by preset high",
+                        "invocation": null,
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "prettier",
+                        "status": "off",
+                        "exit_code": null,
+                        "duration_ms": null,
+                        "summary": "off \u2014 by preset high",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": "by preset high",
+                        "invocation": null,
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "phpunit",
+                        "status": "passed",
+                        "exit_code": 0,
+                        "duration_ms": 4514,
+                        "summary": "phpunit passed \u2014 72 test(s), 138 assertion(s)",
+                        "findings": [
+                            {
+                                "key": "totals",
+                                "detail": {
+                                    "tests": 72,
+                                    "assertions": 138
+                                }
+                            }
+                        ],
+                        "truncated": false,
+                        "skip_reason": null,
+                        "invocation": "<site>/vendor/bin/phpunit --no-progress --do-not-fail-on-empty-test-suite",
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "mutation",
+                        "status": "off",
+                        "exit_code": null,
+                        "duration_ms": null,
+                        "summary": "off \u2014 by preset high",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": "by preset high",
+                        "invocation": null,
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "playwright",
+                        "status": "passed",
+                        "exit_code": 0,
+                        "duration_ms": 380104,
+                        "summary": "playwright passed \u2014 71 passed",
+                        "findings": [
+                            {
+                                "key": "totals",
+                                "detail": {
+                                    "passed": 71,
+                                    "failed": 0,
+                                    "flaky": 0,
+                                    "skipped": 0,
+                                    "interrupted": 0,
+                                    "did not run": 0
+                                }
+                            }
+                        ],
+                        "truncated": false,
+                        "skip_reason": null,
+                        "invocation": "<site>/node_modules/.bin/playwright test",
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "parity",
+                        "status": "passed",
+                        "exit_code": 0,
+                        "duration_ms": 35734,
+                        "summary": "parity passed \u2014 8 view(s) (4 route(s) at 1280 and 390px) as the reference against http://localhost:5399 (captured 2026-10-23T05:42:52.668Z) (D1\u2013D7, frame scope; page scope for /, /vehicles, /location, /contact at 1280px; live texts not judged (they follow the clock): 8 on /location); judged at https://wildbills-a.ddev.site (from .ddev/config.yaml); set aside by decision: \"Status uses your device's clock.\" on /location (Q8); added by decision: \"Status uses the dealership's local time.\" after \"Closed\" on /location (Q8)",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": null,
+                        "invocation": "<site>/tools/droost/vendor/droost/workflow/bin/droost-parity judge --reference droost/parity --scope frame --pages /,/vehicles,/location,/contact --routes /,/vehicles,/location,/contact --json",
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "coverage",
+                        "status": "off",
+                        "exit_code": null,
+                        "duration_ms": null,
+                        "summary": "off \u2014 by preset high",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": "by preset high",
+                        "invocation": null,
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    }
+                ]
+            },
+            "complete": {
+                "phase": "complete",
+                "advance": true,
+                "tally": {
+                    "passed": 8,
+                    "labelled": 0,
+                    "failed": 0,
+                    "reported": 0,
+                    "skipped-no-site": 0,
+                    "error-tool-missing": 0,
+                    "error-tool-failed": 0,
+                    "off": 5,
+                    "waived": 0
+                },
+                "gates": [
+                    {
+                        "gate": "phpcs",
+                        "status": "passed",
+                        "exit_code": 0,
+                        "duration_ms": 531,
+                        "summary": "phpcs passed \u2014 ticket scope: 10 file(s) this run changed, not the whole configured set",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": null,
+                        "invocation": "<site>/vendor/bin/phpcs -q --report=json --standard=Drupal,DrupalPractice --extensions=php,module,install,inc,theme,profile,engine --ignore=*/node_modules/*,*/vendor/*,*/.claude/*,*/droost/droost-workflow/*,*/droost/baseline/*,*/.droost-workflow/* web/modules/custom/wildbills_site/src/Hook/WildbillsSiteHooks.php web/modules/custom/wildbills_site/src/HoursSummary.php web/modules/custom/wildbills_site/src/InquiryDetails.php web/modules/custom/wildbills_site/src/Inventory.php web/modules/custom/wildbills_site/src/LocationDetails.php web/modules/custom/wildbills_site/tests/src/Unit/HoursSummaryTest.php web/modules/custom/wildbills_site/tests/src/Unit/InquiryDetailsTest.php web/modules/custom/wildbills_site/tests/src/Unit/LocationDetailsTest.php web/modules/custom/wildbills_site/tests/src/Unit/WildbillsSiteHooksTest.php web/modules/custom/wildbills_site/wildbills_site.deploy.php",
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "phpstan",
+                        "status": "passed",
+                        "exit_code": 0,
+                        "duration_ms": 3729,
+                        "summary": "phpstan passed \u2014 ticket scope: 10 file(s) this run changed, not the whole configured set",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": null,
+                        "invocation": "<site>/vendor/bin/phpstan analyse --no-progress --error-format=json --level=6 --memory-limit=1G web/modules/custom/wildbills_site/src/Hook/WildbillsSiteHooks.php web/modules/custom/wildbills_site/src/HoursSummary.php web/modules/custom/wildbills_site/src/InquiryDetails.php web/modules/custom/wildbills_site/src/Inventory.php web/modules/custom/wildbills_site/src/LocationDetails.php web/modules/custom/wildbills_site/tests/src/Unit/HoursSummaryTest.php web/modules/custom/wildbills_site/tests/src/Unit/InquiryDetailsTest.php web/modules/custom/wildbills_site/tests/src/Unit/LocationDetailsTest.php web/modules/custom/wildbills_site/tests/src/Unit/WildbillsSiteHooksTest.php web/modules/custom/wildbills_site/wildbills_site.deploy.php",
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "eslint",
+                        "status": "off",
+                        "exit_code": null,
+                        "duration_ms": null,
+                        "summary": "off \u2014 by preset high",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": "by preset high",
+                        "invocation": null,
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "stylelint",
+                        "status": "off",
+                        "exit_code": null,
+                        "duration_ms": null,
+                        "summary": "off \u2014 by preset high",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": "by preset high",
+                        "invocation": null,
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "prettier",
+                        "status": "off",
+                        "exit_code": null,
+                        "duration_ms": null,
+                        "summary": "off \u2014 by preset high",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": "by preset high",
+                        "invocation": null,
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "phpunit",
+                        "status": "passed",
+                        "exit_code": 0,
+                        "duration_ms": 1318,
+                        "summary": "phpunit passed \u2014 72 test(s), 138 assertion(s)",
+                        "findings": [
+                            {
+                                "key": "totals",
+                                "detail": {
+                                    "tests": 72,
+                                    "assertions": 138
+                                }
+                            }
+                        ],
+                        "truncated": false,
+                        "skip_reason": null,
+                        "invocation": "<site>/vendor/bin/phpunit --no-progress --do-not-fail-on-empty-test-suite",
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "mutation",
+                        "status": "off",
+                        "exit_code": null,
+                        "duration_ms": null,
+                        "summary": "off \u2014 by preset high",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": "by preset high",
+                        "invocation": null,
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "playwright",
+                        "status": "passed",
+                        "exit_code": 0,
+                        "duration_ms": 351639,
+                        "summary": "playwright passed \u2014 71 passed",
+                        "findings": [
+                            {
+                                "key": "totals",
+                                "detail": {
+                                    "passed": 71,
+                                    "failed": 0,
+                                    "flaky": 0,
+                                    "skipped": 0,
+                                    "interrupted": 0,
+                                    "did not run": 0
+                                }
+                            }
+                        ],
+                        "truncated": false,
+                        "skip_reason": null,
+                        "invocation": "<site>/node_modules/.bin/playwright test",
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "parity",
+                        "status": "passed",
+                        "exit_code": 0,
+                        "duration_ms": 32943,
+                        "summary": "parity passed \u2014 8 view(s) (4 route(s) at 1280 and 390px) as the reference against http://localhost:5399 (captured 2026-10-23T05:42:52.668Z) (D1\u2013D7, frame scope; page scope for /, /vehicles, /location, /contact at 1280px; live texts not judged (they follow the clock): 8 on /location); judged at https://wildbills-a.ddev.site (from .ddev/config.yaml); set aside by decision: \"Status uses your device's clock.\" on /location (Q8); added by decision: \"Status uses the dealership's local time.\" after \"Closed\" on /location (Q8)",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": null,
+                        "invocation": "<site>/tools/droost/vendor/droost/workflow/bin/droost-parity judge --reference droost/parity --scope frame --pages /,/vehicles,/location,/contact --routes /,/vehicles,/location,/contact --json",
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "coverage",
+                        "status": "off",
+                        "exit_code": null,
+                        "duration_ms": null,
+                        "summary": "off \u2014 by preset high",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": "by preset high",
+                        "invocation": null,
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "house_rules",
+                        "status": "passed",
+                        "exit_code": 0,
+                        "duration_ms": 1,
+                        "summary": "house_rules passed \u2014 HR1 held (HR1 read 15 added file(s))",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": null,
+                        "invocation": "house rules: HR1",
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "wiki_fresh",
+                        "status": "passed",
+                        "exit_code": 0,
+                        "duration_ms": 2179,
+                        "summary": "wiki_fresh passed \u2014 2 of 2 page(s) fresh; 1 extension(s) have no page: redirect",
+                        "findings": [
+                            {
+                                "rule": "wiki.uncovered",
+                                "message": "no wiki page covers redirect",
+                                "extension": "redirect"
+                            }
+                        ],
+                        "truncated": false,
+                        "skip_reason": null,
+                        "invocation": "<site>/tools/droost/vendor/droost/workflow/bin/droost code:wiki status --json",
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    },
+                    {
+                        "gate": "custom:component_lint",
+                        "status": "passed",
+                        "exit_code": 0,
+                        "duration_ms": 5138,
+                        "summary": "custom:component_lint passed \u2014 component_lint passed: 26 custom SDC(s) meet Canvas's requirements (0 advisory(ies), which never fail it).",
+                        "findings": [],
+                        "truncated": false,
+                        "skip_reason": null,
+                        "invocation": "run droost/gates/component-lint.php",
+                        "inherited": null,
+                        "new": null,
+                        "labelled": false
+                    }
+                ]
+            }
+        },
+        "retries": {
+            "attempts": {
+                "phpstan": 1
+            },
+            "remaining": {
+                "phpstan": 2
+            },
+            "max_gate_retries": 2,
+            "exhausted": false
+        },
+        "awaiting": null,
+        "answered": 0,
+        "released": 0,
+        "lead": "autonomous",
+        "answered_by_question": 0,
+        "answered_by_agent": 0
+    },
+    "host": {
+        "session_id": "54187bdc-0da7-4d56-84f1-a4d9d8ed46f7",
+        "claude_code": "2.1.309",
+        "recorded_at": "2026-10-23T06:40:36+00:00",
+        "mods_recorded": false,
+        "host": "claude-code",
+        "source": "the transcript the hook was handed",
+        "sessions": [
+            {
+                "session_id": "918a217d-5abe-41d4-bac8-d8bd4c69f6ba",
+                "claude_code": "2.1.308",
+                "recorded_at": "2026-10-22T21:54:19+00:00",
+                "mods_recorded": false
+            },
+            {
+                "session_id": "4fcc2dcf-96e4-4e6a-86ba-2395dea17620",
+                "claude_code": "2.1.308",
+                "recorded_at": "2026-10-23T01:27:01+00:00",
+                "mods_recorded": false
+            },
+            {
+                "session_id": "31b21cdf-d48d-4d89-8e1e-c36fd19ef1da",
+                "claude_code": "2.1.309",
+                "recorded_at": "2026-10-23T03:29:28+00:00",
+                "mods_recorded": false
+            },
+            {
+                "session_id": "1c7ef700-58bf-4cb2-b306-85f1b10f053f",
+                "claude_code": "2.1.309",
+                "recorded_at": "2026-10-23T05:05:43+00:00",
+                "mods_recorded": false
+            },
+            {
+                "session_id": "1ab6ac8d-08e6-44cc-b106-a53c2cb9236c",
+                "claude_code": "2.1.309",
+                "recorded_at": "2026-10-23T05:44:26+00:00",
+                "mods_recorded": false
+            },
+            {
+                "session_id": "47456568-9042-4435-bc9c-4ff87d22729f",
+                "claude_code": "2.1.309",
+                "recorded_at": "2026-10-23T05:56:40+00:00",
+                "mods_recorded": false
+            },
+            {
+                "session_id": "54187bdc-0da7-4d56-84f1-a4d9d8ed46f7",
+                "claude_code": "2.1.309",
+                "recorded_at": "2026-10-23T06:40:36+00:00",
+                "mods_recorded": false
+            }
+        ]
+    }
+}

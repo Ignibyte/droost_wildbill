@@ -1,0 +1,18 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Card grid
+description: "The grid a View's cards sit in: vehicle cards fill as many columns as fit, body-style tiles go three to a row."
+group: "Wild Bill's inventory"
+status: stable
+props:
+  type: object
+  properties:
+    kind:
+      type: string
+      title: Kind
+      description: Cars or tiles.
+      enum: ['cars', 'tiles']
+      examples: ['cars']
+slots:
+  items:
+    title: Items
+    description: The cards.

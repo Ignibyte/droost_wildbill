@@ -1,0 +1,195 @@
+uuid: fdbbc1b1-d4d6-4215-8446-3466314260bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.body_style.field_plural_name
+    - field.field.taxonomy_term.body_style.field_tile_line
+    - field.field.taxonomy_term.body_style.field_tile_photo
+    - taxonomy.vocabulary.body_style
+  module:
+    - media
+    - node
+    - options
+    - taxonomy
+    - ui_patterns
+    - ui_patterns_field_formatters
+    - ui_patterns_views
+    - user
+  theme:
+    - wildbills
+id: body_styles
+label: 'Body styles'
+module: views
+description: "The body styles with a car on the lot, in the order staff set: the home page's tiles."
+tag: ''
+base_table: taxonomy_term_field_data
+base_field: tid
+display:
+  default:
+    id: default
+    display_title: Default
+    display_plugin: default
+    position: 0
+    display_options:
+      pager:
+        type: none
+        options:
+          offset: 0
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
+      sorts:
+        weight:
+          id: weight
+          table: taxonomy_term_field_data
+          field: weight
+          relationship: none
+          entity_type: taxonomy_term
+          entity_field: weight
+          plugin_id: standard
+          order: ASC
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: none
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: standard
+          order: ASC
+      filters:
+        vid:
+          id: vid
+          table: taxonomy_term_field_data
+          field: vid
+          relationship: none
+          entity_type: taxonomy_term
+          entity_field: vid
+          plugin_id: bundle
+          operator: in
+          value:
+            body_style: body_style
+          group: 1
+        tstatus:
+          id: tstatus
+          table: taxonomy_term_field_data
+          field: status
+          relationship: none
+          entity_type: taxonomy_term
+          entity_field: status
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          relationship: reverse__node__field_body_style
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+        field_sale_status_value:
+          id: field_sale_status_value
+          table: node__field_sale_status
+          field: field_sale_status_value
+          relationship: reverse__node__field_body_style
+          plugin_id: list_field
+          operator: not
+          value:
+            sold: sold
+          group: 1
+      style:
+        type: ui_patterns
+        options:
+          ui_patterns:
+            ui_patterns:
+              component_id: 'wildbills:card_grid'
+              variant_id: null
+              props:
+                kind:
+                  source_id: select
+                  source:
+                    value: tiles
+              slots:
+                items:
+                  sources:
+                    -
+                      source_id: view_rows
+                      source: {  }
+                      _weight: 0
+      row:
+        type: ui_patterns
+        options:
+          ui_patterns:
+            component_id: 'wildbills:body_style_tile'
+            variant_id: null
+            props:
+              label:
+                source_id: 'field_property:taxonomy_term:field_plural_name:value'
+                source: {  }
+              line:
+                source_id: 'field_property:taxonomy_term:field_tile_line:value'
+                source: {  }
+              type:
+                source_id: 'field_property:taxonomy_term:name:value'
+                source: {  }
+            slots:
+              photo:
+                sources:
+                  -
+                    source_id: 'field_formatter:taxonomy_term:body_style:field_tile_photo'
+                    source:
+                      type: media_thumbnail
+                      settings:
+                        image_link: ''
+                        image_style: 4_3_720x540_focal_point_webp
+                        image_loading:
+                          attribute: lazy
+                    _weight: 0
+      query:
+        type: views_query
+        options:
+          distinct: true
+      relationships:
+        reverse__node__field_body_style:
+          id: reverse__node__field_body_style
+          table: taxonomy_term_field_data
+          field: reverse__node__field_body_style
+          relationship: none
+          entity_type: taxonomy_term
+          plugin_id: entity_reverse
+          required: true
+      group_by: true
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - user.permissions
+      tags: {  }
+  block_tiles:
+    id: block_tiles
+    display_title: Tiles
+    display_plugin: block
+    position: 1
+    display_options:
+      display_description: 'A tile per body style with a car on the lot, for the home page.'
+      display_extenders: {  }
+      block_description: 'Body style tiles'
+      block_category: "Wild Bill's"
+      block_hide_empty: true
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - user.permissions
+      tags: {  }

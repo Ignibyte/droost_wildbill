@@ -1,0 +1,25 @@
+uuid: b101b0d0-26e7-42bb-b697-8506918f0f9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_tile_photo
+    - media.type.image
+    - taxonomy.vocabulary.body_style
+id: taxonomy_term.body_style.field_tile_photo
+field_name: field_tile_photo
+entity_type: taxonomy_term
+bundle: body_style
+label: 'Tile photo'
+description: 'The photo on the home page tile.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    auto_create: false
+field_type: entity_reference

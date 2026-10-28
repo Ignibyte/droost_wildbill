@@ -1,0 +1,15 @@
+name: "Wild Bill's site"
+type: module
+description: "The dealership details (contact lines, weekly hours, time zone, demo notices) and the blocks that render the site header and footer from them; the vehicles on the lot: their titles, the inventory page, the redirects and the hero's count."
+package: "Wild Bill's"
+core_version_requirement: ^11
+dependencies:
+  - drupal:block
+  - drupal:media
+  - drupal:menu_link_content
+  - drupal:node
+  - drupal:options
+  - drupal:taxonomy
+  - drupal:views
+  - pathauto:pathauto
+  - redirect:redirect

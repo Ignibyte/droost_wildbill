@@ -1,0 +1,72 @@
+uuid: faa1613b-158a-4c8c-9f0d-c4a70a6a680d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.body_style.field_plural_name
+    - field.field.taxonomy_term.body_style.field_tile_line
+    - field.field.taxonomy_term.body_style.field_tile_photo
+    - taxonomy.vocabulary.body_style
+  module:
+    - media_library
+    - path
+id: taxonomy_term.body_style.default
+targetEntityType: taxonomy_term
+bundle: body_style
+mode: default
+content:
+  field_plural_name:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tile_line:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tile_photo:
+    type: media_library_widget
+    weight: 3
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 100
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  description: true
+  publish_on: true
+  publish_state: true
+  unpublish_on: true
+  unpublish_state: true

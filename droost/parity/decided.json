@@ -1,0 +1,8 @@
+{
+  "set_aside": [
+    {"route": "/location", "text": "Status uses your device's clock.", "decided": "Q8", "why": "the open status is worked out in the dealership's time zone, not the visitor's clock"}
+  ],
+  "added": [
+    {"route": "/location", "text": "Status uses the dealership's local time.", "after": "Closed", "decided": "Q8", "why": "the note under the hours says which clock the open status uses"}
+  ]
+}

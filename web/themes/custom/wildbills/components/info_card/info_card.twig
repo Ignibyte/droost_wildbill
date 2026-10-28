@@ -1,0 +1,17 @@
+{#
+  demo_notices and the dealership's details (street, city, phone, phone_href,
+  email, hours) are not props: the wildbills_site module hands them in
+  (DemoNotices, LocationDetails) for the detail the card is set to show, so
+  the card shows what is on the dealership details form, and nothing an
+  editor types.
+#}
+{%- set address = detail in ['address', 'address_text'] and (street or city) -%}
+<div class="wb-info">
+  <h3>{{ heading }}{% if detail and detail != 'none' and demo_notices %} <span class="wb-tag-sample">{{ 'sample'|t }}</span>{% endif %}</h3>
+  {%- if address %}<p{% if detail == 'address' %} class="wb-info-address"{% endif %}>{{ street }}{% if street and city %}<br>{% endif %}{{ city }}</p>{% endif %}
+  {%- if detail == 'phone' and phone %}<p><a class="wb-link" href="{{ phone_href }}">{{ phone }}</a></p>{% endif %}
+  {%- if detail == 'email' and email %}<p><a class="wb-link" href="mailto:{{ email }}">{{ email }}</a></p>{% endif %}
+  {%- if detail == 'hours' and hours %}<p>{% for line in hours %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>{% endif %}
+  {%- if text %}<p class="wb-info-text">{{ text }}</p>{% endif %}
+  {%- if link_label and link_url %}<p class="wb-info-link"><a class="wb-link" href="{{ link_url }}">{{ link_label }}</a></p>{% endif %}
+</div>

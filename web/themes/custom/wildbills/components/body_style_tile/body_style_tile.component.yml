@@ -1,0 +1,30 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Body style tile
+description: "A home page tile for one body style: its photo, its line and its plural name, linking to the inventory with that body style chosen."
+group: "Wild Bill's inventory"
+status: stable
+props:
+  type: object
+  required:
+    - label
+    - type
+  properties:
+    label:
+      type: string
+      title: Label
+      description: The body style's plural name.
+      examples: ['Trucks']
+    line:
+      type: string
+      title: Line
+      description: The short line above the label.
+      examples: ['Haul, tow, work']
+    type:
+      type: string
+      title: Body style
+      description: "The body style's name: the tile opens the inventory with it chosen (/vehicles?type=<name>)."
+      examples: ['Truck']
+slots:
+  photo:
+    title: Photo
+    description: The tile's photo.

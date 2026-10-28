@@ -1,0 +1,86 @@
+{#
+  demo_notices, email, vehicle and topic are not props: the wildbills_site
+  module hands them in (DemoNotices, InquiryDetails). email is the
+  dealership's; vehicle is the listed car the link asks about (stock_label,
+  name, price, miles, color, photo, listing), or nothing; topic
+  is the one chosen when the page opens.
+
+  The topics are values other pages link with (?topic=Test%20drive) and the
+  draft's subject carries, so their values stay as written and only what the
+  visitor reads is translated. The fields have no name attribute: a form
+  submitted with JavaScript off carries none of the visitor's words.
+  inquiry_form.js checks the form and drafts the email in the browser, from
+  the sentences in the data attributes below. Nothing is sent to the site.
+#}
+{%- set id = 'wb-inquiry'|clean_unique_id -%}
+{%- set topics = {
+  'General question': 'General question'|t,
+  'Specific vehicle': 'Specific vehicle'|t,
+  'Test drive': 'Test drive'|t,
+  'Trade-in': 'Trade-in'|t,
+  'Payment options': 'Payment options'|t,
+  'Vehicle search': 'Vehicle search'|t,
+} -%}
+{%- set price = vehicle ? '$' ~ vehicle.price|number_format : '' -%}
+{%- set miles = vehicle ? vehicle.miles|number_format ~ ' mi' : '' -%}
+{%- set message = vehicle ? "Hi, I'm interested in the @name (@color, @miles, listed at @price). Is it still available, and when could I come see it?"|t({ '@name': vehicle.name, '@color': vehicle.color, '@miles': miles, '@price': price }) : '' -%}
+<div class="wb-form-card" data-wb-inquiry data-email="{{ email }}"
+  data-err-name="{{ 'Please add your name.'|t }}"
+  data-err-email="{{ 'Please add your email.'|t }}"
+  data-err-email-invalid="{{ "That email address doesn't look complete."|t }}"
+  data-err-message="{{ 'Please write a short message.'|t }}"
+  data-count="{{ '@count / 1000'|t }}"
+  data-subject-vehicle="{{ 'Inquiry: @name'|t }}"
+  data-subject-topic="{{ 'Website inquiry: @topic'|t }}"
+  data-line-name="{{ 'Name: @value'|t }}"
+  data-line-email="{{ 'Email: @value'|t }}"
+  data-line-phone="{{ 'Phone: @value'|t }}"
+  data-line-topic="{{ 'Topic: @value'|t }}"
+  data-line-vehicle="{{ 'Vehicle: @name · Stock #@stock · @price'|t }}"
+  data-line-listing="{{ 'Listing: @url'|t }}"
+  data-to="{{ 'To: @email'|t }}"
+  data-subject="{{ 'Subject: @subject'|t }}"
+  data-copied="{{ 'Copied. Paste it into a new email to send.'|t }}"
+  data-copy-failed="{{ "Couldn't copy automatically. The text is selected, press Ctrl/Cmd+C."|t }}">
+  <form class="wb-form-grid" novalidate data-wb-form>
+    {%- if notice %}
+    <div class="wb-notice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span>{{ notice }}</span></div>
+    {%- endif %}
+    {%- if vehicle %}
+    <div class="wb-vehicle-pick" data-wb-vehicle data-name="{{ vehicle.name }}" data-stock="{{ vehicle.stock_label }}" data-price="{{ price }}" data-listing="{{ vehicle.listing }}">
+      {%- if vehicle.photo %}<img src="{{ vehicle.photo }}" alt="">{% endif %}
+      <div class="wb-vehicle-pick-text"><div class="wb-pick-label">{{ 'ASKING ABOUT'|t }}</div><b>{{ vehicle.name }}</b><div class="wb-help">{{ price }} · {{ miles }} · {{ vehicle.color }}</div></div>
+      <button class="wb-btn wb-btn-ghost wb-btn-sm" type="button" data-wb-remove>{{ 'Remove'|t }}</button>
+    </div>
+    {%- endif %}
+    <div class="wb-form-row">
+      <div class="wb-field"><label for="{{ id }}-name">{{ name_label }}</label><input class="wb-input" id="{{ id }}-name" autocomplete="name" required aria-describedby="{{ id }}-name-err" data-wb-field="name"><span class="wb-err" id="{{ id }}-name-err"></span></div>
+      <div class="wb-field"><label for="{{ id }}-email">{{ email_label }}</label><input class="wb-input" id="{{ id }}-email" type="email" autocomplete="email" required aria-describedby="{{ id }}-email-err" data-wb-field="email"><span class="wb-err" id="{{ id }}-email-err"></span></div>
+    </div>
+    <div class="wb-form-row">
+      <div class="wb-field"><label for="{{ id }}-phone">{{ phone_label }}{% if optional_label %} <span class="wb-help">{{ optional_label }}</span>{% endif %}</label><input class="wb-input" id="{{ id }}-phone" type="tel" autocomplete="tel" data-wb-field="phone"></div>
+      <div class="wb-field"><label for="{{ id }}-topic">{{ topic_label }}</label>
+        <select class="wb-select" id="{{ id }}-topic" data-wb-field="topic">
+          {%- for value, label in topics %}
+          <option value="{{ value }}"{% if value == topic %} selected{% endif %}>{{ label }}</option>
+          {%- endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="wb-field"><label for="{{ id }}-message">{{ message_label }} <span class="wb-help" data-wb-count>{{ '@count / 1000'|t({ '@count': message|length }) }}</span></label><textarea class="wb-textarea" id="{{ id }}-message" maxlength="1000" required aria-describedby="{{ id }}-message-err" data-wb-field="message"{% if message_placeholder %} placeholder="{{ message_placeholder }}"{% endif %}>{{ message }}</textarea><span class="wb-err" id="{{ id }}-message-err"></span></div>
+    <button class="wb-btn wb-btn-primary wb-inquiry-submit" type="submit">{{ submit_label }}</button>
+  </form>
+
+  <div class="wb-handoff" tabindex="-1" aria-labelledby="{{ id }}-ready" hidden data-wb-handoff>
+    <div class="wb-notice wb-notice-warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span>{% if not_sent_label %}<strong>{{ not_sent_label }}</strong> {% endif %}{{ not_sent_text }}</span></div>
+    <h2 class="wb-handoff-title" id="{{ id }}-ready">{{ ready_heading }}</h2>
+    <p class="wb-handoff-text">{{ 'Open it in your email app, review it, and press send there. If no app opens, copy the text and send it to @email yourself.'|t({ '@email': email }) }}{% if demo_notices %} <span class="wb-tag-sample">{{ 'sample address'|t }}</span>{% endif %}</p>
+    <pre data-wb-preview></pre>
+    <div class="wb-handoff-actions">
+      <a class="wb-btn wb-btn-primary" href="mailto:{{ email }}" data-wb-open>{{ open_label }}</a>
+      {%- if copy_label %}<button class="wb-btn wb-btn-ghost" type="button" data-wb-copy>{{ copy_label }}</button>{% endif %}
+      {%- if edit_label %}<button class="wb-btn wb-btn-ghost" type="button" data-wb-edit>{{ edit_label }}</button>{% endif %}
+    </div>
+    <p class="wb-copy-status" role="status" aria-live="polite" data-wb-copy-status></p>
+  </div>
+</div>

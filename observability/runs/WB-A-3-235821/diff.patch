@@ -1,0 +1,1204 @@
+diff --git a/config/sync/canvas.component.sdc.wildbills.home_hero.yml b/config/sync/canvas.component.sdc.wildbills.home_hero.yml
+index 688ffc4..f62c8b3 100644
+--- a/config/sync/canvas.component.sdc.wildbills.home_hero.yml
++++ b/config/sync/canvas.component.sdc.wildbills.home_hero.yml
+@@ -15,7 +15,7 @@ dependencies:
+     - media_library
+   theme:
+     - wildbills
+-active_version: cb203aa0d5fceac2
++active_version: 634554a3634a10a2
+ versioned_properties:
+   active:
+     settings:
+@@ -151,6 +151,194 @@ versioned_properties:
+           default_value: {  }
+           expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
+           derived_schema_metadata: {  }
++        tag_noun:
++          required: false
++          field_type: string
++          field_storage_settings: {  }
++          field_instance_settings: {  }
++          field_widget: string_textfield
++          default_value:
++            -
++              value: vehicles
++          expression: ℹ︎string␟value
++          derived_schema_metadata:
++            string_shape: {  }
++        tag_text:
++          required: false
++          field_type: string
++          field_storage_settings: {  }
++          field_instance_settings: {  }
++          field_widget: string_textfield
++          default_value:
++            -
++              value: 'Trucks, SUVs and cars to explore'
++          expression: ℹ︎string␟value
++          derived_schema_metadata:
++            string_shape: {  }
++        tag_label:
++          required: false
++          field_type: string
++          field_storage_settings: {  }
++          field_instance_settings: {  }
++          field_widget: string_textfield
++          default_value:
++            -
++              value: 'See them'
++          expression: ℹ︎string␟value
++          derived_schema_metadata:
++            string_shape: {  }
++        tag_url:
++          required: false
++          field_type: link
++          field_storage_settings: {  }
++          field_instance_settings:
++            title: 0
++            link_type: 17
++          field_widget: link_default
++          default_value:
++            -
++              uri: /vehicles
++              options: {  }
++          expression: ℹ︎link␟url
++          derived_schema_metadata:
++            string_shape:
++              format: uri-reference
++    fallback_metadata:
++      slot_definitions: {  }
++  cb203aa0d5fceac2:
++    settings:
++      prop_field_definitions:
++        eyebrow:
++          required: false
++          field_type: string
++          field_storage_settings: {  }
++          field_instance_settings: {  }
++          field_widget: string_textfield
++          default_value:
++            -
++              value: 'Independent used-car lot'
++          expression: ℹ︎string␟value
++          derived_schema_metadata:
++            string_shape: {  }
++        headline_before:
++          required: true
++          field_type: string
++          field_storage_settings: {  }
++          field_instance_settings: {  }
++          field_widget: string_textfield
++          default_value:
++            -
++              value: 'Good used cars.'
++          expression: ℹ︎string␟value
++          derived_schema_metadata:
++            string_shape: {  }
++        headline_emphasis:
++          required: false
++          field_type: string
++          field_storage_settings: {  }
++          field_instance_settings: {  }
++          field_widget: string_textfield
++          default_value:
++            -
++              value: Plainly
++          expression: ℹ︎string␟value
++          derived_schema_metadata:
++            string_shape: {  }
++        headline_after:
++          required: false
++          field_type: string
++          field_storage_settings: {  }
++          field_instance_settings: {  }
++          field_widget: string_textfield
++          default_value:
++            -
++              value: sold.
++          expression: ℹ︎string␟value
++          derived_schema_metadata:
++            string_shape: {  }
++        lede:
++          required: false
++          field_type: string
++          field_storage_settings: {  }
++          field_instance_settings: {  }
++          field_widget: string_textfield
++          default_value:
++            -
++              value: 'Trucks, SUVs and cars with the price on the windshield and the answers up front. Look around online, then come drive the one you like.'
++          expression: ℹ︎string␟value
++          derived_schema_metadata:
++            string_shape: {  }
++        primary_label:
++          required: false
++          field_type: string
++          field_storage_settings: {  }
++          field_instance_settings: {  }
++          field_widget: string_textfield
++          default_value:
++            -
++              value: 'Browse inventory'
++          expression: ℹ︎string␟value
++          derived_schema_metadata:
++            string_shape: {  }
++        primary_url:
++          required: false
++          field_type: link
++          field_storage_settings: {  }
++          field_instance_settings:
++            title: 0
++            link_type: 17
++          field_widget: link_default
++          default_value:
++            -
++              uri: /vehicles
++              options: {  }
++          expression: ℹ︎link␟url
++          derived_schema_metadata:
++            string_shape:
++              format: uri-reference
++        secondary_label:
++          required: false
++          field_type: string
++          field_storage_settings: {  }
++          field_instance_settings: {  }
++          field_widget: string_textfield
++          default_value:
++            -
++              value: 'Ask a question'
++          expression: ℹ︎string␟value
++          derived_schema_metadata:
++            string_shape: {  }
++        secondary_url:
++          required: false
++          field_type: link
++          field_storage_settings: {  }
++          field_instance_settings:
++            title: 0
++            link_type: 17
++          field_widget: link_default
++          default_value:
++            -
++              uri: /contact
++              options: {  }
++          expression: ℹ︎link␟url
++          derived_schema_metadata:
++            string_shape:
++              format: uri-reference
++        image:
++          required: true
++          field_type: entity_reference
++          field_storage_settings:
++            target_type: media
++          field_instance_settings:
++            handler: 'default:media'
++            handler_settings:
++              target_bundles:
++                image: image
++                svg_image: svg_image
++          field_widget: media_library_widget
++          default_value: {  }
++          expression: 'ℹ︎entity_reference␟entity␜[␜entity:media:image␝field_media_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}][␜entity:media:svg_image␝field_media_svg_image␞␟{src↠src_with_alternate_widths,alt↠alt,width↠width,height↠height}]'
++          derived_schema_metadata: {  }
+         tag_count:
+           required: false
+           field_type: string
+diff --git a/config/sync/canvas.folder.07b760d4-1888-44a2-a99a-a71243f815e2.yml b/config/sync/canvas.folder.07b760d4-1888-44a2-a99a-a71243f815e2.yml
+index bd05738..c2aabf3 100644
+--- a/config/sync/canvas.folder.07b760d4-1888-44a2-a99a-a71243f815e2.yml
++++ b/config/sync/canvas.folder.07b760d4-1888-44a2-a99a-a71243f815e2.yml
+@@ -3,7 +3,9 @@ langcode: en
+ status: true
+ dependencies:
+   config:
++    - canvas.component.sdc.wildbills.body_style_tiles
+     - canvas.component.sdc.wildbills.closing_cta
++    - canvas.component.sdc.wildbills.featured_vehicles
+     - canvas.component.sdc.wildbills.home_hero
+     - canvas.component.sdc.wildbills.how_it_works
+     - canvas.component.sdc.wildbills.promise_band
+@@ -12,7 +14,9 @@ name: "Wild Bill's home"
+ configEntityTypeId: component
+ weight: 0
+ items:
++  - sdc.wildbills.body_style_tiles
+   - sdc.wildbills.closing_cta
++  - sdc.wildbills.featured_vehicles
+   - sdc.wildbills.home_hero
+   - sdc.wildbills.how_it_works
+   - sdc.wildbills.promise_band
+diff --git a/config/sync/canvas.folder.feb1e100-8545-43cd-ac83-0a538fa6fd41.yml b/config/sync/canvas.folder.feb1e100-8545-43cd-ac83-0a538fa6fd41.yml
+index c4d95bd..2be2b18 100644
+--- a/config/sync/canvas.folder.feb1e100-8545-43cd-ac83-0a538fa6fd41.yml
++++ b/config/sync/canvas.folder.feb1e100-8545-43cd-ac83-0a538fa6fd41.yml
+@@ -3,11 +3,17 @@ langcode: en
+ status: true
+ dependencies:
+   config:
++    - canvas.component.block.views_block.body_styles-block_tiles
++    - canvas.component.block.views_block.vehicles-block_featured
+     - canvas.component.sdc.wildbills.button
++    - canvas.component.sdc.wildbills.page_head
+     - canvas.component.sdc.wildbills.section_heading
+ name: "Wild Bill's"
+ configEntityTypeId: component
+ weight: 0
+ items:
++  - block.views_block.body_styles-block_tiles
++  - block.views_block.vehicles-block_featured
+   - sdc.wildbills.button
++  - sdc.wildbills.page_head
+   - sdc.wildbills.section_heading
+diff --git a/config/sync/core.extension.yml b/config/sync/core.extension.yml
+index 82cc0c1..5061811 100644
+--- a/config/sync/core.extension.yml
++++ b/config/sync/core.extension.yml
+@@ -96,6 +96,7 @@ module:
+   trash: 0
+   ui_patterns: 0
+   ui_patterns_field_formatters: 0
++  ui_patterns_views: 0
+   update: 0
+   user: 0
+   view_password: 0
+diff --git a/config/sync/metatag.metatag_defaults.global.yml b/config/sync/metatag.metatag_defaults.global.yml
+index 86da0cb..0091224 100644
+--- a/config/sync/metatag.metatag_defaults.global.yml
++++ b/config/sync/metatag.metatag_defaults.global.yml
+@@ -8,7 +8,7 @@ id: global
+ label: Global
+ tags:
+   referrer: unsafe-url
+-  title: '[current-page:title] | [site:name]'
++  title: '[current-page:title] — [site:name]'
+   canonical_url: '[current-page:url:absolute]'
+   shortlink: '[current-page:url:unaliased]'
+   rights: 'Copyright © All rights reserved.'
+diff --git a/config/sync/user.role.content_editor.yml b/config/sync/user.role.content_editor.yml
+index 90dfb5b..de1c114 100644
+--- a/config/sync/user.role.content_editor.yml
++++ b/config/sync/user.role.content_editor.yml
+@@ -11,6 +11,9 @@ dependencies:
+     - media.type.svg_image
+     - media.type.video
+     - node.type.page
++    - node.type.vehicle
++    - taxonomy.vocabulary.body_style
++    - taxonomy.vocabulary.make
+     - workflows.workflow.basic_editorial
+   module:
+     - canvas
+@@ -24,6 +27,7 @@ dependencies:
+     - redirect
+     - scheduler
+     - system
++    - taxonomy
+     - trash
+     - wildbills_site
+ _core:
+@@ -36,6 +40,7 @@ permissions:
+   - 'access administration pages'
+   - 'access content overview'
+   - 'access media overview'
++  - 'access taxonomy overview'
+   - 'access trash'
+   - 'administer dealership details'
+   - 'administer menu'
+@@ -47,23 +52,32 @@ permissions:
+   - 'create page content'
+   - 'create remote_video media'
+   - 'create svg_image media'
++  - 'create terms in body_style'
++  - 'create terms in make'
+   - 'create url aliases'
++  - 'create vehicle content'
+   - 'create video media'
+   - 'delete any document media'
+   - 'delete any image media'
+   - 'delete any page content'
+   - 'delete any remote_video media'
+   - 'delete any svg_image media'
++  - 'delete any vehicle content'
+   - 'delete any video media'
+   - 'delete canvas_page'
+   - 'delete page revisions'
++  - 'delete terms in body_style'
++  - 'delete terms in make'
+   - 'edit any document media'
+   - 'edit any image media'
+   - 'edit any page content'
+   - 'edit any remote_video media'
+   - 'edit any svg_image media'
++  - 'edit any vehicle content'
+   - 'edit any video media'
+   - 'edit canvas_page'
++  - 'edit terms in body_style'
++  - 'edit terms in make'
+   - 'revert all revisions'
+   - 'schedule publishing of nodes'
+   - 'use basic_editorial transition create_new_draft'
+@@ -80,4 +94,5 @@ permissions:
+   - 'view own unpublished content'
+   - 'view own unpublished media'
+   - 'view scheduled content'
++  - 'view vehicle revisions'
+   - 'view welcome dashboard'
+diff --git a/config/sync/views.settings.yml b/config/sync/views.settings.yml
+index 8a70755..37a3089 100644
+--- a/config/sync/views.settings.yml
++++ b/config/sync/views.settings.yml
+@@ -1,6 +1,7 @@
+ _core:
+   default_config_hash: _XeIJp8HLFXacGTv7BbJQAA0otRUXl0XxnqovpotgYQ
+-display_extenders: {  }
++display_extenders:
++  - ui_patterns
+ sql_signature: false
+ ui:
+   show:
+diff --git a/config/sync/workflows.workflow.basic_editorial.yml b/config/sync/workflows.workflow.basic_editorial.yml
+index f6ac9a9..aac5215 100644
+--- a/config/sync/workflows.workflow.basic_editorial.yml
++++ b/config/sync/workflows.workflow.basic_editorial.yml
+@@ -5,6 +5,7 @@ dependencies:
+   config:
+     - node.type.event
+     - node.type.page
++    - node.type.vehicle
+   module:
+     - content_moderation
+ _core:
+@@ -56,4 +57,5 @@ type_settings:
+     node:
+       - event
+       - page
++      - vehicle
+   default_moderation_state: draft
+diff --git a/droost/canvas/home.tree.json b/droost/canvas/home.tree.json
+index 2faf8da..683f989 100644
+--- a/droost/canvas/home.tree.json
++++ b/droost/canvas/home.tree.json
+@@ -16,7 +16,6 @@
+         "image": {
+           "target_id": "media:hero.jpg"
+         },
+-        "tag_count": "15",
+         "tag_noun": "vehicles",
+         "tag_text": "Trucks, SUVs and cars to explore",
+         "tag_label": "See them",
+@@ -37,6 +36,49 @@
+         "text_4": "Hours and directions on one page"
+       }
+     },
++    {
++      "uuid": "6f1b2c1e-0a51-4c2e-9d1a-1b0e5f6a0007",
++      "component_id": "sdc.wildbills.featured_vehicles",
++      "inputs": {
++        "eyebrow": "On the lot",
++        "heading": "Featured this week",
++        "lede": "A few picks from the sample inventory.",
++        "button_label": "All vehicles",
++        "button_url": "/vehicles"
++      }
++    },
++    {
++      "uuid": "6f1b2c1e-0a51-4c2e-9d1a-1b0e5f6a0008",
++      "component_id": "block.views_block.vehicles-block_featured",
++      "parent_uuid": "6f1b2c1e-0a51-4c2e-9d1a-1b0e5f6a0007",
++      "slot": "vehicles",
++      "inputs": {
++        "label": "Featured vehicles",
++        "label_display": "0",
++        "views_label": "",
++        "items_per_page": null
++      }
++    },
++    {
++      "uuid": "6f1b2c1e-0a51-4c2e-9d1a-1b0e5f6a0009",
++      "component_id": "sdc.wildbills.body_style_tiles",
++      "inputs": {
++        "eyebrow": "Shop by body style",
++        "heading": "What do you need it to do?"
++      }
++    },
++    {
++      "uuid": "6f1b2c1e-0a51-4c2e-9d1a-1b0e5f6a000a",
++      "component_id": "block.views_block.body_styles-block_tiles",
++      "parent_uuid": "6f1b2c1e-0a51-4c2e-9d1a-1b0e5f6a0009",
++      "slot": "tiles",
++      "inputs": {
++        "label": "Body style tiles",
++        "label_display": "0",
++        "views_label": "",
++        "items_per_page": null
++      }
++    },
+     {
+       "uuid": "6f1b2c1e-0a51-4c2e-9d1a-1b0e5f6a0003",
+       "component_id": "sdc.wildbills.how_it_works",
+diff --git a/droost/wiki/wildbills.md b/droost/wiki/wildbills.md
+index 9116c36..57b5483 100644
+--- a/droost/wiki/wildbills.md
++++ b/droost/wiki/wildbills.md
+@@ -28,13 +28,37 @@ droost:
+     - path: web/themes/custom/wildbills/components/site_footer/site_footer.component.yml
+       hash: "xxh3:d97d745f4e8967e6"
+     - path: web/themes/custom/wildbills/components/home_hero/home_hero.component.yml
+-      hash: "xxh3:7f938a13318ffd46"
++      hash: "xxh3:a02eac4bd87fb96e"
+     - path: droost/canvas/home.tree.json
+-      hash: "xxh3:e43a38f8963cce52"
++      hash: "xxh3:3469c20af2a48d51"
+     - path: droost/canvas/apply-home.sh
+       hash: "xxh3:1ae7f036cb72c399"
+     - path: droost/canvas/resolve-home.php
+       hash: "xxh3:fc705de360630eb3"
++    - path: web/themes/custom/wildbills/components/page_head/page_head.component.yml
++      hash: "xxh3:d8a25eb363f83fc3"
++    - path: web/themes/custom/wildbills/components/vehicle_card/vehicle_card.component.yml
++      hash: "xxh3:1b09e9ba440104cb"
++    - path: web/themes/custom/wildbills/components/vehicle_card/vehicle_card.twig
++      hash: "xxh3:62c447c96a35dd02"
++    - path: web/themes/custom/wildbills/components/card_grid/card_grid.component.yml
++      hash: "xxh3:8d67f3b5a1710961"
++    - path: web/themes/custom/wildbills/components/body_style_tile/body_style_tile.component.yml
++      hash: "xxh3:c0d4c7b99b5618f3"
++    - path: web/themes/custom/wildbills/components/filter_choice/filter_choice.component.yml
++      hash: "xxh3:b5e00e64756bdd8c"
++    - path: web/themes/custom/wildbills/components/inventory/inventory.component.yml
++      hash: "xxh3:1c96a921f758f663"
++    - path: web/themes/custom/wildbills/components/inventory/inventory.twig
++      hash: "xxh3:e16a5fba39ea235d"
++    - path: web/themes/custom/wildbills/components/inventory/inventory.js
++      hash: "xxh3:20605a7c42954f68"
++    - path: web/themes/custom/wildbills/components/featured_vehicles/featured_vehicles.component.yml
++      hash: "xxh3:95bde2d2b7943e95"
++    - path: web/themes/custom/wildbills/components/body_style_tiles/body_style_tiles.component.yml
++      hash: "xxh3:12341ec8041f9117"
++    - path: web/themes/custom/wildbills/components/home_hero/home_hero.twig
++      hash: "xxh3:0eb0328d3e8ddec6"
+ ---
+ 
+ # wildbills
+@@ -125,6 +149,39 @@ everything shows at once, with no transition.
+   2. It writes a resolved copy of the tree.
+   3. `droost/bin/canvas` runs `tree:validate` and then `tree:set 1` on that
+      copy.
+-- **Not yet built:** R02 adds the featured vehicles and body-style tiles
+-  between the promise band and How it works. The hero's "15" count becomes a
+-  live count then.
++- **R02's sections:** `featured_vehicles` and `body_style_tiles` sit between
++  the promise band and How it works, seven roots in all. Each is a section
++  heading above a slot holding a Views block
++  (`block.views_block.vehicles-block_featured`,
++  `block.views_block.body_styles-block_tiles`; both enabled in Canvas).
++- **The hero's count is live:** `home_hero` has no count prop. It reads
++  `vehicle_count`, which `wildbills_site` hands it, and says "1 sample
++  vehicle" for one.
++
++## The inventory components (R02)
++
++- **Who renders them:** Views and the `wildbills_inventory` style, so they are
++  disabled in Canvas.
++  - `vehicle_card`: one chip (Sale pending, then Featured, then body style),
++    and the facts as `data-*` attributes.
++  - `card_grid`: `kind: cars` or `kind: tiles`, three to a row. UI Patterns
++    reserves a prop named `variant` for component variants, so the prop is
++    `kind`.
++  - `body_style_tile`: builds `/vehicles?type=<name>` with `url_encode`.
++  - `filter_choice`: a button or an `<option>`.
++  - `inventory`: the layout.
++- **`page_head`** is enabled for the inner pages R03 and R04 build.
++- **`inventory.js`** (a behavior) does what the source's `vehicles.ts` does,
++  over the cards already on the page:
++  - search over year, make, model, colour and body style;
++  - body style, make and the three sliders;
++  - the five sorts (stable, from the default order);
++  - chips, Clear all, Reset and the empty state;
++  - `?type=` (unknown means All);
++  - the 390 Filters toggle.
++- **The pop-up:** it opens from Details (a link to `/vehicles?vehicle=N`,
++  intercepted) or from `?vehicle=`. It is filled with `textContent`, keeps the
++  parameter in the address while open, and on close drops it and returns
++  focus. A car that is not listed (sold, unpublished) opens no pop-up.
++- **The grid's CSS:** the inventory includes `card_grid`, so the grid's CSS is
++  attached on /vehicles as well.
+diff --git a/droost/wiki/wildbills_site.md b/droost/wiki/wildbills_site.md
+index a82dccf..e8de769 100644
+--- a/droost/wiki/wildbills_site.md
++++ b/droost/wiki/wildbills_site.md
+@@ -6,13 +6,13 @@ droost:
+   modules: [wildbills_site]
+   sources:
+     - path: web/modules/custom/wildbills_site/wildbills_site.info.yml
+-      hash: "xxh3:3ed24a28ac65dafe"
++      hash: "xxh3:b803fd40821f2535"
+     - path: web/modules/custom/wildbills_site/wildbills_site.install
+       hash: "xxh3:7969cb7da3bc319e"
+     - path: web/modules/custom/wildbills_site/config/install/wildbills_site.dealership.yml
+       hash: "xxh3:192bb967f05844e6"
+     - path: web/modules/custom/wildbills_site/config/schema/wildbills_site.schema.yml
+-      hash: "xxh3:9e6c8b561c3fb181"
++      hash: "xxh3:90c4b4236940daff"
+     - path: web/modules/custom/wildbills_site/src/Dealership.php
+       hash: "xxh3:1281013fcc3cf5d0"
+     - path: web/modules/custom/wildbills_site/src/HoursSummary.php
+@@ -20,7 +20,7 @@ droost:
+     - path: web/modules/custom/wildbills_site/src/DemoNotices.php
+       hash: "xxh3:fcab6e8a275b96bb"
+     - path: web/modules/custom/wildbills_site/src/Hook/WildbillsSiteHooks.php
+-      hash: "xxh3:d45782939167360f"
++      hash: "xxh3:578318117df9db60"
+     - path: web/modules/custom/wildbills_site/src/Form/DealershipSettingsForm.php
+       hash: "xxh3:953697ffb3706f58"
+     - path: web/modules/custom/wildbills_site/src/Plugin/Block/SiteFrameBlockBase.php
+@@ -29,6 +29,30 @@ droost:
+       hash: "xxh3:6e79e7e6b10ce7bb"
+     - path: web/modules/custom/wildbills_site/src/Plugin/Block/SiteFooterBlock.php
+       hash: "xxh3:b698b98245698e71"
++    - path: web/modules/custom/wildbills_site/wildbills_site.services.yml
++      hash: "xxh3:5c1c728a89673747"
++    - path: web/modules/custom/wildbills_site/wildbills_site.deploy.php
++      hash: "xxh3:d915954bb0858d90"
++    - path: web/modules/custom/wildbills_site/content/vehicles.yml
++      hash: "xxh3:7f94716d00cf7b94"
++    - path: web/modules/custom/wildbills_site/src/Inventory.php
++      hash: "xxh3:d781fa0ba6f8d3ae"
++    - path: web/modules/custom/wildbills_site/src/InventoryFacets.php
++      hash: "xxh3:bca835f766a21725"
++    - path: web/modules/custom/wildbills_site/src/VehicleTitle.php
++      hash: "xxh3:8752f2b61f7dc1f2"
++    - path: web/modules/custom/wildbills_site/src/VehicleCount.php
++      hash: "xxh3:a067a598d69761cf"
++    - path: web/modules/custom/wildbills_site/src/EventSubscriber/VehicleRedirectSubscriber.php
++      hash: "xxh3:a79de242a4e4160d"
++    - path: web/modules/custom/wildbills_site/src/Plugin/views/style/InventoryStyle.php
++      hash: "xxh3:02312413c49eb954"
++    - path: config/sync/views.view.vehicles.yml
++      hash: "xxh3:756eb1d60b86f330"
++    - path: config/sync/views.view.body_styles.yml
++      hash: "xxh3:3bcf4301182047aa"
++    - path: config/sync/node.type.vehicle.yml
++      hash: "xxh3:52804820cb5e1514"
+ ---
+ 
+ # wildbills_site
+@@ -122,3 +146,93 @@ the same hours group:
+ 
+ The home page's photos and tree are not here. `droost/canvas/apply-home.sh`
+ writes them after config is in place (see the `wildbills` page).
++
++## The vehicles (R02)
++
++Built in R02 (`droost/intake/tickets/R02.md`; spec
++`droost/droost-workflow/spec-r02-vehicles.md`, whose Realized section says why
++each choice was made).
++
++### The model (config/sync)
++
++- **Vehicle** (`vehicle`): stock number (unique), make (→ Make), model, year,
++  price (whole dollars), body style (→ Body style), mileage, colour, condition
++  (excellent / good / fair), featured, sale status (available / pending /
++  sold), photo (image media). The title is written, never typed.
++- **Make** (`make`): one spelling per make, so the filter lists each once.
++- **Body style** (`body_style`): name (what `?type=` and "2021 · TRUCK" carry),
++  plural name, tile line and tile photo. The term weight is the order staff
++  set on the vocabulary's overview page.
++- **On the editorial workflow.** Core gives the Published box only to
++  `administer nodes`, so content editors publish and unpublish cars through
++  `basic_editorial`, like pages. The site's ECA model `auto_enable_moderation`
++  puts every new type there anyway.
++- **No alias, no menu, no sitemap.** `nodePresave()` tells Pathauto to skip
++  vehicles (the recipe's `menu_path` pattern matches every node).
++- **Editors** (`content_editor`) create, edit and delete vehicles and both
++  vocabularies' terms, and reach the vocabulary overview.
++
++### Listed
++
++A car is **listed** while it is published and its sale status is not Sold.
++
++- **Where the rule lives:** in two places that must agree. `Inventory` (the
++  hero's count) and the Views' filters (`vehicles`, `body_styles`) each state
++  it. Change one, change the other.
++- **Sale pending** cars stay listed, with a "Sale pending" chip (Q10).
++- **Sold** cars leave the cards, the featured cars, the count and the
++  filter's choices (Q11).
++
++### /vehicles
++
++- **The View:** `views.view.vehicles` `page_inventory`, sorted featured first,
++  then by stock number. Its rows are UI Patterns `ComponentRow` →
++  `wildbills:vehicle_card`, with props bound to field properties and tokens.
++- **The style:** `wildbills_inventory` (`InventoryStyle`) wraps the rows in
++  `wildbills:inventory`:
++  - the page heading, from the style's options;
++  - the body-style buttons and make options as `wildbills:filter_choice`
++    slots;
++  - the slider ends;
++  - the dealership's tel link for the pop-up's Call button.
++  It adds the `node_list`, `taxonomy_term_list` and dealership cache tags.
++- **`InventoryFacets`** (pure, unit-tested) works out:
++  - the body styles present, by weight and then name;
++  - the makes present, each once;
++  - the ranges. These are the source's ($25,000–$60,000 step 500,
++    2019–2022, 10,000–80,000 step 5,000), widened (rounded out to the step) to
++    hold any listed car.
++- **In the browser:** filtering, sorting, chips, `?type=`, `?vehicle=` and the
++  pop-up are `inventory.js` in the theme (see the `wildbills` page).
++- **A vehicle's node address** answers 301 to `/vehicles?vehicle=<stock>`
++  (`VehicleRedirectSubscriber`, after routing and access). `/vehicles.html`
++  redirects with its query (a redirect entity; `passthrough_querystring` is
++  on).
++
++### The home page's picks
++
++- **`vehicles` `block_featured`:** the listed featured cars, in
++  `wildbills:card_grid`.
++- **`body_styles` `block_tiles`:** body-style terms joined to their listed
++  vehicles, grouped by term. That gives a tile per body style with a car on
++  the lot, in staff order.
++- **The hero's count:** `VehicleCount::preRender`, beside `DemoNotices`, gives
++  `wildbills:home_hero` its `vehicle_count`.
++
++### Sample content
++
++`wildbills_site_deploy_r02_vehicles()` (`wildbills_site.deploy.php`) runs with
++`drush deploy:hook`, after config import. It reads `content/vehicles.yml` (the
++source's `VEHICLES`) and `content/images/v1–v15.jpg`.
++
++- **What it writes:**
++  - the makes;
++  - the three body styles (tiles v6, v9, v11);
++  - the 15 photos as image media named "<year> <make> <model>, <colour>";
++  - the 15 vehicles, published and Available;
++  - the `/vehicles.html` redirect.
++- **Running it again:** it matches by name and stock number, so a second run
++  creates nothing.
++- **Trash:** a deleted car stays in Trash, and its stock number stays taken
++  until it is purged.
++
+diff --git a/tests/e2e/dealership.spec.ts b/tests/e2e/dealership.spec.ts
+index 4b71ff0..c04a0d5 100644
+--- a/tests/e2e/dealership.spec.ts
++++ b/tests/e2e/dealership.spec.ts
+@@ -126,8 +126,22 @@ test('AC-11: turning the demo notices off removes every demo notice and sample l
+   await expect(footer.locator('h4')).toHaveText(['Pages', 'Hours', 'Contact']);
+   await expect(footer.locator('.wb-footer-bottom span')).toHaveText([`© ${new Date().getFullYear()} Wild Bill's Used Cars`]);
+   await expect(visitor.locator('.wb-hero-tag b')).toHaveText('15 vehicles');
+-  // Nothing left on the page calls itself a sample or a demonstration.
+-  const text = (await visitor.locator('body').innerText()).toLowerCase();
+-  expect(text).not.toMatch(/sample|demonstration|demo site|placeholders/);
++  // Nothing the switch governs still calls itself a sample or a demonstration:
++  // the header, the footer, the hero and (R02) the vehicle cards. Section copy
++  // an editor wrote in Canvas ("A few picks from the sample inventory.") is
++  // the editor's to change.
++  for (const part of ['header', 'footer', '.wb-hero', '[data-wb-vehicle]']) {
++    const text = (await visitor.locator(part).allInnerTexts()).join(' ').toLowerCase();
++    expect(text, part).not.toMatch(/sample|demonstration|demo site|placeholders/);
++  }
++
++  // R02: the inventory's price labels, the pop-up's note and its Call button.
++  await visitor.setViewportSize({ width: 1280, height: 900 });
++  await visitor.goto('/vehicles?vehicle=1');
++  const dialog = visitor.getByRole('dialog', { name: '2021 Ford F-150' });
++  await expect(dialog.locator('.wb-price--detail small')).toHaveText('Listed price');
++  await expect(dialog.locator('.wb-note')).toHaveCount(0);
++  await expect(dialog.getByRole('link', { name: 'Call', exact: true })).toBeVisible();
++  await expect(visitor.locator('[data-wb-vehicle] .wb-price small')).toHaveCount(0);
+   await visitor.close();
+ });
+diff --git a/tests/e2e/home.spec.ts b/tests/e2e/home.spec.ts
+index 813aecb..7c64827 100644
+--- a/tests/e2e/home.spec.ts
++++ b/tests/e2e/home.spec.ts
+@@ -2,17 +2,19 @@ import { test, expect } from '@playwright/test';
+ 
+ /**
+  * R01: the home page's copy sections, its title and description, the favicon,
+- * reduced motion and the /index.html redirect. The source is
++ * reduced motion and the /index.html redirect. R02: the featured vehicles, the
++ * body-style tiles and the hero's live count. The source is
+  * design/src/Wild-Bills-Cars/artifacts/wildbills/index.html.
+  */
+ 
+ test.use({ viewport: { width: 1280, height: 900 } });
+ 
+-test('AC-13: the five copy sections, in the source order', async ({ page }) => {
++test('AC-13: the copy sections, in the source order', async ({ page }) => {
+   await page.goto('/');
+   const main = page.locator('main#main');
+   const sections = main.locator('section');
+-  await expect(sections).toHaveCount(5);
++  // R02 put the featured vehicles and the body-style tiles third and fourth.
++  await expect(sections).toHaveCount(7);
+ 
+   const hero = sections.nth(0);
+   await expect(hero.locator('.wb-eyebrow')).toHaveText('Independent used-car lot');
+@@ -38,12 +40,12 @@ test('AC-13: the five copy sections, in the source order', async ({ page }) => {
+     'Inquiries come prefilled with the vehicle', 'Hours and directions on one page',
+   ]);
+ 
+-  const steps = sections.nth(2);
++  const steps = sections.nth(4);
+   await expect(steps.locator('h2')).toHaveText('Four steps. No runaround.');
+   await expect(steps.locator('.wb-step-n')).toHaveText(['01', '02', '03', '04']);
+   await expect(steps.locator('.wb-step h3')).toHaveText(['Browse', 'Ask', 'Drive it', 'Decide']);
+ 
+-  const questions = sections.nth(3);
++  const questions = sections.nth(5);
+   await expect(questions.locator('h2')).toHaveText("Bring your questions. We'd rather you ask.");
+   await expect(questions.locator('img')).toHaveAttribute('alt', 'A small dealership office with cars parked out front in late-afternoon light');
+   await expect(questions.locator('.wb-checklist li')).toHaveText([
+@@ -55,12 +57,48 @@ test('AC-13: the five copy sections, in the source order', async ({ page }) => {
+   await expect(questions.getByRole('link', { name: 'Send a question' })).toHaveAttribute('href', '/contact');
+   await expect(questions.getByRole('link', { name: 'Hours & directions' })).toHaveAttribute('href', '/location');
+ 
+-  const cta = sections.nth(4);
++  const cta = sections.nth(6);
+   await expect(cta.locator('h2')).toHaveText('Found one you like?');
+   await expect(cta.getByRole('link', { name: 'Browse inventory' })).toHaveAttribute('href', '/vehicles');
+   await expect(cta.getByRole('link', { name: 'Plan a visit' })).toHaveAttribute('href', '/location');
+ });
+ 
++test('R02 AC-14: the featured vehicles, then a tile per body style on the lot', async ({ page }) => {
++  await page.goto('/');
++  const sections = page.locator('main#main section');
++  const featured = sections.nth(2);
++  await expect(featured.locator('.wb-eyebrow')).toHaveText('On the lot');
++  await expect(featured.locator('h2')).toHaveText('Featured this week');
++  await expect(featured.locator('.wb-lede')).toHaveText('A few picks from the sample inventory.');
++  await expect(featured.getByRole('link', { name: 'All vehicles' })).toHaveAttribute('href', '/vehicles');
++  const cards = featured.locator('[data-wb-vehicle]');
++  await expect(cards.locator('h3')).toHaveText(['Ford F-150', 'Chevrolet Tahoe', 'RAM 1500', 'Jeep Wrangler']);
++  await expect(cards.locator('.wb-chip')).toHaveText(['Featured', 'Featured', 'Featured', 'Featured']);
++  await expect(featured.getByRole('link', { name: 'View details for 2022 RAM 1500' })).toHaveAttribute('href', '/vehicles?vehicle=3');
++
++  const styles = sections.nth(3);
++  await expect(styles.locator('.wb-eyebrow')).toHaveText('Shop by body style');
++  await expect(styles.locator('h2')).toHaveText('What do you need it to do?');
++  const tiles = styles.locator('a.wb-cat');
++  await expect(tiles.locator('h3')).toHaveText(['Trucks', 'SUVs', 'Cars']);
++  await expect(tiles.locator('.wb-cat-label span:not(.wb-cat-arrow)')).toHaveText(['Haul, tow, work', 'Room for everyone', 'Just for driving']);
++  expect(await tiles.evaluateAll((els) => els.map((el) => el.getAttribute('href')))).toEqual(
++    ['/vehicles?type=Truck', '/vehicles?type=SUV', '/vehicles?type=Car'],
++  );
++  // The source's photos: v6, v9 and v11.
++  expect(await tiles.locator('img').evaluateAll((els) => els.map((el) => (el as HTMLImageElement).src.match(/v\d+\.jpg/)?.[0]))).toEqual(
++    ['v6.jpg', 'v9.jpg', 'v11.jpg'],
++  );
++  // Three to a row.
++  const tops = await tiles.evaluateAll((els) => els.map((el) => Math.round(el.getBoundingClientRect().top)));
++  expect(new Set(tops).size).toBe(1);
++});
++
++test('R02 AC-15: the hero counts the listed vehicles', async ({ page }) => {
++  await page.goto('/');
++  await expect(page.locator('.wb-hero-tag b')).toHaveText('15 sample vehicles');
++});
++
+ test('AC-15: the title, description, theme colour and green favicon', async ({ page, request }) => {
+   await page.goto('/');
+   await expect(page).toHaveTitle("Wild Bill's Used Cars — Straightforward used cars, trucks and SUVs");
+diff --git a/web/modules/custom/wildbills_site/README.md b/web/modules/custom/wildbills_site/README.md
+index fb87d9c..e1d9c02 100644
+--- a/web/modules/custom/wildbills_site/README.md
++++ b/web/modules/custom/wildbills_site/README.md
+@@ -1,7 +1,8 @@
+ # Wild Bill's site (`wildbills_site`)
+ 
+ The dealership's details, kept in one place, and the two blocks that put them
+-on every page.
++on every page. Since R02, also the vehicles on the lot: their titles, the
++inventory page's style, the redirects and the home hero's count.
+ 
+ ## What it holds
+ 
+@@ -45,17 +46,70 @@ on every page.
+   - It adds a 301 from `/index.html` to `/`.
+   - It is safe to run again.
+ 
++## The vehicles (R02)
++
++- **Listed** means published and not Sold. A Sale pending car is listed (Q10).
++  The `Inventory` service (`wildbills_site.inventory`) counts listed cars and
++  gives a car's facts. The `vehicles` and `body_styles` Views filter the same
++  way.
++- **Title:** `nodePresave()` writes "<year> <make> <model>" (`VehicleTitle`) on
++  every save. The form has no title field. It also tells Pathauto to skip
++  vehicles, because a vehicle has no page of its own.
++- **Stock number:** unique among vehicles. `UniqueField` is added in
++  `entity_bundle_field_info_alter`. A deleted car sits in Trash, and its number
++  stays taken until it is purged.
++- **A vehicle's address** (`/node/<nid>`) answers 301 to
++  `/vehicles?vehicle=<stock number>` (Q5, `VehicleRedirectSubscriber`). It runs
++  after routing and access, so an unpublished car is refused, never redirected.
++- **`/vehicles`:** the `wildbills_inventory` Views style renders the
++  `wildbills:inventory` component around the cards. Its options hold the
++  heading, eyebrow and lede.
++  - **Body-style buttons:** the body styles with a car on the lot, in staff
++    order (term weight, then name), labelled with their plural names.
++  - **Makes:** the makes of the listed cars, each once.
++  - **Sliders:** they run the source's ranges ($25k–$60k, 2019–2022, 10k–80k).
++    A listed car outside a range widens it, rounded to the slider's step.
++  - `InventoryFacets` works this out and is unit-tested. The filtering itself
++    happens in the browser.
++- **The hero's count:** `VehicleCount` gives `wildbills:home_hero` a
++  `vehicle_count`, with the `node_list` and `taxonomy_term_list` tags. The
++  hero reads "<n> sample vehicles".
++- **Sample content:** `wildbills_site_deploy_r02_vehicles()` in
++  `wildbills_site.deploy.php` runs with `drush deploy` / `drush deploy:hook`,
++  after config import. From `content/vehicles.yml` and `content/images/` it
++  writes:
++  - the 7 makes;
++  - Truck, SUV and Car, with their plurals, lines and tile photos;
++  - the 15 photos as image media;
++  - the 15 vehicles, published and Available;
++  - the 301 from `/vehicles.html`, which carries its query.
++
++  It is safe to run again.
++
+ ## Using it
+ 
+ - **Change a detail:** edit it in the form. The header, the footer and every
+   page that shows it follow on the next view.
+ - **Launch with real data:** untick "Show the demo notices". The demo bar, every
+   "(sample)" and "sample" label, and the footer's demonstration lines all go.
++- **Add a car:** Content → Add content → Vehicle. Enter the stock number, make,
++  model, year, price, mileage, colour and condition, and choose the body style
++  and photo. Save as Published. Vehicles are on the Basic editorial workflow:
++  to take a car off every page, change it to Unpublished.
++- **Sell a car:** set its Sale status to Sale pending (it stays listed, marked)
++  or Sold (it leaves the inventory, the home page and the count).
++- **Feature a car:** tick Featured. It appears on the home page and first in
++  the inventory.
++- **Add a body style:** Structure → Taxonomy → Body style. Give it a name (what
++  `?type=` and the card carry), a plural name, a tile line and a tile photo.
++  Drag the body styles into order on that page. A body style shows on the
++  filter and the home page once a car of it is listed.
+ 
+ ## Tests
+ 
+-- **Unit tests** (`tests/src/Unit`): `HoursSummaryTest`, `DealershipTest` and
+-  `WildbillsSiteHooksTest`. Run them with `vendor/bin/phpunit` from the project
+-  root.
+-- **Browser tests:** `tests/e2e/frame.spec.ts` and
+-  `tests/e2e/dealership.spec.ts`.
++- **Unit tests** (`tests/src/Unit`): `HoursSummaryTest`, `DealershipTest`,
++  `WildbillsSiteHooksTest`, `VehicleTitleTest` and `InventoryFacetsTest`. Run
++  them with `vendor/bin/phpunit` from the project root.
++- **Browser tests:** `tests/e2e/frame.spec.ts`, `tests/e2e/dealership.spec.ts`,
++  `tests/e2e/inventory.spec.ts` and `tests/e2e/vehicle-admin.spec.ts`. The last
++  one runs as a throwaway content editor and puts the samples back afterwards.
+diff --git a/web/modules/custom/wildbills_site/config/schema/wildbills_site.schema.yml b/web/modules/custom/wildbills_site/config/schema/wildbills_site.schema.yml
+index 2696121..8ba183d 100644
+--- a/web/modules/custom/wildbills_site/config/schema/wildbills_site.schema.yml
++++ b/web/modules/custom/wildbills_site/config/schema/wildbills_site.schema.yml
+@@ -96,3 +96,17 @@ block.settings.wildbills_site_footer:
+     about:
+       type: text
+       label: 'Line under the brand'
++
++views.style.wildbills_inventory:
++  type: views_style
++  label: "Wild Bill's inventory"
++  mapping:
++    eyebrow:
++      type: label
++      label: 'Eyebrow'
++    heading:
++      type: label
++      label: 'Heading'
++    lede:
++      type: text
++      label: 'Lede'
+diff --git a/web/modules/custom/wildbills_site/src/Hook/WildbillsSiteHooks.php b/web/modules/custom/wildbills_site/src/Hook/WildbillsSiteHooks.php
+index 8dbb6d5..e01e2e0 100644
+--- a/web/modules/custom/wildbills_site/src/Hook/WildbillsSiteHooks.php
++++ b/web/modules/custom/wildbills_site/src/Hook/WildbillsSiteHooks.php
+@@ -6,9 +6,17 @@
+ 
+ use Drupal\Component\Datetime\TimeInterface;
+ use Drupal\Core\Cache\CacheTagsInvalidatorInterface;
++use Drupal\Core\Entity\EntityTypeInterface;
++use Drupal\Core\Field\FieldConfigInterface;
+ use Drupal\Core\Hook\Attribute\Hook;
+ use Drupal\Core\State\StateInterface;
++use Drupal\node\NodeInterface;
++use Drupal\pathauto\PathautoState;
++use Drupal\taxonomy\TermInterface;
+ use Drupal\wildbills_site\DemoNotices;
++use Drupal\wildbills_site\Inventory;
++use Drupal\wildbills_site\VehicleCount;
++use Drupal\wildbills_site\VehicleTitle;
+ 
+ /**
+  * Hook implementations for the Wild Bill's site module.
+@@ -34,8 +42,9 @@ public function __construct(
+   /**
+    * Implements hook_element_info_alter().
+    *
+-   * Runs DemoNotices::preRender() ahead of the component element's own
+-   * pre-render, which turns the props into the template's context.
++   * Runs DemoNotices::preRender() and VehicleCount::preRender() ahead of the
++   * component element's own pre-render, which turns the props into the
++   * template's context.
+    *
+    * @param array<string, array<string, mixed>> $info
+    *   The element info, keyed by element type.
+@@ -44,7 +53,7 @@ public function __construct(
+   public function elementInfoAlter(array &$info): void {
+     if (isset($info['component'])) {
+       $pre_render = $info['component']['#pre_render'] ?? [];
+-      array_unshift($pre_render, [DemoNotices::class, 'preRender']);
++      array_unshift($pre_render, [DemoNotices::class, 'preRender'], [VehicleCount::class, 'preRender']);
+       $info['component']['#pre_render'] = $pre_render;
+     }
+   }
+@@ -65,4 +74,51 @@ public function cron(): void {
+     }
+   }
+ 
++  /**
++   * Implements hook_ENTITY_TYPE_presave() for node.
++   *
++   * A vehicle's title is "<year> <make> <model>", written on every save, so
++   * editors never type it. A vehicle has no page of its own (Q5: its address
++   * redirects to the inventory), so Pathauto gives it no alias.
++   */
++  #[Hook('node_presave')]
++  public function nodePresave(NodeInterface $node): void {
++    if ($node->bundle() !== Inventory::BUNDLE) {
++      return;
++    }
++    if ($node->hasField('path')) {
++      $node->get('path')->pathauto = PathautoState::SKIP;
++    }
++    $make = $node->get('field_make')->entity;
++    $year = $node->get('field_year')->value;
++    $node->setTitle(VehicleTitle::build(
++      $year === NULL || $year === '' ? NULL : (int) $year,
++      $make instanceof TermInterface ? (string) $make->label() : '',
++      (string) $node->get('field_model')->value,
++    ));
++  }
++
++  /**
++   * Implements hook_entity_bundle_field_info_alter().
++   *
++   * Each car on the lot has its own stock number: the inventory's links and
++   * the inquiry carry it.
++   *
++   * @param array<string, \Drupal\Core\Field\FieldDefinitionInterface> $fields
++   *   The bundle's field definitions.
++   * @param \Drupal\Core\Entity\EntityTypeInterface $entity_type
++   *   The entity type.
++   * @param string $bundle
++   *   The bundle.
++   */
++  #[Hook('entity_bundle_field_info_alter')]
++  public function entityBundleFieldInfoAlter(array &$fields, EntityTypeInterface $entity_type, string $bundle): void {
++    if ($entity_type->id() === 'node' && $bundle === Inventory::BUNDLE && isset($fields['field_stock_number'])) {
++      $field = $fields['field_stock_number'];
++      if ($field instanceof FieldConfigInterface) {
++        $field->addConstraint('UniqueField');
++      }
++    }
++  }
++
+ }
+diff --git a/web/modules/custom/wildbills_site/tests/src/Unit/WildbillsSiteHooksTest.php b/web/modules/custom/wildbills_site/tests/src/Unit/WildbillsSiteHooksTest.php
+index 3b65458..4b4f97a 100644
+--- a/web/modules/custom/wildbills_site/tests/src/Unit/WildbillsSiteHooksTest.php
++++ b/web/modules/custom/wildbills_site/tests/src/Unit/WildbillsSiteHooksTest.php
+@@ -6,16 +6,19 @@
+ 
+ use Drupal\Component\Datetime\TimeInterface;
+ use Drupal\Core\Cache\CacheTagsInvalidatorInterface;
++use Drupal\Core\Entity\EntityTypeInterface;
++use Drupal\Core\Field\FieldConfigInterface;
+ use Drupal\Core\Render\Element\HtmlTag;
+ use Drupal\Core\State\StateInterface;
+ use Drupal\Tests\UnitTestCase;
+ use Drupal\wildbills_site\DemoNotices;
+ use Drupal\wildbills_site\Hook\WildbillsSiteHooks;
++use Drupal\wildbills_site\VehicleCount;
+ use PHPUnit\Framework\Attributes\CoversClass;
+ use PHPUnit\Framework\Attributes\Group;
+ 
+ /**
+- * Tests the module's hooks: the demo switch's pre-render, the year turnover.
++ * Tests the module's hooks: the pre-renders, the year turnover, stock numbers.
+  */
+ #[CoversClass(WildbillsSiteHooks::class)]
+ #[Group('wildbills_site')]
+@@ -51,14 +54,36 @@ public function testCronLeavesTheSameYearAlone(): void {
+   }
+ 
+   /**
+-   * The demo switch's pre-render runs before the component element's own.
++   * The demo switch's and the count's pre-renders run before the element's own.
+    */
+   public function testDemoNoticesRunFirst(): void {
+     // Any pre-render already declared stands in for the element's own.
+     $info = ['component' => ['#pre_render' => [[HtmlTag::class, 'preRenderHtmlTag']]]];
+     $this->hooks(NULL, 0, $this->createMock(CacheTagsInvalidatorInterface::class))->elementInfoAlter($info);
+-    $this->assertSame([DemoNotices::class, 'preRender'], $info['component']['#pre_render'][0]);
+-    $this->assertSame([HtmlTag::class, 'preRenderHtmlTag'], $info['component']['#pre_render'][1]);
++    $this->assertSame([
++      [DemoNotices::class, 'preRender'],
++      [VehicleCount::class, 'preRender'],
++      [HtmlTag::class, 'preRenderHtmlTag'],
++    ], $info['component']['#pre_render']);
++  }
++
++  /**
++   * A vehicle's stock number must be its own; other bundles are untouched.
++   */
++  public function testStockNumberIsUnique(): void {
++    $hooks = $this->hooks(NULL, 0, $this->createMock(CacheTagsInvalidatorInterface::class));
++    $node = $this->createMock(EntityTypeInterface::class);
++    $node->method('id')->willReturn('node');
++
++    $stock = $this->createMock(FieldConfigInterface::class);
++    $stock->expects($this->once())->method('addConstraint')->with('UniqueField');
++    $fields = ['field_stock_number' => $stock];
++    $hooks->entityBundleFieldInfoAlter($fields, $node, 'vehicle');
++
++    $other = $this->createMock(FieldConfigInterface::class);
++    $other->expects($this->never())->method('addConstraint');
++    $fields = ['field_stock_number' => $other];
++    $hooks->entityBundleFieldInfoAlter($fields, $node, 'page');
+   }
+ 
+ }
+diff --git a/web/modules/custom/wildbills_site/wildbills_site.info.yml b/web/modules/custom/wildbills_site/wildbills_site.info.yml
+index 7567d4b..51efa24 100644
+--- a/web/modules/custom/wildbills_site/wildbills_site.info.yml
++++ b/web/modules/custom/wildbills_site/wildbills_site.info.yml
+@@ -1,9 +1,15 @@
+ name: "Wild Bill's site"
+ type: module
+-description: "The dealership details (contact lines, weekly hours, time zone, demo notices) and the blocks that render the site header and footer from them."
++description: "The dealership details (contact lines, weekly hours, time zone, demo notices) and the blocks that render the site header and footer from them; the vehicles on the lot: their titles, the inventory page, the redirects and the hero's count."
+ package: "Wild Bill's"
+ core_version_requirement: ^11
+ dependencies:
+   - drupal:block
++  - drupal:media
+   - drupal:menu_link_content
++  - drupal:node
++  - drupal:options
++  - drupal:taxonomy
++  - drupal:views
++  - pathauto:pathauto
+   - redirect:redirect
+diff --git a/web/modules/custom/wildbills_site/wildbills_site.services.yml b/web/modules/custom/wildbills_site/wildbills_site.services.yml
+index e781554..33653c2 100644
+--- a/web/modules/custom/wildbills_site/wildbills_site.services.yml
++++ b/web/modules/custom/wildbills_site/wildbills_site.services.yml
+@@ -4,3 +4,10 @@ services:
+   wildbills_site.dealership:
+     class: Drupal\wildbills_site\Dealership
+   Drupal\wildbills_site\Dealership: '@wildbills_site.dealership'
++  wildbills_site.inventory:
++    class: Drupal\wildbills_site\Inventory
++  Drupal\wildbills_site\Inventory: '@wildbills_site.inventory'
++  wildbills_site.vehicle_redirect:
++    class: Drupal\wildbills_site\EventSubscriber\VehicleRedirectSubscriber
++    tags:
++      - { name: event_subscriber }
+diff --git a/web/themes/custom/wildbills/README.md b/web/themes/custom/wildbills/README.md
+index 290d84d..96682d0 100644
+--- a/web/themes/custom/wildbills/README.md
++++ b/web/themes/custom/wildbills/README.md
+@@ -39,15 +39,26 @@ component.
+ | `site_footer` | the Site footer block | brand, Pages, Hours, Contact, copyright |
+ | `brand`, `nav_link` | the header and footer | the WB lock-up; one menu link (bar, mobile or footer) |
+ | `button`, `section_heading` | Canvas, and the components below | a pill button; a section's eyebrow, heading and lede |
+-| `home_hero`, `promise_band`, `how_it_works`, `questions_split`, `closing_cta` | Canvas (the Home page) | the home page's five sections; every string is a prop |
++| `home_hero`, `promise_band`, `how_it_works`, `questions_split`, `closing_cta` | Canvas (the Home page) | the home page's copy sections; every string is a prop. The hero's count is not a prop: `wildbills_site` hands it the number of listed cars |
++| `featured_vehicles`, `body_style_tiles` | Canvas (the Home page) | a section heading above a slot holding the `vehicles` featured block or the `body_styles` tiles block |
++| `page_head` | the inventory style (and, later, the inner pages) | eyebrow, h1, lede |
++| `inventory` | the `wildbills_inventory` Views style | the /vehicles layout: filters, toolbar, chips, cards, empty state and the details `<dialog>`. `inventory.js` filters and sorts the cards from their data attributes, handles `?type=` and `?vehicle=`, and fills the pop-up with `textContent` |
++| `vehicle_card` | the vehicles Views (UI Patterns row) | the source's `carCard()`: one chip (Sale pending, then Featured, then body style); Details links to `/vehicles?vehicle=<stock>` |
++| `card_grid` | UI Patterns Views style, and `inventory` | the cards' grid (`kind: cars`), or tiles three to a row (`kind: tiles`). The prop is not named `variant`, because UI Patterns reserves that name |
++| `body_style_tile`, `filter_choice` | the body_styles View; the inventory style | a home tile linking to `/vehicles?type=<name>` (encoded); a body-style button or a make option |
+ 
+ The five frame components (`page`, `site_header`, `site_footer`, `brand`,
+ `nav_link`) are disabled as Canvas components. They render from the template
+-and the blocks, so the dealership form stays their one source.
++and the blocks, so the dealership form stays their one source. For the same
++reason, the five inventory components that code and Views render
++(`inventory`, `vehicle_card`, `card_grid`, `body_style_tile`, `filter_choice`)
++are disabled too.
+ 
+ ## The Home page
+ 
+-`/` is `canvas_page` 1, one component per section. Its tree is committed as
++`/` is `canvas_page` 1, one component per section (seven). The featured
++cars and the tiles are Views blocks in the slots of `featured_vehicles` and
++`body_style_tiles`. Its tree is committed as
+ `droost/canvas/home.tree.json`, which names its photos by file
+ (`media:hero.jpg`). To rebuild it on any site, after config import, run this
+ from the project root:
+@@ -62,5 +73,6 @@ The photos ship in `components/home_hero/` and `components/questions_split/`.
+ 
+ ## Tests
+ 
+-`tests/e2e/frame.spec.ts` and `tests/e2e/home.spec.ts`. The parity gate holds
+-the header and footer to the source at 1280 and 390 wide.
++`tests/e2e/frame.spec.ts`, `tests/e2e/home.spec.ts` and
++`tests/e2e/inventory.spec.ts`. The parity gate holds the header and footer to
++the source on `/` and `/vehicles`, at 1280 and 390 wide.
+diff --git a/web/themes/custom/wildbills/components/home_hero/home_hero.component.yml b/web/themes/custom/wildbills/components/home_hero/home_hero.component.yml
+index b3e3392..2510d7b 100644
+--- a/web/themes/custom/wildbills/components/home_hero/home_hero.component.yml
++++ b/web/themes/custom/wildbills/components/home_hero/home_hero.component.yml
+@@ -1,6 +1,6 @@
+ $schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+ name: Home hero
+-description: "The home page's opening section: eyebrow, a large headline with one emphasised word, a lede, two buttons, and the lot photo with its count tag and button."
++description: "The home page's opening section: eyebrow, a large headline with one emphasised word, a lede, two buttons, and the lot photo with its tag: the number of cars on the lot (counted, not typed), a line and a button."
+ group: "Wild Bill's home"
+ status: stable
+ props:
+@@ -66,11 +66,6 @@ props:
+           alt: 'Used cars and pickup trucks lined up on a dealership lot at golden hour'
+           width: 1024
+           height: 1024
+-    tag_count:
+-      type: string
+-      title: Tag count
+-      description: The number in the photo's tag. While the demo notices are on, "sample" follows it.
+-      examples: ['15']
+     tag_noun:
+       type: string
+       title: Tag noun
+diff --git a/web/themes/custom/wildbills/components/home_hero/home_hero.twig b/web/themes/custom/wildbills/components/home_hero/home_hero.twig
+index 2abc91d..c3a1725 100644
+--- a/web/themes/custom/wildbills/components/home_hero/home_hero.twig
++++ b/web/themes/custom/wildbills/components/home_hero/home_hero.twig
+@@ -1,6 +1,7 @@
+ {#
+-  demo_notices is not a prop: the wildbills_site module hands it to every
+-  wildbills component from the dealership details' demo switch.
++  demo_notices and vehicle_count are not props: the wildbills_site module
++  hands every wildbills component the dealership details' demo switch, and
++  this one the number of cars on the lot.
+ #}
+ <section class="wb-hero">
+   <div class="wb-wrap wb-hero-grid">
+@@ -15,8 +16,8 @@
+     </div>
+     <figure class="wb-hero-photo wb-rise wb-rise-3">
+       {%- if image.src %}<img src="{{ image.src }}" alt="{{ image.alt }}"{% if image.width %} width="{{ image.width }}"{% endif %}{% if image.height %} height="{{ image.height }}"{% endif %} fetchpriority="high">{% endif %}
+-      {%- if tag_count or tag_text %}
+-      <figcaption class="wb-hero-tag"><div><b>{{ [tag_count, demo_notices ? 'sample'|t : null, tag_noun]|filter(w => w)|join(' ') }}</b>{% if tag_text %}<span>{{ tag_text }}</span>{% endif %}</div>
++      {%- if vehicle_count is not null or tag_text %}
++      <figcaption class="wb-hero-tag"><div><b>{{ [vehicle_count, demo_notices ? 'sample'|t : null, vehicle_count == 1 ? tag_noun|trim('s', 'right') : tag_noun]|filter(w => w is not same as(null) and w is not same as(''))|join(' ') }}</b>{% if tag_text %}<span>{{ tag_text }}</span>{% endif %}</div>
+         {%- if tag_label and tag_url %}{{ include('wildbills:button', { label: tag_label, url: tag_url, variant: 'ink', size: 'sm' }, with_context = false) }}{% endif -%}
+       </figcaption>
+       {%- endif %}

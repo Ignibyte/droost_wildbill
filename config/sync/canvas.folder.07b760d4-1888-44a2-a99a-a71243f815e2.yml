@@ -1,0 +1,23 @@
+uuid: 07b760d4-1888-44a2-a99a-a71243f815e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.wildbills.body_style_tiles
+    - canvas.component.sdc.wildbills.closing_cta
+    - canvas.component.sdc.wildbills.featured_vehicles
+    - canvas.component.sdc.wildbills.home_hero
+    - canvas.component.sdc.wildbills.how_it_works
+    - canvas.component.sdc.wildbills.promise_band
+    - canvas.component.sdc.wildbills.questions_split
+name: "Wild Bill's home"
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.wildbills.body_style_tiles
+  - sdc.wildbills.closing_cta
+  - sdc.wildbills.featured_vehicles
+  - sdc.wildbills.home_hero
+  - sdc.wildbills.how_it_works
+  - sdc.wildbills.promise_band
+  - sdc.wildbills.questions_split

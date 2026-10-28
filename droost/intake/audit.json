@@ -1,0 +1,2294 @@
+{
+  "schema": "droost-source/audit@1",
+  "at": "2026-10-22T21:55:03.688Z",
+  "source": {
+    "url": "http://localhost:4321/",
+    "files": "/var/www/html/design/src/Wild-Bills-Cars/artifacts/wildbills",
+    "width": 1280,
+    "documents": [],
+    "html": [
+      "contact.html",
+      "index.html",
+      "location.html",
+      "vehicles.html"
+    ],
+    "filesRead": 34
+  },
+  "routes": [
+    {
+      "id": "r:/",
+      "path": "/",
+      "status": 200,
+      "declared": false,
+      "pattern": null,
+      "notFound": false
+    },
+    {
+      "id": "r:/contact",
+      "path": "/contact",
+      "status": 200,
+      "declared": false,
+      "pattern": null,
+      "notFound": false
+    },
+    {
+      "id": "r:/location",
+      "path": "/location",
+      "status": 200,
+      "declared": false,
+      "pattern": null,
+      "notFound": false
+    },
+    {
+      "id": "r:/vehicles",
+      "path": "/vehicles",
+      "status": 200,
+      "declared": false,
+      "pattern": null,
+      "notFound": false
+    }
+  ],
+  "pages": [
+    {
+      "id": "p:/",
+      "route": "/",
+      "status": 200,
+      "title": "Wild Bill's Used Cars — Straightforward used cars, trucks and SUVs",
+      "description": "Browse sample inventory from Wild Bill's Used Cars, an independent used-car lot. Clear prices, plain answers, no pressure. Demo website.",
+      "landmarks": [
+        "header",
+        "nav",
+        "main",
+        "footer"
+      ],
+      "outline": [
+        {
+          "level": 1,
+          "text": "Good used cars. sold. Plainly"
+        },
+        {
+          "level": 2,
+          "text": "Featured this week"
+        },
+        {
+          "level": 3,
+          "text": "Ford F-150"
+        },
+        {
+          "level": 3,
+          "text": "Chevrolet Tahoe"
+        },
+        {
+          "level": 3,
+          "text": "RAM 1500"
+        },
+        {
+          "level": 3,
+          "text": "Jeep Wrangler"
+        },
+        {
+          "level": 2,
+          "text": "What do you need it to do?"
+        },
+        {
+          "level": 3,
+          "text": "Trucks"
+        },
+        {
+          "level": 3,
+          "text": "SUVs"
+        },
+        {
+          "level": 3,
+          "text": "Cars"
+        },
+        {
+          "level": 2,
+          "text": "Four steps. No runaround."
+        },
+        {
+          "level": 3,
+          "text": "Browse"
+        },
+        {
+          "level": 3,
+          "text": "Ask"
+        },
+        {
+          "level": 3,
+          "text": "Drive it"
+        },
+        {
+          "level": 3,
+          "text": "Decide"
+        },
+        {
+          "level": 2,
+          "text": "Bring your questions. We'd rather you ask."
+        },
+        {
+          "level": 2,
+          "text": "Found one you like?"
+        },
+        {
+          "level": 4,
+          "text": "Pages"
+        },
+        {
+          "level": 4,
+          "text": "Hours (sample)"
+        },
+        {
+          "level": 4,
+          "text": "Contact (sample)"
+        }
+      ],
+      "sections": [
+        {
+          "id": "p:/#s1",
+          "heading": {
+            "level": 1,
+            "text": "Good used cars. sold. Plainly"
+          },
+          "words": 91,
+          "start": "Independent used-car lot Good used cars. sold. Plainly Trucks, SUVs and cars wit"
+        },
+        {
+          "id": "p:/#s2",
+          "heading": {
+            "level": 2,
+            "text": "Featured this week"
+          },
+          "words": 71,
+          "start": "On the lot Featured this week A few picks from the sample inventory. All vehicle",
+          "records": [
+            "d:src/site/shared.ts#VEHICLES@1",
+            "d:src/site/shared.ts#VEHICLES@2",
+            "d:src/site/shared.ts#VEHICLES@3",
+            "d:src/site/shared.ts#VEHICLES@4"
+          ]
+        },
+        {
+          "id": "p:/#s3",
+          "heading": {
+            "level": 2,
+            "text": "What do you need it to do?"
+          },
+          "words": 23,
+          "start": "Shop by body style What do you need it to do? Haul, tow, work Trucks Room for ev"
+        },
+        {
+          "id": "p:/#s4",
+          "heading": {
+            "level": 2,
+            "text": "Four steps. No runaround."
+          },
+          "words": 65,
+          "start": "How it works Four steps. No runaround. 01 Browse Filter the lot by body style, m"
+        },
+        {
+          "id": "p:/#s5",
+          "heading": {
+            "level": 2,
+            "text": "Bring your questions. We'd rather you ask."
+          },
+          "words": 64,
+          "start": "Before you come in Bring your questions. We'd rather you ask. Buying used should"
+        },
+        {
+          "id": "p:/#s6",
+          "heading": {
+            "level": 2,
+            "text": "Found one you like?"
+          },
+          "words": 33,
+          "start": "Come take a look Found one you like? Send an inquiry with the car already filled"
+        }
+      ],
+      "repeats": [
+        {
+          "id": "p:/#r1",
+          "count": 4,
+          "kind": "links",
+          "container": "ul.nav-links",
+          "shape": "li(a)",
+          "slots": [
+            {
+              "n": 1,
+              "role": "link",
+              "varies": true,
+              "values": [
+                "Home",
+                "Inventory",
+                "Contact",
+                "Visit"
+              ],
+              "targets": [
+                "/",
+                "/vehicles.html",
+                "/contact.html",
+                "/location.html"
+              ]
+            }
+          ],
+          "inside": "nav",
+          "seenOn": []
+        },
+        {
+          "id": "p:/#r2",
+          "count": 4,
+          "kind": "items",
+          "container": "div.wrap.band-grid",
+          "shape": "div(b,span)",
+          "slots": [
+            {
+              "n": 1,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "Price on every car",
+                "Look before you visit",
+                "Ask about any car",
+                "Visit on your schedule"
+              ]
+            },
+            {
+              "n": 2,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "Listed up front, no \"call for price\"",
+                "Filter by type, price, year and miles",
+                "Inquiries come prefilled with the vehicle",
+                "Hours and directions on one page"
+              ]
+            }
+          ],
+          "inside": "main",
+          "seenOn": []
+        },
+        {
+          "id": "p:/#r3",
+          "count": 4,
+          "kind": "cards",
+          "container": "div.car-grid",
+          "shape": "article(div(img,span),div(div(div,h3),ul(li+),div(div+)))",
+          "slots": [
+            {
+              "n": 1,
+              "role": "image",
+              "varies": true,
+              "values": [
+                "2021 Ford F-150, Magnetic Gray",
+                "2020 Chevrolet Tahoe, Shadow Gray",
+                "2022 RAM 1500, Diamond Black",
+                "2021 Jeep Wrangler, Firecracker Red"
+              ]
+            },
+            {
+              "n": 2,
+              "role": "text",
+              "varies": false,
+              "values": [
+                "Featured",
+                "Featured",
+                "Featured",
+                "Featured"
+              ]
+            },
+            {
+              "n": 3,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "2021 · TRUCK",
+                "2020 · SUV",
+                "2022 · TRUCK",
+                "2021 · SUV"
+              ]
+            },
+            {
+              "n": 4,
+              "role": "heading",
+              "varies": true,
+              "values": [
+                "Ford F-150",
+                "Chevrolet Tahoe",
+                "RAM 1500",
+                "Jeep Wrangler"
+              ]
+            },
+            {
+              "n": 5,
+              "role": "list",
+              "varies": true,
+              "values": [
+                "42,000 mi | Magnetic Gray",
+                "55,000 mi | Shadow Gray",
+                "18,500 mi | Diamond Black",
+                "31,000 mi | Firecracker Red"
+              ],
+              "items": [
+                2,
+                2,
+                2,
+                2
+              ]
+            },
+            {
+              "n": 6,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "$38,900",
+                "$42,500",
+                "$47,200",
+                "$44,800"
+              ],
+              "pattern": "price"
+            },
+            {
+              "n": 7,
+              "role": "text",
+              "varies": false,
+              "values": [
+                "Sample price",
+                "Sample price",
+                "Sample price",
+                "Sample price"
+              ]
+            },
+            {
+              "n": 8,
+              "role": "link",
+              "varies": false,
+              "values": [
+                "Details",
+                "Details",
+                "Details",
+                "Details"
+              ],
+              "targets": [
+                "/vehicles.html",
+                "/vehicles.html",
+                "/vehicles.html",
+                "/vehicles.html"
+              ]
+            }
+          ],
+          "inside": "main",
+          "data": {
+            "id": "d:src/site/shared.ts#VEHICLES",
+            "fields": {
+              "1": "model",
+              "3": "year",
+              "4": "model",
+              "5": "miles",
+              "6": "price"
+            },
+            "records": [
+              "d:src/site/shared.ts#VEHICLES@1",
+              "d:src/site/shared.ts#VEHICLES@2",
+              "d:src/site/shared.ts#VEHICLES@3",
+              "d:src/site/shared.ts#VEHICLES@4"
+            ]
+          },
+          "seenOn": [
+            "p:/vehicles#r1"
+          ]
+        },
+        {
+          "id": "p:/#r4",
+          "count": 4,
+          "kind": "cards",
+          "container": "div.steps.reveal.in",
+          "shape": "div(span,h3,p)",
+          "slots": [
+            {
+              "n": 1,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "01",
+                "02",
+                "03",
+                "04"
+              ],
+              "pattern": "number"
+            },
+            {
+              "n": 2,
+              "role": "heading",
+              "varies": true,
+              "values": [
+                "Browse",
+                "Ask",
+                "Drive it",
+                "Decide"
+              ]
+            },
+            {
+              "n": 3,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "Filter the lot by body style, make, budget, year and mileage.",
+                "Open any car and send a question. The form fills in the vehicle for you.",
+                "Stop by during open hours and take it for a test drive.",
+                "Take your time. Ask about paperwork, history and trade-ins in person."
+              ]
+            }
+          ],
+          "inside": "main",
+          "seenOn": []
+        },
+        {
+          "id": "p:/#r5",
+          "count": 4,
+          "kind": "chips",
+          "container": "ul.checklist",
+          "shape": "li(svg,span)",
+          "slots": [
+            {
+              "n": 1,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "Vehicle history report and title status",
+                "Service records and recent maintenance",
+                "Whether a pre-purchase inspection by your mechanic is welcome",
+                "Trade-in value and payment options, in writing"
+              ]
+            }
+          ],
+          "inside": "main",
+          "seenOn": []
+        },
+        {
+          "id": "p:/#r6",
+          "count": 4,
+          "kind": "links",
+          "container": "ul",
+          "shape": "li(a)",
+          "slots": [
+            {
+              "n": 1,
+              "role": "link",
+              "varies": true,
+              "values": [
+                "Home",
+                "Inventory",
+                "Contact",
+                "Location & hours"
+              ],
+              "targets": [
+                "/",
+                "/vehicles.html",
+                "/contact.html",
+                "/location.html"
+              ]
+            }
+          ],
+          "inside": "footer",
+          "seenOn": []
+        },
+        {
+          "id": "p:/#r7",
+          "count": 3,
+          "kind": "links",
+          "container": "div.cats",
+          "shape": "a(img,div(div(span,h3),span(svg)))",
+          "slots": [
+            {
+              "n": 1,
+              "role": "link",
+              "varies": true,
+              "values": [
+                "Haul, tow, work Trucks",
+                "Room for everyone SUVs",
+                "Just for driving Cars"
+              ],
+              "targets": [
+                "/vehicles.html",
+                "/vehicles.html",
+                "/vehicles.html"
+              ]
+            }
+          ],
+          "inside": "main",
+          "seenOn": []
+        },
+        {
+          "id": "p:/#r8",
+          "count": 3,
+          "kind": "chips",
+          "container": "ul",
+          "shape": "li",
+          "slots": [
+            {
+              "n": 1,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "Mon–Fri 8am–7pm",
+                "Saturday 9am–6pm",
+                "Sunday closed"
+              ],
+              "pattern": "date"
+            }
+          ],
+          "inside": "footer",
+          "seenOn": []
+        }
+      ],
+      "forms": [],
+      "looseFields": [],
+      "media": {
+        "images": 9,
+        "embeds": [],
+        "videos": 0,
+        "broken": []
+      },
+      "links": {
+        "internal": [
+          "/",
+          "/contact.html",
+          "/location.html",
+          "/vehicles.html"
+        ],
+        "external": [
+          "mailto:wildbill@wildbillscars.com",
+          "tel:+15551234567"
+        ]
+      }
+    },
+    {
+      "id": "p:/contact",
+      "route": "/contact",
+      "status": 200,
+      "title": "Contact — Wild Bill's Used Cars",
+      "description": "Ask Wild Bill's Used Cars about a vehicle, a test drive, trade-ins or payment options. Prepares an email in your own mail app. Demo website.",
+      "landmarks": [
+        "header",
+        "nav",
+        "main",
+        "aside",
+        "footer"
+      ],
+      "outline": [
+        {
+          "level": 1,
+          "text": "Ask us anything."
+        },
+        {
+          "level": 3,
+          "text": "Phone sample"
+        },
+        {
+          "level": 3,
+          "text": "Email sample"
+        },
+        {
+          "level": 3,
+          "text": "Visit sample"
+        },
+        {
+          "level": 3,
+          "text": "Hours sample"
+        },
+        {
+          "level": 4,
+          "text": "Pages"
+        },
+        {
+          "level": 4,
+          "text": "Hours (sample)"
+        },
+        {
+          "level": 4,
+          "text": "Contact (sample)"
+        }
+      ],
+      "sections": [
+        {
+          "id": "p:/contact#s1",
+          "heading": {
+            "level": 1,
+            "text": "Ask us anything."
+          },
+          "words": 31,
+          "start": "Contact Ask us anything. About a specific car, a test drive, your trade-in or ho"
+        },
+        {
+          "id": "p:/contact#s2",
+          "heading": {
+            "level": 3,
+            "text": "Phone sample"
+          },
+          "words": 80,
+          "start": "This site has no message server. Submitting prepares an email in your own mail a"
+        }
+      ],
+      "repeats": [
+        {
+          "id": "p:/contact#r1",
+          "count": 6,
+          "kind": "chips",
+          "container": "select.select",
+          "shape": "option",
+          "slots": [
+            {
+              "n": 1,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "General question",
+                "Specific vehicle",
+                "Test drive",
+                "Trade-in",
+                "Payment options",
+                "Vehicle search"
+              ]
+            }
+          ],
+          "inside": "main",
+          "seenOn": [
+            "p:/vehicles#r2",
+            "p:/vehicles#r3"
+          ]
+        },
+        {
+          "id": "p:/contact#r2",
+          "count": 4,
+          "kind": "links",
+          "container": "ul.nav-links",
+          "shape": "li(a)",
+          "slots": [
+            {
+              "n": 1,
+              "role": "link",
+              "varies": true,
+              "values": [
+                "Home",
+                "Inventory",
+                "Contact",
+                "Visit"
+              ],
+              "targets": [
+                "/",
+                "/vehicles.html",
+                "/contact.html",
+                "/location.html"
+              ]
+            }
+          ],
+          "inside": "nav",
+          "seenOn": []
+        },
+        {
+          "id": "p:/contact#r3",
+          "count": 4,
+          "kind": "links",
+          "container": "ul",
+          "shape": "li(a)",
+          "slots": [
+            {
+              "n": 1,
+              "role": "link",
+              "varies": true,
+              "values": [
+                "Home",
+                "Inventory",
+                "Contact",
+                "Location & hours"
+              ],
+              "targets": [
+                "/",
+                "/vehicles.html",
+                "/contact.html",
+                "/location.html"
+              ]
+            }
+          ],
+          "inside": "footer",
+          "seenOn": []
+        },
+        {
+          "id": "p:/contact#r4",
+          "count": 3,
+          "kind": "chips",
+          "container": "ul",
+          "shape": "li",
+          "slots": [
+            {
+              "n": 1,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "Mon–Fri 8am–7pm",
+                "Saturday 9am–6pm",
+                "Sunday closed"
+              ],
+              "pattern": "date"
+            }
+          ],
+          "inside": "footer",
+          "seenOn": []
+        }
+      ],
+      "forms": [
+        {
+          "id": "p:/contact#f1",
+          "fields": [
+            {
+              "label": "Your name",
+              "type": "text",
+              "name": "name",
+              "required": true
+            },
+            {
+              "label": "Email",
+              "type": "email",
+              "name": "email",
+              "required": true
+            },
+            {
+              "label": "Phone optional",
+              "type": "tel",
+              "name": "phone",
+              "required": false
+            },
+            {
+              "label": "Topic",
+              "type": "select",
+              "name": "topic",
+              "required": false,
+              "options": [
+                "General question",
+                "Specific vehicle",
+                "Test drive",
+                "Trade-in",
+                "Payment options",
+                "Vehicle search"
+              ]
+            },
+            {
+              "label": "Message 0 / 1000",
+              "type": "textarea",
+              "name": "message",
+              "required": true
+            }
+          ],
+          "submit": "Prepare email",
+          "inside": "main"
+        }
+      ],
+      "looseFields": [],
+      "media": {
+        "images": 0,
+        "embeds": [],
+        "videos": 0,
+        "broken": []
+      },
+      "links": {
+        "internal": [
+          "/",
+          "/contact",
+          "/contact.html",
+          "/location.html",
+          "/vehicles.html"
+        ],
+        "external": [
+          "mailto:wildbill@wildbillscars.com",
+          "tel:+15551234567"
+        ]
+      }
+    },
+    {
+      "id": "p:/location",
+      "route": "/location",
+      "status": 200,
+      "title": "Location & Hours — Wild Bill's Used Cars",
+      "description": "Opening hours, address and map links for visiting Wild Bill's Used Cars. Sample location details for this demo website.",
+      "landmarks": [
+        "header",
+        "nav",
+        "main",
+        "aside",
+        "footer"
+      ],
+      "outline": [
+        {
+          "level": 1,
+          "text": "Come see it in person."
+        },
+        {
+          "level": 3,
+          "text": "Address sample"
+        },
+        {
+          "level": 3,
+          "text": "Before you head over"
+        },
+        {
+          "level": 2,
+          "text": "Hours sample"
+        },
+        {
+          "level": 2,
+          "text": "Shortlist first."
+        },
+        {
+          "level": 4,
+          "text": "Pages"
+        },
+        {
+          "level": 4,
+          "text": "Hours (sample)"
+        },
+        {
+          "level": 4,
+          "text": "Contact (sample)"
+        }
+      ],
+      "sections": [
+        {
+          "id": "p:/location#s1",
+          "heading": {
+            "level": 1,
+            "text": "Come see it in person."
+          },
+          "words": 26,
+          "start": "Visit Come see it in person. Photos only tell you so much. Stop by during open h"
+        },
+        {
+          "id": "p:/location#s2",
+          "heading": {
+            "level": 3,
+            "text": "Address sample"
+          },
+          "words": 124,
+          "start": "Wild Bill's Illustrative graphic, not a real map. The address below is a sample "
+        }
+      ],
+      "repeats": [
+        {
+          "id": "p:/location#r1",
+          "count": 7,
+          "kind": "items",
+          "container": "ul",
+          "shape": "li(span+)",
+          "slots": [
+            {
+              "n": 1,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday · today",
+                "Friday",
+                "Saturday",
+                "Sunday"
+              ],
+              "pattern": "date"
+            },
+            {
+              "n": 2,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "8:00am – 7:00pm",
+                "8:00am – 7:00pm",
+                "8:00am – 7:00pm",
+                "8:00am – 7:00pm",
+                "8:00am – 7:00pm",
+                "9:00am – 6:00pm",
+                "Closed"
+              ]
+            }
+          ],
+          "inside": "aside",
+          "data": {
+            "id": "d:src/site/shared.ts#HOURS",
+            "fields": {
+              "1": "day",
+              "2": "open"
+            },
+            "records": [
+              "d:src/site/shared.ts#HOURS@1",
+              "d:src/site/shared.ts#HOURS@2",
+              "d:src/site/shared.ts#HOURS@3",
+              "d:src/site/shared.ts#HOURS@4",
+              "d:src/site/shared.ts#HOURS@5",
+              "d:src/site/shared.ts#HOURS@6"
+            ]
+          },
+          "seenOn": []
+        },
+        {
+          "id": "p:/location#r2",
+          "count": 4,
+          "kind": "links",
+          "container": "ul.nav-links",
+          "shape": "li(a)",
+          "slots": [
+            {
+              "n": 1,
+              "role": "link",
+              "varies": true,
+              "values": [
+                "Home",
+                "Inventory",
+                "Contact",
+                "Visit"
+              ],
+              "targets": [
+                "/",
+                "/vehicles.html",
+                "/contact.html",
+                "/location.html"
+              ]
+            }
+          ],
+          "inside": "nav",
+          "seenOn": []
+        },
+        {
+          "id": "p:/location#r3",
+          "count": 4,
+          "kind": "links",
+          "container": "ul",
+          "shape": "li(a)",
+          "slots": [
+            {
+              "n": 1,
+              "role": "link",
+              "varies": true,
+              "values": [
+                "Home",
+                "Inventory",
+                "Contact",
+                "Location & hours"
+              ],
+              "targets": [
+                "/",
+                "/vehicles.html",
+                "/contact.html",
+                "/location.html"
+              ]
+            }
+          ],
+          "inside": "footer",
+          "seenOn": []
+        },
+        {
+          "id": "p:/location#r4",
+          "count": 3,
+          "kind": "chips",
+          "container": "ul",
+          "shape": "li",
+          "slots": [
+            {
+              "n": 1,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "Mon–Fri 8am–7pm",
+                "Saturday 9am–6pm",
+                "Sunday closed"
+              ],
+              "pattern": "date"
+            }
+          ],
+          "inside": "footer",
+          "seenOn": []
+        }
+      ],
+      "forms": [],
+      "looseFields": [],
+      "media": {
+        "images": 0,
+        "embeds": [],
+        "videos": 0,
+        "broken": []
+      },
+      "links": {
+        "internal": [
+          "/",
+          "/contact.html",
+          "/location",
+          "/location.html",
+          "/vehicles.html"
+        ],
+        "external": [
+          "https://maps.apple.com/?q=123%20Dusty%20Creek%20Rd%2C%20Dusty%20Creek%2C%20TX%2078701",
+          "https://www.google.com/maps/search/?api=1&query=123%20Dusty%20Creek%20Rd%2C%20Dusty%20Creek%2C%20TX%2078701",
+          "mailto:wildbill@wildbillscars.com",
+          "tel:+15551234567"
+        ]
+      }
+    },
+    {
+      "id": "p:/vehicles",
+      "route": "/vehicles",
+      "status": 200,
+      "title": "Inventory — Wild Bill's Used Cars",
+      "description": "Search and filter sample used trucks, SUVs and cars by make, type, price, year and mileage at Wild Bill's Used Cars. Demo inventory.",
+      "landmarks": [
+        "header",
+        "nav",
+        "main",
+        "aside",
+        "footer"
+      ],
+      "outline": [
+        {
+          "level": 1,
+          "text": "The lot."
+        },
+        {
+          "level": 2,
+          "text": "Filters"
+        },
+        {
+          "level": 3,
+          "text": "Ford F-150"
+        },
+        {
+          "level": 3,
+          "text": "Chevrolet Tahoe"
+        },
+        {
+          "level": 3,
+          "text": "RAM 1500"
+        },
+        {
+          "level": 3,
+          "text": "Jeep Wrangler"
+        },
+        {
+          "level": 3,
+          "text": "Toyota Tundra"
+        },
+        {
+          "level": 3,
+          "text": "GMC Sierra 1500"
+        },
+        {
+          "level": 3,
+          "text": "Ford Explorer"
+        },
+        {
+          "level": 3,
+          "text": "Chevrolet Silverado 1500"
+        },
+        {
+          "level": 3,
+          "text": "Toyota 4Runner"
+        },
+        {
+          "level": 3,
+          "text": "Dodge Challenger"
+        },
+        {
+          "level": 3,
+          "text": "Ford Mustang GT"
+        },
+        {
+          "level": 3,
+          "text": "Jeep Grand Cherokee"
+        },
+        {
+          "level": 3,
+          "text": "GMC Yukon XL"
+        },
+        {
+          "level": 3,
+          "text": "Chevrolet Colorado"
+        },
+        {
+          "level": 3,
+          "text": "RAM 2500 Laramie"
+        },
+        {
+          "level": 4,
+          "text": "Pages"
+        },
+        {
+          "level": 4,
+          "text": "Hours (sample)"
+        },
+        {
+          "level": 4,
+          "text": "Contact (sample)"
+        }
+      ],
+      "sections": [
+        {
+          "id": "p:/vehicles#s1",
+          "heading": {
+            "level": 1,
+            "text": "The lot."
+          },
+          "words": 32,
+          "start": "Sample inventory · not live stock The lot. Every car with its price, mileage and"
+        },
+        {
+          "id": "p:/vehicles#s2",
+          "heading": {
+            "level": 2,
+            "text": "Filters"
+          },
+          "words": 308,
+          "start": "Filters Reset Search Body style All Trucks SUVs Cars Make All makes Chevrolet Do",
+          "records": [
+            "d:src/site/shared.ts#VEHICLES@1",
+            "d:src/site/shared.ts#VEHICLES@2",
+            "d:src/site/shared.ts#VEHICLES@3",
+            "d:src/site/shared.ts#VEHICLES@4",
+            "d:src/site/shared.ts#VEHICLES@5",
+            "d:src/site/shared.ts#VEHICLES@6",
+            "d:src/site/shared.ts#VEHICLES@7",
+            "d:src/site/shared.ts#VEHICLES@8",
+            "d:src/site/shared.ts#VEHICLES@9",
+            "d:src/site/shared.ts#VEHICLES@10",
+            "d:src/site/shared.ts#VEHICLES@11",
+            "d:src/site/shared.ts#VEHICLES@12"
+          ]
+        }
+      ],
+      "repeats": [
+        {
+          "id": "p:/vehicles#r1",
+          "count": 15,
+          "kind": "cards",
+          "container": "div.car-grid",
+          "shape": "article(div(img,span),div(div(div,h3),ul(li+),div(div+)))",
+          "slots": [
+            {
+              "n": 1,
+              "role": "image",
+              "varies": true,
+              "values": [
+                "2021 Ford F-150, Magnetic Gray",
+                "2020 Chevrolet Tahoe, Shadow Gray",
+                "2022 RAM 1500, Diamond Black",
+                "2021 Jeep Wrangler, Firecracker Red",
+                "2020 Toyota Tundra, Barcelona Red",
+                "2021 GMC Sierra 1500, Onyx Black",
+                "2020 Ford Explorer, Star White",
+                "2019 Chevrolet Silverado 1500, Summit White",
+                "2021 Toyota 4Runner, Army Green",
+                "2020 Dodge Challenger, Hellraisin Purple",
+                "2021 Ford Mustang GT, Race Red",
+                "2020 Jeep Grand Cherokee, Brilliant Black",
+                "2022 GMC Yukon XL, White Frost",
+                "2021 Chevrolet Colorado, Northsky Blue",
+                "2020 RAM 2500 Laramie, Granite Crystal"
+              ]
+            },
+            {
+              "n": 2,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "Featured",
+                "Featured",
+                "Featured",
+                "Featured",
+                "Truck",
+                "Truck",
+                "SUV",
+                "Truck",
+                "SUV",
+                "Car",
+                "Car",
+                "SUV",
+                "SUV",
+                "Truck",
+                "Truck"
+              ]
+            },
+            {
+              "n": 3,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "2021 · TRUCK",
+                "2020 · SUV",
+                "2022 · TRUCK",
+                "2021 · SUV",
+                "2020 · TRUCK",
+                "2021 · TRUCK",
+                "2020 · SUV",
+                "2019 · TRUCK",
+                "2021 · SUV",
+                "2020 · CAR",
+                "2021 · CAR",
+                "2020 · SUV",
+                "2022 · SUV",
+                "2021 · TRUCK",
+                "2020 · TRUCK"
+              ]
+            },
+            {
+              "n": 4,
+              "role": "heading",
+              "varies": true,
+              "values": [
+                "Ford F-150",
+                "Chevrolet Tahoe",
+                "RAM 1500",
+                "Jeep Wrangler",
+                "Toyota Tundra",
+                "GMC Sierra 1500",
+                "Ford Explorer",
+                "Chevrolet Silverado 1500",
+                "Toyota 4Runner",
+                "Dodge Challenger",
+                "Ford Mustang GT",
+                "Jeep Grand Cherokee",
+                "GMC Yukon XL",
+                "Chevrolet Colorado",
+                "RAM 2500 Laramie"
+              ]
+            },
+            {
+              "n": 5,
+              "role": "list",
+              "varies": true,
+              "values": [
+                "42,000 mi | Magnetic Gray",
+                "55,000 mi | Shadow Gray",
+                "18,500 mi | Diamond Black",
+                "31,000 mi | Firecracker Red",
+                "48,000 mi | Barcelona Red",
+                "35,000 mi | Onyx Black",
+                "61,000 mi | Star White",
+                "72,000 mi | Summit White",
+                "29,000 mi | Army Green",
+                "22,000 mi | Hellraisin Purple",
+                "18,000 mi | Race Red",
+                "44,000 mi | Brilliant Black",
+                "12,000 mi | White Frost",
+                "39,000 mi | Northsky Blue",
+                "47,000 mi | Granite Crystal"
+              ],
+              "items": [
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2
+              ]
+            },
+            {
+              "n": 6,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "$38,900",
+                "$42,500",
+                "$47,200",
+                "$44,800",
+                "$39,500",
+                "$41,000",
+                "$32,900",
+                "$28,500",
+                "$43,900",
+                "$36,800",
+                "$34,500",
+                "$38,200",
+                "$58,000",
+                "$31,000",
+                "$53,400"
+              ],
+              "pattern": "price"
+            },
+            {
+              "n": 7,
+              "role": "text",
+              "varies": false,
+              "values": [
+                "Sample price",
+                "Sample price",
+                "Sample price",
+                "Sample price",
+                "Sample price",
+                "Sample price",
+                "Sample price",
+                "Sample price",
+                "Sample price",
+                "Sample price",
+                "Sample price",
+                "Sample price",
+                "Sample price",
+                "Sample price",
+                "Sample price"
+              ]
+            },
+            {
+              "n": 8,
+              "role": "button",
+              "varies": false,
+              "values": [
+                "Details",
+                "Details",
+                "Details",
+                "Details",
+                "Details",
+                "Details",
+                "Details",
+                "Details",
+                "Details",
+                "Details",
+                "Details",
+                "Details",
+                "Details",
+                "Details",
+                "Details"
+              ]
+            }
+          ],
+          "inside": "main",
+          "data": {
+            "id": "d:src/site/shared.ts#VEHICLES",
+            "fields": {
+              "1": "model",
+              "2": "type",
+              "3": "year",
+              "4": "model",
+              "5": "miles",
+              "6": "price"
+            },
+            "records": [
+              "d:src/site/shared.ts#VEHICLES@1",
+              "d:src/site/shared.ts#VEHICLES@2",
+              "d:src/site/shared.ts#VEHICLES@3",
+              "d:src/site/shared.ts#VEHICLES@4",
+              "d:src/site/shared.ts#VEHICLES@5",
+              "d:src/site/shared.ts#VEHICLES@6",
+              "d:src/site/shared.ts#VEHICLES@7",
+              "d:src/site/shared.ts#VEHICLES@8",
+              "d:src/site/shared.ts#VEHICLES@9",
+              "d:src/site/shared.ts#VEHICLES@10",
+              "d:src/site/shared.ts#VEHICLES@11",
+              "d:src/site/shared.ts#VEHICLES@12",
+              "d:src/site/shared.ts#VEHICLES@13",
+              "d:src/site/shared.ts#VEHICLES@14",
+              "d:src/site/shared.ts#VEHICLES@15"
+            ]
+          },
+          "seenOn": [
+            "p:/#r3"
+          ]
+        },
+        {
+          "id": "p:/vehicles#r2",
+          "count": 8,
+          "kind": "chips",
+          "container": "select.select",
+          "shape": "option",
+          "slots": [
+            {
+              "n": 1,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "All makes",
+                "Chevrolet",
+                "Dodge",
+                "Ford",
+                "GMC",
+                "Jeep",
+                "RAM",
+                "Toyota"
+              ]
+            }
+          ],
+          "inside": "aside",
+          "seenOn": [
+            "p:/contact#r1",
+            "p:/vehicles#r3"
+          ]
+        },
+        {
+          "id": "p:/vehicles#r3",
+          "count": 5,
+          "kind": "chips",
+          "container": "select.select",
+          "shape": "option",
+          "slots": [
+            {
+              "n": 1,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "Featured first",
+                "Price: low to high",
+                "Price: high to low",
+                "Newest first",
+                "Lowest mileage"
+              ]
+            }
+          ],
+          "inside": "main",
+          "seenOn": [
+            "p:/contact#r1",
+            "p:/vehicles#r2"
+          ]
+        },
+        {
+          "id": "p:/vehicles#r4",
+          "count": 4,
+          "kind": "links",
+          "container": "ul.nav-links",
+          "shape": "li(a)",
+          "slots": [
+            {
+              "n": 1,
+              "role": "link",
+              "varies": true,
+              "values": [
+                "Home",
+                "Inventory",
+                "Contact",
+                "Visit"
+              ],
+              "targets": [
+                "/",
+                "/vehicles.html",
+                "/contact.html",
+                "/location.html"
+              ]
+            }
+          ],
+          "inside": "nav",
+          "seenOn": []
+        },
+        {
+          "id": "p:/vehicles#r5",
+          "count": 4,
+          "kind": "buttons",
+          "container": "div.seg",
+          "shape": "button",
+          "slots": [
+            {
+              "n": 1,
+              "role": "button",
+              "varies": true,
+              "values": [
+                "All",
+                "Trucks",
+                "SUVs",
+                "Cars"
+              ]
+            }
+          ],
+          "inside": "aside",
+          "seenOn": []
+        },
+        {
+          "id": "p:/vehicles#r6",
+          "count": 4,
+          "kind": "links",
+          "container": "ul",
+          "shape": "li(a)",
+          "slots": [
+            {
+              "n": 1,
+              "role": "link",
+              "varies": true,
+              "values": [
+                "Home",
+                "Inventory",
+                "Contact",
+                "Location & hours"
+              ],
+              "targets": [
+                "/",
+                "/vehicles.html",
+                "/contact.html",
+                "/location.html"
+              ]
+            }
+          ],
+          "inside": "footer",
+          "seenOn": []
+        },
+        {
+          "id": "p:/vehicles#r7",
+          "count": 3,
+          "kind": "fields",
+          "container": "aside.filters",
+          "shape": "div(label(output),input,div(span+))",
+          "slots": [
+            {
+              "n": 1,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "Max price",
+                "Year or newer",
+                "Max mileage"
+              ]
+            },
+            {
+              "n": 2,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "$60,000",
+                "2019+",
+                "80,000 mi"
+              ]
+            },
+            {
+              "n": 3,
+              "role": "field",
+              "varies": true,
+              "values": [
+                "Max price $60,000",
+                "Year or newer 2019+",
+                "Max mileage 80,000 mi"
+              ]
+            },
+            {
+              "n": 4,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "$25k",
+                "2019",
+                "10k"
+              ]
+            },
+            {
+              "n": 5,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "$60k",
+                "2022",
+                "80k"
+              ]
+            }
+          ],
+          "inside": "aside",
+          "seenOn": []
+        },
+        {
+          "id": "p:/vehicles#r8",
+          "count": 3,
+          "kind": "chips",
+          "container": "ul",
+          "shape": "li",
+          "slots": [
+            {
+              "n": 1,
+              "role": "text",
+              "varies": true,
+              "values": [
+                "Mon–Fri 8am–7pm",
+                "Saturday 9am–6pm",
+                "Sunday closed"
+              ],
+              "pattern": "date"
+            }
+          ],
+          "inside": "footer",
+          "seenOn": []
+        }
+      ],
+      "forms": [],
+      "looseFields": [
+        {
+          "label": "Search",
+          "type": "search",
+          "name": ""
+        },
+        {
+          "label": "Make",
+          "type": "select",
+          "name": ""
+        },
+        {
+          "label": "Max price $60,000",
+          "type": "range",
+          "name": ""
+        },
+        {
+          "label": "Year or newer 2019+",
+          "type": "range",
+          "name": ""
+        },
+        {
+          "label": "Max mileage 80,000 mi",
+          "type": "range",
+          "name": ""
+        },
+        {
+          "label": "Sort by",
+          "type": "select",
+          "name": ""
+        }
+      ],
+      "media": {
+        "images": 15,
+        "embeds": [],
+        "videos": 0,
+        "broken": []
+      },
+      "links": {
+        "internal": [
+          "/",
+          "/contact.html",
+          "/location.html",
+          "/vehicles",
+          "/vehicles.html"
+        ],
+        "external": [
+          "mailto:wildbill@wildbillscars.com",
+          "tel:+15551234567"
+        ]
+      }
+    }
+  ],
+  "frame": {
+    "id": "frame",
+    "header": {
+      "links": [
+        {
+          "label": "WB Wild Bill's Used Cars",
+          "href": "/"
+        },
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Inventory",
+          "href": "/vehicles.html"
+        },
+        {
+          "label": "Contact",
+          "href": "/contact.html"
+        },
+        {
+          "label": "Visit",
+          "href": "/location.html"
+        },
+        {
+          "label": "Browse cars",
+          "href": "/vehicles.html"
+        }
+      ]
+    },
+    "footer": {
+      "links": [
+        {
+          "label": "WB Wild Bill's Used Cars",
+          "href": "/"
+        },
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Inventory",
+          "href": "/vehicles.html"
+        },
+        {
+          "label": "Contact",
+          "href": "/contact.html"
+        },
+        {
+          "label": "Location & hours",
+          "href": "/location.html"
+        },
+        {
+          "label": "(555) 123-4567",
+          "href": "tel:+15551234567"
+        },
+        {
+          "label": "wildbill@wildbillscars.com",
+          "href": "mailto:wildbill@wildbillscars.com"
+        }
+      ],
+      "text": "WB Wild Bill's Used Cars An independent used-car lot. Look at the car, ask your questions, decide in your own time. Pages Home Inventory Contact Location & hours Hours (sample) Mon–Fri 8am–7pm Saturday 9am–6pm Sunday closed Contact (sample) (555) 123-4567 wildbill@wildbillscars.com 123 Dusty Creek R"
+    }
+  },
+  "tokens": {
+    "fonts": [
+      {
+        "value": "Geist, system-ui, sans-serif",
+        "uses": 59
+      },
+      {
+        "value": "\"Bricolage Grotesque\", Geist, system-ui, sans-serif",
+        "uses": 35
+      },
+      {
+        "value": "\"Geist Mono\", ui-monospace, monospace",
+        "uses": 30
+      }
+    ],
+    "colours": [
+      {
+        "value": "rgb(23, 63, 51)",
+        "uses": 35
+      },
+      {
+        "value": "rgb(246, 243, 234)",
+        "uses": 26
+      },
+      {
+        "value": "rgb(59, 89, 75)",
+        "uses": 18
+      },
+      {
+        "value": "rgb(88, 111, 97)",
+        "uses": 15
+      },
+      {
+        "value": "rgba(246, 243, 234, 0.78)",
+        "uses": 11
+      },
+      {
+        "value": "rgb(50, 103, 77)",
+        "uses": 6
+      },
+      {
+        "value": "rgba(246, 243, 234, 0.5)",
+        "uses": 5
+      },
+      {
+        "value": "rgba(246, 243, 234, 0.72)",
+        "uses": 4
+      }
+    ],
+    "backgrounds": [
+      {
+        "value": "rgb(23, 63, 51)",
+        "uses": 11
+      },
+      {
+        "value": "rgb(246, 243, 234)",
+        "uses": 8
+      },
+      {
+        "value": "rgb(50, 103, 77)",
+        "uses": 6
+      },
+      {
+        "value": "rgb(218, 213, 200)",
+        "uses": 6
+      },
+      {
+        "value": "rgb(42, 85, 66)",
+        "uses": 2
+      },
+      {
+        "value": "rgba(246, 243, 234, 0.86)",
+        "uses": 1
+      },
+      {
+        "value": "rgba(246, 243, 234, 0.92)",
+        "uses": 1
+      },
+      {
+        "value": "rgb(236, 232, 223)",
+        "uses": 1
+      }
+    ],
+    "headingFont": "\"Bricolage Grotesque\", Geist, system-ui, sans-serif",
+    "bodyFont": "Geist, system-ui, sans-serif",
+    "variables": {
+      "--paper": "45 38% 94%",
+      "--paper-2": "44 28% 89%",
+      "--paper-3": "42 20% 82%",
+      "--ink": "161 46% 17%",
+      "--ink-2": "153 20% 29%",
+      "--ink-3": "145 12% 39%",
+      "--petrol": "153 34% 25%",
+      "--signal": "151 35% 30%",
+      "--signal-ink": "161 46% 17%",
+      "--sage": "97 26% 74%",
+      "--line": "110 13% 74%",
+      "--ok": "152 52% 32%",
+      "--radius": "14px",
+      "--display": "\"Bricolage Grotesque\", \"Geist\", system-ui, sans-serif",
+      "--body": "\"Geist\", system-ui, sans-serif",
+      "--mono": "\"Geist Mono\", ui-monospace, monospace",
+      "--wrap": "min(1240px, 100% - 2.5rem)",
+      "--ease": "cubic-bezier(.2, .7, .2, 1)"
+    }
+  },
+  "typefaces": [
+    {
+      "family": "Geist",
+      "texts": 213,
+      "drawn": true
+    },
+    {
+      "family": "Geist Mono",
+      "texts": 115,
+      "drawn": true
+    },
+    {
+      "family": "Bricolage Grotesque",
+      "texts": 88,
+      "drawn": true
+    }
+  ],
+  "data": [
+    {
+      "id": "d:src/site/shared.ts#Hours",
+      "path": "src/site/shared.ts",
+      "kind": "interface",
+      "name": "Hours",
+      "fields": [
+        {
+          "name": "day",
+          "type": "string",
+          "optional": false
+        },
+        {
+          "name": "open",
+          "type": "number | null",
+          "optional": false
+        },
+        {
+          "name": "close",
+          "type": "number | null",
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "d:src/site/shared.ts#Vehicle",
+      "path": "src/site/shared.ts",
+      "kind": "interface",
+      "name": "Vehicle",
+      "fields": [
+        {
+          "name": "id",
+          "type": "number",
+          "optional": false
+        },
+        {
+          "name": "make",
+          "type": "string",
+          "optional": false
+        },
+        {
+          "name": "model",
+          "type": "string",
+          "optional": false
+        },
+        {
+          "name": "year",
+          "type": "number",
+          "optional": false
+        },
+        {
+          "name": "price",
+          "type": "number",
+          "optional": false
+        },
+        {
+          "name": "type",
+          "type": "VehicleType",
+          "optional": false
+        },
+        {
+          "name": "miles",
+          "type": "number",
+          "optional": false
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "optional": false
+        },
+        {
+          "name": "cond",
+          "type": "\"Excellent\" | \"Good\" | \"Fair\"",
+          "optional": false
+        },
+        {
+          "name": "featured",
+          "type": "boolean",
+          "optional": false
+        }
+      ]
+    },
+    {
+      "id": "d:src/site/shared.ts#HOURS",
+      "path": "src/site/shared.ts",
+      "kind": "records",
+      "name": "HOURS",
+      "count": 7,
+      "type": "Hours",
+      "fields": [
+        {
+          "name": "day",
+          "type": "string",
+          "optional": false
+        },
+        {
+          "name": "open",
+          "type": "number | null",
+          "optional": false
+        },
+        {
+          "name": "close",
+          "type": "number | null",
+          "optional": false
+        }
+      ],
+      "values": [
+        {
+          "day": "Sunday",
+          "open": "null",
+          "close": "null"
+        },
+        {
+          "day": "Monday",
+          "open": 8,
+          "close": 19
+        },
+        {
+          "day": "Tuesday",
+          "open": 8,
+          "close": 19
+        },
+        {
+          "day": "Wednesday",
+          "open": 8,
+          "close": 19
+        },
+        {
+          "day": "Thursday",
+          "open": 8,
+          "close": 19
+        },
+        {
+          "day": "Friday",
+          "open": 8,
+          "close": 19
+        },
+        {
+          "day": "Saturday",
+          "open": 9,
+          "close": 18
+        }
+      ]
+    },
+    {
+      "id": "d:src/site/shared.ts#VEHICLES",
+      "path": "src/site/shared.ts",
+      "kind": "records",
+      "name": "VEHICLES",
+      "count": 15,
+      "type": "Vehicle",
+      "fields": [
+        {
+          "name": "id",
+          "type": "number",
+          "optional": false
+        },
+        {
+          "name": "make",
+          "type": "string",
+          "optional": false
+        },
+        {
+          "name": "model",
+          "type": "string",
+          "optional": false
+        },
+        {
+          "name": "year",
+          "type": "number",
+          "optional": false
+        },
+        {
+          "name": "price",
+          "type": "number",
+          "optional": false
+        },
+        {
+          "name": "type",
+          "type": "VehicleType",
+          "optional": false
+        },
+        {
+          "name": "miles",
+          "type": "number",
+          "optional": false
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "optional": false
+        },
+        {
+          "name": "cond",
+          "type": "\"Excellent\" | \"Good\" | \"Fair\"",
+          "optional": false
+        },
+        {
+          "name": "featured",
+          "type": "boolean",
+          "optional": false
+        }
+      ],
+      "values": [
+        {
+          "id": 1,
+          "make": "Ford",
+          "model": "F-150",
+          "year": 2021,
+          "price": 38900,
+          "type": "Truck",
+          "miles": 42000,
+          "color": "Magnetic Gray",
+          "cond": "Excellent",
+          "featured": true
+        },
+        {
+          "id": 2,
+          "make": "Chevrolet",
+          "model": "Tahoe",
+          "year": 2020,
+          "price": 42500,
+          "type": "SUV",
+          "miles": 55000,
+          "color": "Shadow Gray",
+          "cond": "Good",
+          "featured": true
+        },
+        {
+          "id": 3,
+          "make": "RAM",
+          "model": "1500",
+          "year": 2022,
+          "price": 47200,
+          "type": "Truck",
+          "miles": 18500,
+          "color": "Diamond Black",
+          "cond": "Excellent",
+          "featured": true
+        },
+        {
+          "id": 4,
+          "make": "Jeep",
+          "model": "Wrangler",
+          "year": 2021,
+          "price": 44800,
+          "type": "SUV",
+          "miles": 31000,
+          "color": "Firecracker Red",
+          "cond": "Excellent",
+          "featured": true
+        },
+        {
+          "id": 5,
+          "make": "Toyota",
+          "model": "Tundra",
+          "year": 2020,
+          "price": 39500,
+          "type": "Truck",
+          "miles": 48000,
+          "color": "Barcelona Red",
+          "cond": "Good",
+          "featured": false
+        },
+        {
+          "id": 6,
+          "make": "GMC",
+          "model": "Sierra 1500",
+          "year": 2021,
+          "price": 41000,
+          "type": "Truck",
+          "miles": 35000,
+          "color": "Onyx Black",
+          "cond": "Excellent",
+          "featured": false
+        },
+        {
+          "id": 7,
+          "make": "Ford",
+          "model": "Explorer",
+          "year": 2020,
+          "price": 32900,
+          "type": "SUV",
+          "miles": 61000,
+          "color": "Star White",
+          "cond": "Good",
+          "featured": false
+        },
+        {
+          "id": 8,
+          "make": "Chevrolet",
+          "model": "Silverado 1500",
+          "year": 2019,
+          "price": 28500,
+          "type": "Truck",
+          "miles": 72000,
+          "color": "Summit White",
+          "cond": "Fair",
+          "featured": false
+        },
+        {
+          "id": 9,
+          "make": "Toyota",
+          "model": "4Runner",
+          "year": 2021,
+          "price": 43900,
+          "type": "SUV",
+          "miles": 29000,
+          "color": "Army Green",
+          "cond": "Excellent",
+          "featured": false
+        },
+        {
+          "id": 10,
+          "make": "Dodge",
+          "model": "Challenger",
+          "year": 2020,
+          "price": 36800,
+          "type": "Car",
+          "miles": 22000,
+          "color": "Hellraisin Purple",
+          "cond": "Excellent",
+          "featured": false
+        },
+        {
+          "id": 11,
+          "make": "Ford",
+          "model": "Mustang GT",
+          "year": 2021,
+          "price": 34500,
+          "type": "Car",
+          "miles": 18000,
+          "color": "Race Red",
+          "cond": "Excellent",
+          "featured": false
+        },
+        {
+          "id": 12,
+          "make": "Jeep",
+          "model": "Grand Cherokee",
+          "year": 2020,
+          "price": 38200,
+          "type": "SUV",
+          "miles": 44000,
+          "color": "Brilliant Black",
+          "cond": "Good",
+          "featured": false
+        },
+        {
+          "id": 13,
+          "make": "GMC",
+          "model": "Yukon XL",
+          "year": 2022,
+          "price": 58000,
+          "type": "SUV",
+          "miles": 12000,
+          "color": "White Frost",
+          "cond": "Excellent",
+          "featured": false
+        },
+        {
+          "id": 14,
+          "make": "Chevrolet",
+          "model": "Colorado",
+          "year": 2021,
+          "price": 31000,
+          "type": "Truck",
+          "miles": 39000,
+          "color": "Northsky Blue",
+          "cond": "Good",
+          "featured": false
+        },
+        {
+          "id": 15,
+          "make": "RAM",
+          "model": "2500 Laramie",
+          "year": 2020,
+          "price": 53400,
+          "type": "Truck",
+          "miles": 47000,
+          "color": "Granite Crystal",
+          "cond": "Good",
+          "featured": false
+        }
+      ]
+    },
+    {
+      "id": "d:src/site/shared.ts#NAV",
+      "path": "src/site/shared.ts",
+      "exported": false,
+      "kind": "records",
+      "name": "NAV",
+      "count": 4,
+      "type": null,
+      "fields": [
+        {
+          "name": "href"
+        },
+        {
+          "name": "label"
+        },
+        {
+          "name": "key"
+        }
+      ],
+      "values": [
+        {
+          "href": "index.html",
+          "label": "Home",
+          "key": "home"
+        },
+        {
+          "href": "vehicles.html",
+          "label": "Inventory",
+          "key": "vehicles"
+        },
+        {
+          "href": "contact.html",
+          "label": "Contact",
+          "key": "contact"
+        },
+        {
+          "href": "location.html",
+          "label": "Visit",
+          "key": "location"
+        }
+      ]
+    }
+  ],
+  "notes": [],
+  "summary": {
+    "routes": 4,
+    "pages": 4,
+    "repeats": 24,
+    "forms": 1,
+    "data": 5,
+    "invalid": 0
+  }
+}

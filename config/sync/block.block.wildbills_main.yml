@@ -1,0 +1,22 @@
+uuid: b64f323d-4d08-4de3-8579-8176bdb1862d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - wildbills
+_core:
+  default_config_hash: PMft0GDcUomzHPtq6vlnX3rMNvA07xBjVXmPX2DusuI
+id: wildbills_main
+theme: wildbills
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: main
+  label_display: '0'
+  provider: system
+visibility: {  }

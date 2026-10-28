@@ -1,0 +1,9 @@
+.wb-split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.wb-split-photo { border-radius: 24px; overflow: hidden; aspect-ratio: 5 / 4; background: hsl(var(--wb-paper-3)); }
+.wb-split-photo img { width: 100%; height: 100%; object-fit: cover; }
+.wb-split-heading { margin: 1rem 0; }
+.wb-checklist { list-style: none; padding: 0; margin: 1.8rem 0 0; display: grid; gap: .9rem; }
+.wb-checklist li { display: flex; gap: .8rem; align-items: start; }
+.wb-checklist svg { width: 20px; height: 20px; color: hsl(var(--wb-signal)); flex: none; margin-top: 2px; }
+.wb-split-actions { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 2rem; }
+@media (max-width: 860px) { .wb-split { grid-template-columns: 1fr; } }

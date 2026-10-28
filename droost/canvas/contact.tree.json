@@ -1,0 +1,84 @@
+{
+  "items": [
+    {
+      "uuid": "4d1f8b63-7c2e-4a1b-8f68-3b7d4a1c0401",
+      "component_id": "sdc.wildbills.page_head",
+      "inputs": {
+        "eyebrow": "Contact",
+        "heading": "Ask us anything.",
+        "lede": "About a specific car, a test drive, your trade-in or how payment works. Write it here and we'll put it into an email for you to send."
+      }
+    },
+    {
+      "uuid": "4d1f8b63-7c2e-4a1b-8f68-3b7d4a1c0402",
+      "component_id": "sdc.wildbills.contact_grid",
+      "inputs": {}
+    },
+    {
+      "uuid": "4d1f8b63-7c2e-4a1b-8f68-3b7d4a1c0403",
+      "component_id": "sdc.wildbills.inquiry_form",
+      "parent_uuid": "4d1f8b63-7c2e-4a1b-8f68-3b7d4a1c0402",
+      "slot": "main",
+      "inputs": {
+        "notice": "This site has no message server. Submitting prepares an email in your own mail app. Nothing is sent until you press send there.",
+        "name_label": "Your name",
+        "email_label": "Email",
+        "phone_label": "Phone",
+        "optional_label": "optional",
+        "topic_label": "Topic",
+        "message_label": "Message",
+        "message_placeholder": "What would you like to know?",
+        "submit_label": "Prepare email",
+        "not_sent_label": "Not sent yet.",
+        "not_sent_text": "Your message is ready but has not left this page.",
+        "ready_heading": "Your email is ready to send.",
+        "open_label": "Open in email app",
+        "copy_label": "Copy message",
+        "edit_label": "Edit message"
+      }
+    },
+    {
+      "uuid": "4d1f8b63-7c2e-4a1b-8f68-3b7d4a1c0404",
+      "component_id": "sdc.wildbills.info_card",
+      "parent_uuid": "4d1f8b63-7c2e-4a1b-8f68-3b7d4a1c0402",
+      "slot": "aside",
+      "inputs": {
+        "heading": "Phone",
+        "detail": "phone",
+        "text": "Placeholder number from the original site."
+      }
+    },
+    {
+      "uuid": "4d1f8b63-7c2e-4a1b-8f68-3b7d4a1c0405",
+      "component_id": "sdc.wildbills.info_card",
+      "parent_uuid": "4d1f8b63-7c2e-4a1b-8f68-3b7d4a1c0402",
+      "slot": "aside",
+      "inputs": {
+        "heading": "Email",
+        "detail": "email"
+      }
+    },
+    {
+      "uuid": "4d1f8b63-7c2e-4a1b-8f68-3b7d4a1c0406",
+      "component_id": "sdc.wildbills.info_card",
+      "parent_uuid": "4d1f8b63-7c2e-4a1b-8f68-3b7d4a1c0402",
+      "slot": "aside",
+      "inputs": {
+        "heading": "Visit",
+        "detail": "address_text",
+        "link_label": "Hours & directions",
+        "link_url": "/location"
+      }
+    },
+    {
+      "uuid": "4d1f8b63-7c2e-4a1b-8f68-3b7d4a1c0407",
+      "component_id": "sdc.wildbills.info_card",
+      "parent_uuid": "4d1f8b63-7c2e-4a1b-8f68-3b7d4a1c0402",
+      "slot": "aside",
+      "inputs": {
+        "heading": "Hours",
+        "detail": "hours"
+      }
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory — Wild Bill's Used Cars</title>
+  <meta name="description" content="Search and filter sample used trucks, SUVs and cars by make, type, price, year and mileage at Wild Bill's Used Cars. Demo inventory.">
+  <meta name="theme-color" content="#173e32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script type="module" src="/src/site/vehicles.ts"></script>
+</head>
+<body>
+<main id="main">
+  <div class="wrap page-head">
+    <span class="eyebrow rise">Sample inventory · not live stock</span>
+    <h1 class="rise rise-2">The lot.</h1>
+    <p class="lede rise rise-3">Every car with its price, mileage and color. Narrow it down, open one up, and send a question with the details already filled in.</p>
+  </div>
+
+  <div class="wrap inv-layout">
+    <aside class="filters" id="filters" aria-label="Filter vehicles">
+      <div class="filters-head"><h2>Filters</h2><button class="link" type="button" id="resetSide" style="background:none;border:0;cursor:pointer;font-size:.88rem" data-testid="button-reset-filters">Reset</button></div>
+      <div class="field">
+        <label for="q">Search</label>
+        <input class="input" id="q" type="search" placeholder="Make, model or color" autocomplete="off" data-testid="input-search">
+      </div>
+      <div class="field">
+        <span class="field-label" id="typeLabel">Body style</span>
+        <div class="seg" role="group" aria-labelledby="typeLabel" id="typeSeg">
+          <button type="button" data-type="" aria-pressed="true">All</button>
+          <button type="button" data-type="Truck" aria-pressed="false">Trucks</button>
+          <button type="button" data-type="SUV" aria-pressed="false">SUVs</button>
+          <button type="button" data-type="Car" aria-pressed="false">Cars</button>
+        </div>
+      </div>
+      <div class="field">
+        <label for="make">Make</label>
+        <select class="select" id="make" data-testid="select-make"><option value="">All makes</option></select>
+      </div>
+      <div class="field">
+        <label for="maxPrice">Max price <output for="maxPrice" id="maxPriceOut"></output></label>
+        <input type="range" id="maxPrice" min="25000" max="60000" step="500" data-testid="range-price">
+        <div class="range-ends"><span>$25k</span><span>$60k</span></div>
+      </div>
+      <div class="field">
+        <label for="minYear">Year or newer <output for="minYear" id="minYearOut"></output></label>
+        <input type="range" id="minYear" min="2019" max="2022" step="1" data-testid="range-year">
+        <div class="range-ends"><span>2019</span><span>2022</span></div>
+      </div>
+      <div class="field">
+        <label for="maxMiles">Max mileage <output for="maxMiles" id="maxMilesOut"></output></label>
+        <input type="range" id="maxMiles" min="10000" max="80000" step="5000" data-testid="range-miles">
+        <div class="range-ends"><span>10k</span><span>80k</span></div>
+      </div>
+    </aside>
+
+    <div>
+      <div class="toolbar">
+        <p class="count" id="count" role="status" aria-live="polite" style="margin:0" data-testid="text-result-count"></p>
+        <div class="toolbar-right">
+          <button class="btn btn-ghost btn-sm filter-toggle" type="button" id="filterToggle" aria-expanded="false" aria-controls="filters" data-testid="button-toggle-filters">Filters</button>
+          <label class="sr-only" for="sort">Sort by</label>
+          <select class="select" id="sort" data-testid="select-sort">
+            <option value="featured">Featured first</option>
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+            <option value="year-desc">Newest first</option>
+            <option value="miles-asc">Lowest mileage</option>
+          </select>
+        </div>
+      </div>
+      <div class="active-chips" id="chips" aria-label="Active filters"></div>
+      <div class="car-grid" id="grid"></div>
+      <div class="empty" id="empty" hidden>
+        <div class="empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11h6"/></svg></div>
+        <h2>Nothing matches that combination.</h2>
+        <p>Loosen a filter or two, or tell us what you're after and we'll keep an eye out.</p>
+        <div style="display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap"><button class="btn btn-primary" type="button" id="resetEmpty" data-testid="button-reset-empty">Reset all filters</button><a class="btn btn-ghost" href="./contact.html?topic=Vehicle%20search">Ask us to look</a></div>
+      </div>
+    </div>
+  </div>
+
+  <dialog class="detail" id="detail" aria-labelledby="detailTitle">
+    <div id="detailContent" style="position:relative"></div>
+  </dialog>
+</main>
+</body>
+</html>

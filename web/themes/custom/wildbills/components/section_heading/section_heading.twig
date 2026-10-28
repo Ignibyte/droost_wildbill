@@ -1,0 +1,10 @@
+<div class="wb-section-head wb-reveal">
+  <div>
+    {%- if eyebrow %}<span class="wb-eyebrow">{{ eyebrow }}</span>{% endif -%}
+    <h2 class="wb-h2">{{ heading }}</h2>
+    {%- if lede %}<p class="wb-lede">{{ lede }}</p>{% endif -%}
+  </div>
+  {%- if button_label and button_url -%}
+    {{ include('wildbills:button', { label: button_label, url: button_url, variant: 'ghost' }, with_context = false) }}
+  {%- endif -%}
+</div>

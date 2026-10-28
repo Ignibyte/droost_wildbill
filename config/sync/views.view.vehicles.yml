@@ -1,0 +1,281 @@
+uuid: 25e7ce92-1b4d-427f-a439-c0491030512b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.vehicle.field_color
+    - field.field.node.vehicle.field_featured
+    - field.field.node.vehicle.field_mileage
+    - field.field.node.vehicle.field_model
+    - field.field.node.vehicle.field_photo
+    - field.field.node.vehicle.field_price
+    - field.field.node.vehicle.field_sale_status
+    - field.field.node.vehicle.field_stock_number
+    - field.field.node.vehicle.field_year
+    - node.type.vehicle
+  module:
+    - node
+    - options
+    - token
+    - ui_patterns
+    - ui_patterns_views
+    - user
+    - wildbills_site
+  theme:
+    - wildbills
+id: vehicles
+label: Vehicles
+module: views
+description: "The cars on the lot (published, not sold): the inventory page and the home page's featured cars."
+tag: ''
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    id: default
+    display_title: Default
+    display_plugin: default
+    position: 0
+    display_options:
+      title: Inventory
+      fields: {  }
+      pager:
+        type: none
+        options:
+          offset: 0
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
+      empty: {  }
+      sorts:
+        field_featured_value:
+          id: field_featured_value
+          table: node__field_featured
+          field: field_featured_value
+          relationship: none
+          plugin_id: standard
+          order: DESC
+        field_stock_number_value:
+          id: field_stock_number_value
+          table: node__field_stock_number
+          field: field_stock_number_value
+          relationship: none
+          plugin_id: standard
+          order: ASC
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          relationship: none
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            vehicle: vehicle
+          group: 1
+        field_sale_status_value:
+          id: field_sale_status_value
+          table: node__field_sale_status
+          field: field_sale_status_value
+          relationship: none
+          plugin_id: list_field
+          operator: not
+          value:
+            sold: sold
+          group: 1
+      style:
+        type: ui_patterns
+        options:
+          ui_patterns:
+            ui_patterns:
+              component_id: 'wildbills:card_grid'
+              variant_id: null
+              props:
+                kind:
+                  source_id: select
+                  source:
+                    value: cars
+              slots:
+                items:
+                  sources:
+                    -
+                      source_id: view_rows
+                      source: {  }
+                      _weight: 0
+      row:
+        type: ui_patterns
+        options:
+          ui_patterns:
+            component_id: 'wildbills:vehicle_card'
+            variant_id: null
+            props:
+              stock:
+                source_id: 'field_property:node:field_stock_number:value'
+                source: {  }
+              year:
+                source_id: 'field_property:node:field_year:value'
+                source: {  }
+              make:
+                source_id: token
+                source:
+                  value: '[node:field_make:entity:name]'
+              model:
+                source_id: 'field_property:node:field_model:value'
+                source: {  }
+              body_style:
+                source_id: token
+                source:
+                  value: '[node:field_body_style:entity:name]'
+              price:
+                source_id: 'field_property:node:field_price:value'
+                source: {  }
+              miles:
+                source_id: 'field_property:node:field_mileage:value'
+                source: {  }
+              color:
+                source_id: 'field_property:node:field_color:value'
+                source: {  }
+              condition:
+                source_id: token
+                source:
+                  value: '[node:field_condition]'
+              featured:
+                source_id: 'field_property:node:field_featured:value'
+                source: {  }
+              status:
+                source_id: 'field_property:node:field_sale_status:value'
+                source: {  }
+            slots:
+              photo:
+                sources:
+                  -
+                    source_id: 'field_formatter:node:vehicle:field_photo'
+                    source:
+                      type: media_thumbnail
+                      settings:
+                        image_link: ''
+                        image_style: 4_3_720x540_focal_point_webp
+                        image_loading:
+                          attribute: lazy
+                    _weight: 0
+      query:
+        type: views_query
+        options: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_featured:
+    id: block_featured
+    display_title: Featured
+    display_plugin: block
+    position: 2
+    display_options:
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          relationship: none
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            vehicle: vehicle
+          group: 1
+        field_sale_status_value:
+          id: field_sale_status_value
+          table: node__field_sale_status
+          field: field_sale_status_value
+          relationship: none
+          plugin_id: list_field
+          operator: not
+          value:
+            sold: sold
+          group: 1
+        field_featured_value:
+          id: field_featured_value
+          table: node__field_featured
+          field: field_featured_value
+          relationship: none
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        filters: false
+        filter_groups: false
+      display_description: 'The featured vehicles that are not sold, for the home page.'
+      display_extenders: {  }
+      block_description: 'Featured vehicles'
+      block_category: "Wild Bill's"
+      block_hide_empty: true
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  page_inventory:
+    id: page_inventory
+    display_title: Inventory
+    display_plugin: page
+    position: 1
+    display_options:
+      style:
+        type: wildbills_inventory
+        options:
+          eyebrow: 'Sample inventory · not live stock'
+          heading: 'The lot.'
+          lede: 'Every car with its price, mileage and color. Narrow it down, open one up, and send a question with the details already filled in.'
+      defaults:
+        style: false
+        row: true
+      display_description: 'Every listed vehicle with the filters and the details pop-up.'
+      display_extenders: {  }
+      path: vehicles
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }

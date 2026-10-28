@@ -1,0 +1,23 @@
+{%- set sample = demo_notices ? ' ' ~ '(sample)'|t : '' -%}
+<footer class="wb-footer">
+  <div class="wb-wrap wb-footer-top">
+    <div>
+      {{ include('wildbills:brand', { mark: brand_mark, name: brand_name, tagline: brand_tagline, url: home_url, label: brand_label }, with_context = false) }}
+      {%- if about %}<p class="wb-footer-about">{{ about }}</p>{% endif %}
+    </div>
+    <div><h4>{{ 'Pages'|t }}</h4><ul>{% block links %}{{ links }}{% endblock %}</ul></div>
+    <div><h4>{{ 'Hours'|t }}{{ sample }}</h4><ul>{% for line in hours %}<li>{{ line }}</li>{% endfor %}</ul></div>
+    <div><h4>{{ 'Contact'|t }}{{ sample }}</h4><ul>
+      {%- if phone %}<li><a href="{{ phone_href }}">{{ phone }}</a></li>{% endif -%}
+      {%- if email %}<li><a href="mailto:{{ email }}">{{ email }}</a></li>{% endif -%}
+      {%- if street or city %}<li>{{ street }}<br>{{ city }}</li>{% endif -%}
+    </ul></div>
+  </div>
+  <div class="wb-wrap wb-footer-bottom">
+    {%- if demo_notices %}
+    <span>© {{ year }} {{ name }} · {{ 'Demonstration website'|t }}</span><span>{{ 'Vehicle photos are illustrative. Contact details are placeholders.'|t }}</span>
+    {%- else %}
+    <span>© {{ year }} {{ name }}</span>
+    {%- endif %}
+  </div>
+</footer>

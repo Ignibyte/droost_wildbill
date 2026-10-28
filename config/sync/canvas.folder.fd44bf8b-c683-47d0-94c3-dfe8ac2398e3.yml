@@ -1,0 +1,19 @@
+uuid: fd44bf8b-c683-47d0-94c3-dfe8ac2398e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.wildbills.brand
+    - canvas.component.sdc.wildbills.nav_link
+    - canvas.component.sdc.wildbills.page
+    - canvas.component.sdc.wildbills.site_footer
+    - canvas.component.sdc.wildbills.site_header
+name: "Wild Bill's frame"
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.wildbills.brand
+  - sdc.wildbills.nav_link
+  - sdc.wildbills.page
+  - sdc.wildbills.site_footer
+  - sdc.wildbills.site_header

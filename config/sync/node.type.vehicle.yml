@@ -1,0 +1,17 @@
+uuid: 18e86cfd-f87e-42e9-96a1-24de0bdf3531
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Vehicle
+type: vehicle
+description: 'A car on the lot. Its title is written from the year, make and model.'
+help: null
+new_revision: true
+preview_mode: 0
+display_submitted: false

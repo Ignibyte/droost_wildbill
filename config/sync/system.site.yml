@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: HlN7eAN2N4JIHsYv56V4E7sqC9bS609KwvGFjyD_mgk
+langcode: en
+uuid: cd8029b0-b2d6-4240-af75-748717df8933
+name: "Wild Bill's Used Cars"
+mail: admin@example.com
+slogan: 'Straightforward used cars, trucks and SUVs'
+page:
+  403: /user/login
+  404: ''
+  front: /home
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: null

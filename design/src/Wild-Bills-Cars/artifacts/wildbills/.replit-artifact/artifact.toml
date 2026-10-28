@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Wild Bill's Used Cars"
+version = "1.0.0"
+id = "artifacts/wildbills"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19064
+
+[services.development]
+run = "pnpm --filter @workspace/wildbills run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/wildbills", "run", "build" ]
+publicDir = "artifacts/wildbills/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19064"
+BASE_PATH = "/"

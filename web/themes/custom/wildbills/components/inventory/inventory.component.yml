@@ -1,0 +1,77 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Inventory
+description: "The inventory page: its heading, the filters (search, body style, make, price, year, mileage), the count, sort and active-filter chips, the vehicle cards, the empty state and the details pop-up. The vehicles View's inventory style renders it; inventory.js filters the cards in the browser as the source does."
+group: "Wild Bill's inventory"
+status: stable
+props:
+  type: object
+  required:
+    - total
+  properties:
+    total:
+      type: integer
+      title: Total
+      description: How many vehicles are listed.
+      examples: [15]
+    price_min:
+      type: integer
+      title: Price slider, low end
+      description: "The price slider's low end: $25,000, or lower when a listed car costs less."
+      examples: [25000]
+    price_max:
+      type: integer
+      title: Price slider, high end
+      description: "The price slider's high end: $60,000, or higher when a listed car costs more."
+      examples: [60000]
+    price_step:
+      type: integer
+      title: Price slider step
+      description: "How far the price slider moves per step."
+      examples: [500]
+    year_min:
+      type: integer
+      title: Year slider, low end
+      description: "The year slider's low end: 2019, or older when a listed car is."
+      examples: [2019]
+    year_max:
+      type: integer
+      title: Year slider, high end
+      description: "The year slider's high end: 2022, or newer when a listed car is."
+      examples: [2022]
+    miles_min:
+      type: integer
+      title: Mileage slider, low end
+      description: "The mileage slider's low end: 10,000, or lower when a listed car has fewer miles."
+      examples: [10000]
+    miles_max:
+      type: integer
+      title: Mileage slider, high end
+      description: "The mileage slider's high end: 80,000, or higher when a listed car has more."
+      examples: [80000]
+    miles_step:
+      type: integer
+      title: Mileage slider step
+      description: "How far the mileage slider moves per step."
+      examples: [5000]
+    phone_href:
+      type: string
+      title: Call link
+      description: The dealership's tel link, for the pop-up's Call button.
+      examples: ['tel:+15551234567']
+slots:
+  heading:
+    title: Heading
+    description: The page heading.
+  types:
+    title: Body styles
+    description: A filter choice button per body style on the lot.
+  makes:
+    title: Makes
+    description: A filter choice option per make on the lot.
+  cards:
+    title: Cards
+    description: The vehicle cards.
+libraryOverrides:
+  dependencies:
+    - core/drupal
+    - core/once

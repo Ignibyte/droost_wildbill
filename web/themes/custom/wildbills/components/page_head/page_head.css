@@ -1,0 +1,2 @@
+.wb-page-head { padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(2rem, 4vw, 3rem); }
+.wb-page-head h1 { font-size: clamp(2.6rem, 6vw, 5rem); letter-spacing: -.045em; font-weight: 800; margin: 1rem 0 1rem; }

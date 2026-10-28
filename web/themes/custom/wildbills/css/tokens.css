@@ -1,0 +1,27 @@
+/*
+ * Wild Bill's design tokens: the source's forest green, cream and sage
+ * palette (HSL channels, used as hsl(var(--wb-ink)) or hsl(var(--wb-ink) / .5)),
+ * its three faces, radius, wrap width and easing. Change a value here and
+ * every component follows.
+ */
+:root {
+  --wb-paper: 45 38% 94%;
+  --wb-paper-2: 44 28% 89%;
+  --wb-paper-3: 42 20% 82%;
+  --wb-ink: 161 46% 17%;
+  --wb-ink-2: 153 20% 29%;
+  --wb-ink-3: 145 12% 39%;
+  --wb-petrol: 153 34% 25%;
+  --wb-signal: 151 35% 30%;
+  --wb-signal-ink: 161 46% 17%;
+  --wb-sage: 97 26% 74%;
+  --wb-line: 110 13% 74%;
+  --wb-ok: 152 52% 32%;
+  --wb-band: 40 26% 90%;
+  --wb-radius: 14px;
+  --wb-display: "Bricolage Grotesque", "Geist", system-ui, sans-serif;
+  --wb-body: "Geist", system-ui, sans-serif;
+  --wb-mono: "Geist Mono", ui-monospace, monospace;
+  --wb-wrap: min(1240px, 100% - 2.5rem);
+  --wb-ease: cubic-bezier(.2, .7, .2, 1);
+}

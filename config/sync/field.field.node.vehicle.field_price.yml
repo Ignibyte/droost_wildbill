@@ -1,0 +1,23 @@
+uuid: e0c06845-37ba-49ad-96e5-53e1c7450672
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_price
+    - node.type.vehicle
+id: node.vehicle.field_price
+field_name: field_price
+entity_type: node
+bundle: vehicle
+label: Price
+description: 'Whole dollars.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: $
+  suffix: ''
+field_type: integer

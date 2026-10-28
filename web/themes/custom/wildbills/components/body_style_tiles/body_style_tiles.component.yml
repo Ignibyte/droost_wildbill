@@ -1,0 +1,24 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Body style tiles
+description: "The home page's shop-by-body-style section: an eyebrow and a heading above the body-style tiles' block placed in its slot."
+group: "Wild Bill's home"
+status: stable
+props:
+  type: object
+  required:
+    - heading
+  properties:
+    eyebrow:
+      type: string
+      title: Eyebrow
+      description: "The small uppercase line above the heading."
+      examples: ['Shop by body style']
+    heading:
+      type: string
+      title: Heading
+      description: "The section's heading."
+      examples: ['What do you need it to do?']
+slots:
+  tiles:
+    title: Tiles
+    description: The body-style tiles' block.

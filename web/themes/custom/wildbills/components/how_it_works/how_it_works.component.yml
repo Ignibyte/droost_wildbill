@@ -1,0 +1,60 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: How it works
+description: "A tinted section with an eyebrow, a heading and four numbered steps, each a title and a sentence. The numbers are the steps' order."
+group: "Wild Bill's home"
+status: stable
+props:
+  type: object
+  required:
+    - heading
+  properties:
+    eyebrow:
+      type: string
+      title: Eyebrow
+      description: The small uppercase line above the heading.
+      examples: ['How it works']
+    heading:
+      type: string
+      title: Heading
+      description: The section's heading.
+      examples: ['Four steps. No runaround.']
+    step_1_title:
+      type: string
+      title: Step 1
+      description: The first step's title.
+      examples: ['Browse']
+    step_1_text:
+      type: string
+      title: Step 1, sentence
+      description: The first step's sentence.
+      examples: ['Filter the lot by body style, make, budget, year and mileage.']
+    step_2_title:
+      type: string
+      title: Step 2
+      description: The second step's title.
+      examples: ['Ask']
+    step_2_text:
+      type: string
+      title: Step 2, sentence
+      description: The second step's sentence.
+      examples: ['Open any car and send a question. The form fills in the vehicle for you.']
+    step_3_title:
+      type: string
+      title: Step 3
+      description: The third step's title.
+      examples: ['Drive it']
+    step_3_text:
+      type: string
+      title: Step 3, sentence
+      description: The third step's sentence.
+      examples: ['Stop by during open hours and take it for a test drive.']
+    step_4_title:
+      type: string
+      title: Step 4
+      description: The fourth step's title.
+      examples: ['Decide']
+    step_4_text:
+      type: string
+      title: Step 4, sentence
+      description: The fourth step's sentence.
+      examples: ['Take your time. Ask about paperwork, history and trade-ins in person.']

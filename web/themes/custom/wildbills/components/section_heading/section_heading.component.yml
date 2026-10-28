@@ -1,0 +1,36 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Section heading
+description: "A section's eyebrow, heading and optional lede, with an optional button to the side. The home sections include it."
+group: "Wild Bill's"
+status: stable
+props:
+  type: object
+  required:
+    - heading
+  properties:
+    eyebrow:
+      type: string
+      title: Eyebrow
+      description: The small uppercase line above the heading.
+      examples: ['How it works']
+    heading:
+      type: string
+      title: Heading
+      description: The section's heading.
+      examples: ['Four steps. No runaround.']
+    lede:
+      type: string
+      title: Lede
+      description: An optional sentence under the heading.
+      examples: ['A few picks from the sample inventory.']
+    button_label:
+      type: string
+      title: Button label
+      description: An optional button beside the heading.
+      examples: ['All vehicles']
+    button_url:
+      type: string
+      format: uri-reference
+      title: Button link
+      description: Where the button goes.
+      examples: ['/vehicles']

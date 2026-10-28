@@ -1,0 +1,19 @@
+uuid: 7cc59ff3-c76f-4687-9d09-4013b3985c58
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_tile_line
+    - taxonomy.vocabulary.body_style
+id: taxonomy_term.body_style.field_tile_line
+field_name: field_tile_line
+entity_type: taxonomy_term
+bundle: body_style
+label: 'Tile line'
+description: 'The short line on the home page tile: "Haul, tow, work".'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,40 @@
+Workflow run run-aff3544daf28
+  started 2026-10-23T05:56:53+00:00 · effort high · mode agentic · lead autonomous · browser none · tasks claude-code
+  ✓ plan: passed
+  ✓ code: passed
+      phpcs          passed
+      phpstan        passed
+      eslint         off — by preset high
+      stylelint      off — by preset high
+      prettier       off — by preset high
+      house_rules    passed
+      custom:component_lint passed
+  ✓ test: passed
+      phpcs          passed
+      phpstan        passed
+      eslint         off — by preset high
+      prettier       off — by preset high
+      phpunit        passed
+      mutation       off — by preset high
+      playwright     passed
+      parity         passed
+      coverage       off — by preset high
+  ✓ complete: passed
+      phpcs          passed
+      phpstan        passed
+      eslint         off — by preset high
+      stylelint      off — by preset high
+      prettier       off — by preset high
+      phpunit        passed
+      mutation       off — by preset high
+      playwright     passed
+      parity         passed
+      coverage       off — by preset high
+      house_rules    passed
+      wiki_fresh     passed
+      custom:component_lint passed
+  criteria: 17 verified by a test, 0 manual, 0 unverified
+  seeker (latest inspection, at code): clean (critical 0, high 1, medium 0, low 2 found, 0 still open) · 2 out-of-diff observation(s) — see the spec ledger
+    across 2 inspection(s):
+      1. findings — critical 0, high 1, medium 0, low 2
+      2. clean — critical 0, high 1, medium 0, low 2

@@ -1,0 +1,25 @@
+/* The contact page's form card, from the source's site.css ("contact"). */
+.wb-form-card { border: 1px solid hsl(var(--wb-line)); border-radius: 22px; padding: clamp(1.4rem, 3vw, 2.2rem); background: hsl(var(--wb-paper)); }
+.wb-form-grid { display: grid; gap: 1.1rem; }
+.wb-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.wb-err { font-size: .8rem; color: hsl(var(--wb-signal-ink)); min-height: 0; }
+.wb-err:empty { display: none; }
+.wb-help { font-size: .78rem; color: hsl(var(--wb-ink-3)); font-weight: 400; }
+.wb-notice { display: flex; gap: .8rem; padding: 1rem 1.1rem; border-radius: 14px; background: hsl(var(--wb-petrol) / .08); color: hsl(var(--wb-petrol)); font-size: .9rem; }
+.wb-notice svg { width: 20px; height: 20px; flex: none; margin-top: 1px; }
+.wb-notice-warn { background: hsl(var(--wb-signal) / .1); color: hsl(var(--wb-signal-ink)); }
+.wb-inquiry-submit { justify-self: start; }
+.wb-vehicle-pick { display: flex; gap: .9rem; align-items: center; padding: .7rem; border-radius: 14px; background: hsl(var(--wb-paper-2)); }
+.wb-vehicle-pick img { width: 84px; height: 62px; object-fit: cover; border-radius: 9px; }
+.wb-vehicle-pick b { font-family: var(--wb-display); }
+.wb-vehicle-pick-text { flex: 1; }
+.wb-pick-label { font-family: var(--wb-mono); font-size: .76rem; color: hsl(var(--wb-ink-3)); letter-spacing: .06em; }
+.wb-handoff:not([hidden]) { display: grid; gap: 1.1rem; animation: wb-handoff .4s var(--wb-ease); }
+.wb-handoff:focus { outline: none; }
+.wb-handoff-title { font-size: 1.8rem; }
+.wb-handoff-text { margin: 0; color: hsl(203 30% 30%); }
+.wb-handoff pre { margin: 0; white-space: pre-wrap; font-family: var(--wb-mono); font-size: .82rem; background: hsl(var(--wb-paper-2)); border-radius: 12px; padding: 1rem; max-height: 240px; overflow: auto; }
+.wb-handoff-actions { display: flex; gap: .6rem; flex-wrap: wrap; }
+.wb-copy-status { font-size: .82rem; color: hsl(var(--wb-ink-3)); margin: 0; }
+@keyframes wb-handoff { from { opacity: 0; transform: translateY(14px) scale(.98); } }
+@media (max-width: 560px) { .wb-form-row { grid-template-columns: 1fr; } }

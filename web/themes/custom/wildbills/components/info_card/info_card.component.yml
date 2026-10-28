@@ -1,0 +1,45 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Info card
+description: "A titled card under a rule: a heading, optionally one of the dealership's details (from the dealership details form, with the \"sample\" tag while the demo notices are on), a sentence and a link."
+group: "Wild Bill's"
+status: stable
+props:
+  type: object
+  required:
+    - heading
+  properties:
+    heading:
+      type: string
+      title: Heading
+      description: The card's heading.
+      examples: ['Before you head over']
+    detail:
+      type: string
+      title: Dealership detail
+      description: One of the dealership's details to show under the heading, as the dealership details form sets it.
+      enum: [none, address, address_text, phone, email, hours]
+      meta:enum:
+        none: None
+        address: Address (large)
+        address_text: Address
+        phone: Phone number
+        email: Email address
+        hours: Opening hours
+      default: none
+      examples: [none]
+    text:
+      type: string
+      title: Sentence
+      description: The card's text.
+      examples: ["Call or email to confirm the car you want to see is still on the lot, and bring your driver's license for a test drive."]
+    link_label:
+      type: string
+      title: Link label
+      description: An underlined link under the text.
+      examples: ['Ask about a test drive']
+    link_url:
+      type: string
+      format: uri-reference
+      title: Link
+      description: Where the link goes.
+      examples: ['/contact?topic=Test%20drive']

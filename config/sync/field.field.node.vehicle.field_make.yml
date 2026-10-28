@@ -1,0 +1,28 @@
+uuid: b111e3fa-903a-4dbb-a772-53bfacf4e7f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_make
+    - node.type.vehicle
+    - taxonomy.vocabulary.make
+id: node.vehicle.field_make
+field_name: field_make
+entity_type: node
+bundle: vehicle
+label: Make
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      make: make
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+field_type: entity_reference

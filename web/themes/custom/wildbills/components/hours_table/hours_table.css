@@ -1,0 +1,11 @@
+.wb-hours { border: 1px solid hsl(var(--wb-line)); border-radius: 22px; padding: 1.5rem; }
+.wb-hours h2 { font-size: 1.6rem; margin-bottom: 1rem; }
+.wb-hours-status { display: flex; align-items: center; gap: .6rem; padding: .85rem 1rem; border-radius: 14px; background: hsl(var(--wb-paper-2)); font-weight: 600; margin-bottom: 1rem; }
+.wb-dot { width: 10px; height: 10px; border-radius: 50%; background: hsl(var(--wb-ink-3)); flex: none; }
+.wb-dot.is-on { background: hsl(var(--wb-ok)); box-shadow: 0 0 0 4px hsl(var(--wb-ok) / .18); }
+.wb-hours ul { list-style: none; margin: 0; padding: 0; }
+.wb-hours li { display: flex; justify-content: space-between; padding: .7rem .2rem; border-bottom: 1px dashed hsl(var(--wb-line)); font-size: .95rem; }
+.wb-hours li:last-child { border-bottom: 0; }
+.wb-hours li.is-today { font-weight: 700; color: hsl(var(--wb-signal-ink)); }
+.wb-hours li span:last-child { font-family: var(--wb-mono); font-size: .88rem; }
+.wb-hours-note { font-size: .82rem; color: hsl(var(--wb-ink-3)); margin: 1rem 0 0; }

@@ -1,0 +1,11 @@
+uuid: f48dbde6-0d23-44ce-9f0c-e0d4cb58db3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.droost_theme.card
+name: Cards
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.droost_theme.card

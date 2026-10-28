@@ -1,0 +1,21 @@
+uuid: 9c3bdfc8-b98c-4b45-9d09-e28c3680a0d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_condition
+    - node.type.vehicle
+  module:
+    - options
+id: node.vehicle.field_condition
+field_name: field_condition
+entity_type: node
+bundle: vehicle
+label: Condition
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

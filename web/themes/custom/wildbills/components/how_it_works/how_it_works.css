@@ -1,0 +1,7 @@
+.wb-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid hsl(var(--wb-ink)); }
+.wb-step { padding: 1.6rem 1.5rem 0 0; }
+.wb-step-n { font-family: var(--wb-mono); font-size: .8rem; color: hsl(var(--wb-signal)); }
+.wb-step h3 { font-size: 1.4rem; margin: .8rem 0 .5rem; }
+.wb-step p { margin: 0; color: hsl(var(--wb-ink-2)); font-size: .95rem; }
+@media (max-width: 900px) { .wb-steps { grid-template-columns: 1fr 1fr; row-gap: 2rem; } }
+@media (max-width: 560px) { .wb-steps { grid-template-columns: 1fr; } }

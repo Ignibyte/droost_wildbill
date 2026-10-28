@@ -1,0 +1,13 @@
+uuid: 4996cce4-79b1-464f-bae7-b1d6f29c2da1
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 2owhVLlrINAGaC_iC-3ipx0lsTiube_2GXsTej3o2Pw
+name: Event
+type: event
+description: 'A dated event with a location. Created for the Droost Phase 2 proof gate.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

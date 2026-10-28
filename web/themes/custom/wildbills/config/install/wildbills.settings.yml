@@ -1,0 +1,6 @@
+favicon:
+  use_default: false
+  path: themes/custom/wildbills/favicon.svg
+  mimetype: image/svg+xml
+logo:
+  use_default: true

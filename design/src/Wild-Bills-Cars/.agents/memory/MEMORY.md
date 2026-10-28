@@ -1,0 +1,1 @@
+- [Design direction](design-direction.md) — User rejected the original western-themed site and requested a complete fresh design.

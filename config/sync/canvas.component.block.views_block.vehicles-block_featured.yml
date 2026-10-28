@@ -1,0 +1,37 @@
+uuid: 8d78cd2f-09ef-4ac3-a7a1-89ec8a97d6b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.vehicles
+  module:
+    - views
+active_version: e32b5e476da9ca68
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'views_block:vehicles-block_featured'
+        label: 'Featured vehicles'
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: null
+    fallback_metadata:
+      slot_definitions: null
+  e32b5e476da9ca68:
+    settings:
+      default_settings:
+        id: 'views_block:vehicles-block_featured'
+        label: 'Featured vehicles'
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: null
+    fallback_metadata:
+      slot_definitions: null
+label: 'Featured vehicles'
+id: block.views_block.vehicles-block_featured
+provider: views
+source: block
+source_local_id: 'views_block:vehicles-block_featured'

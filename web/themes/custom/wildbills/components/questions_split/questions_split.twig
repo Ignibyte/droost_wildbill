@@ -1,0 +1,22 @@
+<section class="wb-section">
+  <div class="wb-wrap wb-split">
+    <div class="wb-split-photo wb-reveal">
+      {%- if image.src %}<img src="{{ image.src }}" alt="{{ image.alt }}"{% if image.width %} width="{{ image.width }}"{% endif %}{% if image.height %} height="{{ image.height }}"{% endif %} loading="lazy">{% endif -%}
+    </div>
+    <div class="wb-reveal">
+      {%- if eyebrow %}<span class="wb-eyebrow">{{ eyebrow }}</span>{% endif %}
+      <h2 class="wb-h2 wb-split-heading">{{ heading }}</h2>
+      {%- if lede %}<p class="wb-lede">{{ lede }}</p>{% endif %}
+      <ul class="wb-checklist">
+        {%- for i in 1..4 %}
+          {%- set item = attribute(_context, 'item_' ~ i) %}
+          {%- if item %}<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><span>{{ item }}</span></li>{% endif %}
+        {%- endfor %}
+      </ul>
+      <div class="wb-split-actions">
+        {%- if primary_label and primary_url %}{{ include('wildbills:button', { label: primary_label, url: primary_url, variant: 'ink' }, with_context = false) }}{% endif -%}
+        {%- if secondary_label and secondary_url %}{{ include('wildbills:button', { label: secondary_label, url: secondary_url, variant: 'ghost' }, with_context = false) }}{% endif -%}
+      </div>
+    </div>
+  </div>
+</section>

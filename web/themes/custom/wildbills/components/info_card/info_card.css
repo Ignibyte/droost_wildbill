@@ -1,0 +1,5 @@
+.wb-info { border-top: 1px solid hsl(var(--wb-ink)); padding: 1.2rem 0 .4rem; }
+.wb-info h3 { font-size: 1.15rem; margin-bottom: .6rem; display: flex; align-items: center; gap: .5rem; }
+.wb-info p { margin: .2rem 0; color: hsl(var(--wb-ink-2)); }
+.wb-info p.wb-info-address { font-family: var(--wb-display); font-size: 1.6rem; color: hsl(203 58% 13%); letter-spacing: -.02em; line-height: 1.2; }
+.wb-info p.wb-info-text + p.wb-info-link { margin-top: .8rem; }

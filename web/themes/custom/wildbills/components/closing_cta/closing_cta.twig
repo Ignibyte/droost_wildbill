@@ -1,0 +1,31 @@
+{#
+  layout: band is the full-width closing section (home); panel is the compact
+  one-column card that sits in a column (location's "Shortlist first.").
+#}
+{%- set actions -%}
+  {%- if primary_label and primary_url %}{{ include('wildbills:button', { label: primary_label, url: primary_url, variant: 'primary' }, with_context = false) }}{% endif -%}
+  {%- if secondary_label and secondary_url %}{{ include('wildbills:button', { label: secondary_label, url: secondary_url, variant: 'light' }, with_context = false) }}{% endif -%}
+{%- endset -%}
+{%- if layout == 'panel' %}
+<div class="wb-cta wb-cta--panel">
+  <div class="wb-cta-copy">
+    {%- if eyebrow %}<span class="wb-eyebrow">{{ eyebrow }}</span>{% endif %}
+    <h2>{{ heading }}</h2>
+    {%- if text %}<p>{{ text }}</p>{% endif %}
+    {%- if actions|trim %}<div class="wb-cta-actions">{{ actions }}</div>{% endif %}
+  </div>
+</div>
+{%- else %}
+<section class="wb-section wb-section--flush-top">
+  <div class="wb-wrap">
+    <div class="wb-cta wb-reveal">
+      <div class="wb-cta-copy">
+        {%- if eyebrow %}<span class="wb-eyebrow">{{ eyebrow }}</span>{% endif %}
+        <h2 class="wb-h2">{{ heading }}</h2>
+        {%- if text %}<p>{{ text }}</p>{% endif %}
+      </div>
+      <div class="wb-cta-actions">{{ actions }}</div>
+    </div>
+  </div>
+</section>
+{%- endif %}

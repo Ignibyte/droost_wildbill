@@ -1,0 +1,22 @@
+uuid: a9ab809c-55d2-4159-b7d2-353fca105205
+langcode: en
+status: true
+dependencies:
+  theme:
+    - wildbills
+_core:
+  default_config_hash: B8hZEctzrZ4_85e7Ry9CZypJCy4qwRvP3cRy0-Mg8_Y
+id: wildbills_tabs
+theme: wildbills
+region: content
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: tabs
+  label_display: '0'
+  provider: system
+  primary: true
+  secondary: true
+visibility: {  }

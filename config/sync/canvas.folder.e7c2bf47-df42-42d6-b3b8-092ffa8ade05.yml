@@ -1,0 +1,21 @@
+uuid: e7c2bf47-df42-42d6-b3b8-092ffa8ade05
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.droost_theme.carousel
+    - canvas.component.sdc.droost_theme.hero
+    - canvas.component.sdc.droost_theme.slide
+    - canvas.component.sdc.mercury.cta
+    - canvas.component.sdc.mercury.hero-billboard
+    - canvas.component.sdc.mercury.hero-side-by-side
+name: Hero
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.droost_theme.carousel
+  - sdc.droost_theme.hero
+  - sdc.droost_theme.slide
+  - sdc.mercury.cta
+  - sdc.mercury.hero-billboard
+  - sdc.mercury.hero-side-by-side

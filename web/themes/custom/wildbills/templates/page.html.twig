@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * The page: the three regions, handed to the wildbills:page component.
+ *
+ * No markup of its own (HR1 exception, granted by the operator for R01):
+ * droost_theme's page template hardcodes a navbar and footer the design
+ * replaces, so this template only passes the regions to the component that
+ * owns the page's markup.
+ */
+#}
+{% embed 'wildbills:page' %}
+  {% block header %}{{ page.header }}{% endblock %}
+  {% block content %}{{ page.content }}{% endblock %}
+  {% block footer %}{{ page.footer }}{% endblock %}
+{% endembed %}

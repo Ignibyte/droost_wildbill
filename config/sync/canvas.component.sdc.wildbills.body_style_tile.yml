@@ -1,0 +1,107 @@
+uuid: bbb47f1a-d453-445f-8262-a0578cb4ad75
+langcode: en
+status: false
+dependencies:
+  module:
+    - link
+  theme:
+    - wildbills
+active_version: 38abf7dddaddf6b4
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        label:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Trucks
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        line:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Haul, tow, work'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        type:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Truck
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+    fallback_metadata:
+      slot_definitions:
+        photo:
+          title: Photo
+          description: "The tile's photo."
+  2e4249ba7d14fafa:
+    settings:
+      prop_field_definitions:
+        label:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Trucks
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        line:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Haul, tow, work'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        url:
+          required: true
+          field_type: link
+          field_storage_settings: {  }
+          field_instance_settings:
+            title: 0
+            link_type: 17
+          field_widget: link_default
+          default_value:
+            -
+              uri: '/vehicles?type=Truck'
+              options: {  }
+          expression: ℹ︎link␟url
+          derived_schema_metadata:
+            string_shape:
+              format: uri-reference
+    fallback_metadata:
+      slot_definitions:
+        photo:
+          title: Photo
+          description: "The tile's photo."
+label: 'Body style tile'
+id: sdc.wildbills.body_style_tile
+provider: wildbills
+source: sdc
+source_local_id: 'wildbills:body_style_tile'

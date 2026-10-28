@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Preprocess for the Wild Bill's theme.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_preprocess_html().
+ *
+ * The source's theme colour, for the browser's own chrome.
+ *
+ * @phpstan-param array<string, mixed> $variables
+ */
+function wildbills_preprocess_html(array &$variables): void {
+  $variables['page']['#attached']['html_head'][] = [
+    [
+      '#tag' => 'meta',
+      '#attributes' => ['name' => 'theme-color', 'content' => '#173e32'],
+    ],
+    'wildbills_theme_color',
+  ];
+}

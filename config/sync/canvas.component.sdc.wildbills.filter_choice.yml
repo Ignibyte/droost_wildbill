@@ -1,0 +1,56 @@
+uuid: efb4e322-dee1-4475-8eb9-365e32b7196a
+langcode: en
+status: false
+dependencies:
+  module:
+    - options
+  theme:
+    - wildbills
+active_version: a2e12b439d01dea3
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        kind:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: button
+          expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
+        value:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Truck
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        label:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: Trucks
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'Filter choice'
+id: sdc.wildbills.filter_choice
+provider: wildbills
+source: sdc
+source_local_id: 'wildbills:filter_choice'

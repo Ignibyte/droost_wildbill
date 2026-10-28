@@ -1,0 +1,2 @@
+web_environment:
+  - PLAYWRIGHT_BROWSERS_PATH=/mnt/ddev-global-cache/playwright

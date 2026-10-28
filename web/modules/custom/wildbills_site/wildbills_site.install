@@ -1,0 +1,79 @@
+<?php
+
+/**
+ * @file
+ * Install hooks for the Wild Bill's site module.
+ */
+
+declare(strict_types=1);
+
+use Drupal\menu_link_content\Entity\MenuLinkContent;
+use Drupal\redirect\Entity\Redirect;
+
+/**
+ * Implements hook_install().
+ *
+ * Writes the content the frame needs: the main and footer menus as the design
+ * names them, without the recipe's privacy links (Q7), and the redirect that
+ * keeps the static source's /index.html answering. Safe to run again: links
+ * are matched by menu and title, the redirect by its source path. It writes
+ * content only, never config, and needs only menus this module's own
+ * dependencies install. The home page's photos and tree are written by
+ * droost/canvas/apply-home.sh, after config is in place.
+ */
+function wildbills_site_install(bool $is_syncing): void {
+  _wildbills_site_write_menu('main', [
+    ['Home', 'internal:/'],
+    ['Inventory', 'internal:/vehicles'],
+    ['Contact', 'internal:/contact'],
+    ['Visit', 'internal:/location'],
+  ]);
+  _wildbills_site_write_menu('footer', [
+    ['Home', 'internal:/'],
+    ['Inventory', 'internal:/vehicles'],
+    ['Contact', 'internal:/contact'],
+    ['Location & hours', 'internal:/location'],
+  ]);
+
+  $storage = \Drupal::entityTypeManager()->getStorage('menu_link_content');
+  foreach (['Privacy policy', 'My privacy settings'] as $title) {
+    $storage->delete($storage->loadByProperties(['menu_name' => 'footer', 'title' => $title]));
+  }
+
+  $redirects = \Drupal::entityTypeManager()->getStorage('redirect');
+  if (!$redirects->loadByProperties(['redirect_source__path' => 'index.html'])) {
+    Redirect::create([
+      'redirect_source' => ['path' => 'index.html'],
+      'redirect_redirect' => ['uri' => 'internal:/'],
+      'status_code' => 301,
+      'language' => 'und',
+    ])->save();
+  }
+}
+
+/**
+ * Makes a menu's top level hold exactly these links, in this order.
+ *
+ * A link already in the menu with the same title is kept and re-pointed, so
+ * the recipe's "Home" link becomes the front page's rather than a duplicate.
+ *
+ * @param string $menu_name
+ *   The menu.
+ * @param list<array{0: string, 1: string}> $links
+ *   Each link's title and URI, in order.
+ */
+function _wildbills_site_write_menu(string $menu_name, array $links): void {
+  $storage = \Drupal::entityTypeManager()->getStorage('menu_link_content');
+  foreach ($links as $weight => [$title, $uri]) {
+    $existing = $storage->loadByProperties(['menu_name' => $menu_name, 'title' => $title]);
+    $link = $existing ? reset($existing) : MenuLinkContent::create([
+      'menu_name' => $menu_name,
+      'title' => $title,
+    ]);
+    $link->set('link', ['uri' => $uri]);
+    $link->set('weight', $weight);
+    $link->set('enabled', TRUE);
+    $link->set('expanded', FALSE);
+    $link->save();
+  }
+}

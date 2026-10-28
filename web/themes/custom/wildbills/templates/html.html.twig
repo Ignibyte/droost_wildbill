@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * The document: core's html.html.twig, with the design's skip link.
+ *
+ * HR1 exception, granted by the operator for R01: core's template fixes the
+ * skip link as "Skip to main content" to #main-content; the design's is "Skip
+ * to content" to #main, the id the wildbills:page component gives <main>.
+ * Everything else is core's, unchanged.
+ *
+ * @see core/modules/system/templates/html.html.twig
+ */
+#}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token }}">
+    <js-placeholder token="{{ placeholder_token }}">
+  </head>
+  <body{{ attributes }}>
+    <a href="#main" class="wb-skip">{{ 'Skip to content'|t }}</a>
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+    <js-bottom-placeholder token="{{ placeholder_token }}">
+  </body>
+</html>

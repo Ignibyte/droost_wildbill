@@ -1,0 +1,12 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Contact columns
+description: "The contact page's two columns: the inquiry form on the left, a stack of contact cards on the right; one column on a narrow screen."
+group: "Wild Bill's contact"
+status: stable
+slots:
+  main:
+    title: Main column
+    description: The wider left column; the inquiry form.
+  aside:
+    title: Side column
+    description: The right column; the contact cards, stacked.

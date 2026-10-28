@@ -1,0 +1,27 @@
+{#
+  google_url and apple_url are not props: the wildbills_site module builds
+  them from the dealership's address (LocationDetails), so the map links
+  follow the address an editor sets on the dealership details form.
+#}
+<div class="wb-map">
+  <div class="wb-map-card" role="img"{% if map_label %} aria-label="{{ map_label }}"{% endif %}>
+    <svg class="wb-map-art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <g stroke="hsl(42 33% 95% / .1)" stroke-width="1">
+        <path d="M0 40h400M0 90h400M0 150h400M0 210h400M0 260h400M50 0v300M120 0v300M190 0v300M270 0v300M340 0v300"/>
+      </g>
+      <path d="M-10 230 C 90 200, 150 160, 216 138 S 330 90, 420 70" stroke="hsl(14 82% 52% / .75)" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M216 138 L 216 320" stroke="hsl(42 33% 95% / .35)" stroke-width="4" fill="none"/>
+      <path d="M0 120 L 400 180" stroke="hsl(42 33% 95% / .2)" stroke-width="3" fill="none"/>
+      <circle cx="216" cy="138" r="46" fill="none" stroke="hsl(42 33% 95% / .15)"/>
+      <circle cx="216" cy="138" r="86" fill="none" stroke="hsl(42 33% 95% / .08)"/>
+    </svg>
+    <div class="wb-map-pin">{% if pin_label %}<span>{{ pin_label }}</span>{% endif %}<i></i></div>
+    {%- if caption %}<p class="wb-map-caption">{{ caption }}</p>{% endif %}
+  </div>
+  {%- if (google_label and google_url) or (apple_label and apple_url) %}
+  <div class="wb-map-links">
+    {%- if google_label and google_url %}{{ include('wildbills:button', { label: google_label, url: google_url, variant: 'ink', new_tab: true }, with_context = false) }}{% endif -%}
+    {%- if apple_label and apple_url %}{{ include('wildbills:button', { label: apple_label, url: apple_url, variant: 'ghost', new_tab: true }, with_context = false) }}{% endif -%}
+  </div>
+  {%- endif %}
+</div>

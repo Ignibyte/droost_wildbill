@@ -1,0 +1,40 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Featured vehicles
+description: "The home page's featured cars: an eyebrow, a heading, a lede and a button to the inventory, above the featured vehicles' block placed in its slot."
+group: "Wild Bill's home"
+status: stable
+props:
+  type: object
+  required:
+    - heading
+  properties:
+    eyebrow:
+      type: string
+      title: Eyebrow
+      description: "The small uppercase line above the heading."
+      examples: ['On the lot']
+    heading:
+      type: string
+      title: Heading
+      description: "The section's heading."
+      examples: ['Featured this week']
+    lede:
+      type: string
+      title: Lede
+      description: "An optional sentence under the heading."
+      examples: ['A few picks from the sample inventory.']
+    button_label:
+      type: string
+      title: Button label
+      description: "The button beside the heading."
+      examples: ['All vehicles']
+    button_url:
+      type: string
+      format: uri-reference
+      title: Button link
+      description: "Where the button goes."
+      examples: ['/vehicles']
+slots:
+  vehicles:
+    title: Vehicles
+    description: The featured vehicles' block.

@@ -1,0 +1,23 @@
+ .../canvas.component.sdc.wildbills.home_hero.yml   | 190 ++++++++++++++++++++-
+ ...folder.07b760d4-1888-44a2-a99a-a71243f815e2.yml |   4 +
+ ...folder.feb1e100-8545-43cd-ac83-0a538fa6fd41.yml |   6 +
+ config/sync/core.extension.yml                     |   1 +
+ config/sync/metatag.metatag_defaults.global.yml    |   2 +-
+ config/sync/user.role.content_editor.yml           |  15 ++
+ config/sync/views.settings.yml                     |   3 +-
+ config/sync/workflows.workflow.basic_editorial.yml |   2 +
+ droost/canvas/home.tree.json                       |  44 ++++-
+ droost/wiki/wildbills.md                           |  67 +++++++-
+ droost/wiki/wildbills_site.md                      | 120 ++++++++++++-
+ tests/e2e/dealership.spec.ts                       |  20 ++-
+ tests/e2e/home.spec.ts                             |  50 +++++-
+ web/modules/custom/wildbills_site/README.md        |  66 ++++++-
+ .../config/schema/wildbills_site.schema.yml        |  14 ++
+ .../wildbills_site/src/Hook/WildbillsSiteHooks.php |  62 ++++++-
+ .../tests/src/Unit/WildbillsSiteHooksTest.php      |  33 +++-
+ .../custom/wildbills_site/wildbills_site.info.yml  |   8 +-
+ .../wildbills_site/wildbills_site.services.yml     |   7 +
+ web/themes/custom/wildbills/README.md              |  22 ++-
+ .../components/home_hero/home_hero.component.yml   |   7 +-
+ .../wildbills/components/home_hero/home_hero.twig  |   9 +-
+ 22 files changed, 702 insertions(+), 50 deletions(-)

@@ -1,0 +1,112 @@
+wildbills_site.dealership:
+  type: config_object
+  label: 'Dealership details'
+  mapping:
+    name:
+      type: label
+      label: 'Dealership name'
+    phone:
+      type: string
+      label: 'Phone, as shown'
+    email:
+      type: email
+      label: 'Email'
+    street:
+      type: string
+      label: 'Street address'
+    city:
+      type: string
+      label: 'City, state and ZIP'
+    timezone:
+      type: string
+      label: 'Time zone'
+    demo_notices:
+      type: boolean
+      label: 'Show the demo notices'
+    hours:
+      type: mapping
+      label: 'Weekly hours'
+      mapping:
+        sunday:
+          type: wildbills_site.day_hours
+          label: 'Sunday'
+        monday:
+          type: wildbills_site.day_hours
+          label: 'Monday'
+        tuesday:
+          type: wildbills_site.day_hours
+          label: 'Tuesday'
+        wednesday:
+          type: wildbills_site.day_hours
+          label: 'Wednesday'
+        thursday:
+          type: wildbills_site.day_hours
+          label: 'Thursday'
+        friday:
+          type: wildbills_site.day_hours
+          label: 'Friday'
+        saturday:
+          type: wildbills_site.day_hours
+          label: 'Saturday'
+
+wildbills_site.day_hours:
+  type: mapping
+  label: 'Opening hours for one day'
+  mapping:
+    open:
+      type: string
+      label: 'Opens (HH:MM, empty when closed)'
+    close:
+      type: string
+      label: 'Closes (HH:MM, empty when closed)'
+
+block.settings.wildbills_site_header:
+  type: block_settings
+  label: 'Site header block'
+  mapping:
+    brand_mark:
+      type: string
+      label: 'Brand mark'
+    brand_name:
+      type: label
+      label: 'Brand name'
+    brand_tagline:
+      type: label
+      label: 'Brand tagline'
+    cta_label:
+      type: label
+      label: 'Button label'
+    cta_url:
+      type: string
+      label: 'Button link'
+
+block.settings.wildbills_site_footer:
+  type: block_settings
+  label: 'Site footer block'
+  mapping:
+    brand_mark:
+      type: string
+      label: 'Brand mark'
+    brand_name:
+      type: label
+      label: 'Brand name'
+    brand_tagline:
+      type: label
+      label: 'Brand tagline'
+    about:
+      type: text
+      label: 'Line under the brand'
+
+views.style.wildbills_inventory:
+  type: views_style
+  label: "Wild Bill's inventory"
+  mapping:
+    eyebrow:
+      type: label
+      label: 'Eyebrow'
+    heading:
+      type: label
+      label: 'Heading'
+    lede:
+      type: text
+      label: 'Lede'

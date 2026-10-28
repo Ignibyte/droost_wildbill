@@ -1,0 +1,9 @@
+uuid: 6c933210-9d74-444e-8cdf-3b003e3ee4cc
+langcode: en
+status: true
+dependencies: {  }
+name: Make
+vid: make
+description: 'Vehicle makes. Each make is spelled once, so the inventory filter lists it once.'
+weight: 0
+new_revision: false

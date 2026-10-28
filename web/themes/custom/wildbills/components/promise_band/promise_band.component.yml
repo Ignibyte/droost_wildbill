@@ -1,0 +1,50 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Promise band
+description: "The dark green band under the home hero: four short promises, each a bold title and a line."
+group: "Wild Bill's home"
+status: stable
+props:
+  type: object
+  required:
+    - title_1
+  properties:
+    title_1:
+      type: string
+      title: First promise
+      description: The first promise's title.
+      examples: ['Price on every car']
+    text_1:
+      type: string
+      title: First promise, line
+      description: The line under it.
+      examples: ['Listed up front, no "call for price"']
+    title_2:
+      type: string
+      title: Second promise
+      description: The second promise's title.
+      examples: ['Look before you visit']
+    text_2:
+      type: string
+      title: Second promise, line
+      description: The line under it.
+      examples: ['Filter by type, price, year and miles']
+    title_3:
+      type: string
+      title: Third promise
+      description: The third promise's title.
+      examples: ['Ask about any car']
+    text_3:
+      type: string
+      title: Third promise, line
+      description: The line under it.
+      examples: ['Inquiries come prefilled with the vehicle']
+    title_4:
+      type: string
+      title: Fourth promise
+      description: The fourth promise's title.
+      examples: ['Visit on your schedule']
+    text_4:
+      type: string
+      title: Fourth promise, line
+      description: The line under it.
+      examples: ['Hours and directions on one page']

@@ -1,0 +1,29 @@
+# The source's three faces, from Google Fonts as the source loads them.
+fonts:
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap': { type: external, minified: true }
+
+# The design tokens: palette, faces, radius, wrap width, easing.
+tokens:
+  css:
+    base:
+      css/tokens.css: { weight: 20 }
+
+# Page-wide rules: the body, type, buttons' focus ring, the skip link, motion.
+base:
+  css:
+    base:
+      css/base.css: { weight: 30 }
+  dependencies:
+    - wildbills/tokens
+
+# Reveal on scroll. In the head, so the hidden starting state is set before
+# the first paint; nothing is hidden without it.
+reveal:
+  header: true
+  js:
+    js/reveal.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

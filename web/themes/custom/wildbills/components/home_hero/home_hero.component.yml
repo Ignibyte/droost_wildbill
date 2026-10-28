@@ -1,0 +1,89 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Home hero
+description: "The home page's opening section: eyebrow, a large headline with one emphasised word, a lede, two buttons, and the lot photo with its tag: the number of cars on the lot (counted, not typed), a line and a button."
+group: "Wild Bill's home"
+status: stable
+props:
+  type: object
+  required:
+    - headline_before
+    - image
+  properties:
+    eyebrow:
+      type: string
+      title: Eyebrow
+      description: The small uppercase line above the headline.
+      examples: ['Independent used-car lot']
+    headline_before:
+      type: string
+      title: Headline, before the emphasis
+      description: The headline's words before the emphasised word.
+      examples: ['Good used cars.']
+    headline_emphasis:
+      type: string
+      title: Headline, emphasised word
+      description: The word set in green.
+      examples: ['Plainly']
+    headline_after:
+      type: string
+      title: Headline, after the emphasis
+      description: The headline's words after the emphasised word.
+      examples: ['sold.']
+    lede:
+      type: string
+      title: Lede
+      description: The sentence under the headline.
+      examples: ['Trucks, SUVs and cars with the price on the windshield and the answers up front. Look around online, then come drive the one you like.']
+    primary_label:
+      type: string
+      title: First button label
+      description: The green button.
+      examples: ['Browse inventory']
+    primary_url:
+      type: string
+      format: uri-reference
+      title: First button link
+      description: Where the green button goes.
+      examples: ['/vehicles']
+    secondary_label:
+      type: string
+      title: Second button label
+      description: The outlined button.
+      examples: ['Ask a question']
+    secondary_url:
+      type: string
+      format: uri-reference
+      title: Second button link
+      description: Where the outlined button goes.
+      examples: ['/contact']
+    image:
+      $ref: json-schema-definitions://canvas.module/image
+      title: Photo
+      description: The lot photo beside the headline.
+      type: object
+      examples:
+        - src: hero.jpg
+          alt: 'Used cars and pickup trucks lined up on a dealership lot at golden hour'
+          width: 1024
+          height: 1024
+    tag_noun:
+      type: string
+      title: Tag noun
+      description: What is counted.
+      examples: ['vehicles']
+    tag_text:
+      type: string
+      title: Tag line
+      description: The small line under the count.
+      examples: ['Trucks, SUVs and cars to explore']
+    tag_label:
+      type: string
+      title: Tag button label
+      description: The tag's button.
+      examples: ['See them']
+    tag_url:
+      type: string
+      format: uri-reference
+      title: Tag button link
+      description: Where the tag's button goes.
+      examples: ['/vehicles']

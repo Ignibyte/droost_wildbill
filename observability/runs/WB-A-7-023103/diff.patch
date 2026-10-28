@@ -1,0 +1,780 @@
+diff --git a/config/sync/canvas.component.sdc.wildbills.info_card.yml b/config/sync/canvas.component.sdc.wildbills.info_card.yml
+index 527ddfc..57772e7 100644
+--- a/config/sync/canvas.component.sdc.wildbills.info_card.yml
++++ b/config/sync/canvas.component.sdc.wildbills.info_card.yml
+@@ -7,7 +7,7 @@ dependencies:
+     - options
+   theme:
+     - wildbills
+-active_version: d6152340fee49553
++active_version: 990c50f6ba2dff87
+ versioned_properties:
+   active:
+     settings:
+@@ -78,6 +78,75 @@ versioned_properties:
+               format: uri-reference
+     fallback_metadata:
+       slot_definitions: {  }
++  d6152340fee49553:
++    settings:
++      prop_field_definitions:
++        heading:
++          required: true
++          field_type: string
++          field_storage_settings: {  }
++          field_instance_settings: {  }
++          field_widget: string_textfield
++          default_value:
++            -
++              value: 'Before you head over'
++          expression: ℹ︎string␟value
++          derived_schema_metadata:
++            string_shape: {  }
++        detail:
++          required: false
++          field_type: list_string
++          field_storage_settings:
++            allowed_values_function: canvas_load_allowed_values_for_component_prop
++          field_instance_settings: {  }
++          field_widget: options_select
++          default_value:
++            -
++              value: none
++          expression: ℹ︎list_string␟value
++          derived_schema_metadata: {  }
++        text:
++          required: false
++          field_type: string
++          field_storage_settings: {  }
++          field_instance_settings: {  }
++          field_widget: string_textfield
++          default_value:
++            -
++              value: "Call or email to confirm the car you want to see is still on the lot, and bring your driver's license for a test drive."
++          expression: ℹ︎string␟value
++          derived_schema_metadata:
++            string_shape: {  }
++        link_label:
++          required: false
++          field_type: string
++          field_storage_settings: {  }
++          field_instance_settings: {  }
++          field_widget: string_textfield
++          default_value:
++            -
++              value: 'Ask about a test drive'
++          expression: ℹ︎string␟value
++          derived_schema_metadata:
++            string_shape: {  }
++        link_url:
++          required: false
++          field_type: link
++          field_storage_settings: {  }
++          field_instance_settings:
++            title: 0
++            link_type: 17
++          field_widget: link_default
++          default_value:
++            -
++              uri: '/contact?topic=Test%20drive'
++              options: {  }
++          expression: ℹ︎link␟url
++          derived_schema_metadata:
++            string_shape:
++              format: uri-reference
++    fallback_metadata:
++      slot_definitions: {  }
+ label: 'Info card'
+ id: sdc.wildbills.info_card
+ provider: wildbills
+diff --git a/droost/wiki/wildbills.md b/droost/wiki/wildbills.md
+index 3080592..f4ab99f 100644
+--- a/droost/wiki/wildbills.md
++++ b/droost/wiki/wildbills.md
+@@ -14,7 +14,7 @@ droost:
+     - path: web/themes/custom/wildbills/css/tokens.css
+       hash: "xxh3:abde5f2e76fb893c"
+     - path: web/themes/custom/wildbills/css/base.css
+-      hash: "xxh3:9c2a8ddbf7f48740"
++      hash: "xxh3:f04f6b0e8852375b"
+     - path: web/themes/custom/wildbills/js/reveal.js
+       hash: "xxh3:6a399dfd35693cdf"
+     - path: web/themes/custom/wildbills/templates/page.html.twig
+@@ -64,7 +64,7 @@ droost:
+     - path: web/themes/custom/wildbills/components/map_card/map_card.component.yml
+       hash: "xxh3:5c7ae4f8c2e1e056"
+     - path: web/themes/custom/wildbills/components/info_card/info_card.component.yml
+-      hash: "xxh3:ac926f7baab60f71"
++      hash: "xxh3:111086890afdb27c"
+     - path: web/themes/custom/wildbills/components/hours_table/hours_table.component.yml
+       hash: "xxh3:6482e4ef76ce84c9"
+     - path: web/themes/custom/wildbills/components/hours_table/hours_table.js
+@@ -77,6 +77,20 @@ droost:
+       hash: "xxh3:75f791e61d98b5d2"
+     - path: droost/canvas/apply-location.sh
+       hash: "xxh3:70c9a5c898ffb72a"
++    - path: web/themes/custom/wildbills/components/info_card/info_card.twig
++      hash: "xxh3:d3a8aaff3bff6bc1"
++    - path: web/themes/custom/wildbills/components/contact_grid/contact_grid.component.yml
++      hash: "xxh3:f8a10c9835f33216"
++    - path: web/themes/custom/wildbills/components/inquiry_form/inquiry_form.component.yml
++      hash: "xxh3:948adcab1346e249"
++    - path: web/themes/custom/wildbills/components/inquiry_form/inquiry_form.twig
++      hash: "xxh3:236d6e436f26c30b"
++    - path: web/themes/custom/wildbills/components/inquiry_form/inquiry_form.js
++      hash: "xxh3:6a1d79dd40bf62a6"
++    - path: droost/canvas/contact.tree.json
++      hash: "xxh3:9d99bb4f961d975a"
++    - path: droost/canvas/apply-contact.sh
++      hash: "xxh3:4b5ae813663e87b1"
+ ---
+ 
+ # wildbills
+@@ -230,7 +244,7 @@ everything shows at once, with no transition.
+   - `detail: address` prints the dealership's street and city in the display face. They come from
+     `LocationDetails`, never a prop.
+   - It adds the "sample" tag while the demo notices are on.
+-  - R04's contact cards can add more `detail` values.
++  - R04 added `address_text`, `phone`, `email` and `hours` (see the Contact page below).
+ - **`hours_table`:** the hours panel. Its props are the heading, the "Checking hours…" placeholder and
+   the note (Q8: "Status uses the dealership's local time.").
+   - **From `LocationDetails`:** the rows and the time zone. The "sample" tag follows the demo notices.
+@@ -256,3 +270,51 @@ everything shows at once, with no transition.
+   before.
+ - **`base.css`** now carries `.wb-link` (the source's `.link`) and `.wb-tag-sample` (`.tag-sample`),
+   for R03 and R04.
++
++## The Contact page (R04)
++
++- **The page:** `/contact` is a Canvas page, `canvas_page` 5 on this site. The `wildbills_site`
++  deploy hook makes it.
++- **The tree file:** `droost/canvas/contact.tree.json` holds its tree, with fixed uuids. Two roots
++  (HR2): `page_head`, then `contact_grid`.
++  - **`main` slot:** `inquiry_form`.
++  - **`aside` slot:** four `info_card`s: Phone (`detail: phone`, with "Placeholder number from the
++    original site."), Email (`email`), Visit (`address_text`, "Hours & directions" → `/location`) and
++    Hours (`hours`).
++- **Rebuilding:** run `droost/canvas/apply-contact.sh` after `drush deploy`. It finds the page by its
++  alias, then runs `tree:validate` and `tree:set`.
++
++### The contact components (enabled in Canvas)
++
++- **`contact_grid`:** the source's `contact-grid`, with no props: `main` (1.5fr) and `aside` (1fr, a
++  1rem stack), one column below 900px. Its own component, not a `location_grid` variant: the ratio,
++  gap and stacking all differ.
++- **`inquiry_form`:** the form card and the hand-off.
++  - **Props:** the page's fixed copy, 15 of them (the notice, the five labels, "optional", the
++    placeholder, the button, the hand-off's warning, heading and three buttons).
++  - **`|t` strings in the template:** what the script fills in or that carries a placeholder: the
++    error messages, the count, the subjects and the mail's lines, the copy statuses, "ASKING ABOUT",
++    "Remove", the hand-off sentence with the address, "sample address" and the filled-in message.
++  - **From `wildbills_site` (`InquiryDetails`):** `email`, `vehicle` and `topic`. The car's card, the
++    chosen topic and the message are rendered by the server, so the page never ships the inventory.
++  - **No `name` attributes:** with JavaScript off, a submit reloads `/contact` with an empty query, so
++    the visitor's words never reach a URL or a log.
++  - **`inquiry_form.js`** (a behavior), as the source's `contact.ts`:
++    - the count, the three checks (`aria-invalid`, focus to the first, re-checked as the visitor types);
++    - the draft: "Inquiry: <car>" or "Website inquiry: <topic>", the body's lines, the `mailto:` and the
++      preview;
++    - Edit, Copy (the clipboard, else the preview selected) and Remove (the card, the Specific vehicle
++      topic and the `vehicle` parameter go; the message keeps its words);
++    - sentences are filled in one pass (`/@[a-z]+/`), so a value is never filled twice.
++  - It depends on `core/components.wildbills--button` for its `wb-btn` buttons.
++- **`info_card`:** `detail` also takes `address_text` (the address in body type), `phone`, `email` and
++  `hours`. The link's `.8rem` gap now follows only the card's sentence (`.wb-info-text +
++  .wb-info-link`), so the contact Visit card's link sits under the address as the source draws it;
++  /location is unchanged.
++
++### Shared form styles
++
++`.wb-field`, `.wb-input` and `.wb-select` moved from `inventory.css` to `base.css`, unchanged, with
++`.wb-textarea` and the `[aria-invalid="true"]` border beside them. The inventory and the inquiry form
++both use them.
++
+diff --git a/droost/wiki/wildbills_site.md b/droost/wiki/wildbills_site.md
+index f74a7ba..f8b4945 100644
+--- a/droost/wiki/wildbills_site.md
++++ b/droost/wiki/wildbills_site.md
+@@ -16,11 +16,11 @@ droost:
+     - path: web/modules/custom/wildbills_site/src/Dealership.php
+       hash: "xxh3:c0659f835d64fe44"
+     - path: web/modules/custom/wildbills_site/src/HoursSummary.php
+-      hash: "xxh3:bb104ccfec8f3028"
++      hash: "xxh3:970328ebfd38d91d"
+     - path: web/modules/custom/wildbills_site/src/DemoNotices.php
+       hash: "xxh3:fcab6e8a275b96bb"
+     - path: web/modules/custom/wildbills_site/src/Hook/WildbillsSiteHooks.php
+-      hash: "xxh3:a5fa69551b46e639"
++      hash: "xxh3:beb9c81fc23902a8"
+     - path: web/modules/custom/wildbills_site/src/Form/DealershipSettingsForm.php
+       hash: "xxh3:953697ffb3706f58"
+     - path: web/modules/custom/wildbills_site/src/Plugin/Block/SiteFrameBlockBase.php
+@@ -32,11 +32,11 @@ droost:
+     - path: web/modules/custom/wildbills_site/wildbills_site.services.yml
+       hash: "xxh3:5c1c728a89673747"
+     - path: web/modules/custom/wildbills_site/wildbills_site.deploy.php
+-      hash: "xxh3:fd7e610f31373f8d"
++      hash: "xxh3:b7e403c26cc233a1"
+     - path: web/modules/custom/wildbills_site/content/vehicles.yml
+       hash: "xxh3:7f94716d00cf7b94"
+     - path: web/modules/custom/wildbills_site/src/Inventory.php
+-      hash: "xxh3:d781fa0ba6f8d3ae"
++      hash: "xxh3:8538cac5432bfa76"
+     - path: web/modules/custom/wildbills_site/src/InventoryFacets.php
+       hash: "xxh3:bca835f766a21725"
+     - path: web/modules/custom/wildbills_site/src/VehicleTitle.php
+@@ -54,16 +54,19 @@ droost:
+     - path: config/sync/node.type.vehicle.yml
+       hash: "xxh3:52804820cb5e1514"
+     - path: web/modules/custom/wildbills_site/src/LocationDetails.php
+-      hash: "xxh3:62cbbb3f2dfa041c"
++      hash: "xxh3:9c2093bc97b643f5"
+     - path: web/modules/custom/wildbills_site/src/HoursTable.php
+       hash: "xxh3:2222e29a591433b5"
++    - path: web/modules/custom/wildbills_site/src/InquiryDetails.php
++      hash: "xxh3:841c8fb3de604704"
+ ---
+ 
+ # wildbills_site
+ 
+ The dealership's details in one place, and the site header and footer that
+ show them. Built in R01 (`droost/intake/tickets/R01.md`). Later rungs read the
+-same details: R03's hours table and open status, R04's contact cards.
++same details: R03's hours table and open status, R04's contact cards and
++inquiry form.
+ 
+ ## The details
+ 
+@@ -102,7 +105,8 @@ config directly.** It gives:
+ - `cacheability()`: the config's cache tag.
+ 
+ `HoursSummary` is pure and unit-tested. Monday to Sunday, consecutive days with
+-the same hours group:
++the same hours group (`lines()` takes the time format as an optional second
++argument; R04's Hours card passes `HoursTable::formatTime` for "8:00am"):
+ 
+ - A run of days reads "Mon–Fri 8am–7pm".
+ - A single day reads "Saturday 9am–6pm".
+@@ -268,8 +272,8 @@ Built in R03 (`droost/intake/tickets/R03.md`). The spec,
+   description, the `/location` alias (Pathauto skipped), and its own `metatags` with the title
+   `[canvas_page:title] — [site:name]`.
+   - **The title tag:** Canvas gives each new page a `|` title of its own, which overrides
+-    `metatag.metatag_defaults.canvas_page`. So the page's own value is set here, and R04's Contact
+-    page needs the same.
++    `metatag.metatag_defaults.canvas_page`. So the page's own value is set here, as R04's Contact
++    page also does.
+   - **The redirect:** the hook also makes the `location.html` → `/location` redirect, which carries
+     the query.
+   - **Running it again:** it skips a page already at `/location` and an existing redirect.
+@@ -281,3 +285,40 @@ Built in R03 (`droost/intake/tickets/R03.md`). The spec,
+   at `/location`.
+   - Deleting the Location page deletes both, through menu_link_content's entity predelete.
+   - Re-running `wildbills_site_install()` puts them back, since it is safe to run again.
++
++## The contact page (R04)
++
++Built in R04 (`droost/intake/tickets/R04.md`). The spec,
++`droost/droost-workflow/spec-r04-contact.md`, has a Realized section that says why.
++
++- **The contact cards:** `LocationDetails` hands `wildbills:info_card` the values for every `detail`:
++  - `address` and `address_text` get `street` and `city`;
++  - `phone` gets `phone` and `phone_href`;
++  - `email` gets `email`;
++  - `hours` gets `hours`, the lines of `HoursSummary::lines()` with `HoursTable::formatTime`
++    ("Mon–Fri 8:00am–7:00pm", "Saturday 9:00am–6:00pm", "Sunday closed").
++- **`Inventory::listedByStock(int)`** finds the listed car with a stock number, on the same
++  `listedQuery()` as the count. A sold or unpublished car is not found (Q11); a pending one is (Q10).
++- **`InquiryDetails::preRender`** (fourth in `elementInfoAlter()`, after `LocationDetails`) hands
++  `wildbills:inquiry_form` what the link asks for. It returns at once for any other component.
++  - `email`: the dealership's.
++  - `vehicle`: when `?vehicle=` is all digits (`stock()`) and names a listed car, its padded stock
++    ("001"), name, price, miles, colour, photo (`4_3_300x225_focal_point_webp`) and listing path
++    (`/vehicles?vehicle=<stock>`); otherwise NULL.
++  - `topic`: Specific vehicle with a car; otherwise `?topic=` when it is one of `TOPICS`; otherwise
++    General question. `props()` holds this rule and is unit-tested.
++  - **Cacheability:** the dealership's tag, `node_list` and `taxonomy_term_list`, and the
++    `url.query_args:vehicle` and `url.query_args:topic` contexts. The page cache keys on the whole URL,
++    so each link is its own cached page, and a sale clears a cached card.
++  - **`TOPICS` are values**, not wording: /location links `?topic=Test%20drive`, the inventory's empty
++    state `?topic=Vehicle%20search`, and the draft's subject carries the value. Renaming one breaks
++    those links. The template translates what the visitor reads.
++- **Nothing is sent or stored (Q4).** No route, form API, Webform or mailer is involved: the browser
++  drafts a `mailto:`.
++- **`wildbills_site_deploy_r04_contact_page()`** makes the Canvas page "Contact": its description,
++  the `/contact` alias (Pathauto skipped), its own `metatags` (`[canvas_page:title] — [site:name]`),
++  and the `contact.html` → `/contact` redirect, which carries the query. It skips what exists. The
++  page's tree is `droost/canvas/apply-contact.sh`'s (see the `wildbills` page).
++- **Menu links:** R01's main and footer "Contact" links point at `/contact`. Deleting the Contact page
++  deletes them, as with Location; re-running `wildbills_site_install()` puts them back.
++
+diff --git a/web/modules/custom/wildbills_site/src/Hook/WildbillsSiteHooks.php b/web/modules/custom/wildbills_site/src/Hook/WildbillsSiteHooks.php
+index 514d378..29661a3 100644
+--- a/web/modules/custom/wildbills_site/src/Hook/WildbillsSiteHooks.php
++++ b/web/modules/custom/wildbills_site/src/Hook/WildbillsSiteHooks.php
+@@ -14,6 +14,7 @@
+ use Drupal\pathauto\PathautoState;
+ use Drupal\taxonomy\TermInterface;
+ use Drupal\wildbills_site\DemoNotices;
++use Drupal\wildbills_site\InquiryDetails;
+ use Drupal\wildbills_site\Inventory;
+ use Drupal\wildbills_site\LocationDetails;
+ use Drupal\wildbills_site\VehicleCount;
+@@ -43,9 +44,10 @@ public function __construct(
+   /**
+    * Implements hook_element_info_alter().
+    *
+-   * Runs DemoNotices::preRender(), VehicleCount::preRender() and
+-   * LocationDetails::preRender() ahead of the component element's own
+-   * pre-render, which turns the props into the template's context.
++   * Runs DemoNotices::preRender(), VehicleCount::preRender(),
++   * LocationDetails::preRender() and InquiryDetails::preRender() ahead of the
++   * component element's own pre-render, which turns the props into the
++   * template's context.
+    *
+    * @param array<string, array<string, mixed>> $info
+    *   The element info, keyed by element type.
+@@ -59,6 +61,7 @@ public function elementInfoAlter(array &$info): void {
+         [DemoNotices::class, 'preRender'],
+         [VehicleCount::class, 'preRender'],
+         [LocationDetails::class, 'preRender'],
++        [InquiryDetails::class, 'preRender'],
+       );
+       $info['component']['#pre_render'] = $pre_render;
+     }
+diff --git a/web/modules/custom/wildbills_site/src/HoursSummary.php b/web/modules/custom/wildbills_site/src/HoursSummary.php
+index 86b2928..6036f0f 100644
+--- a/web/modules/custom/wildbills_site/src/HoursSummary.php
++++ b/web/modules/custom/wildbills_site/src/HoursSummary.php
+@@ -5,12 +5,13 @@
+ namespace Drupal\wildbills_site;
+ 
+ /**
+- * Summarises a week of opening hours into short lines for the footer.
++ * Summarises a week of opening hours into short lines.
+  *
+  * Walks Monday to Sunday and groups consecutive days with the same hours. A
+  * run of days is named by its first and last day, abbreviated ("Mon–Fri");
+- * a single day keeps its full name ("Saturday"). Times print as "8am", or
+- * "8:30am" off the hour, and a closed day reads "closed".
++ * a single day keeps its full name ("Saturday"). For the footer, times print
++ * as "8am", or "8:30am" off the hour; the contact page's Hours card passes
++ * HoursTable::formatTime() and prints "8:00am". A closed day reads "closed".
+  */
+ final class HoursSummary {
+ 
+@@ -33,14 +34,17 @@ final class HoursSummary {
+    * @param array<string, array{open?: string, close?: string}> $hours
+    *   Opening and closing times (HH:MM) keyed by lower-case day name. A day
+    *   that is missing, or has an empty time, is closed.
++   * @param (callable(string): string)|null $formatTime
++   *   Prints one HH:MM time; the footer's formatTime() when not given.
+    *
+    * @return list<string>
+    *   One line per run of days, e.g. "Mon–Fri 8am–7pm", "Sunday closed".
+    */
+-  public static function lines(array $hours): array {
++  public static function lines(array $hours, ?callable $formatTime = NULL): array {
++    $formatTime ??= self::formatTime(...);
+     $runs = [];
+     foreach (array_keys(self::DAYS) as $day) {
+-      $value = self::dayValue($hours[$day] ?? []);
++      $value = self::dayValue($hours[$day] ?? [], $formatTime);
+       $last = array_key_last($runs);
+       if ($last !== NULL && $runs[$last]['value'] === $value) {
+         $runs[$last]['days'][] = $day;
+@@ -89,14 +93,16 @@ public static function isTime(string $value): bool {
+    *
+    * @param array{open?: string, close?: string} $day
+    *   The day's opening and closing times.
++   * @param callable(string): string $formatTime
++   *   Prints one time.
+    */
+-  private static function dayValue(array $day): string {
++  private static function dayValue(array $day, callable $formatTime): string {
+     $open = $day['open'] ?? '';
+     $close = $day['close'] ?? '';
+     if (!self::isTime($open) || !self::isTime($close)) {
+       return 'closed';
+     }
+-    return self::formatTime($open) . '–' . self::formatTime($close);
++    return $formatTime($open) . '–' . $formatTime($close);
+   }
+ 
+ }
+diff --git a/web/modules/custom/wildbills_site/src/Inventory.php b/web/modules/custom/wildbills_site/src/Inventory.php
+index eff137d..4d5beaa 100644
+--- a/web/modules/custom/wildbills_site/src/Inventory.php
++++ b/web/modules/custom/wildbills_site/src/Inventory.php
+@@ -43,6 +43,24 @@ public function listedCount(): int {
+     return (int) $this->listedQuery()->count()->execute();
+   }
+ 
++  /**
++   * The listed vehicle with this stock number.
++   *
++   * The contact form asks about a car only while it is listed, so a link to a
++   * car that has since sold opens the form without it (Q11).
++   *
++   * @param int $stock
++   *   The stock number.
++   *
++   * @return \Drupal\node\NodeInterface|null
++   *   The vehicle, or NULL when no listed vehicle has that number.
++   */
++  public function listedByStock(int $stock): ?NodeInterface {
++    $ids = $this->listedQuery()->condition('field_stock_number', $stock)->range(0, 1)->execute();
++    $vehicle = $ids ? $this->entityTypeManager->getStorage('node')->load(reset($ids)) : NULL;
++    return $vehicle instanceof NodeInterface ? $vehicle : NULL;
++  }
++
+   /**
+    * The cacheability of anything that shows the listed vehicles.
+    *
+diff --git a/web/modules/custom/wildbills_site/src/LocationDetails.php b/web/modules/custom/wildbills_site/src/LocationDetails.php
+index c2140c8..2a5125d 100644
+--- a/web/modules/custom/wildbills_site/src/LocationDetails.php
++++ b/web/modules/custom/wildbills_site/src/LocationDetails.php
+@@ -9,13 +9,15 @@
+ use Drupal\Core\StringTranslation\TranslatableMarkup;
+ 
+ /**
+- * Hands the location page's components the dealership's address and hours.
++ * Hands the location and contact pages' components the dealership's details.
+  *
+- * The address and the hours are the dealership's, set once on its details
+- * form, so they are never Canvas props an editor could type over. This runs
+- * before the component element renders and gives:
++ * The address, phone, email and hours are the dealership's, set once on its
++ * details form, so they are never Canvas props an editor could type over. This
++ * runs before the component element renders and gives:
+  * - `wildbills:map_card` the Google Maps and Apple Maps links;
+- * - `wildbills:info_card` showing the address, the street and city;
++ * - `wildbills:info_card` the detail it is set to show: the street and city
++ *   (`address`, `address_text`), the number and its tel: link (`phone`), the
++ *   email (`email`) or the week summarised (`hours`);
+  * - `wildbills:hours_table` the week's rows and the time zone;
+  * each with the details' cache tag, so a cached page follows the form.
+  */
+@@ -75,10 +77,7 @@ public static function props(string $component, array $props, Dealership $dealer
+         'google_url' => $dealership->googleMapsUrl(),
+         'apple_url' => $dealership->appleMapsUrl(),
+       ],
+-      $component === 'wildbills:info_card' && ($props['detail'] ?? '') === 'address' => [
+-        'street' => $dealership->street(),
+-        'city' => $dealership->city(),
+-      ],
++      $component === 'wildbills:info_card' => self::infoCard((string) ($props['detail'] ?? ''), $dealership),
+       $component === 'wildbills:hours_table' => [
+         'rows' => array_map(static fn (array $row): array => [
+           'label' => (string) self::dayLabel($row['day']),
+@@ -90,6 +89,33 @@ public static function props(string $component, array $props, Dealership $dealer
+     };
+   }
+ 
++  /**
++   * The dealership's values for an info card showing one detail.
++   *
++   * @param string $detail
++   *   The card's `detail` prop.
++   * @param \Drupal\wildbills_site\Dealership $dealership
++   *   The dealership's details.
++   *
++   * @return array<string, mixed>
++   *   The values the card's template prints; empty for no detail.
++   */
++  private static function infoCard(string $detail, Dealership $dealership): array {
++    return match ($detail) {
++      'address', 'address_text' => [
++        'street' => $dealership->street(),
++        'city' => $dealership->city(),
++      ],
++      'phone' => [
++        'phone' => $dealership->phone(),
++        'phone_href' => $dealership->phoneHref(),
++      ],
++      'email' => ['email' => $dealership->email()],
++      'hours' => ['hours' => HoursSummary::lines($dealership->hours(), HoursTable::formatTime(...))],
++      default => [],
++    };
++  }
++
+   /**
+    * A day's name, translated.
+    */
+diff --git a/web/modules/custom/wildbills_site/tests/src/Unit/HoursSummaryTest.php b/web/modules/custom/wildbills_site/tests/src/Unit/HoursSummaryTest.php
+index a4db730..806d295 100644
+--- a/web/modules/custom/wildbills_site/tests/src/Unit/HoursSummaryTest.php
++++ b/web/modules/custom/wildbills_site/tests/src/Unit/HoursSummaryTest.php
+@@ -6,6 +6,7 @@
+ 
+ use Drupal\Tests\UnitTestCase;
+ use Drupal\wildbills_site\HoursSummary;
++use Drupal\wildbills_site\HoursTable;
+ use PHPUnit\Framework\Attributes\CoversClass;
+ use PHPUnit\Framework\Attributes\DataProvider;
+ use PHPUnit\Framework\Attributes\Group;
+@@ -46,6 +47,22 @@ public function testSourceWeek(): void {
+     );
+   }
+ 
++  /**
++   * With the location page's format, the week reads as the contact page's card.
++   */
++  public function testLongFormat(): void {
++    $week = self::sourceWeek();
++    $this->assertSame(
++      ['Mon–Fri 8:00am–7:00pm', 'Saturday 9:00am–6:00pm', 'Sunday closed'],
++      HoursSummary::lines($week, HoursTable::formatTime(...)),
++    );
++    $week['saturday'] = ['open' => '09:30', 'close' => '12:00'];
++    $this->assertSame(
++      ['Mon–Fri 8:00am–7:00pm', 'Saturday 9:30am–12:00pm', 'Sunday closed'],
++      HoursSummary::lines($week, HoursTable::formatTime(...)),
++    );
++  }
++
+   /**
+    * Changing one weekday splits the run it belonged to.
+    */
+diff --git a/web/modules/custom/wildbills_site/tests/src/Unit/LocationDetailsTest.php b/web/modules/custom/wildbills_site/tests/src/Unit/LocationDetailsTest.php
+index 2fcc7fa..1e42b03 100644
+--- a/web/modules/custom/wildbills_site/tests/src/Unit/LocationDetailsTest.php
++++ b/web/modules/custom/wildbills_site/tests/src/Unit/LocationDetailsTest.php
+@@ -12,7 +12,7 @@
+ use PHPUnit\Framework\Attributes\Group;
+ 
+ /**
+- * Tests the values the location page's components get from the dealership.
++ * Tests the values the location and contact pages' components get.
+  */
+ #[CoversClass(LocationDetails::class)]
+ #[Group('wildbills_site')]
+@@ -30,11 +30,15 @@ protected function setUp(): void {
+     parent::setUp();
+     $this->dealership = new Dealership($this->getConfigFactoryStub([
+       Dealership::CONFIG => [
++        'phone' => '(555) 123-4567',
++        'email' => 'wildbill@wildbillscars.com',
+         'street' => '123 Dusty Creek Rd',
+         'city' => 'Dusty Creek, TX 78701',
+         'timezone' => 'America/Chicago',
+         'hours' => [
+           'monday' => ['open' => '08:00', 'close' => '19:00'],
++          'tuesday' => ['open' => '08:00', 'close' => '19:00'],
++          'saturday' => ['open' => '09:30', 'close' => '18:00'],
+           'sunday' => ['open' => '', 'close' => ''],
+         ],
+       ],
+@@ -56,17 +60,40 @@ public function testMapCard(): void {
+   }
+ 
+   /**
+-   * Only an info card set to show the address gets it.
++   * Only an info card set to show the address gets it, in either form.
+    */
+   public function testInfoCard(): void {
+     $this->assertSame(
+       ['street' => '123 Dusty Creek Rd', 'city' => 'Dusty Creek, TX 78701'],
+       LocationDetails::props('wildbills:info_card', ['detail' => 'address'], $this->dealership),
+     );
++    $this->assertSame(
++      ['street' => '123 Dusty Creek Rd', 'city' => 'Dusty Creek, TX 78701'],
++      LocationDetails::props('wildbills:info_card', ['detail' => 'address_text'], $this->dealership),
++    );
+     $this->assertSame([], LocationDetails::props('wildbills:info_card', ['detail' => 'none'], $this->dealership));
++    $this->assertSame([], LocationDetails::props('wildbills:info_card', ['detail' => 'fax'], $this->dealership));
+     $this->assertSame([], LocationDetails::props('wildbills:info_card', [], $this->dealership));
+   }
+ 
++  /**
++   * The contact cards get the phone with its link, the email and the week.
++   */
++  public function testContactCards(): void {
++    $this->assertSame(
++      ['phone' => '(555) 123-4567', 'phone_href' => 'tel:+15551234567'],
++      LocationDetails::props('wildbills:info_card', ['detail' => 'phone'], $this->dealership),
++    );
++    $this->assertSame(
++      ['email' => 'wildbill@wildbillscars.com'],
++      LocationDetails::props('wildbills:info_card', ['detail' => 'email'], $this->dealership),
++    );
++    $this->assertSame(
++      ['hours' => ['Mon–Tue 8:00am–7:00pm', 'Wed–Fri closed', 'Saturday 9:30am–6:00pm', 'Sunday closed']],
++      LocationDetails::props('wildbills:info_card', ['detail' => 'hours'], $this->dealership),
++    );
++  }
++
+   /**
+    * The hours table gets the week, with day names, and the time zone.
+    */
+diff --git a/web/modules/custom/wildbills_site/tests/src/Unit/WildbillsSiteHooksTest.php b/web/modules/custom/wildbills_site/tests/src/Unit/WildbillsSiteHooksTest.php
+index 926b427..c5af510 100644
+--- a/web/modules/custom/wildbills_site/tests/src/Unit/WildbillsSiteHooksTest.php
++++ b/web/modules/custom/wildbills_site/tests/src/Unit/WildbillsSiteHooksTest.php
+@@ -13,6 +13,7 @@
+ use Drupal\Tests\UnitTestCase;
+ use Drupal\wildbills_site\DemoNotices;
+ use Drupal\wildbills_site\Hook\WildbillsSiteHooks;
++use Drupal\wildbills_site\InquiryDetails;
+ use Drupal\wildbills_site\LocationDetails;
+ use Drupal\wildbills_site\VehicleCount;
+ use PHPUnit\Framework\Attributes\CoversClass;
+@@ -65,6 +66,7 @@ public function testDemoNoticesRunFirst(): void {
+       [DemoNotices::class, 'preRender'],
+       [VehicleCount::class, 'preRender'],
+       [LocationDetails::class, 'preRender'],
++      [InquiryDetails::class, 'preRender'],
+       [HtmlTag::class, 'preRenderHtmlTag'],
+     ], $info['component']['#pre_render']);
+   }
+diff --git a/web/modules/custom/wildbills_site/wildbills_site.deploy.php b/web/modules/custom/wildbills_site/wildbills_site.deploy.php
+index eee0836..9f1076a 100644
+--- a/web/modules/custom/wildbills_site/wildbills_site.deploy.php
++++ b/web/modules/custom/wildbills_site/wildbills_site.deploy.php
+@@ -146,6 +146,50 @@ function wildbills_site_deploy_r03_location_page(): string {
+   return $made ? 'Location & Hours: made ' . implode(' and ', $made) . '.' : 'Location & Hours: already in place.';
+ }
+ 
++/**
++ * Makes the Contact page at /contact, and its .html redirect.
++ *
++ * Only the page itself, its title, description and address: its components
++ * are written by droost/canvas/apply-contact.sh with `canvas tree:set` (HR2).
++ * Safe to run again: a page already at /contact, or a redirect already from
++ * contact.html, is left as it is. The redirect carries the query, so
++ * /contact.html?vehicle=3 still asks about car 3.
++ */
++function wildbills_site_deploy_r04_contact_page(): string {
++  $made = [];
++  if (\Drupal::service('path_alias.manager')->getPathByAlias('/contact') === '/contact') {
++    \Drupal::entityTypeManager()->getStorage('canvas_page')->create([
++      'title' => 'Contact',
++      'description' => 'Ask Wild Bill\'s Used Cars about a vehicle, a test drive, trade-ins or payment options. Prepares an email in your own mail app. Demo website.',
++      'path' => ['alias' => '/contact', 'pathauto' => PathautoState::SKIP],
++      // Canvas gives every new page its own title tag, "<title> | <site>";
++      // the source writes "Contact — Wild Bill's Used Cars".
++      'metatags' => Json::encode([
++        'title' => '[canvas_page:title] — [site:name]',
++        'description' => '[canvas_page:description]',
++        'canonical_url' => '[canvas_page:url]',
++        'image_src' => '[canvas_page:image:entity:field_media_image:entity:url]',
++      ]),
++      'status' => TRUE,
++      'owner' => 1,
++    ])->save();
++    $made[] = 'the page';
++  }
++
++  $redirects = \Drupal::entityTypeManager()->getStorage('redirect');
++  if (!$redirects->loadByProperties(['redirect_source__path' => 'contact.html'])) {
++    Redirect::create([
++      'redirect_source' => ['path' => 'contact.html'],
++      'redirect_redirect' => ['uri' => 'internal:/contact'],
++      'status_code' => 301,
++      'language' => 'und',
++    ])->save();
++    $made[] = 'the contact.html redirect';
++  }
++
++  return $made ? 'Contact: made ' . implode(' and ', $made) . '.' : 'Contact: already in place.';
++}
++
+ /**
+  * Finds a term by vocabulary and name, or makes it with these values.
+  *
+diff --git a/web/themes/custom/wildbills/components/info_card/info_card.component.yml b/web/themes/custom/wildbills/components/info_card/info_card.component.yml
+index 58aaf03..32ad37f 100644
+--- a/web/themes/custom/wildbills/components/info_card/info_card.component.yml
++++ b/web/themes/custom/wildbills/components/info_card/info_card.component.yml
+@@ -17,10 +17,14 @@ props:
+       type: string
+       title: Dealership detail
+       description: One of the dealership's details to show under the heading, as the dealership details form sets it.
+-      enum: [none, address]
++      enum: [none, address, address_text, phone, email, hours]
+       meta:enum:
+         none: None
+-        address: Address
++        address: Address (large)
++        address_text: Address
++        phone: Phone number
++        email: Email address
++        hours: Opening hours
+       default: none
+       examples: [none]
+     text:
+diff --git a/web/themes/custom/wildbills/components/info_card/info_card.css b/web/themes/custom/wildbills/components/info_card/info_card.css
+index 7df1982..581e423 100644
+--- a/web/themes/custom/wildbills/components/info_card/info_card.css
++++ b/web/themes/custom/wildbills/components/info_card/info_card.css
+@@ -2,4 +2,4 @@
+ .wb-info h3 { font-size: 1.15rem; margin-bottom: .6rem; display: flex; align-items: center; gap: .5rem; }
+ .wb-info p { margin: .2rem 0; color: hsl(var(--wb-ink-2)); }
+ .wb-info p.wb-info-address { font-family: var(--wb-display); font-size: 1.6rem; color: hsl(203 58% 13%); letter-spacing: -.02em; line-height: 1.2; }
+-.wb-info p.wb-info-link { margin-top: .8rem; }
++.wb-info p.wb-info-text + p.wb-info-link { margin-top: .8rem; }
+diff --git a/web/themes/custom/wildbills/components/info_card/info_card.twig b/web/themes/custom/wildbills/components/info_card/info_card.twig
+index 4459aaa..577dd06 100644
+--- a/web/themes/custom/wildbills/components/info_card/info_card.twig
++++ b/web/themes/custom/wildbills/components/info_card/info_card.twig
+@@ -1,12 +1,17 @@
+ {#
+-  demo_notices, street and city are not props: the wildbills_site module
+-  hands them in (DemoNotices, LocationDetails), so a card showing the address
+-  shows the one on the dealership details form, and nothing an editor types.
++  demo_notices and the dealership's details (street, city, phone, phone_href,
++  email, hours) are not props: the wildbills_site module hands them in
++  (DemoNotices, LocationDetails) for the detail the card is set to show, so
++  the card shows what is on the dealership details form, and nothing an
++  editor types.
+ #}
+-{%- set address = detail == 'address' and (street or city) -%}
++{%- set address = detail in ['address', 'address_text'] and (street or city) -%}
+ <div class="wb-info">
+   <h3>{{ heading }}{% if detail and detail != 'none' and demo_notices %} <span class="wb-tag-sample">{{ 'sample'|t }}</span>{% endif %}</h3>
+-  {%- if address %}<p class="wb-info-address">{{ street }}{% if street and city %}<br>{% endif %}{{ city }}</p>{% endif %}
+-  {%- if text %}<p>{{ text }}</p>{% endif %}
++  {%- if address %}<p{% if detail == 'address' %} class="wb-info-address"{% endif %}>{{ street }}{% if street and city %}<br>{% endif %}{{ city }}</p>{% endif %}
++  {%- if detail == 'phone' and phone %}<p><a class="wb-link" href="{{ phone_href }}">{{ phone }}</a></p>{% endif %}
++  {%- if detail == 'email' and email %}<p><a class="wb-link" href="mailto:{{ email }}">{{ email }}</a></p>{% endif %}
++  {%- if detail == 'hours' and hours %}<p>{% for line in hours %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>{% endif %}
++  {%- if text %}<p class="wb-info-text">{{ text }}</p>{% endif %}
+   {%- if link_label and link_url %}<p class="wb-info-link"><a class="wb-link" href="{{ link_url }}">{{ link_label }}</a></p>{% endif %}
+ </div>
+diff --git a/web/themes/custom/wildbills/components/inventory/inventory.css b/web/themes/custom/wildbills/components/inventory/inventory.css
+index f69e063..435e7c6 100644
+--- a/web/themes/custom/wildbills/components/inventory/inventory.css
++++ b/web/themes/custom/wildbills/components/inventory/inventory.css
+@@ -4,13 +4,6 @@
+ .wb-filters-head { display: flex; justify-content: space-between; align-items: center; }
+ .wb-filters-head h2 { font-size: 1.2rem; }
+ .wb-link-btn { background: none; border: 0; cursor: pointer; font-size: .88rem; font-weight: 600; text-decoration: underline; text-decoration-color: hsl(var(--wb-signal)); text-underline-offset: 4px; text-decoration-thickness: 2px; padding: 0; }
+-.wb-field { display: grid; gap: .45rem; }
+-.wb-field > label, .wb-field-label { font-size: .82rem; font-weight: 600; color: hsl(var(--wb-ink-2)); display: flex; justify-content: space-between; }
+-.wb-field output { font-family: var(--wb-mono); color: hsl(var(--wb-signal-ink)); font-weight: 500; }
+-.wb-input, .wb-select { width: 100%; min-height: 46px; padding: .7rem .9rem; border-radius: 12px; border: 1.5px solid hsl(var(--wb-line)); background: hsl(var(--wb-paper)); transition: border-color .2s; }
+-.wb-input:hover, .wb-select:hover { border-color: hsl(var(--wb-ink-3)); }
+-.wb-input:focus, .wb-select:focus { outline: none; border-color: hsl(var(--wb-petrol)); box-shadow: 0 0 0 3px hsl(var(--wb-petrol) / .15); }
+-.wb-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%2314303f' stroke-width='1.8'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right .9rem center; padding-right: 2.3rem; }
+ .wb-inventory input[type="range"] { width: 100%; accent-color: hsl(var(--wb-signal)); }
+ .wb-range-ends { display: flex; justify-content: space-between; font-family: var(--wb-mono); font-size: .7rem; color: hsl(var(--wb-ink-3)); }
+ .wb-seg { display: flex; flex-wrap: wrap; gap: .35rem; }
+diff --git a/web/themes/custom/wildbills/css/base.css b/web/themes/custom/wildbills/css/base.css
+index fb33468..ef78ca5 100644
+--- a/web/themes/custom/wildbills/css/base.css
++++ b/web/themes/custom/wildbills/css/base.css
+@@ -63,3 +63,14 @@ h1, h2, h3 { font-family: var(--wb-display); letter-spacing: -.025em; line-heigh
+ /* inline: an underlined text link, and the "sample" tag beside a heading */
+ .wb-link { font-weight: 600; text-decoration: underline; text-decoration-color: hsl(var(--wb-signal)); text-underline-offset: 4px; text-decoration-thickness: 2px; }
+ .wb-tag-sample { font-family: var(--wb-mono); font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; padding: .18rem .45rem; border-radius: 6px; background: hsl(var(--wb-signal) / .14); color: hsl(var(--wb-signal-ink)); vertical-align: middle; margin-left: .35rem; font-weight: 500; }
++
++/* form fields: the inventory's filters and the contact page's inquiry form */
++.wb-field { display: grid; gap: .45rem; }
++.wb-field > label, .wb-field-label { font-size: .82rem; font-weight: 600; color: hsl(var(--wb-ink-2)); display: flex; justify-content: space-between; }
++.wb-field output { font-family: var(--wb-mono); color: hsl(var(--wb-signal-ink)); font-weight: 500; }
++.wb-input, .wb-select, .wb-textarea { width: 100%; min-height: 46px; padding: .7rem .9rem; border-radius: 12px; border: 1.5px solid hsl(var(--wb-line)); background: hsl(var(--wb-paper)); transition: border-color .2s; }
++.wb-input:hover, .wb-select:hover, .wb-textarea:hover { border-color: hsl(var(--wb-ink-3)); }
++.wb-input:focus, .wb-select:focus, .wb-textarea:focus { outline: none; border-color: hsl(var(--wb-petrol)); box-shadow: 0 0 0 3px hsl(var(--wb-petrol) / .15); }
++.wb-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%2314303f' stroke-width='1.8'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right .9rem center; padding-right: 2.3rem; }
++.wb-input[aria-invalid="true"], .wb-textarea[aria-invalid="true"] { border-color: hsl(var(--wb-signal)); }
++.wb-textarea { min-height: 140px; resize: vertical; }

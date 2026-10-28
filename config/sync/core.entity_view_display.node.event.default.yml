@@ -1,0 +1,119 @@
+uuid: fa653937-6281-420a-b7ee-ae101b054253
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event.body
+    - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_image
+    - field.field.node.event.field_event_location
+    - node.type.event
+  module:
+    - ui_patterns
+    - ui_patterns_field_formatters
+    - user
+  theme:
+    - droost_theme
+_core:
+  default_config_hash: cMQ1yFI7G8txh_ZZJsaxBt6GDQgGRRpBtYHf6CZVifM
+id: node.event.default
+targetEntityType: node
+bundle: event
+mode: default
+content:
+  body:
+    type: ui_patterns_component_per_item
+    label: hidden
+    settings:
+      ui_patterns:
+        component_id: 'droost_theme:section'
+        variant_id: null
+        props: {  }
+        slots:
+          content:
+            sources:
+              -
+                source_id: 'field_formatter:node:event:body'
+                source:
+                  type: text_default
+                  settings: {  }
+                _weight: 0
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_event_date:
+    type: ui_patterns_component_per_item
+    label: hidden
+    settings:
+      ui_patterns:
+        component_id: 'droost_theme:section'
+        variant_id: null
+        props:
+          heading:
+            source_id: field_label
+        slots:
+          content:
+            sources:
+              -
+                source_id: 'field_formatter:node:event:field_event_date'
+                source:
+                  type: datetime_default
+                  settings:
+                    timezone_override: ''
+                    format_type: long
+                _weight: 0
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_event_image:
+    type: ui_patterns_component_per_item
+    label: hidden
+    settings:
+      ui_patterns:
+        component_id: 'droost_theme:section'
+        variant_id: null
+        props:
+          heading:
+            source_id: field_label
+        slots:
+          content:
+            sources:
+              -
+                source_id: 'field_formatter:node:event:field_event_image'
+                source:
+                  type: image
+                  settings:
+                    image_link: ''
+                    image_style: large
+                    image_loading:
+                      attribute: lazy
+                _weight: 0
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_event_location:
+    type: ui_patterns_component_per_item
+    label: hidden
+    settings:
+      ui_patterns:
+        component_id: 'droost_theme:section'
+        variant_id: null
+        props:
+          heading:
+            source_id: field_label
+        slots:
+          content:
+            sources:
+              -
+                source_id: 'field_property:node:field_event_location:value'
+                _weight: 0
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  links: true

@@ -1,0 +1,14 @@
+Workflow run run-545c1eef904a
+  started 2026-10-23T05:44:35+00:00 · effort high · mode agentic · lead autonomous · browser none · tasks claude-code
+  ✓ plan: passed
+  • code: active
+      phpcs          passed — labelled: it ran and examined nothing — phpcs passed — the run changed no file phpcs reads (ticket scope), so nothing was analysed
+      phpstan        passed — labelled: it ran and examined nothing — phpstan passed — the run changed no file phpstan reads (ticket scope), so nothing was analysed
+      eslint         off — by preset high
+      stylelint      off — by preset high
+      prettier       off — by preset high
+      house_rules    passed — labelled: it ran and examined nothing — house_rules read nothing — no file this run added or changed is one HR1 reads (HR1 read 0 added file(s))
+      custom:component_lint passed
+  • test: pending
+  • complete: pending
+  criteria: 21 verified by a test, 0 manual, 0 unverified

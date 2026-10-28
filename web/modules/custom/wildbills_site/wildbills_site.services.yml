@@ -1,0 +1,13 @@
+services:
+  _defaults:
+    autowire: true
+  wildbills_site.dealership:
+    class: Drupal\wildbills_site\Dealership
+  Drupal\wildbills_site\Dealership: '@wildbills_site.dealership'
+  wildbills_site.inventory:
+    class: Drupal\wildbills_site\Inventory
+  Drupal\wildbills_site\Inventory: '@wildbills_site.inventory'
+  wildbills_site.vehicle_redirect:
+    class: Drupal\wildbills_site\EventSubscriber\VehicleRedirectSubscriber
+    tags:
+      - { name: event_subscriber }

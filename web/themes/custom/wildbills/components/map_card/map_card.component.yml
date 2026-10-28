@@ -1,0 +1,33 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Map card
+description: "An illustrative map graphic with a pin and a caption, and buttons opening the dealership's address in Google Maps and Apple Maps. The address comes from the dealership details."
+group: "Wild Bill's location"
+status: stable
+props:
+  type: object
+  properties:
+    pin_label:
+      type: string
+      title: Pin label
+      description: The label on the map's pin.
+      examples: ["Wild Bill's"]
+    map_label:
+      type: string
+      title: Map description
+      description: What the graphic shows, for screen readers.
+      examples: ['Illustrative map graphic with a pin marking the sample dealership address']
+    caption:
+      type: string
+      title: Caption
+      description: The line along the bottom of the map.
+      examples: ['Illustrative graphic, not a real map. The address below is a sample placeholder.']
+    google_label:
+      type: string
+      title: Google Maps button label
+      description: The dark button, opening the address in Google Maps.
+      examples: ['Open in Google Maps']
+    apple_label:
+      type: string
+      title: Apple Maps button label
+      description: The outlined button, opening the address in Apple Maps.
+      examples: ['Apple Maps']

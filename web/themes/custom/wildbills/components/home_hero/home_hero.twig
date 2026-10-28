@@ -1,0 +1,26 @@
+{#
+  demo_notices and vehicle_count are not props: the wildbills_site module
+  hands every wildbills component the dealership details' demo switch, and
+  this one the number of cars on the lot.
+#}
+<section class="wb-hero">
+  <div class="wb-wrap wb-hero-grid">
+    <div class="wb-hero-copy">
+      {%- if eyebrow %}<span class="wb-eyebrow wb-rise">{{ eyebrow }}</span>{% endif %}
+      <h1 class="wb-display wb-rise wb-rise-2">{{ headline_before }}{% if headline_emphasis %} <em>{{ headline_emphasis }}</em>{% endif %}{% if headline_after %} {{ headline_after }}{% endif %}</h1>
+      {%- if lede %}<p class="wb-lede wb-rise wb-rise-3">{{ lede }}</p>{% endif %}
+      <div class="wb-hero-actions wb-rise wb-rise-4">
+        {%- if primary_label and primary_url %}{{ include('wildbills:button', { label: primary_label, url: primary_url, variant: 'primary', icon: 'arrow' }, with_context = false) }}{% endif -%}
+        {%- if secondary_label and secondary_url %}{{ include('wildbills:button', { label: secondary_label, url: secondary_url, variant: 'ghost' }, with_context = false) }}{% endif -%}
+      </div>
+    </div>
+    <figure class="wb-hero-photo wb-rise wb-rise-3">
+      {%- if image.src %}<img src="{{ image.src }}" alt="{{ image.alt }}"{% if image.width %} width="{{ image.width }}"{% endif %}{% if image.height %} height="{{ image.height }}"{% endif %} fetchpriority="high">{% endif %}
+      {%- if vehicle_count is not null or tag_text %}
+      <figcaption class="wb-hero-tag"><div><b>{{ [vehicle_count, demo_notices ? 'sample'|t : null, vehicle_count == 1 ? tag_noun|trim('s', 'right') : tag_noun]|filter(w => w is not same as(null) and w is not same as(''))|join(' ') }}</b>{% if tag_text %}<span>{{ tag_text }}</span>{% endif %}</div>
+        {%- if tag_label and tag_url %}{{ include('wildbills:button', { label: tag_label, url: tag_url, variant: 'ink', size: 'sm' }, with_context = false) }}{% endif -%}
+      </figcaption>
+      {%- endif %}
+    </figure>
+  </div>
+</section>

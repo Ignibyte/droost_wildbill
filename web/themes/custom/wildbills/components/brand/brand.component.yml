@@ -1,0 +1,34 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Brand
+description: "The WB lock-up: the square mark and the two-line name, linking home. Used by the site header and footer."
+group: "Wild Bill's frame"
+status: stable
+props:
+  type: object
+  properties:
+    mark:
+      type: string
+      title: Mark
+      description: The letters in the square badge.
+      examples: ['WB']
+    name:
+      type: string
+      title: Name
+      description: The first line of the name.
+      examples: ["Wild Bill's"]
+    tagline:
+      type: string
+      title: Tagline
+      description: The small second line.
+      examples: ['Used Cars']
+    url:
+      type: string
+      format: uri-reference
+      title: Link
+      description: Where the lock-up links; the front page.
+      examples: ['/']
+    label:
+      type: string
+      title: Accessible name
+      description: The link's accessible name.
+      examples: ["Wild Bill's Used Cars, home"]

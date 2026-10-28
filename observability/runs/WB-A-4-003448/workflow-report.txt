@@ -1,0 +1,18 @@
+Workflow run run-0704696dc1d4
+  started 2026-10-23T05:05:53+00:00 · effort high · mode agentic · lead autonomous · browser none · tasks claude-code
+  ✓ plan: passed
+  ✓ code: passed
+      phpcs          passed
+      phpstan        passed
+      eslint         off — by preset high
+      stylelint      off — by preset high
+      prettier       off — by preset high
+      house_rules    passed
+      custom:component_lint passed
+  • test: active
+  • complete: pending
+  criteria: 20 verified by a test, 0 manual, 1 unverified (AC-20 — fill "Verified By" before complete)
+  seeker (latest inspection, at code): clean (critical 0, high 1, medium 3, low 2 found, 0 still open) · SELF-REVIEWED, not independent
+    across 2 inspection(s):
+      1. findings — critical 0, high 1, medium 3, low 2
+      2. clean — critical 0, high 1, medium 3, low 2 (self-reviewed)

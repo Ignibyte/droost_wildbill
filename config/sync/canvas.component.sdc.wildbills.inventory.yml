@@ -1,0 +1,141 @@
+uuid: b21e4213-732b-4fb0-aae2-6f8476a5c468
+langcode: en
+status: false
+dependencies:
+  theme:
+    - wildbills
+active_version: 9546ec0a5462bdc1
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        total:
+          required: true
+          field_type: integer
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: number
+          default_value:
+            -
+              value: 15
+          expression: ℹ︎integer␟value
+          derived_schema_metadata: {  }
+        price_min:
+          required: false
+          field_type: integer
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: number
+          default_value:
+            -
+              value: 25000
+          expression: ℹ︎integer␟value
+          derived_schema_metadata: {  }
+        price_max:
+          required: false
+          field_type: integer
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: number
+          default_value:
+            -
+              value: 60000
+          expression: ℹ︎integer␟value
+          derived_schema_metadata: {  }
+        price_step:
+          required: false
+          field_type: integer
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: number
+          default_value:
+            -
+              value: 500
+          expression: ℹ︎integer␟value
+          derived_schema_metadata: {  }
+        year_min:
+          required: false
+          field_type: integer
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: number
+          default_value:
+            -
+              value: 2019
+          expression: ℹ︎integer␟value
+          derived_schema_metadata: {  }
+        year_max:
+          required: false
+          field_type: integer
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: number
+          default_value:
+            -
+              value: 2022
+          expression: ℹ︎integer␟value
+          derived_schema_metadata: {  }
+        miles_min:
+          required: false
+          field_type: integer
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: number
+          default_value:
+            -
+              value: 10000
+          expression: ℹ︎integer␟value
+          derived_schema_metadata: {  }
+        miles_max:
+          required: false
+          field_type: integer
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: number
+          default_value:
+            -
+              value: 80000
+          expression: ℹ︎integer␟value
+          derived_schema_metadata: {  }
+        miles_step:
+          required: false
+          field_type: integer
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: number
+          default_value:
+            -
+              value: 5000
+          expression: ℹ︎integer␟value
+          derived_schema_metadata: {  }
+        phone_href:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'tel:+15551234567'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+    fallback_metadata:
+      slot_definitions:
+        heading:
+          title: Heading
+          description: 'The page heading.'
+        types:
+          title: 'Body styles'
+          description: 'A filter choice button per body style on the lot.'
+        makes:
+          title: Makes
+          description: 'A filter choice option per make on the lot.'
+        cards:
+          title: Cards
+          description: 'The vehicle cards.'
+label: Inventory
+id: sdc.wildbills.inventory
+provider: wildbills
+source: sdc
+source_local_id: 'wildbills:inventory'

@@ -1,0 +1,13 @@
+.wb-btn { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 48px; padding: 0 1.35rem; border-radius: 999px; border: 1.5px solid transparent; font-weight: 600; font-size: .96rem; text-decoration: none; cursor: pointer; transition: transform .25s var(--wb-ease), background-color .2s, color .2s, border-color .2s; white-space: nowrap; }
+.wb-btn:hover { transform: translateY(-2px); }
+.wb-btn:active { transform: translateY(0); }
+.wb-btn svg { width: 18px; height: 18px; flex: none; }
+.wb-btn-primary { background: hsl(var(--wb-signal)); color: hsl(var(--wb-paper)); }
+.wb-btn-primary:hover { background: hsl(var(--wb-signal-ink)); }
+.wb-btn-ink { background: hsl(var(--wb-ink)); color: hsl(var(--wb-paper)); }
+.wb-btn-ink:hover { background: hsl(var(--wb-petrol)); }
+.wb-btn-ghost { border-color: hsl(var(--wb-ink) / .25); background: transparent; }
+.wb-btn-ghost:hover { border-color: hsl(var(--wb-ink)); }
+.wb-btn-light { border-color: hsl(var(--wb-paper) / .4); color: hsl(var(--wb-paper)); }
+.wb-btn-light:hover { border-color: hsl(var(--wb-paper)); }
+.wb-btn-sm { min-height: 40px; padding: 0 1rem; font-size: .88rem; }

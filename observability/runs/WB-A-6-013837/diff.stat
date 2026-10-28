@@ -1,0 +1,17 @@
+ .../sync/canvas.component.sdc.wildbills.button.yml |  82 ++++++++++++++-
+ .../canvas.component.sdc.wildbills.closing_cta.yml | 112 ++++++++++++++++++++-
+ ...folder.feb1e100-8545-43cd-ac83-0a538fa6fd41.yml |   2 +
+ droost/wiki/wildbills.md                           |  75 +++++++++++++-
+ droost/wiki/wildbills_site.md                      |  51 +++++++++-
+ .../custom/wildbills_site/src/Dealership.php       |  23 +++++
+ .../wildbills_site/src/Hook/WildbillsSiteHooks.php |  14 ++-
+ .../tests/src/Unit/DealershipTest.php              |  18 ++++
+ .../tests/src/Unit/WildbillsSiteHooksTest.php      |   4 +-
+ .../wildbills_site/wildbills_site.deploy.php       |  45 +++++++++
+ .../components/button/button.component.yml         |   6 ++
+ .../custom/wildbills/components/button/button.twig |   2 +-
+ .../closing_cta/closing_cta.component.yml          |  12 ++-
+ .../components/closing_cta/closing_cta.css         |   8 ++
+ .../components/closing_cta/closing_cta.twig        |  24 ++++-
+ web/themes/custom/wildbills/css/base.css           |   4 +
+ 16 files changed, 464 insertions(+), 18 deletions(-)
