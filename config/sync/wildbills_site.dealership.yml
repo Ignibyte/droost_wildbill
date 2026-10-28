@@ -3,7 +3,7 @@ _core:
 langcode: en
 name: "Wild Bill's Used Cars"
 phone: '(555) 123-4567'
-email: wildbill@wildbillscars.com
+email: demo@example.invalid
 street: '123 Dusty Creek Rd'
 city: 'Dusty Creek, TX 78701'
 timezone: America/Chicago

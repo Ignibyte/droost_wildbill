@@ -12,6 +12,9 @@
   inquiry_form.js checks the form and drafts the email in the browser, from
   the sentences in the data attributes below. Nothing is sent to the site.
 #}
+{% if demo_notices %}
+  <div class="wb-form-card"><p class="wb-notice">{{ 'This demonstration does not accept enquiries or send email.'|t }}</p></div>
+{% else %}
 {%- set id = 'wb-inquiry'|clean_unique_id -%}
 {%- set topics = {
   'General question': 'General question'|t,
@@ -84,3 +87,5 @@
     <p class="wb-copy-status" role="status" aria-live="polite" data-wb-copy-status></p>
   </div>
 </div>
+
+{% endif %}

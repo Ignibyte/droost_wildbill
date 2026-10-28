@@ -84,7 +84,7 @@ droost:
     - path: web/themes/custom/wildbills/components/inquiry_form/inquiry_form.component.yml
       hash: "xxh3:948adcab1346e249"
     - path: web/themes/custom/wildbills/components/inquiry_form/inquiry_form.twig
-      hash: "xxh3:236d6e436f26c30b"
+      hash: "xxh3:2d7ad09a4b991ff4"
     - path: web/themes/custom/wildbills/components/inquiry_form/inquiry_form.js
       hash: "xxh3:6a1d79dd40bf62a6"
     - path: droost/canvas/contact.tree.json
@@ -290,6 +290,7 @@ everything shows at once, with no transition.
   1rem stack), one column below 900px. Its own component, not a `location_grid` variant: the ratio,
   gap and stacking all differ.
 - **`inquiry_form`:** the form card and the hand-off.
+  - **Public demonstration:** when `demo_notices` is enabled, the component renders a non-submitting notice instead of the form and email hand-off. The live demo forces this setting on.
   - **Props:** the page's fixed copy, 15 of them (the notice, the five labels, "optional", the
     placeholder, the button, the hand-off's warning, heading and three buttons).
   - **`|t` strings in the template:** what the script fills in or that carries a placeholder: the
@@ -317,4 +318,3 @@ everything shows at once, with no transition.
 `.wb-field`, `.wb-input` and `.wb-select` moved from `inventory.css` to `base.css`, unchanged, with
 `.wb-textarea` and the `[aria-invalid="true"]` border beside them. The inventory and the inquiry form
 both use them.
-

@@ -1,0 +1,8 @@
+uuid: b17b3fc0-d05c-4da9-bf6f-367661502939
+langcode: en
+status: true
+dependencies: {  }
+id: demo_disabled
+label: 'Demo: delivery disabled'
+plugin: 'null'
+configuration: {  }

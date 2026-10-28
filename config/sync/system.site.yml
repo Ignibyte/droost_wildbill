@@ -3,7 +3,7 @@ _core:
 langcode: en
 uuid: cd8029b0-b2d6-4240-af75-748717df8933
 name: "Wild Bill's Used Cars"
-mail: admin@example.com
+mail: admin@example.invalid
 slogan: 'Straightforward used cars, trucks and SUVs'
 page:
   403: /user/login
