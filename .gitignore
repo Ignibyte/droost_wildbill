@@ -40,3 +40,6 @@ auth.json
 /web/sites/*/services*.yml
 /web/profiles/contrib/
 /web/libraries/
+
+# Original design archives contain embedded repository metadata.
+/design/*.zip
